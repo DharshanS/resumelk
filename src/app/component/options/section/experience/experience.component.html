@@ -1,0 +1,158 @@
+
+<div class="editor__group" id="experience" *ngIf="flag">
+  <aside class="editor__group-sidebar">
+      <div class="editor__group-title">
+          <i class="fas fa-graduation-cap"></i>
+          <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Work Experience</p>
+      </div>
+      <ul class="editor__group-list" data-sortable data-education-list >
+          <li class="editor__group-item" [ngClass]="{active: selected==i}" *ngFor="let item of work_experiences;index as i"  (click)=selectedItem(i)>
+              <div class="editor__group-item-label" >
+                  <i class="fas fa-bars"></i>{{work_experiences[i].companyName}}
+                  <!-- <p class="paragraph--*ngFor="let item of work_experiences;index as i"med u-weight-smb"></p> -->
+              </div>
+              <i class="fas fa-trash editor__group-item-delete" (click)="removeExperience(i)" data-education-delete></i>
+          </li>
+
+
+      </ul>
+      <div class="editor__group-sidebar-btn">
+          <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent"
+              data-education-side-btn>
+              <p class="btn__label paragraph--med" (click)="addexperience()"><i class="fas fa-plus btn__icon"></i> Add
+                  New</p>
+          </button>
+      </div>
+  </aside>
+  <div class="editor__group-main">
+      <div class="row">
+          <div class="col-12 editor__group-main-form editor__group-main-form--alt"
+              data-education-form>
+              <div class="row">
+                  <div class="col-12" data-education-form-items>
+                      <div class="row">
+                          <div class="col-12 col-lg-6">
+                              <div class="editor__group-main-wrapper">
+                                  <label>Company name</label>
+                                  <input type="text" placeholder=""
+                                      data-education-institution [(ngModel)]="work_experiences[selected].companyName">
+                              </div>
+                          </div>
+                          <div class="col-12 col-lg-6">
+                              <div class="editor__group-main-wrapper">
+                                  <label>Job title</label>
+                                  <input type="text" placeholder="job"
+                                      data-education-field [(ngModel)]="work_experiences[selected].jobTitle">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-12 col-lg-6">
+                              <div class="editor__group-main-wrapper">
+                                  <label>City</label>
+                                  <input type="text" placeholder="City" data-education-city [(ngModel)]="work_experiences[selected].city">
+                              </div>
+                          </div>
+                          <div class="col-12 col-lg-6">
+                              <div class="editor__group-main-wrapper">
+                                  <label>Country</label>
+                                  <input type="text" placeholder="Country"
+                                      data-education-country [(ngModel)]="work_experiences[selected].country">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-12 col-xl-6">
+                              <label>Time Period</label>
+                              <div class="row">
+                                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
+                                      <select required data-education-start-month [(ngModel)]="work_experiences[selected].timePeriod.from.month">
+                                          <option value="" disabled selected hidden>Month</option>
+                                          <option value="January">January</option>
+                                          <option value="February">February</option>
+                                          <option value="March">March</option>
+                                          <option value="June">June</option>
+                                          <option value="July">July</option>
+                                          <option value="August">August</option>
+                                          <option value="September">September</option>
+                                          <option value="October">October</option>
+                                          <option value="November">November</option>
+                                          <option value="December">December</option>
+                                      </select>
+                                  </div>
+                                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
+                                      <select required data-education-start-year [(ngModel)]="work_experiences[selected].timePeriod.from.year">
+                                          <option value="" disabled selected hidden>Year</option>
+                                          <option value="2018">2018</option>
+                                          <option value="2017">2017</option>
+                                          <option value="2016">2016</option>
+                                          <option value="2015">2015</option>
+                                          <option value="2014">2014</option>
+                                          <option value="2013">2013</option>
+                                          <option value="2012">2012</option>
+                                          <option value="2011">2011</option>
+                                          <option value="2010">2010</option>
+                                      </select>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-12 col-xl-6">
+                              <label class="d-none d-xl-inline-block">&nbsp;</label>
+                              <div class="row">
+                                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
+                                      <select required data-education-end-month [(ngModel)]="work_experiences[selected].timePeriod.to.month">
+                                          <option value="" disabled selected hidden>Month</option>
+                                          <option value="January">January</option>
+                                          <option value="February">February</option>
+                                          <option value="March">March</option>
+                                          <option value="June">June</option>
+                                          <option value="July">July</option>
+                                          <option value="August">August</option>
+                                          <option value="September">September</option>
+                                          <option value="October">October</option>
+                                          <option value="November">November</option>
+                                          <option value="December">December</option>
+                                      </select>
+                                  </div>
+                                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
+                                      <select required data-education-end-year  [(ngModel)]="work_experiences[selected].timePeriod.to.year">
+                                          <option value="" disabled selected hidden>Year</option>
+                                          <option value="2018">2018</option>
+                                          <option value="2017">2017</option>
+                                          <option value="2016">2016</option>
+                                          <option value="2015">2015</option>
+                                          <option value="2014">2014</option>
+                                          <option value="2013">2013</option>
+                                          <option value="2012">2012</option>
+                                          <option value="2011">2011</option>
+                                          <option value="2010">2010</option>
+                                      </select>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row justify-content-end">
+                          <div class="col-auto">
+                              <div class="checkbox">
+                                  <input type="checkbox" id="currently-study-here" [(ngModel)]="work_experiences[selected].currentWork"
+                                      data-education-currently>
+                                  <label for="currently-study-here">Currently I study here</label>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+
+
+                      <div  class="col-12" data-skills-item>
+                        <label>Description</label>
+
+
+                </div>
+              </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+

@@ -1,0 +1,16 @@
+.title-txt{
+  max-width: 50%;
+  cursor: pointer;
+}
+.title-font {
+  font-size: 20px;
+  padding-left: 12px;
+  padding-top: 10px;
+
+}
+
+.pointer{
+cursor: pointer;
+position: relative;
+
+}

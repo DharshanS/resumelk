@@ -1,0 +1,132 @@
+<app-header></app-header>
+
+
+  <div class="container-fluid">
+
+      <div class="row">
+          <div class="col-12 col-md-10 offset-md-1">
+              <div class="select-template__grid">
+                  <div class="select-template__grid-item">
+                      <div class="select-template__item" style="background-image: url('assets/images/template-1.jpg');">
+                          <div class="select-template__item-overlay">
+                              <button class="btn btn--no-shadow btn--shorter btn--icon btn--primary-alt btn--full u-margin-bottom-med">
+                                  <p class="btn__label">Select</p><i class="fas fa-chevron-right btn__icon btn__icon--font btn__icon--alt"></i>
+                              </button>
+                              <button class="btn btn--no-shadow btn--shorter btn--white btn--full" data-popup-trigger="preview-popup" data-popup-src="assets/images/template-1.jpg">
+                                  <p class="btn__label">Preview</p>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="select-template__grid-item">
+                      <div class="select-template__item" style="background-image: url('assets/images/template-2.jpg');">
+                          <div class="select-template__item-overlay">
+                              <button class="btn btn--no-shadow btn--shorter btn--icon btn--primary-alt btn--full u-margin-bottom-med">
+                                  <p class="btn__label">Select</p><i class="fas fa-chevron-right btn__icon btn__icon--font btn__icon--alt"></i>
+                              </button>
+                              <button class="btn btn--no-shadow btn--shorter btn--white btn--full" data-popup-trigger="preview-popup" data-popup-src="assets/images/template-2.jpg">
+                                  <p class="btn__label">Preview</p>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="select-template__grid-item">
+                      <div class="select-template__item" style="background-image: url('assets/images/template-3.jpg');">
+                          <div class="select-template__item-overlay">
+                              <button class="btn btn--no-shadow btn--shorter btn--icon btn--primary-alt btn--full u-margin-bottom-med">
+                                  <p class="btn__label">Select</p><i class="fas fa-chevron-right btn__icon btn__icon--font btn__icon--alt"></i>
+                              </button>
+                              <button class="btn btn--no-shadow btn--shorter btn--white btn--full" data-popup-trigger="preview-popup" data-popup-src="assets/images/template-3.jpg">
+                                  <p class="btn__label">Preview</p>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="select-template__grid-item">
+                      <div class="select-template__item" style="background-image: url('assets/images/template-4.jpg');">
+                          <div class="select-template__item-overlay">
+                              <button class="btn btn--no-shadow btn--shorter btn--icon btn--primary-alt btn--full u-margin-bottom-med">
+                                  <p class="btn__label">Select</p><i class="fas fa-chevron-right btn__icon btn__icon--font btn__icon--alt"></i>
+                              </button>
+                              <button class="btn btn--no-shadow btn--shorter btn--white btn--full" data-popup-trigger="preview-popup" data-popup-src="assets/images/template-4.jpg">
+                                  <p class="btn__label">Preview</p>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="select-template__grid-item">
+                      <div class="select-template__item" style="background-image: url('assets/images/template-1.jpg');">
+                          <div class="select-template__item-overlay">
+                              <button class="btn btn--no-shadow btn--shorter btn--icon btn--primary-alt btn--full u-margin-bottom-med">
+                                  <p class="btn__label">Select</p><i class="fas fa-chevron-right btn__icon btn__icon--font btn__icon--alt"></i>
+                              </button>
+                              <button class="btn btn--no-shadow btn--shorter btn--white btn--full" data-popup-trigger="preview-popup" data-popup-src="assets/images/template-1.jpg">
+                                  <p class="btn__label">Preview</p>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="select-template__grid-item">
+                      <div class="select-template__item" style="background-image: url('assets/images/template-2.jpg');">
+                          <div class="select-template__item-overlay">
+                              <button class="btn btn--no-shadow btn--shorter btn--icon btn--primary-alt btn--full u-margin-bottom-med">
+                                  <p class="btn__label">Select</p><i class="fas fa-chevron-right btn__icon btn__icon--font btn__icon--alt"></i>
+                              </button>
+                              <button class="btn btn--no-shadow btn--shorter btn--white btn--full" data-popup-trigger="preview-popup" data-popup-src="assets/images/template-2.jpg">
+                                  <p class=" btn__label" (click)="basicModal.show()" mdbWavesEffect>Preview</p>
+                                  <!-- <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Launch demo modal</button> -->
+                              </button>
+
+
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+
+
+
+
+      <!-- <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button> -->
+
+
+
+
+      <!-- <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Launch demo modal</button> -->
+
+      <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                <span aria-hidden="true">×</span>
+              </button>
+              <h4 class="modal-title w-100" id="myModalLabel">Resume</h4>
+            </div>
+            <div class="modal-body">
+                <!-- <div w3-include-html="https://www.w3schools.com/graphics/google_maps_intro.asp"></div>  -->
+
+                <div  class="prev-temp" style="background-image: url('assets/images/templates/temp-1.png');"></div>
+                <!-- <app-temp-one *ngIf="true"></app-temp-one> -->
+                <!-- <router-outlet></router-outlet> -->
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+              <button type="button" mdbBtn color="primary" class="relative waves-light" routerLink="editor" mdbWavesEffect>Select</button>
+            </div>
+          </div>
+        </div> 
+      </div>
+
+
+</div>
+
+
+

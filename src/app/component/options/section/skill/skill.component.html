@@ -1,0 +1,93 @@
+<div class="editor__group" id="skill" *ngIf="flag">
+  <aside class="editor__group-sidebar">
+
+      <div class="editor__group-title">
+          <i class="fas fa-chart-bar"></i>
+          <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Skills</p>
+      </div>
+
+
+      <ul class="editor__group-list" data-sortable data-skills-list >
+        <li class="editor__group-item" [ngClass]="{active: selected==i}" *ngFor="let item of skillCategories;index as i"  (click)=selectedItem(i)>
+            <div class="editor__group-item-label" >
+                <i class="fas fa-bars"></i>{{skillCategories[i].skillCategoryName}}
+                <!-- <p class="paragraph--*ngFor="let item of work_experiences;index as i"med u-weight-smb"></p> -->
+            </div>
+            <i class="fas fa-trash editor__group-item-delete" (click)="removeSkillCategory(i)" data-education-delete></i>
+        </li>
+
+
+    </ul>
+
+
+
+      <div class="editor__group-sidebar-btn">
+          <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent"
+              data-skills-side-btn  (click)=addNewSkillCategory()>
+              <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i> Add
+                  New</p>
+          </button>
+      </div>
+
+  </aside>
+  <div class="editor__group-main">
+      <div class="row" >
+          <div class="col-12 editor__group-main-form" data-skills-form >
+              <div class="row" data-skills-form-items>
+                  <div class="col-12">
+                      <div class="editor__group-main-wrapper">
+                          <label>Skill category name</label>
+                          <input type="text" placeholder="Skill Category"
+                              data-skills-category [(ngModel)]="skillCategories[selected].skillCategoryName">
+                      </div>
+                  </div>
+                  <div class="col-12" data-skills-item>
+                      <div class="editor__skills"  *ngFor="let item of skillCategories[selected].skillNames;index as i">
+                          <div class="row editor__skills-row">
+                              <div class="col-12 col-lg-6">
+                                  <div class="editor__group-main-wrapper">
+                                      <label>Skill Name</label>
+                                      <input type="text" placeholder="Skill Name" required [(ngModel)]="skillCategories[selected].skillNames[i].skillName"
+                                          data-skills-name>
+                                  </div>
+                              </div>
+                              <!--[(ngModel)]="skillCategories[selected][item].skillName"-->
+                              <div class="col-12 col-lg-6"  >
+                                  <div class="editor__group-main-wrapper">
+                                      <label>Skill Level</label>
+                                      <select required data-skills-level  >
+                                          <option value="" disabled selected hidden>Skill
+                                              Level</option>
+                                          <option value="beginner">Beginner</option>
+                                          <option value="intermediate">Intermediate</option>
+                                          <option value="expert">Expert</option>
+                                      </select>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="editor__skills-delete">
+                              <i class="fas fa-trash editor__skills-delete-icon" *ngIf="i!=0"
+                                  data-skills-form-delete (click)="removeSkill(selected,i)"></i>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12">
+              <div class="editor__group-main-btn">
+                  <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent" (click)=addNewSkill(selected,i)
+                      data-skills-inner-btn>
+                      <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i>
+                          Add New Skill Name</p>
+                  </button>
+
+              </div>
+
+
+
+          </div>
+      </div>
+
+  </div>
+</div>
+

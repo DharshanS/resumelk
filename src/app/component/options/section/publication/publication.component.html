@@ -1,0 +1,109 @@
+<div class="editor__group"  id="publications" *ngIf="basicSections[5].flag">
+  <aside class="editor__group-sidebar">
+      <div class="editor__group-title">
+          <i class="fas fa-chart-bar"></i>
+          <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Publications</p>
+      </div>
+      <ul class="editor__group-list" data-sortable data-skills-list>
+          <li class="editor__group-item editor__group-item--active" data-skills-list-item>
+              <div class="editor__group-item-label">
+                  <i class="fas fa-bars"></i>
+                  <p class="paragraph--med u-weight-smb">Publications #1</p>
+              </div>
+              <i class="fas fa-trash editor__group-item-delete" data-skills-delete></i>
+          </li>
+      </ul>
+      <div class="editor__group-sidebar-btn">
+          <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent"
+              data-skills-side-btn>
+              <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i> Add
+                  New</p>
+          </button>
+      </div>
+  </aside>
+  <div class="editor__group-main">
+      <div class="row">
+          <div class="col-12 editor__group-main-form" data-skills-form>
+              <div class="row editor__skills-row" data-skills-form-items>
+                  <div class="col-12 col-lg-6">
+                      <div class="editor__group-main-wrapper">
+                          <label>Title</label>
+                          <input type="text" placeholder="Skill Category"
+                              data-skills-category>
+                      </div>
+
+                  </div>
+                  <div class="col-12 col-lg-6">
+
+                      <div class="editor__group-main-wrapper">
+                          <label>Publisher</label>
+                          <input type="text" placeholder="Skill Category"
+                              data-skills-category>
+                      </div>
+                  </div>
+
+                  <div class="col-12" data-skills-item>
+                      <div class="editor__skills">
+                          <div class="row editor__skills-row">
+                              <div class="col-12 ">
+                                  <div class="editor__group-main-wrapper">
+                                      <label>Publications URL/ISBN</label>
+                                      <input type="text" placeholder="Skill Name" required
+                                          data-skills-name>
+                                  </div>
+                              </div>
+
+                          </div>
+
+                      </div>
+                  </div>
+
+
+                  <div class="col-12" data-skills-item>
+                      <div class="editor__skills">
+                          <div class="row editor__skills-row">
+                              <div class="col-12 col-lg-4">
+                                  <div class="editor__group-main-wrapper">
+                                      <label>Month</label>
+                                      <select required data-skills-level>
+                                          <option value="" disabled selected hidden>Month</option>
+                                          <option value="beginner">Beginner</option>
+                                          <option value="intermediate">Intermediate</option>
+                                          <option value="expert">Expert</option>
+                                      </select>
+                                  </div>
+                              </div>
+                              <div class="col-12 col-lg-4">
+                                  <div class="editor__group-main-wrapper">
+                                      <label>Year</label>
+                                      <select required data-skills-level>
+                                          <option value="" disabled selected hidden>Year</option>
+                                          <option value="beginner">Beginner</option>
+                                          <option value="intermediate">Intermediate</option>
+                                          <option value="expert">Expert</option>
+                                      </select>
+                                  </div>
+                              </div>
+                          </div>
+
+                      </div>
+                  </div>
+
+                  <div class="col-12" data-skills-item>
+                      <div class="editor__skills">
+                          <div class="col-12">
+                              <label>Description</label>
+                              <div class="editor__wysiwyg editor__education-wysiwyg"
+                                  data-education-wysiwyg></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+
+
+
+</div>

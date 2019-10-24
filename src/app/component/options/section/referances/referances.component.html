@@ -1,0 +1,90 @@
+<div class="editor__group" id="referance" *ngIf="flag" >
+    <aside class="editor__group-sidebar">
+        <div class="editor__group-title">
+            <i class="fas fa-chart-bar"></i>
+            <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Reference</p>
+        </div>
+        <ul class="editor__group-list" data-sortable data-skills-list>
+            <li class="editor__group-item "  [ngClass]="{active: selected==i}" data-skills-list-item  *ngFor="let item of __referances; index as i" (click)=selectedItem(i)>
+                <div class="editor__group-item-label">
+                    <i class="fas fa-bars"></i>{{__referances[i].company}}
+                    <p class="paragraph--med u-weight-smb"></p>
+                </div>
+                <i class="fas fa-trash editor__group-item-delete" data-skills-delete (click)="removeRefernace(i)"></i>
+            </li>
+        </ul>
+        <div class="editor__group-sidebar-btn">
+            <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent" (click)=addNewReferance()
+                data-skills-side-btn>
+                <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i> Add
+                    New</p>
+            </button>
+        </div>
+    </aside>
+    <div class="editor__group-main">
+        <div class="row">
+            <div class="col-12 editor__group-main-form" data-skills-form >
+                <div class="row editor__skills-row" data-skills-form-items>
+                    <div class="col-12 col-lg-6">
+                        <div class="editor__group-main-wrapper">
+                            <label>Company </label>
+                            <input type="text" placeholder="company"
+                                data-skills-category [(ngModel)]="__referances[selected].company">
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-lg-6">
+
+                        <div class="editor__group-main-wrapper">
+                            <label>Person Name</label>
+                            <input type="text" placeholder="Person Name"
+                                data-skills-category [(ngModel)]="__referances[selected].personName" >
+                        </div>
+                    </div>
+
+                    <div class="col-12" data-skills-item>
+                        <div class="editor__skills">
+                            <div class="row editor__skills-row">
+                                <div class="col-6 ">
+                                    <div class="editor__group-main-wrapper">
+                                        <label>Contact 1</label>
+                                        <input type="text" placeholder="contact" required
+                                            data-skills-name [(ngModel)]="__referances[selected].contact1" >
+                                    </div>
+                                </div>
+
+                                <div class="col-6 ">
+                                    <div class="editor__group-main-wrapper">
+                                        <label>Contact 2</label>
+                                        <input type="text" placeholder="contact" required
+                                            data-skills-name [(ngModel)]="  __referances[selected].contact2" >
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div  class="col-12" data-skills-item>
+
+
+
+
+                  </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+  </div>

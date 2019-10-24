@@ -1,0 +1,28 @@
+<div class="editor__group" id="strengths" *ngIf="flag">
+
+<div class="col-12 editor__group-main-form">
+  <span class="head"><h4>strengths</h4></span>
+
+  <div class="col-lg-12">
+      <ng-select [items]="users"
+      bindLabel="name"
+      bindValue="id"
+      [addTag]="addCustomUser"
+      [multiple]="true"
+      placeholder="add your strengths"
+      [(ngModel)]="selectedUserIds">
+</ng-select>
+
+
+
+  </div>
+
+
+
+
+
+</div>
+
+
+</div>
+

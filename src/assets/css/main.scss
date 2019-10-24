@@ -1,0 +1,34 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+@import "base/base";
+@import "base/typography";
+
+@import "components/btn";
+@import "components/banner";
+@import "components/how";
+@import "components/icon";
+@import "components/feature";
+@import "components/benefits";
+@import "components/templates";
+@import "components/slider";
+@import "components/create";
+@import "components/contact";
+@import "components/pricing";
+@import "components/testimonials";
+@import "components/dashboard";
+@import "components/preview";
+@import "components/resume-preview-box";
+@import "components/popup";
+@import "components/select-template";
+@import "components/editor";
+@import "components/form";
+@import "components/account";
+@import "components/table";
+
+@import "layout/wrapper";
+@import "layout/sidebar";
+@import "layout/header";
+@import "layout/footer";
+
+@import "base/utilities";

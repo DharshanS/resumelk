@@ -1,0 +1,105 @@
+<div class="sidebar__main">
+    <ul class="sidebar__menu">
+        <li class="sidebar__menu-item editor__menu w-100 float-left">
+            <a href="" class="sidebar__menu-label"><i class="fas fa-sliders-h sidebar__menu-icon"></i>Fill in v
+                your Resume</a>
+            <div data-sortable *ngFor="let item of editor.moreSections;index as i">
+
+                <div class="menu-item" *ngIf="item.flag" @fade>
+                    <div class="" (click)="scroll(item.name)">
+                        <i class="close-lock-icon fas {{item.icon}}" (click)="removeFromDisplayBucket(i)"></i>
+                    <i class="fas {{item.class}} "></i>
+                    <label>{{item.label}}</label>
+                </div>
+                </div>
+            </div>
+        </li>
+        <li class="sidebar__menu-item more-sections w-100 mt-4 float-left">
+            <a class="sidebar__menu-label" (click)=moreDeatails($event) style="margin-left: -15px;">
+                <i class={{moreIcon}} id=more-icon></i>
+                More  Sections
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+
+
+
+<div class="sidebar__main">
+
+
+    <ng-container *ngIf="moreIconShow">
+        <ul class="sidebar__menu" name="moreDeatails" @fade>
+            <li class="sidebar__menu-item editor__menu w-100 float-left">
+                    <div data-sortable *ngFor="let item of editor.moreSections;index as i">
+
+                            <div class="menu-item" *ngIf="!item.flag" @fade>
+                                    <div class="" (click)="addToDisplayBucket(i)">
+                                    <!-- <i class="close-lock-icon fas {{item.icon}}" (click)="removeFromDisplayBucket(i)"></i> -->
+                                    <i class="close-lock-icon fas fa-plus"></i>
+                                <i class="fas {{item.class}} "></i>
+                                <label>{{item.label}}</label>
+                            </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                <!-- <ul class="sidebar__menu sidebar__menu--sub" data-sortable
+                    *ngFor="let item of editor.moreSections;index as i">
+
+                    <li class="sidebar__menu-item" *ngIf="!item.flag">
+                        <a class="sidebar__menu-label" (click)="addToDisplayBucket(i)">
+                            <i class="fas {{item.class}} sidebar__menu-icon"></i>{{item.label}}
+                            <i class="sidebar__menu-label-icon fas fa-plus"></i></a>
+                    </li>
+
+
+
+                </ul> -->
+            </li>
+
+
+        </ul>
+
+        <button (click)="addCustomComponent()">Add Custom</button>
+
+        <ul class="sidebar__menu" name="" @fade>
+            <li class="sidebar__menu-item editor__menu col-12 float-left">
+                <ul class="sidebar__menu sidebar__menu--sub" data-sortable *ngFor="let item of customelist;index as i">
+                    <!--
+                  <li class="sidebar__menu-item" *ngIf="!item.flag">
+                      <a  class="sidebar__menu-label" (click)="addToDisplayBucket(i)">
+                          <i class="fas {{item.class}} sidebar__menu-icon" ></i>{{item.label}}
+                           <i class="sidebar__menu-label-icon fas fa-plus"></i></a>
+                  </li> -->
+
+                    <li>{{item.instance.title}}</li>
+
+                </ul>
+            </li>
+
+
+        </ul>
+    </ng-container>
+
+
+
+
+
+
+</div>
+<div class="sidebar__footer float-left">
+    <div class="editor__status">
+        <div class="editor__status-chart"></div>
+        <div class="editor__status-copy">
+            <p class="paragraph--small u-color-gray-alt-13 u-weight-smb">Career Status</p>
+            <h2 class="u-color-primary-alt">65%</h2>
+            <p class="paragraph--small u-color-gray-alt-12 u-weight-smb">Intermediate</p>
+        </div>
+    </div>
+</div>

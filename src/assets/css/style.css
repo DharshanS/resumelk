@@ -1,0 +1,329 @@
+body {
+  background: rgb(204,204,204);
+  font-size: 12px !important;
+}
+page {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+page[size="A4"] {
+  width: 21cm;
+  height: 29.7cm;
+}
+page[size="A4"][layout="landscape"] {
+  width: 29.7cm;
+  height: 21cm;
+}
+
+.temp-img-logo{
+  width: 150px;
+}
+.sub-title{
+  font-size: 19px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.sub-list-title{
+  font-size: 16px;
+}
+
+.ul-line{
+  line-height: 16px;
+}
+.balu-title{
+  color: #6b0303;
+  font-size: 16px;
+  border-bottom: 1px solid #000000;
+}
+.balu-ul{
+  padding-left: 28px;
+  padding-top: 8px;
+  text-align: justify;
+}
+
+.bulu-position {
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 500;
+}
+.col-left-icon {
+  width: 7%;
+  border-right: solid 1px;
+  /* padding-right: 9px; */
+}
+.col-left-con {
+  padding-left: 10px;
+}
+
+.balu-pro-sub{
+  font-weight: 400;
+  font-size: 11px;
+}
+
+.balu-proj{
+  font-size: 15px;
+}
+
+.balu-right-bg-col{
+  padding: 10px;
+  background-color: #ced2c4;
+}
+
+
+
+.awe-border-b{
+  border-bottom: #000000 solid 1px
+}
+.awes-sub-title{
+  font-weight: 600;
+    font-size: 16px;
+    padding-left: 15px;
+}
+.awes-sub-p{
+  padding-left: 15px;
+}
+.b-color{
+  color: #6b0303;
+}
+.awe-b{
+  padding: 9px 0px;
+}
+.awoe-name-b{
+  font-weight: 600;
+    font-size: 17px;
+    
+}
+
+.awe-bottom{
+  bottom: -13px;
+  position: relative;
+  top: 363px;
+}
+
+
+.yashJe-sub-tit1{
+  font-size: 20px;
+  font-weight: 200;
+  color: #7d7d7d;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.yashJe-sub-tit2 {
+  font-weight: 600;
+  font-size: 16px;
+}
+.yashJe-sub-con1 {
+  font-weight: 400;
+  font-size: 15px;
+}
+.yashJe-sub-con2 {
+  color: #7d7d7d;
+}
+.yashje-con-box{
+  padding-top: 12px;
+}
+
+.circle{
+  font-size: 9px;
+  padding-right: 6px;
+}
+
+.resum-h1{
+  font-size: 32px
+}
+
+.resum-contact-span {
+  padding-right: 9px;
+  font-weight: 700;
+}
+.reus-sub-title-h1 {
+  color: #161fa7;
+  font-size: 19px;
+  width: 100%;
+  line-height: 19px;
+  border-bottom: solid 2px;
+  text-decoration: blink;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  margin-top: 6px;
+}
+.reus-sub-title-h4{
+  font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.reus-sub-title-h3{
+  color: #161fa7;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.reus-client{
+  color: #808080;
+  font-weight: 600;
+  margin-bottom: 1px;
+}
+.right-border{
+  border-bottom: dashed 1px #ccc;
+    padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.resu-SKILLS {
+  border: solid #d4d4d4 1px;
+  padding: 4px;
+  border-radius: 7px;
+  float: left;
+}
+.suur-educa{
+  padding-bottom: 9px;
+}
+.sura-border-b{
+  border-bottom: solid 2px #bdbbbb;
+}
+.sura-work-ex {
+  font-size: 15px;
+  font-weight: 500;
+}
+.sura-work-ex-date {
+  font-size: 14px;
+}
+
+.profe-sub-title-h4 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 11px;
+}
+.moha-h1 {
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 14px;
+}
+
+.moha-address-left,.moha-address-right{
+  margin: 0px;
+}
+.moha-border-b{
+  border-bottom: solid 1px;
+}
+
+.moha-sub-title {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.jafri-mort-p {
+  margin: 0;
+  font-weight: 600;
+  color: #000;
+  font-size: 13px;
+}
+.moha-li-span {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.tehz-jafri-img{
+  width: 115px;
+  border-radius: 100%;
+}
+
+.tehz-jafri-sub-title-h3{
+  color: #161fa7;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.jafri-mort-span {
+  color: #7d7d7d;
+  font-weight: 500;
+}
+
+.jafri-mort-1 {
+  color: #161fa7;
+  font-size:14px ;
+}
+
+.jafri-mort-lang {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+
+
+.mohit-h1 {
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom: 1px solid;
+  margin-bottom: 7px;
+}
+.mohit-p {
+  font-size: 14px;
+}
+
+.mohit-edu-dub-title {
+  font-weight: 600;
+  font-size: 14px;
+}
+.mohan-major {
+  font-style: italic;
+  font-size: 14px;
+}
+
+.container-fluid {
+  /* padding-top: 25px; */
+}
+
+
+
+.rohan-address1 {
+  margin: 0;
+  color: #5a5454;
+  font-weight: 600;
+}
+.address-colo {
+  color: #216bb9;
+}
+.rohan-h1 {
+  font-size: 25px;
+}
+.rohan-ex {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.rohan-title-left {
+  font-size: 17px;
+  padding-top: 15px;
+  border-top: #757575 solid;
+
+}
+.rohan-right-sub-h2{
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.rohan-right{
+  padding-top: 15px;
+  border-top: #757575 solid;
+
+}
+
+.rohan-right-sub-p {
+  font-size: 13px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.rohan-right-sub-date {
+  font-style: italic;
+  font-size: 11px;
+}

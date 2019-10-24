@@ -1,0 +1,257 @@
+
+
+ <div class="main-pdf">
+  <div class="pdf-bg-color">
+
+<div class="component-container"  #tasknote >
+
+
+<div class="section portfolio ">
+    <div class="left-text">
+        {{__resume.personalInfo.address.street}}<br> {{__resume.personalInfo.address.city}},{{__resume.personalInfo.address.postalCode}} <br>{{__resume.personalInfo.web}}
+    </div>
+    <div class="main-name center-col">
+        {{__resume.personalInfo.firstName}}  {{__resume.personalInfo.lastName}}
+    </div>
+    <div class="right-text">
+       {{__resume.personalInfo.phoneNumber}}<br>  {{__resume.personalInfo.email}}<br> {{__resume.personalInfo.git}}
+    </div>
+    <div class="left-text">
+        Nationality : {{__resume.personalInfo.nationality}}<br>
+
+     </div>
+</div>
+
+
+
+
+
+
+<div class="col-1 section">
+    <div   class="p-title b-bottom">
+        EDUCATION
+    </div>
+
+<!--Eduction places-->
+<div *ngFor="let education of __resume.education">
+<div class="portfolio" >
+
+    <div class="left-text p-title">{{education.institutionName}}</div>
+    <div class="left-text p-title center-col">{{education.fieldOfStudy}}</div>
+    <div class="right-text p-title">{{education.timePeriod.from.month +'–'+ education.timePeriod.from.year}} – {{education.timePeriod.to.month +'–'+ education.timePeriod.to.year}}</div>
+
+
+
+</div>
+<div class="col-1">
+    <div class="">{{education.description}}</div>
+    <div>
+        <ul>
+
+        </ul>
+    </div>
+</div>
+
+</div>
+</div>
+
+<div class="section">
+    <div class="col-1 section">
+        <div   class="p-title b-bottom">
+            SKILL
+        </div>
+    </div>
+<div class="skills" *ngFor="let skill of __resume.skills">
+<div class="portfolio">
+    <div class="left-text ">{{skill.category}}</div>
+    <div class="left-text center-col">{{skill.name}}</div>
+    <div class="right-text ">skill level : {{skill.skilLevel}} </div>
+</div>
+<div class="col-1">
+    <div>
+        <ul>
+            <li> Bachelor of Engineering in Computer Science and Engineering, First Class Graduate (Honors)
+            </li>
+
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+
+
+<div class="section col-1">
+    <div class="p-title b-bottom">
+        EXPERIENCE
+    </div>
+
+
+
+<div class="" *ngFor="let item of __resume.workExperiance">
+<div class="col-1">
+    <div    class="row p-title">
+       <span>{{item.jobTitle }}</span> <span> ( From : {{item.timePeriod.from.year}}/{{  item.timePeriod.from.month}}  To:{{item.timePeriod.to.year }} /{{  item.timePeriod.to.month}})</span>
+    </div>
+</div>
+<div class="col-1">
+    <div   class="p-title">
+        {{item.companyName }}
+    </div>
+</div>
+<div class="col-1">
+    <div>
+        {{item.description}}
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<div class="section col-1">
+    <div class="p-title b-bottom">
+        ACHIVEMENTS
+    </div>
+
+
+
+<div class="" *ngFor="let item of __resume.achivements">
+<div class="col-1">
+    <div    class="row p-title">
+       <span>{{item.name}}</span>
+    </div>
+</div>
+<div class="col-1">
+    <div   class="">
+        {{item.description }}
+    </div>
+</div>
+
+
+</div>
+</div>
+
+
+
+<div class="section col-1">
+    <div  class="p-title b-bottom">
+        REFERENCES
+    </div>
+
+
+
+<div class="" *ngFor="let item of __resume.referances">
+
+    <div class="">
+        <div class="p-title">
+            {{item.company }}
+        </div>
+    </div>
+    <div class="col-1">
+        <div>
+          <span >{{item.description}}</span><br/>
+          <span >{{item.personName}}</span><br/>
+          <span > {{item.contact1}}</span><br/>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="section col-1">
+    <div  class="p-title b-bottom">
+        AWARDS
+    </div>
+
+
+
+<div class="" *ngFor="let item of __resume.awards">
+
+    <div class="">
+        <div class="p-title">
+            {{item.name }}
+        </div>
+    </div>
+    <div class="col-1">
+        <div>
+            <span >{{item.description}}</span><br/>
+          <span >{{item.url}}</span><br/>
+          <span > {{item.issuer}}</span><br/>
+          <span > {{item.month}}{{item.year}}</span><br/>
+
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+<div class="section col-1">
+    <div  class="p-title b-bottom">
+        CERTIFICATES
+    </div>
+
+
+
+<div class="" *ngFor="let item of __resume.certificates">
+
+    <div class="">
+        <div class="p-title">
+            {{item.certificateName }}
+        </div>
+    </div>
+    <div class="col-1">
+        <div>
+          <span >{{item.authority}}</span><br/>
+          <span > {{item.certicateCode}}</span><br/>
+          <span > {{item.dateOfCerticate.month}}{{item.dateOfCerticate.year}}</span><br/>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+
+<div class="section col-1">
+    <div  class="p-title b-bottom">
+        PUBLICATIONS
+    </div>
+
+
+
+<div class="" *ngFor="let item of __resume.publictions">
+
+    <div class="">
+        <div class="p-title">
+            {{item.title }}
+        </div>
+    </div>
+    <div class="col-1">
+        <div>
+          <span >{{item.publisher}}</span><br/>
+          <span > {{item.url}}</span><br/>
+          <span > {{item.date.month}}{{item.date.year}}</span><br/>
+          <span > {{item.description}}</span><br/>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+</div>
+

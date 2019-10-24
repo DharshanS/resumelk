@@ -1,0 +1,56 @@
+<div class="editor__group" id="achievements" *ngIf="flag" >
+  <aside class="editor__group-sidebar">
+      <div class="editor__group-title">
+          <i class="fas fa-chart-bar"></i>
+          <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Achievements</p>
+      </div>
+      <ul class="editor__group-list" data-sortable data-skills-list>
+          <li class="editor__group-item editor__group-item--active" [ngClass]="{active: selected==i}" data-skills-list-item *ngFor="let item of __achivements;index as i"  (click)=selectedItem(i)>
+              <div class="editor__group-item-label">
+                  <i class="fas fa-bars"></i>
+                  <p class="paragraph--med u-weight-smb">{{__achivements[i].name}}</p>
+              </div>
+              <i class="fas fa-trash editor__group-item-delete" (click)="removeAchivements()" data-skills-delete></i>
+          </li>
+      </ul>
+      <div class="editor__group-sidebar-btn">
+          <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent" (click)="addAchivements()"
+              data-skills-side-btn>
+              <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i> Add
+                  New</p>
+          </button>
+      </div>
+  </aside>
+  <div class="editor__group-main" >
+      <div class="row">
+          <div class="col-12 editor__group-main-form" data-skills-form>
+              <div class="row editor__skills-row" data-skills-form-items>
+
+                <div class="col-12 col-lg-6">
+                  <div class="editor__group-main-wrapper">
+                      <label>Name </label>
+                      <input type="text" placeholder="company"
+                          data-skills-category [(ngModel)]="__achivements[selected].name">
+                  </div>
+
+              </div>
+                  <div class="col-12" data-skills-item>
+                      <div class="editor__skills">
+                          <div class="col-12">
+
+                              <label>Achievements</label>
+                              <!-- <angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor> -->
+                        <!-- <ckeditor [editor]="Editor" data="write something about your achivements"  [(ngModel)]="__achivements[selected].description"></ckeditor> -->
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+
+
+
+</div>

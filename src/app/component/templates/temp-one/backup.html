@@ -1,0 +1,450 @@
+
+
+ <div class="main-pdf">
+  <div class="pdf-bg-color">
+
+<div class="component-container"  >
+
+
+  <div class="portfolio">
+    <div class="left-text">
+        {{__resume.personalInfo.address.street}}<br> {{__resume.personalInfo.address.city}},{{__resume.personalInfo.address.postalCode}} <br>{{__resume.personalInfo.web}}
+    </div>
+    <div class="main-name center-col">
+        {{__resume.personalInfo.firstName}}  {{__resume.personalInfo.lastName}}
+    </div>
+    <div class="right-text">
+       {{__resume.personalInfo.phoneNumber}}<br>  {{__resume.personalInfo.email}}<br> {{__resume.personalInfo.git}}
+    </div>
+</div>
+<div class="col-1">
+    <div colspan="3" class="p-title b-bottom">
+        EDUCATION
+    </div>
+</div>
+<!--Eduction places-->
+<div *ngFor="let education of __resume.education">
+<div class="portfolio" >
+
+    <div class="left-text p-title">{{education.institutionName}}</div>
+    <div class="left-text p-title center-col">{{education.fieldOfStudy}}</div>
+    <div class="right-text p-title">{{education.timePeriod.from.month +'–'+ education.timePeriod.from.year}} – {{education.timePeriod.to.month +'–'+ education.timePeriod.to.year}}</div>
+
+
+
+</div>
+<div class="col-1">
+    <div class="">{{education.description}}</div>
+    <div>
+        <ul>
+            <li class="p-title">M.S. in Computer Science, GPA: 3.61</li>
+            <li>
+                <span class="p-title"> Graduate Coursework: </span>
+
+                Design and Analysis of Algorithms, Operating Systems, Object-Oriented Design and Development,
+                Database Management Concepts and Systems, Software Engineering, Internet Protocols, Data
+                Intensive Computing.
+
+            </li>
+        </ul>
+    </div>
+</div>
+
+</div>
+<!--skills places-->
+<div class="skills">
+<div class="portfolio">
+    <div class="left-text p-title">Assam Engineering Colleg</div>
+    <div class="left-text p-title center-col">Guwahati, India</div>
+    <div class="right-text p-title">Aug 2009 – May 2013 </div>
+</div>
+<div class="col-1">
+    <div>
+        <ul>
+            <li> Bachelor of Engineering in Computer Science and Engineering, First Class Graduate (Honors)
+            </li>
+
+        </ul>
+    </div>
+</div>
+</div>
+
+
+
+<div class="portfolio">
+    <div class="left-text p-title">Student Programme</div>
+    <div class="left-text p-title center-col">NC State University, Raleigh </div>
+    <div class="right-text p-title">May 2016 – Present </div>
+</div>
+
+<div class="col-1">
+    <div>
+        <ul>
+            <li>Tracked and fixed bugs, re-factored the code and redesigned the interface for increased
+                efficiency and maintainability of the Research Commitment and Tracking System and the Financial
+                Reporting web-apps(JSP and Servlet based)</li>
+            <li>Effectively integrated version control using git in all the projects which ensured easy
+                maintainabilit)</li>
+            <li> Proactively created a Java program to automate the creation of the Annual Reports of the
+                Centers and Institutes which reduced manual data entry by 10 day</li>
+
+        </ul>
+    </div>
+</div>
+<div class="col-1">
+    <div colspan="3" class="p-title b-bottom">
+        LANGUAGES AND TECHNOLOGIES
+
+    </div>
+</div>
+
+<div class="col-1">
+    <div>
+        <ul>
+            <li>Java, C, Ruby, Python, SAP ABAP, HTML, CSS, JavaScript, MySQL, IBM DB2, MongoDB</li>
+            <li>Ruby on Rails, jQuery, Bootstrap, Node.js, AngularJS, Express.js, Ionic, Git, Eclipse, Linux</li>
+
+
+        </ul>
+    </div>
+</div>
+<div class="col-1">
+    <div class="p-title b-bottom">
+        TECHNICAL EXPERIENCE
+
+    </div>
+</div>
+
+<div class=" col-1">
+    <div colspan="3" class="p-title">
+        Academic Projects
+
+    </div>
+</div>
+
+<div class="col-1">
+    <div>
+        <ul>
+            <li> <span class="p-title"> RestoScrapper: </span>
+
+                Developed a Ruby on Rails app along with a Chrome extension that shows aggregated
+                ratings and reviews from Yelp, Trip Advisor and Foursquare with the help of data scraped via a
+                Python script..
+            </li>
+
+            <li> <span class="p-title">Metrics for Expertiza </span>
+
+                Designed and implemented a module to generate metrics for peer-reviews in Expertiza (an open source
+                peer-review
+                web
+                application built with the Ruby on Rails framework). </li>
+            <li> <span class="p-title"> Online Book Library: </span>
+
+                Built a library system using Ruby on Rails and MySQL which allowed users to check out, return and
+                suggest books and
+                also had admins to manage the same. It also supported e-mail notifications and checkout histories.
+            </li>
+
+            <li> <span class="p-title">University Library Management System </span>
+
+                Built a library management system in Java and Oracle DB with a focus on triggers and procedures
+                which offered management of 3 types of resources – books, cameras and rooms.
+            </li>
+
+            <li> <span class="p-title">P2P system with centralized index: </span>
+
+                Designed and implemented a module to generate metrics for peer-reviews in Expertiza (an open source
+                peer-review
+                web
+                application built with the Ruby on Rails framework). </li>
+            <li> <span class="p-title"> Online Book Library: </span>
+
+                Built a library system using Ruby on Rails and MySQL which allowed users to check out, return and
+                suggest books and
+                also had admins to manage the same. It also supported e-mail notifications and checkout histories.
+            </li>
+
+
+        </ul>
+    </div>
+</div>
+
+<div class="col-1">
+    <div class="p-title">
+        Personal Projects
+
+    </div>
+</div>
+<div class="col-1">
+    <div>
+        <ul>
+            <li> <span class="p-title">E-Store:</span>
+
+                Developed a simplified online store application using the MEAN stack which utilized various RESTful
+                APIs like Facebook for login and Stripe for credit card payments. It also supported multiple
+                currencies via the Open Exchange Rates API
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="col-1" #tasknote>
+        <div class="p-title b-bottom">
+            ADDITIONAL EXPERIENCE AND AWARDS
+
+        </div>
+    </div>
+
+    <div class="col-1">
+        <div>
+            <ul>
+                <li> <span class="p-title">ADDITIONAL EXPERIENCE AND AWARDS</span>
+
+                    Developed a simplified online store application using the MEAN stack which utilized various
+                    RESTful APIs like Facebook for login and Stripe for credit card payments. It also supported
+                    multiple currencies via the Open Exchange Rates API
+                </li>
+                <li> Conducted a 3-day workshop on IBM DB2 with 73 participants (Oct 2013) at Assam Engineering
+                    Colleg
+                </li>
+                <li>
+
+                    Worked as a Programming lab assistant at Assam Engineering College, Guwahati (Aug 2013 - Oct
+                    2013)
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class=" page component-container"   >
+
+
+  <div class="portfolio">
+    <div class="left-text">
+        {{__resume.personalInfo.address.street}}<br> {{__resume.personalInfo.address.city}},{{__resume.personalInfo.address.postalCode}} <br>{{__resume.personalInfo.web}}
+    </div>
+    <div class="main-name center-col">
+        {{__resume.personalInfo.firstName}}  {{__resume.personalInfo.lastName}}
+    </div>
+    <div class="right-text">
+       {{__resume.personalInfo.phoneNumber}}<br>  {{__resume.personalInfo.email}}<br> {{__resume.personalInfo.git}}
+    </div>
+</div>
+<div class="col-1">
+    <div colspan="3" class="p-title b-bottom">
+        EDUCATION
+    </div>
+</div>
+<!--Eduction places-->
+<div *ngFor="let education of __resume.education">
+<div class="portfolio" >
+
+    <div class="left-text p-title">{{education.institutionName}}</div>
+    <div class="left-text p-title center-col">{{education.fieldOfStudy}}</div>
+    <div class="right-text p-title">{{education.timePeriod.from.month +'–'+ education.timePeriod.from.year}} – {{education.timePeriod.to.month +'–'+ education.timePeriod.to.year}}</div>
+
+
+
+</div>
+<div class="col-1">
+    <div class="">{{education.description}}</div>
+    <div>
+        <ul>
+            <li class="p-title">M.S. in Computer Science, GPA: 3.61</li>
+            <li>
+                <span class="p-title"> Graduate Coursework: </span>
+
+                Design and Analysis of Algorithms, Operating Systems, Object-Oriented Design and Development,
+                Database Management Concepts and Systems, Software Engineering, Internet Protocols, Data
+                Intensive Computing.
+
+            </li>
+        </ul>
+    </div>
+</div>
+
+</div>
+<!--skills places-->
+<div class="skills">
+<div class="portfolio">
+    <div class="left-text p-title">Assam Engineering Colleg</div>
+    <div class="left-text p-title center-col">Guwahati, India</div>
+    <div class="right-text p-title">Aug 2009 – May 2013 </div>
+</div>
+<div class="col-1">
+    <div>
+        <ul>
+            <li> Bachelor of Engineering in Computer Science and Engineering, First Class Graduate (Honors)
+            </li>
+
+        </ul>
+    </div>
+</div>
+</div>
+
+
+
+<div class="portfolio">
+    <div class="left-text p-title">Student Programme</div>
+    <div class="left-text p-title center-col">NC State University, Raleigh </div>
+    <div class="right-text p-title">May 2016 – Present </div>
+</div>
+
+<div class="col-1">
+    <div>
+        <ul>
+            <li>Tracked and fixed bugs, re-factored the code and redesigned the interface for increased
+                efficiency and maintainability of the Research Commitment and Tracking System and the Financial
+                Reporting web-apps(JSP and Servlet based)</li>
+            <li>Effectively integrated version control using git in all the projects which ensured easy
+                maintainabilit)</li>
+            <li> Proactively created a Java program to automate the creation of the Annual Reports of the
+                Centers and Institutes which reduced manual data entry by 10 day</li>
+
+        </ul>
+    </div>
+</div>
+<div class="col-1">
+    <div colspan="3" class="p-title b-bottom">
+        LANGUAGES AND TECHNOLOGIES
+
+    </div>
+</div>
+
+<div class="col-1">
+    <div>
+        <ul>
+            <li>Java, C, Ruby, Python, SAP ABAP, HTML, CSS, JavaScript, MySQL, IBM DB2, MongoDB</li>
+            <li>Ruby on Rails, jQuery, Bootstrap, Node.js, AngularJS, Express.js, Ionic, Git, Eclipse, Linux</li>
+
+
+        </ul>
+    </div>
+</div>
+<div class="col-1">
+    <div class="p-title b-bottom">
+        TECHNICAL EXPERIENCE
+
+    </div>
+</div>
+
+<div class=" col-1">
+    <div colspan="3" class="p-title">
+        Academic Projects
+
+    </div>
+</div>
+
+<div class="col-1">
+    <div>
+        <ul>
+            <li> <span class="p-title"> RestoScrapper: </span>
+
+                Developed a Ruby on Rails app along with a Chrome extension that shows aggregated
+                ratings and reviews from Yelp, Trip Advisor and Foursquare with the help of data scraped via a
+                Python script..
+            </li>
+
+            <li> <span class="p-title">Metrics for Expertiza </span>
+
+                Designed and implemented a module to generate metrics for peer-reviews in Expertiza (an open source
+                peer-review
+                web
+                application built with the Ruby on Rails framework). </li>
+            <li> <span class="p-title"> Online Book Library: </span>
+
+                Built a library system using Ruby on Rails and MySQL which allowed users to check out, return and
+                suggest books and
+                also had admins to manage the same. It also supported e-mail notifications and checkout histories.
+            </li>
+
+            <li> <span class="p-title">University Library Management System </span>
+
+                Built a library management system in Java and Oracle DB with a focus on triggers and procedures
+                which offered management of 3 types of resources – books, cameras and rooms.
+            </li>
+
+            <li> <span class="p-title">P2P system with centralized index: </span>
+
+                Designed and implemented a module to generate metrics for peer-reviews in Expertiza (an open source
+                peer-review
+                web
+                application built with the Ruby on Rails framework). </li>
+            <li> <span class="p-title"> Online Book Library: </span>
+
+                Built a library system using Ruby on Rails and MySQL which allowed users to check out, return and
+                suggest books and
+                also had admins to manage the same. It also supported e-mail notifications and checkout histories.
+            </li>
+
+
+        </ul>
+    </div>
+</div>
+
+<div class="col-1">
+    <div class="p-title">
+        Personal Projects
+
+    </div>
+</div>
+<div class="col-1">
+    <div>
+        <ul>
+            <li> <span class="p-title">E-Store:</span>
+
+                Developed a simplified online store application using the MEAN stack which utilized various RESTful
+                APIs like Facebook for login and Stripe for credit card payments. It also supported multiple
+                currencies via the Open Exchange Rates API
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="col-1" #tasknote>
+        <div class="p-title b-bottom">
+            ADDITIONAL EXPERIENCE AND AWARDS
+
+        </div>
+    </div>
+
+    <div class="col-1">
+        <div>
+            <ul>
+                <li> <span class="p-title">ADDITIONAL EXPERIENCE AND AWARDS</span>
+
+                    Developed a simplified online store application using the MEAN stack which utilized various
+                    RESTful APIs like Facebook for login and Stripe for credit card payments. It also supported
+                    multiple currencies via the Open Exchange Rates API
+                </li>
+                <li> Conducted a 3-day workshop on IBM DB2 with 73 participants (Oct 2013) at Assam Engineering
+                    Colleg
+                </li>
+                <li>
+
+                    Worked as a Programming lab assistant at Assam Engineering College, Guwahati (Aug 2013 - Oct
+                    2013)
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+  </div>
+  </div>
