@@ -1,15 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
-@font-face {
-  font-family: "SFUIDisplay-Medium";
-  src: url("../fonts/SFUIDisplay-Medium.ttf"); }
 
-@font-face {
-  font-family: "SFUIDisplay-Semibold";
-  src: url("../fonts/SFUIDisplay-Semibold.ttf"); }
-
-@font-face {
-  font-family: "SFUIDisplay-Bold";
-  src: url("../fonts/SFUIDisplay-Bold.ttf"); }
 
 html,
 body {
@@ -141,7 +130,6 @@ select {
     max-width: 1300px; } }
 
 .heading-primary, h1 {
-  font-family: "SFUIDisplay-Bold", "Helvetica", "Arial", sans-serif;
   color: #323232;
   font-size: 3.333rem;
   line-height: 5rem; }
@@ -156,7 +144,6 @@ select {
         font-size: 3rem; } }
 
 .heading-secondary, h2 {
-  font-family: "SFUIDisplay-Semibold", "Helvetica", "Arial", sans-serif;
   color: #323232;
   font-size: 2.5rem;
   line-height: 3.333rem; }
@@ -167,7 +154,6 @@ select {
 
 .heading-tertiary, h3, table th,
 table td {
-  font-family: "SFUIDisplay-Medium", "Helvetica", "Arial", sans-serif;
   color: #323232;
   font-size: 1.667rem;
   line-height: 2.5rem; }
@@ -178,7 +164,7 @@ table td {
       line-height: 1.875rem; } }
 
 .heading-quaternary, h4 {
-  font-family: "SFUIDisplay-Bold", "Helvetica", "Arial", sans-serif;
+  
   color: #323232;
   font-size: 1.5rem;
   line-height: 2.5rem; }
@@ -190,7 +176,7 @@ table td {
 .paragraph, p,
 li, .contact input,
 .contact textarea, .contact button {
-  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+ 
   color: #908f8f;
   font-weight: 400;
   font-size: 1.333rem;
@@ -731,7 +717,6 @@ li, .contact input,
           height: 3.4375rem;
           margin-bottom: 2.5rem; } }
     .pricing__category-title {
-      font-family: "SFUIDisplay-Bold", "Helvetica", "Arial", sans-serif;
       color: #323232;
       font-size: 5rem;
       margin-bottom: 5rem;
@@ -1477,7 +1462,7 @@ li, .contact input,
       .trumbowyg-button-pane {
         border: 0; } }
   .trumbowyg-fontfamily-button {
-    font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+   
     font-weight: 600;
     font-size: 1.167rem;
     color: #484848; }
@@ -1489,14 +1474,13 @@ li, .contact input,
       min-height: 10.625rem; } }
 
 label {
-  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.167rem;
   line-height: 2rem;
   margin-bottom: 5px; }
   @media screen and (min-width: 768px) {
     label {
-      font-size: .875rem;
+      font-size: .96rem;
       line-height: 1.0rem; } }
 
 select,
@@ -1508,7 +1492,6 @@ input {
   border: 1px solid #f0f0f0;
   border-radius: 3px;
   font-size: 12px !important;
-  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
   font-weight: 400;
   background: #cccbcb1c;
   -webkit-appearance: none;
@@ -1708,7 +1691,6 @@ table {
       padding: 1.875rem 0; } }
 
 .sidebar__menu-item {
-  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
   color: #61abfd;
   font-weight: 600; }
   .sidebar__menu-item.sortable-ghost {
@@ -1935,7 +1917,6 @@ table {
         -ms-flex-pack: end;
         justify-content: flex-end; } }
     .header__menu-item {
-      font-family: "SFUIDisplay-Semibold", "Helvetica", "Arial", sans-serif;
       color: #656565;
       cursor: pointer;
       -webkit-transition: all .25s;
@@ -2437,13 +2418,10 @@ table {
     margin-bottom: 0; } }
 
 .u-font-main {
-  font-family: "Open Sans", "Helvetica", "Arial", sans-serif; }
+  font-weight: 400;
+  font-family: "Proxima Nova" !important; }
 
-.u-font-titles-med {
-  font-family: "SFUIDisplay-Medium", "Helvetica", "Arial", sans-serif; }
 
-.u-font-titles-smb {
-  font-family: "SFUIDisplay-Semibold", "Helvetica", "Arial", sans-serif; }
 
 .u-weight-smb {
   font-weight: 600; }
