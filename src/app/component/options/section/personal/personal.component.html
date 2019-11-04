@@ -20,25 +20,38 @@
       </div>
   </aside>
   <div class="editor__group-main">
+    <div class="row">
+        <div class="col-md-4 ">
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      <div class="co-md-4  ">
+          <button><a (click)="goToPreview()">preview</a></button>
+      </div>
+
+
+      </div>
       <div class="row">
           <div class="col-12 editor__group-main-form editor__group-main-form--alt">
               <div class="row">
                   <div class="col-12 col-xl-4">
                       <div class="editor__group-main-wrapper">
                           <label>Title before</label>
-                          <input type="text" placeholder="Title before" [(ngModel)]="personal_Info.titleBefore">
+                          <input type="text" placeholder="Title before" [(ngModel)]="personalInformation.title">
                       </div>
                   </div>
                   <div class="col-12 col-lg-6 col-xl-4">
                       <div class="editor__group-main-wrapper">
-                          <label>First Name</label>
-                          <input type="text" placeholder="First Name" [(ngModel)]="personal_Info.firstName">
+                          <label>First Name {{personalInformation.firstName}}</label>
+                          <input type="text" placeholder="First Name" [(ngModel)]="personalInformation.firstName">
                       </div>
                   </div>
                   <div class="col-12 col-lg-6 col-xl-4">
                       <div class="editor__group-main-wrapper">
                           <label>Last Name</label>
-                          <input type="text" placeholder="Last Name" [(ngModel)]="personal_Info.lastName">
+                          <input type="text" placeholder="Last Name" [(ngModel)]="personalInformation.lastName">
                       </div>
                   </div>
               </div>
@@ -53,13 +66,13 @@
                         #dpYMD="bsDatepicker"
                         bsDatepicker
 
-                        [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" placeholder="YYYY/MM/DD"  [(ngModel)]="personal_Info.dateOfBirth">
+                        [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" placeholder="YYYY/MM/DD"  [(ngModel)]="personalInformation.dateOfBirth">
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="editor__group-main-wrapper">
                         <label>Nationality</label>
-                        <input type="text" placeholder="Nationality" [(ngModel)]="personal_Info.natinality">
+                        <input type="text" placeholder="Nationality" [(ngModel)]="personalInformation.nationality">
                     </div>
                 </div>
             </div>
@@ -68,13 +81,13 @@
                   <div class="col-12 col-lg-6">
                       <div class="editor__group-main-wrapper">
                           <label>Phone Number</label>
-                          <input type="tel" placeholder="Phone Number" [(ngModel)]="personal_Info.phoneNumber">
+                          <input type="tel" placeholder="Phone Number" [(ngModel)]="personalInformation.phoneNumber">
                       </div>
                   </div>
                   <div class="col-12 col-lg-6">
                       <div class="editor__group-main-wrapper">
                           <label>Email Address</label>
-                          <input type="email" placeholder="Email Address" [(ngModel)]="personal_Info.email">
+                          <input type="email" placeholder="Email Address" [(ngModel)]="personalInformation.email">
                       </div>
                   </div>
               </div>
@@ -82,7 +95,7 @@
                   <div class="col-12">
                       <div class="editor__group-main-wrapper">
                           <label>Website Link</label>
-                          <input type="text" placeholder="Website Link" [(ngModel)]="personal_Info.web">
+                          <input type="text" placeholder="Website Link" [(ngModel)]="personalInformation.web">
                       </div>
                   </div>
               </div>
@@ -94,22 +107,22 @@
                           </div>
                           <div class="col-12 col-lg-6">
                               <div class="editor__group-main-wrapper">
-                                  <input type="text" placeholder="Street line" [(ngModel)]="personal_Info.address.street">
+                                  <input type="text" placeholder="Street line" [(ngModel)]="personalInformation.address.street">
                               </div>
                           </div>
                           <div class="col-12 col-lg-6">
                               <div class="editor__group-main-wrapper">
-                                  <input type="text" placeholder="City" [(ngModel)]="personal_Info.address.city">
+                                  <input type="text" placeholder="City" [(ngModel)]="personalInformation.address.city">
                               </div>
                           </div>
                           <div class="col-12 col-lg-6">
                               <div class="editor__group-main-wrapper">
-                                  <input type="text" placeholder="Postal Code" [(ngModel)]="personal_Info.address.postalCode">
+                                  <input type="text" placeholder="Postal Code" [(ngModel)]="personalInformation.address.postalCode">
                               </div>
                           </div>
                           <div class="col-12 col-lg-6">
                               <div class="editor__group-main-wrapper">
-                                  <input type="text" placeholder="Country" [(ngModel)]="personal_Info.address.country">
+                                  <input type="text" placeholder="Country" [(ngModel)]="personalInformation.address.country">
                               </div>
                           </div>
                       </div>

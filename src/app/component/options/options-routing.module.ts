@@ -15,28 +15,28 @@ const optionsRoute: Routes = [
 
         path: '',
         component: MainComponent,
-        // children: [
-        //     {
-        //         path: 'dashboard',
-        //      //   component: DashboardComponent
+        children: [
+            {
+                path: 'dashboard',
+             //   component: DashboardComponent
 
-        //     },
-        //     {
-        //         path: 'templates',
-        //       //  component: TemplatesComponent
+            },
+            {
+                path: 'templates',
+              //  component: TemplatesComponent
 
-        //     },
-        //     {
-        //         path: '',
-        //         component: EditorComponent
+            },
+            {
+                path: '',
+                component: EditorComponent
 
-        //     },
-        //     {
-        //         path: 'preview',
-        //       //  component: PreviewComponent
+            },
+            {
+                path: 'preview',
+              //  component: PreviewComponent
 
-        //     }
-        // ]
+            }
+        ]
     },
 
 

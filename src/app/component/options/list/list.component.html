@@ -1,25 +1,26 @@
 <div class="sidebar__main">
     <ul class="sidebar__menu">
         <li class="sidebar__menu-item editor__menu w-100 float-left">
-            <a href="" class="sidebar__menu-label"><i class="fas fa-sliders-h sidebar__menu-icon"></i>Fill in v
-                your Resume</a>
+            <!-- <a href="" class="sidebar__menu-label"><i class="fas fa-sliders-h sidebar__menu-icon"></i>Fill in v
+                your Resume</a> -->
             <div data-sortable *ngFor="let item of editor.moreSections;index as i">
 
-                <div class="menu-item select-item" *ngIf="item.flag" @fade>
-                    <div class="" (click)="scroll(item.name)">
-                        <i class="close-lock-icon fas {{item.icon}}" (click)="removeFromDisplayBucket(i)"></i>
+                <div class="menu-item select-item-no" *ngIf="item" @fade>
+                    <div class="" (click)="scroll(item.name,i)">
+                        <i class="close-lock-icon fas {{item.icon}}"> </i>
                     <i class="fas {{item.class}} "></i>
                     <label>{{item.label}}</label>
                 </div>
                 </div>
             </div>
+            <!-- <button class="btn btn--auto  btn--no-shadow add-custom btn--accent" (click)="addCustomComponent()"><i class="fas fa-plus btn__icon"></i> Add Custom</button> -->
         </li>
-        <li class="sidebar__menu-item more-sections w-100 mt-4 float-left">
+        <!-- <li class="sidebar__menu-item more-sections w-100 mt-4 float-left">
             <a class="sidebar__menu-label" (click)=moreDeatails($event) style="margin-left: -15px;">
                 <i class={{moreIcon}} id=more-icon></i>
                 More  Sections
             </a>
-        </li>
+        </li> -->
     </ul>
 </div>
 
@@ -51,9 +52,9 @@
 
         <ul class="sidebar__menu" name="moreDeatails" @fade>
             <li class="sidebar__menu-item editor__menu w-100 float-left">
-                <div data-sortable *ngFor="let item of customelist;index as i">        
+                <div data-sortable *ngFor="let item of customelist;index as i">
                     <div class="menu-item" *ngIf="!item.flag" @fade>
-                        <div class="">        
+                        <div class="">
                             <i class="close-lock-icon fas fa-plus"></i>
                             <i class="fas {{item.class}} "></i>
                             <label>{{item.instance.title}}</label>
@@ -64,20 +65,8 @@
         </ul>
 
 
-        <!-- <ul class="sidebar__menu" name="" @fade>
-            <li class="sidebar__menu-item editor__menu col-12 float-left">
-                <ul class="sidebar__menu sidebar__menu--sub" data-sortable *ngFor="let item of customelist;index as i">
-              
-                    <li class="menu-item">{{item.instance.title}}</li>
-
-                </ul>
-            </li>
 
 
-        </ul> -->
-        <button class="btn btn--auto  btn--no-shadow add-custom btn--accent" (click)="addCustomComponent()"><i class="fas fa-plus btn__icon"></i> Add Custom</button>
-
-     
     </ng-container>
 
 

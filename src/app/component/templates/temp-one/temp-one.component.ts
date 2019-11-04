@@ -68,7 +68,7 @@ export class TempOneComponent implements OnInit {
 
 
   ngOnInit() {
-    this.__resume=resumeJson;
+  //  this.__resume=resumeJson;
     console.log("---Inside ngOnInit---");
   }
   ngDoCheck() {

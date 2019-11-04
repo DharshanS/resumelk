@@ -16,7 +16,7 @@ import {TemplatesComponent} from './wrapper/templates.component';
 //     component: TempOneComponent
 //   },
 //   {path: 'editor',
- 
+
 //   loadChildren: "../../../component/options/options.module#OptionsModule"},
 
 //   path: '', component: FrameDefaultComponent, pathMatch: 'prefix',
@@ -24,7 +24,7 @@ import {TemplatesComponent} from './wrapper/templates.component';
 //       {path: '', component: SiteCalculatorComponent},
 //       {path: 'site-notice', component: SiteSiteNoticeComponent}
 //   ]
- 
+
 // ];
 
 
@@ -36,12 +36,12 @@ const routes: Routes = [
        },
   // { path: 'editor', loadChildren:"../options/options.module#OptionsModule" },
 
-  { path: 'editor', loadChildren: () => import('../options/options.module').then(m => m.OptionsModule) },
+//    { path: 'editor/:id', loadChildren: () => import('../options/options.module').then(m => m.OptionsModule) },
   ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  
+
 })
 export class TemplateRoutingModule { }

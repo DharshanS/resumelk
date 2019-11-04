@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild,ViewContainerRef,ComponentFactoryResolver} from '@angular/core';
+import { Component, OnInit,ViewChild,ViewContainerRef,ComponentFactoryResolver, OnChanges,SimpleChanges} from '@angular/core';
 
 import * as $ from 'jquery';
 import{FormControl,FormGroup} from '@angular/forms';
@@ -28,16 +28,20 @@ export class EditorComponent implements OnInit {
   componentRefList: any[] = [];
 
   components: [TextComponent];
+
   @ViewChild('customContainer', {  static: true,read: ViewContainerRef }) container;
 
     //personalInfoGroup: FormGroup;
     constructor(private resolver: ComponentFactoryResolver,
       private sections:EditorService,
       private custom: DynamicComponentsService,
-      private editor: EditorService,
+      private resume: EditorService,
       private resolve:ComponentFactoryResolver) {
 
     }
+
+
+
 
 
 
@@ -55,8 +59,6 @@ export class EditorComponent implements OnInit {
 
 
   listUpdate(item){
-
-   // this.container.clear();
 
       const factory=this.resolve.resolveComponentFactory(item.component);
       let componentRef=this.container.createComponent(factory);
@@ -84,9 +86,9 @@ export class EditorComponent implements OnInit {
 
     public handleScroll(event: ScrollEvent) {
 
-    // if($(document).scrollTop()>150){
-    //   this.displayScrollButton="block";
-    // }
+    if($(document).scrollTop()>100){
+      this.displayScrollButton="block";
+    }
 
       if (event.isReachingBottom) {
 

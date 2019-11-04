@@ -4,6 +4,7 @@ import {DashboardComponent} from './component/dashboard/dashboard.component';
 import {PreviewComponent} from './component/preview/preview.component';
 
 
+
 const routes: Routes = [
   {
     path: '',
@@ -27,7 +28,7 @@ const routes: Routes = [
     path: 'preview',
     component: PreviewComponent
   },
-  { path: 'editor', loadChildren: () => import('./component/options/options.module').then(m => m.OptionsModule) },
+  { path: 'editor/:id', loadChildren: () => import('./component/options/options.module').then(m => m.OptionsModule) },
 ];
 
 @NgModule({

@@ -8,9 +8,10 @@ import { Router } from '@angular/router';
 })
 export class TemplatesComponent implements OnInit,AfterViewInit {
 
- 
+
+  selectedTemplate=1;
   constructor(private router: Router) { }
-  
+
 
   ngOnInit() {
     console.log("---Inside ngOnInit---");
@@ -39,5 +40,8 @@ export class TemplatesComponent implements OnInit,AfterViewInit {
 
   }
 
- 
+  goToProductDetails() {
+    this.router.navigate(['/editor',this.selectedTemplate]);
+  }
+
 }

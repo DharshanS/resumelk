@@ -22,7 +22,7 @@ export class AwardComponent implements OnInit {
 
   addAward(){
     this.awards.push({"name":"awrds#","issuer":"","url":"","month":"","year":"","description":""})
-    alert(JSON.stringify(this.awards));
+   // alert(JSON.stringify(this.awards));
   }
   removeAward(index){
     if(index!=0)
@@ -30,7 +30,7 @@ export class AwardComponent implements OnInit {
   }
 
   selectedItem(index){
-this.selected=index;
+    this.selected=index;
   }
 
 

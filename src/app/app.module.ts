@@ -14,6 +14,7 @@ import { TempOneComponent } from './component/preview/templates/temp-one/temp-on
 import { HttpClientModule } from '@angular/common/http'
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { ResumeInformation } from "./resumeInfomation.service";
 
 
 
@@ -42,7 +43,7 @@ import { AppComponent } from './app.component';
 
     MDBBootstrapModule.forRoot()
   ],
-  providers: [],
+  providers: [ResumeInformation],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

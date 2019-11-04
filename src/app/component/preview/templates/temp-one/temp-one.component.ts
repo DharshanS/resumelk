@@ -2,8 +2,7 @@ import { Component, OnInit ,Renderer2,ViewEncapsulation,ElementRef,ViewChild} fr
 import resumeJson from '../../../../../assets/json/resume.json';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
-
-
+import { ResumeInformation } from "../../../../resumeInfomation.service";
 
 
 
@@ -66,9 +65,12 @@ export class TempOneComponent implements OnInit {
     toolbarPosition: 'top',
 };
 
+constructor( private resumeService: ResumeInformation,){
+
+}
 
   ngOnInit() {
-    this.__resume=resumeJson;
+    this.__resume=this.resumeService._resume;
     console.log("---Inside ngOnInit---");
   }
   ngDoCheck() {
