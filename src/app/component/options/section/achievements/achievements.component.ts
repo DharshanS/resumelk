@@ -1,5 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { Acheivment } from './Achivment';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { ResumeInformation } from "../../../../resumeInfomation.service";
 
 @Component({
   selector: 'app-achievements',
@@ -10,61 +12,22 @@ export class AchievementsComponent implements OnInit {
 
 
   __achivements=[];
-  selected=0;
+    selected=0;
+    public Editor = ClassicEditor;
 
-  config: AngularEditorConfig = {
-    editable: true,
-      spellcheck: true,
-      height: 'auto',
-      minHeight: '0',
-      maxHeight: 'auto',
-      width: 'auto',
-      minWidth: '0',
-      translate: 'yes',
-      enableToolbar: true,
-      showToolbar: true,
-      placeholder: 'Enter text here...',
-      defaultParagraphSeparator: '',
-      defaultFontName: '',
-      defaultFontSize: '',
-      fonts: [
-        {class: 'arial', name: 'Arial'},
-        {class: 'times-new-roman', name: 'Times New Roman'},
-        {class: 'calibri', name: 'Calibri'},
-        {class: 'comic-sans-ms', name: 'Comic Sans MS'}
-      ],
-      customClasses: [
-      {
-        name: 'quote',
-        class: 'quote',
-      },
-      {
-        name: 'redText',
-        class: 'redText'
-      },
-      {
-        name: 'titleText',
-        class: 'titleText',
-        tag: 'h1',
-      },
-    ],
-    uploadUrl: 'v1/image',
-    sanitize: true,
-    toolbarPosition: 'top',
-};
 
 
   @Input() flag:boolean;
 
 
-  constructor() { }
+  constructor( private resumeService: ResumeInformation) { }
 
   ngOnInit() {
-    this.__achivements.push({"name":"","description":""})
+    this.__achivements.push(new Acheivment())
   }
 
   addAchivements(){
-    this.__achivements.push({"name":"","description":""})
+    this.__achivements.push(new Acheivment())
   }
   removeAchivements(index){
     if(index!=0)

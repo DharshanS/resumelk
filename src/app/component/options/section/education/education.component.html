@@ -5,9 +5,9 @@
           <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Education</p>
       </div>
       <ul class="editor__group-list" data-sortable data-education-list >
-          <li class="editor__group-item "  [ngClass]="{active: selected==i}" data-education-list-item *ngFor="let eduction of eductions_place; index as i" (click)=selectedItem(i)>
+          <li class="editor__group-item "  [ngClass]="{active: selected==i}" data-education-list-item *ngFor="let eduction of eductionsPlace; index as i" (click)=selectedItem(i)>
               <div class="editor__group-item-label">
-                  <i class="fas fa-bars"></i>{{eductions_place[i].institutionName}}
+                  <i class="fas fa-bars"></i>{{eductionsPlace[i].institutionName}}
                   <p class="paragraph--med u-weight-smb"></p>
               </div>
               <i class="fas fa-trash editor__group-item-delete" data-education-delete (click)="removeEducation(i)"></i>
@@ -32,14 +32,14 @@
                               <div class="editor__group-main-wrapper">
                                   <label>Institution name</label>
                                   <input type="text" placeholder="Institution"
-                                      [(ngModel)]="eductions_place[selected].institutionName">
+                                      [(ngModel)]="eductionsPlace[selected].institutionName">
                               </div>
                           </div>
                           <div class="col-12 col-lg-6">
                               <div class="editor__group-main-wrapper">
                                   <label>Field of Study</label>
                                   <input type="text" placeholder="Field of Study"
-                                      data-education-field [(ngModel)]="eductions_place[selected].feildOfStudy">
+                                      data-education-field [(ngModel)]="eductionsPlace[selected].feildOfStudy">
                               </div>
                           </div>
                       </div>
@@ -47,14 +47,14 @@
                           <div class="col-12 col-lg-6">
                               <div class="editor__group-main-wrapper">
                                   <label>Country</label>
-                                  <input type="text" placeholder="City" data-education-city [(ngModel)]="eductions_place[selected].country">
+                                  <input type="text" placeholder="City" data-education-city [(ngModel)]="eductionsPlace[selected].country">
                               </div>
                           </div>
                           <div class="col-12 col-lg-6">
                               <div class="editor__group-main-wrapper">
                                   <label>City</label>
                                   <input type="text" placeholder="Country"
-                                      data-education-country [(ngModel)]="eductions_place[selected].city">
+                                      data-education-country [(ngModel)]="eductionsPlace[selected].city">
                               </div>
                           </div>
                       </div>
@@ -63,7 +63,7 @@
                               <label>Time Period</label>
                               <div class="row">
                                   <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-start-month [(ngModel)]="eductions_place[selected].timePeriod.from.month">
+                                      <select required data-education-start-month [(ngModel)]="eductionsPlace[selected].timePeriod.from.month">
                                           <option value="" disabled selected hidden>Month</option>
                                           <option value="January">January</option>
                                           <option value="February">February</option>
@@ -78,7 +78,7 @@
                                       </select>
                                   </div>
                                   <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-start-year [(ngModel)]="eductions_place[selected].timePeriod.from.year">
+                                      <select required data-education-start-year [(ngModel)]="eductionsPlace[selected].timePeriod.from.year">
                                           <option value="" disabled selected hidden>Year</option>
                                           <option value="2018">2018</option>
                                           <option value="2017">2017</option>
@@ -97,7 +97,7 @@
                               <label class="d-none d-xl-inline-block">&nbsp;</label>
                               <div class="row">
                                   <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-end-month [(ngModel)]="eductions_place[selected].timePeriod.to.month">
+                                      <select required data-education-end-month [(ngModel)]="eductionsPlace[selected].timePeriod.to.month">
                                           <option value="" disabled selected hidden>Month</option>
                                           <option value="January">January</option>
                                           <option value="February">February</option>
@@ -112,7 +112,7 @@
                                       </select>
                                   </div>
                                   <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-end-year [(ngModel)]="eductions_place[selected].timePeriod.to.year">
+                                      <select required data-education-end-year [(ngModel)]="eductionsPlace[selected].timePeriod.to.year">
                                           <option value="" disabled selected hidden>Year</option>
                                           <option value="2018">2018</option>
                                           <option value="2017">2017</option>
@@ -131,7 +131,7 @@
                       <div class="row justify-content-end">
                           <div class="col-auto">
                               <div class="checkbox">
-                                  <input type="checkbox" id="currently-study-here" [(ngModel)]="eductions_place[selected].currently"
+                                  <input type="checkbox" id="currently-study-here" [(ngModel)]="eductionsPlace[selected].currently"
                                       data-education-currently>
                                   <label for="currently-study-here">Currently I study here</label>
                               </div>
@@ -140,7 +140,7 @@
                       <div class="row">
                         <div class="col-12">
                             <label>Profile</label>
-
+                            <ckeditor [editor]="Editor" [(ngModel)]="eductionsPlace[selected].description" data></ckeditor>
                         </div>
                     </div>
 

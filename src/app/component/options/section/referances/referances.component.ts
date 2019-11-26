@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { Referance } from './Referance';
 @Component({
   selector: 'app-referances',
   templateUrl: './referances.component.html',
@@ -13,17 +14,18 @@ export class ReferancesComponent implements OnInit {
   @Input() flag:boolean;
   selected=0;
 
+  __referances:any;
 
-  __referances=[{"company":"","personName":"","contact1":"","contact2":"","description":""}];
 
   ngOnInit() {
+    this.__referances=[new Referance()];
     //this.__referances.push(this._referance);
   }
 
 
   addNewReferance(){
 
-    this.__referances.push({"company":"","personName":"","contact1":"","contact2":"","description":""})
+    this.__referances.push(new Referance())
   }
 
   selectedItem(i){

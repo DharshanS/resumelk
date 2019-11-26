@@ -1,37 +1,32 @@
-import { Component, OnInit, Input } from '@angular/core';
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+import { Component, OnInit, Input } from "@angular/core";
+import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { Certificate } from "./Certificate";
 
 @Component({
-  selector: 'app-certificate',
-  templateUrl: './certificate.component.html',
-  styleUrls: ['./certificate.component.css']
+  selector: "app-certificate",
+  templateUrl: "./certificate.component.html",
+  styleUrls: ["./certificate.component.css"]
 })
 export class CertificateComponent implements OnInit {
-  @Input() flag:boolean;
+  @Input() flag: boolean;
   public Editor = ClassicEditor;
 
-certificates=[];
-selected=0;
-  constructor() { }
+  certificates = [];
+  selected = 0;
+  constructor() {}
 
   ngOnInit() {
-    this.certificates=[{"certificateName":" certificate #","authority":"","certicateCode":"","dateOfCerticate":{"month":"","year":""}}]
+    this.certificates = [new Certificate()];
   }
 
-
-  addNewCertificate(){
-    this.certificates.push({"certificateName":"certificate #","authority":"","certicateCode":"","dateOfCerticate":{"month":"","year":""}})
-
+  addNewCertificate() {
+    this.certificates.push(new Certificate());
   }
-  removeCertificate(index){
-
-    if(index!==0)
-    this.certificates.splice(index,1);
-
+  removeCertificate(index) {
+    if (index !== 0) this.certificates.splice(index, 1);
   }
 
-  selectedItem(i){
-    this.selected=i;
+  selectedItem(i) {
+    this.selected = i;
   }
-
 }

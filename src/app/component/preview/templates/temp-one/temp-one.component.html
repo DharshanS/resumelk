@@ -27,7 +27,7 @@
 
 
 
-<div class="col-1 section">
+<div class="col-1 section" *ngIf="__resume.education.length">
     <div   class="p-title b-bottom">
         EDUCATION
     </div>
@@ -38,13 +38,13 @@
 
     <div class="left-text p-title">{{education.institutionName}}</div>
     <div class="left-text p-title center-col">{{education.fieldOfStudy}}</div>
-    <div class="right-text p-title">{{education.timePeriod.from.month +'–'+ education.timePeriod.from.year}} – {{education.timePeriod.to.month +'–'+ education.timePeriod.to.year}}</div>
+    <div class="right-text p-title">{{education.timePeriod.from.month?education.timePeriod.from.month +'–'+ education.timePeriod.from.year:""}} – {{education.timePeriod.to.month?education.timePeriod.to.month +'–'+ education.timePeriod.to.year:""}}</div>
 
 
 
 </div>
 <div class="col-1">
-    <div class="">{{education.description}}</div>
+    <div class="" [innerHTML]=education.description></div>
     <div>
         <ul>
 
@@ -55,7 +55,7 @@
 </div>
 </div>
 
-<div class="section">
+<div class="section" *ngIf="__resume.skills.length">
     <div class="col-1 section">
         <div   class="p-title b-bottom">
             SKILL
@@ -69,18 +69,14 @@
 </div>
 <div class="col-1">
     <div>
-        <ul>
-            <li> Bachelor of Engineering in Computer Science and Engineering, First Class Graduate (Honors)
-            </li>
 
-        </ul>
     </div>
 </div>
 </div>
 </div>
 
 
-<div class="section col-1">
+<div class="section col-1" *ngIf="__resume.workExperiance.length >0">
     <div class="p-title b-bottom">
         EXPERIENCE
     </div>

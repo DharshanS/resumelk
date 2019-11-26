@@ -66,7 +66,7 @@
                               <label>Time Period</label>
                               <div class="row">
                                   <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-start-month [(ngModel)]="work_experiences[selected].timePeriod.from.month">
+                                      <select required data-education-start-month [(ngModel)]=work_experiences[selected].timePeriod.from.month>
                                           <option value="" disabled selected hidden>Month</option>
                                           <option value="January">January</option>
                                           <option value="February">February</option>
@@ -81,7 +81,7 @@
                                       </select>
                                   </div>
                                   <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-start-year [(ngModel)]="work_experiences[selected].timePeriod.from.year">
+                                      <select required data-education-start-year >
                                           <option value="" disabled selected hidden>Year</option>
                                           <option value="2018">2018</option>
                                           <option value="2017">2017</option>
@@ -100,7 +100,7 @@
                               <label class="d-none d-xl-inline-block">&nbsp;</label>
                               <div class="row">
                                   <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-end-month [(ngModel)]="work_experiences[selected].timePeriod.to.month">
+                                      <select required data-education-end-month >
                                           <option value="" disabled selected hidden>Month</option>
                                           <option value="January">January</option>
                                           <option value="February">February</option>
@@ -115,7 +115,7 @@
                                       </select>
                                   </div>
                                   <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-end-year  [(ngModel)]="work_experiences[selected].timePeriod.to.year">
+                                      <select required data-education-end-year >
                                           <option value="" disabled selected hidden>Year</option>
                                           <option value="2018">2018</option>
                                           <option value="2017">2017</option>
@@ -134,7 +134,7 @@
                       <div class="row justify-content-end">
                           <div class="col-auto">
                               <div class="checkbox">
-                                  <input type="checkbox" id="currently-study-here" [(ngModel)]="work_experiences[selected].currentWork"
+                                  <input type="checkbox" id="currently-study-here"
                                       data-education-currently>
                                   <label for="currently-study-here">Currently I study here</label>
                               </div>
@@ -145,7 +145,7 @@
 
                       <div  class="col-12" data-skills-item>
                         <label>Description</label>
-
+                        <ckeditor [editor]="Editor"  data=""></ckeditor>
 
                 </div>
               </div>

@@ -28,7 +28,7 @@
 
         </div>
       <div class="co-md-4  ">
-          <button><a (click)="goToPreview()">preview</a></button>
+          <!-- <button><a (click)="goToPreview()">preview</a></button> -->
       </div>
 
 
@@ -44,7 +44,7 @@
                   </div>
                   <div class="col-12 col-lg-6 col-xl-4">
                       <div class="editor__group-main-wrapper">
-                          <label>First Name {{personalInformation.firstName}}</label>
+                          <label>First Name </label>
                           <input type="text" placeholder="First Name" [(ngModel)]="personalInformation.firstName">
                       </div>
                   </div>
@@ -61,12 +61,19 @@
                 <div class="col-12 col-lg-6">
                     <div class="editor__group-main-wrapper">
                         <label>Date of Birth</label>
-                        <input
+
+
+                          <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="personalInformation.dateOfBirth">
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+
+
+                        <!-- <input
 
                         #dpYMD="bsDatepicker"
                         bsDatepicker
 
-                        [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" placeholder="YYYY/MM/DD"  [(ngModel)]="personalInformation.dateOfBirth">
+                        [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" placeholder="YYYY/MM/DD"  [(ngModel)]="personalInformation.dateOfBirth"> -->
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">

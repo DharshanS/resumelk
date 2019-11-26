@@ -33,7 +33,7 @@ const optionsRoute: Routes = [
             },
             {
                 path: 'preview',
-              //  component: PreviewComponent
+               // component: PreviewComponent
 
             }
         ]

@@ -13,10 +13,10 @@ import { CommonModule } from '@angular/common';
  import { HeaderComponent } from './header/header.component';
 import { EditorComponent } from './editor/editor.component';
 
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {  FormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
 import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import {MaterialModule} from './material.module';
+// import {MaterialModule} from './material.module';
 import { ScrollEventModule } from 'ngx-scroll-event';
 import { PersonalComponent } from './section/personal/personal.component';
 import { ExperienceComponent } from './section/experience/experience.component';
@@ -40,6 +40,13 @@ import { SocialMediaComponent } from './section/social-media/social-media.compon
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
+import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule
+  ,MatNativeDateModule} from '@angular/material';
+
+import { MatDatepickerModule,MatFormFieldModule } from '@angular/material';
+
+
+
 
 
 import {DynamicComponentsService} from './dynamic-components.service';
@@ -49,6 +56,7 @@ import {DynamicComponentsService} from './dynamic-components.service';
   declarations: [
 
    MainComponent,
+
 
     EditorComponent,
     PersonalComponent,
@@ -75,22 +83,29 @@ import {DynamicComponentsService} from './dynamic-components.service';
   ],
   imports: [
 
-    MaterialModule,
     ScrollEventModule,
     CommonModule,
     OptionRoutingModule,
-    ReactiveFormsModule,
+ //   ReactiveFormsModule,
     FormsModule,
-    BsDatepickerModule.forRoot(),
-    DatepickerModule.forRoot(),
+  //  BsDatepickerModule.forRoot(),
+   // DatepickerModule.forRoot(),
+   MatDatepickerModule,
+   MatFormFieldModule,
+   MatInputModule,
+   MatNativeDateModule,
+   MatSelectModule,
 
+   NgSelectModule,
+    CKEditorModule,
 
-    NgSelectModule,
-    CKEditorModule
 
   ],
+
+  //exports:[MatDatepickerModule],
+
   entryComponents: [ CustomComponent,TextComponent ],
-  providers: [  EditorService,DynamicComponentsService],
+  providers: [  EditorService,DynamicComponentsService,MatDatepickerModule],
 
 })
 export class OptionsModule { }

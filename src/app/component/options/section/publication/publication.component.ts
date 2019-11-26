@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { ResumeInformation } from "../../../../resumeInfomation.service";
+import { Publication } from './Publication';
+import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 @Component({
   selector: 'app-publication',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicationComponent implements OnInit {
 
-  constructor() { }
+  @Input() flag:boolean;
+
+
+  public Editor = ClassicEditor;
+  selected = 0;
+
+
+  constructor( private resumeService: ResumeInformation) { }
+
+  publications=[];
 
   ngOnInit() {
+    this.publications.push(new Publication());
+  }
+
+  addPublication(){
+    this.publications.push(new Publication())
+  }
+  removePublication(index){
+    if(index!=0)
+    this.publications.splice(index,1);
+
+  }
+
+  selectedItem(index) {
+    this.selected = index;
   }
 
 }

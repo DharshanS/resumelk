@@ -1,4 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { Skill, SkillName } from './Skill';
+import { ResumeInformation } from "../../../../resumeInfomation.service";
 
 @Component({
   selector: 'app-skill',
@@ -10,34 +12,30 @@ export class SkillComponent implements OnInit {
 
   @Input() flag:boolean;
 
-  skillNames = [{ "skillName": "", "skillLevel": "" }];
+
 
   selected=0;
 
   skillCategories = [];
 
-  skill = {
-    "skillCategoryName": "Skill #",
-    "skillNames": this.skillNames
-  }
 
 
-  constructor() { }
+
+  constructor(    private resumeService: ResumeInformation) { }
 
   ngOnInit() {
-    this.skillCategories.push(this.skill)
+    this.skillCategories.push(new Skill())
+    this.resumeService._resume.skills=this.skillCategories;
   }
 
   addNewSkillCategory() {
-    this.skillCategories.push({
-      "skillCategoryName": "",
-      "skillNames": [{ "skillName": "", "skillLevel": "" }]
-    })
+    this.skillCategories.push(new Skill());
+
 
   }
 
   addNewSkill(j,i) {
-    this.skillCategories[j].skillNames.push({ "skillName": "", "skillLevel": "" })
+    this.skillCategories[j].skillNames.push(new SkillName())
   }
 
   selectedItem(i){

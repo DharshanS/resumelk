@@ -18,6 +18,7 @@ import { ResumeInformation } from "./resumeInfomation.service";
 
 
 
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -41,8 +42,13 @@ import { AppComponent } from './app.component';
     CKEditorModule,
     MDBBootstrapModule,
 
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+
+
+
+
   ],
+
   providers: [ResumeInformation],
   bootstrap: [AppComponent]
 })

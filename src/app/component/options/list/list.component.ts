@@ -51,6 +51,7 @@ export class ListComponent implements OnInit {
   }
 
   addToDisplayBucket(index) {
+    this.editor.moreSections[index].active = true;
     this.editor.moreSections[index].flag = true;
   }
 

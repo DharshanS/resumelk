@@ -1,5 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+import { Education } from './Education';
+import { ResumeInformation } from "../../../../resumeInfomation.service";
 
 @Component({
   selector: 'app-education',
@@ -11,60 +13,36 @@ export class EducationComponent implements OnInit {
   @Input() flag:boolean;
   public Editor = ClassicEditor;
 
-  education={
-    "institutionName":"Institution #",
-    "feildOfStudy":"",
-    "country":"",
-    "city":"",
-    "timePeriod":{
-      "from":{
-        "month":"",
-        "year":""
-      },
-      "to":{
-        "month":"",
-        "year":""
-      }
-    },
-    "currently":false
-  }
+  education:Education;
 
   selected=0;
 
-  eductions_place=[];
+  eductionsPlace=[];
 
 
-  constructor() { }
+  constructor(
+    private resumeService: ResumeInformation
+
+  ) {
+
+  }
 
   ngOnInit() {
-    this.eductions_place.push(this.education)
+    this.eductionsPlace.push(new Education())
+
+    this.resumeService._resume.education=this.eductionsPlace;
   }
 
   removeEducation(index){
     if(index!==0)
-this.eductions_place.splice(index,1);
+this.eductionsPlace.splice(index,1);
 
 
   }
 
   addEducation(){
-    this.eductions_place.push({
-      "institutionName":"Institution #",
-      "feildOfStudy":"",
-      "country":"",
-      "city":"",
-      "timePeriod":{
-        "from":{
-          "month":"",
-          "year":""
-        },
-        "to":{
-          "month":"",
-          "year":""
-        }
-      },
-      "currently":false
-    });
+    console.log(this.Editor.document.ge);
+    this.eductionsPlace.push(new Education())
   }
   selectedItem(index){
     this.selected=index;
@@ -72,7 +50,7 @@ this.eductions_place.splice(index,1);
 
 
   continue(){
-    console.log(this.eductions_place)
+    console.log(this.eductionsPlace)
   }
 
 }

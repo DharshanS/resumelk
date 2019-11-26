@@ -12,13 +12,14 @@ export class StrengthsComponent implements OnInit {
   @Input() flag:boolean;
 
   users = [
-    {id: 'anjmao', name: 'Anjmao'},
-    {id: 'varnas', name: 'Tadeus Varnas'}
+    {id: 1, name: 'Ability to learn from mistakes'},
+    {id: 2, name: 'Ability to prioritize'},
+    {id: 3, name: 'Accuracy'}
 ];
 
 
 
-addCustomUser = (term) => ({id: term, name: term});
+addStrengths = (term) => ({id: term, name: term});
 
   constructor() { }
 
