@@ -155,12 +155,12 @@ select {
 .heading-tertiary, h3, table th,
 table td {
   color: #323232;
-  font-size: 1.667rem;
+  /* font-size: 1.667rem; */
   line-height: 2.5rem; }
   @media screen and (min-width: 768px) {
     .heading-tertiary, h3, table th,
     table td {
-      font-size: 1.25rem;
+      /* font-size: 1.25rem; */
       line-height: 1.875rem; } }
 
 .heading-quaternary, h4 {
@@ -1602,20 +1602,19 @@ table {
     padding-bottom: 2.5rem; }
   table th,
   table td {
-    text-align: center;
+    /* text-align: center;
     padding: 1.25rem 1.5625rem;
     font-weight: 400;
-    white-space: nowrap; }
+    white-space: nowrap;  */
+  }
     @media screen and (min-width: 768px) {
       table th,
       table td {
         white-space: initial; } }
-  table th {
-    background-color: #61abfd;
-    color: #ffffff; }
-  table td {
+
+  /* table td {
     background-color: #f5f5f5;
-    color: #696969; }
+    color: #696969; } */
 
 .wrapper {
   width: 100vw; }

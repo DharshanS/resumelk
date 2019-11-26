@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule , Component,
+import {
+  NgModule, Component,
   ViewChild,
   ViewContainerRef,
   ComponentFactoryResolver,
@@ -10,10 +11,10 @@ import { NgModule , Component,
 import { OptionRoutingModule } from './options-routing.module';
 import { CommonModule } from '@angular/common';
 
- import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './header/header.component';
 import { EditorComponent } from './editor/editor.component';
 
-import {  FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
 import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 // import {MaterialModule} from './material.module';
@@ -40,24 +41,26 @@ import { SocialMediaComponent } from './section/social-media/social-media.compon
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
-import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule
-  ,MatNativeDateModule} from '@angular/material';
+import {
+  MatInputModule, MatButtonModule, MatSelectModule, MatIconModule
+  , MatNativeDateModule
+} from '@angular/material';
 
-import { MatDatepickerModule,MatFormFieldModule } from '@angular/material';
+import { MatDatepickerModule, MatFormFieldModule } from '@angular/material';
 
 
 
 
 
-import {DynamicComponentsService} from './dynamic-components.service';
+import { DynamicComponentsService } from './dynamic-components.service';
 
 
 @NgModule({
   declarations: [
 
-   MainComponent,
+    MainComponent,
 
-
+    
     EditorComponent,
     PersonalComponent,
     ExperienceComponent,
@@ -82,21 +85,21 @@ import {DynamicComponentsService} from './dynamic-components.service';
 
   ],
   imports: [
-
+    MatIconModule,
     ScrollEventModule,
     CommonModule,
     OptionRoutingModule,
- //   ReactiveFormsModule,
+    //   ReactiveFormsModule,
     FormsModule,
-  //  BsDatepickerModule.forRoot(),
-   // DatepickerModule.forRoot(),
-   MatDatepickerModule,
-   MatFormFieldModule,
-   MatInputModule,
-   MatNativeDateModule,
-   MatSelectModule,
+    //  BsDatepickerModule.forRoot(),
+    // DatepickerModule.forRoot(),
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatSelectModule,
 
-   NgSelectModule,
+    NgSelectModule,
     CKEditorModule,
 
 
@@ -104,8 +107,8 @@ import {DynamicComponentsService} from './dynamic-components.service';
 
   //exports:[MatDatepickerModule],
 
-  entryComponents: [ CustomComponent,TextComponent ],
-  providers: [  EditorService,DynamicComponentsService,MatDatepickerModule],
+  entryComponents: [CustomComponent, TextComponent],
+  providers: [EditorService, DynamicComponentsService, MatDatepickerModule],
 
 })
 export class OptionsModule { }

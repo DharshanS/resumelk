@@ -58,23 +58,27 @@
 
 
               <div class="row">
+                    <mat-form-field>
+                            <mat-label>Outline form field</mat-label>
+                            <input matInput placeholder="Placeholder">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-hint>Hint</mat-hint>
+                          </mat-form-field>
+                  <div class="col-md-6">
+                  
+                  </div>
                 <div class="col-12 col-lg-6">
-                    <div class="editor__group-main-wrapper">
-                        <label>Date of Birth</label>
 
+                       
 
-                          <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="personalInformation.dateOfBirth">
-                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                          <mat-datepicker #picker></mat-datepicker>
-
-
-                        <!-- <input
-
-                        #dpYMD="bsDatepicker"
-                        bsDatepicker
-
-                        [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" placeholder="YYYY/MM/DD"  [(ngModel)]="personalInformation.dateOfBirth"> -->
-                    </div>
+                    <mat-form-field appearance="outline">
+                            <mat-label>Outline form field</mat-label>
+                        <mat-datepicker #Start></mat-datepicker>
+                        <input type="text" class="form-control" placeholder="From" [(ngModel)]="personalInformation.dateOfBirth"
+                            [matDatepicker]="Start" (click)="Start.open()">
+                    </mat-form-field>
+                
+                
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="editor__group-main-wrapper">

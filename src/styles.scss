@@ -1,3 +1,5 @@
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
 $bg-color: #003980;
 $bg-color2: #ebedf3;
 $btn-color: #151aa7;
@@ -25,7 +27,7 @@ html {
 }
 
 table th {
-  background-color: #053a75 !important;
+  // background-color: #053a75 !important;
 }
 .add-custom {
   background-color: #053a75 !important;
@@ -272,6 +274,9 @@ table th {
 }
 
 @import "media_query";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
