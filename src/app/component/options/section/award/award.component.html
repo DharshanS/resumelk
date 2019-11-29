@@ -27,18 +27,20 @@
               <div class="row editor__skills-row" data-skills-form-items>
                   <div class="col-12 col-lg-6">
                       <div class="editor__group-main-wrapper">
-                          <label>Award Name </label>
+                          
                           <input type="text" placeholder=" award name # {{awards.length}}" [(ngModel)]="awards[selected].name"
-                              data-skills-category>
+                              data-skills-category required>
+                              <label>Award Name {{awards.length}}</label>
                       </div>
 
                   </div>
                   <div class="col-12 col-lg-6">
 
                       <div class="editor__group-main-wrapper">
-                          <label>Issuer</label>
+                          
                           <input type="text" placeholder="issuer"
-                              data-skills-category [(ngModel)]="awards[selected].issuer">
+                              data-skills-category [(ngModel)]="awards[selected].issuer" required>
+                              <label>Issuer</label>
                       </div>
                   </div>
 
@@ -47,9 +49,10 @@
                           <div class="row editor__skills-row">
                               <div class="col-12 ">
                                   <div class="editor__group-main-wrapper">
-                                      <label>URL to award</label>
+                                      
                                       <input type="text" placeholder="url" required
                                           data-skills-name [(ngModel)]="awards[selected].url">
+                                          <label>URL to award</label>
                                   </div>
                               </div>
 

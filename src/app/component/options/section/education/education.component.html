@@ -30,31 +30,35 @@
                       <div class="row">
                           <div class="col-12 col-lg-6">
                               <div class="editor__group-main-wrapper">
-                                  <label>Institution name</label>
-                                  <input type="text" placeholder="Institution"
-                                      [(ngModel)]="eductionsPlace[selected].institutionName">
+                                  
+                                  <input type="text" 
+                                      [(ngModel)]="eductionsPlace[selected].institutionName" required>
+                                      <label>Institution name</label>
                               </div>
                           </div>
                           <div class="col-12 col-lg-6">
                               <div class="editor__group-main-wrapper">
-                                  <label>Field of Study</label>
-                                  <input type="text" placeholder="Field of Study"
-                                      data-education-field [(ngModel)]="eductionsPlace[selected].feildOfStudy">
+                                  
+                                  <input type="text" 
+                                      data-education-field [(ngModel)]="eductionsPlace[selected].feildOfStudy" required>
+                                      <label>Field of Study</label>
                               </div>
                           </div>
                       </div>
                       <div class="row">
                           <div class="col-12 col-lg-6">
                               <div class="editor__group-main-wrapper">
+                                
+                                  <input type="text" placeholder="" data-education-city [(ngModel)]="eductionsPlace[selected].country" required>
                                   <label>Country</label>
-                                  <input type="text" placeholder="City" data-education-city [(ngModel)]="eductionsPlace[selected].country">
                               </div>
                           </div>
                           <div class="col-12 col-lg-6">
                               <div class="editor__group-main-wrapper">
-                                  <label>City</label>
-                                  <input type="text" placeholder="Country"
-                                      data-education-country [(ngModel)]="eductionsPlace[selected].city">
+                                  
+                                  <input type="text" placeholder=""
+                                      data-education-country [(ngModel)]="eductionsPlace[selected].city" required>
+                                      <label>City</label>
                               </div>
                           </div>
                       </div>

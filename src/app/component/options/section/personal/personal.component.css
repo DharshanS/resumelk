@@ -1,0 +1,11 @@
+/* .editor__group-main-wrapper input:focus ~ label,
+.editor__group-main-wrapper input:valid ~ label
+{
+   
+} */
+
+
+.editor__group-main-wrapper input.visited ~ .editor__group-main-wrapper label{
+    top: -18px !important;
+    color: #610059 !important;
+}

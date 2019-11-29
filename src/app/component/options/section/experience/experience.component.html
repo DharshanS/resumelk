@@ -33,37 +33,41 @@
                       <div class="row">
                           <div class="col-12 col-lg-6">
                               <div class="editor__group-main-wrapper">
-                                  <label>Company name</label>
+                                  
                                   <input type="text" placeholder=""
-                                      data-education-institution [(ngModel)]="work_experiences[selected].companyName">
+                                      data-education-institution [(ngModel)]="work_experiences[selected].companyName" required>
+                                      <label>Company name</label>
                               </div>
                           </div>
                           <div class="col-12 col-lg-6">
                               <div class="editor__group-main-wrapper">
-                                  <label>Job title</label>
-                                  <input type="text" placeholder="job"
-                                      data-education-field [(ngModel)]="work_experiences[selected].jobTitle">
+                                 
+                                  <input type="text" 
+                                      data-education-field [(ngModel)]="work_experiences[selected].jobTitle" required>
+                                      <label>Job title</label>
                               </div>
                           </div>
                       </div>
                       <div class="row">
                           <div class="col-12 col-lg-6">
                               <div class="editor__group-main-wrapper">
+                                  
+                                  <input type="text" data-education-city [(ngModel)]="work_experiences[selected].city" required>
                                   <label>City</label>
-                                  <input type="text" placeholder="City" data-education-city [(ngModel)]="work_experiences[selected].city">
                               </div>
                           </div>
                           <div class="col-12 col-lg-6">
                               <div class="editor__group-main-wrapper">
-                                  <label>Country</label>
-                                  <input type="text" placeholder="Country"
-                                      data-education-country [(ngModel)]="work_experiences[selected].country">
+                                  
+                                  <input type="text"
+                                      data-education-country [(ngModel)]="work_experiences[selected].country" required>
+                                      <label>Country</label>
                               </div>
                           </div>
                       </div>
                       <div class="row">
                           <div class="col-12 col-xl-6">
-                              <label>Time Period</label>
+                               <label>Time Period</label>
                               <div class="row">
                                   <div class="col-12 col-lg-6 editor__group-main-wrapper">
                                       <select required data-education-start-month [(ngModel)]=work_experiences[selected].timePeriod.from.month>
@@ -79,6 +83,7 @@
                                           <option value="November">November</option>
                                           <option value="December">December</option>
                                       </select>
+                                     
                                   </div>
                                   <div class="col-12 col-lg-6 editor__group-main-wrapper">
                                       <select required data-education-start-year >

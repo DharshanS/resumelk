@@ -1485,21 +1485,15 @@ label {
 
 select,
 input {
-  height: 3.0rem;
   display: block;
   width: 100%;
-  padding: 0 2rem;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #cecdcd;
   border-radius: 3px;
-  font-size: 12px !important;
   font-weight: 400;
-  background: #cccbcb1c;
+  background: #72727317;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
-  -webkit-transition: all .25s;
-  -o-transition: all .25s;
-  transition: all .25s; }
+  transition: all .25s;}
   @media screen and (min-width: 768px) {
     select,
     input {

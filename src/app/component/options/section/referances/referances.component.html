@@ -27,18 +27,20 @@
                 <div class="row editor__skills-row" data-skills-form-items>
                     <div class="col-12 col-lg-6">
                         <div class="editor__group-main-wrapper">
-                            <label>Company </label>
+                            
                             <input type="text" placeholder="company"
-                                data-skills-category [(ngModel)]="__referances[selected].company">
+                                data-skills-category [(ngModel)]="__referances[selected].company" required>
+                                <label>Company </label>
                         </div>
 
                     </div>
                     <div class="col-12 col-lg-6">
 
                         <div class="editor__group-main-wrapper">
-                            <label>Person Name</label>
+                            
                             <input type="text" placeholder="Person Name"
-                                data-skills-category [(ngModel)]="__referances[selected].personName" >
+                                data-skills-category [(ngModel)]="__referances[selected].personName" required>
+                                <label>Person Name</label>
                         </div>
                     </div>
 
@@ -47,17 +49,19 @@
                             <div class="row editor__skills-row">
                                 <div class="col-6 ">
                                     <div class="editor__group-main-wrapper">
-                                        <label>Contact 1</label>
+                                        
                                         <input type="text" placeholder="contact" required
-                                            data-skills-name [(ngModel)]="__referances[selected].contact1" >
+                                            data-skills-name [(ngModel)]="__referances[selected].contact1" required>
+                                            <label>Contact 1</label>
                                     </div>
                                 </div>
 
                                 <div class="col-6 ">
                                     <div class="editor__group-main-wrapper">
-                                        <label>Contact 2</label>
+                                        
                                         <input type="text" placeholder="contact" required
-                                            data-skills-name [(ngModel)]="  __referances[selected].contact2" >
+                                            data-skills-name [(ngModel)]="  __referances[selected].contact2" required>
+                                            <label>Contact 2</label>
                                     </div>
                                 </div>
 

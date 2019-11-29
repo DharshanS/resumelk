@@ -280,3 +280,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+.editor__group-main-wrapper{
+  position: relative;
+input,select{
+  font-size: 14px !important;
+  padding-top: 9px !important;
+  height: 3.3rem !important;
+  color: #292929;
+}
+label{
+  position: absolute;
+  top: 9px;
+  left: 0;
+  padding: 10px 25px;
+  color: #797979;
+  transition: 0.5s !important;
+}
+
+
+}
+.editor__group-main-wrapper select.selected ~label,
+.editor__group-main-wrapper input:focus ~ label,
+.editor__group-main-wrapper input:valid ~ label
+{
+  top: -5px !important;
+  color: #03a9f4 !important;
+  font-size: 12px;
+  // left: 22px;
+}

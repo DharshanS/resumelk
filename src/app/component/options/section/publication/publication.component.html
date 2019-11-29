@@ -27,18 +27,20 @@
               <div class="row editor__skills-row" data-skills-form-items>
                   <div class="col-12 col-lg-6">
                       <div class="editor__group-main-wrapper">
-                          <label>Title</label>
-                          <input type="text" placeholder="" [(ngModel)]="publications[selected].title"
+                          
+                          <input type="text" required [(ngModel)]="publications[selected].title"
                               data-skills-category>
+                              <label>Title</label>
                       </div>
 
                   </div>
                   <div class="col-12 col-lg-6">
 
                       <div class="editor__group-main-wrapper">
-                          <label>Publisher</label>
-                          <input type="text" placeholder="" [(ngModel)]="publications[selected].publisher"
+                         
+                          <input type="text" required [(ngModel)]="publications[selected].publisher"
                               data-skills-category>
+                              <label>Publisher</label>
                       </div>
                   </div>
 
@@ -47,9 +49,10 @@
                           <div class="row editor__skills-row">
                               <div class="col-12 ">
                                   <div class="editor__group-main-wrapper">
-                                      <label>Publications URL/ISBN</label>
+                                      
                                       <input type="text" placeholder="" required  [(ngModel)]="publications[selected].url"
                                           data-skills-name>
+                                          <label>Publications URL/ISBN</label>
                                   </div>
                               </div>
 

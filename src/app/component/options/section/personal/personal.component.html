@@ -1,153 +1,160 @@
 <div class="editor__group" id="personal">
-  <aside class="editor__group-sidebar">
-      <div class="editor__group-title">
-          <i class="fas fa-user"></i>
-          <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Personal Info</p>
-      </div>
-      <div class="editor__photo">
-          <div class="editor__photo-img" style="background-image: url('assets/images/headshot.jpg');"></div>
-          <div class="editor__photo-check checkbox">
-              <input type="checkbox" id="use-profile-photo">
-              <label for="use-profile-photo">Use profile photo</label>
-          </div>
-          <input type="file" class="editor__photo-input" id="editor-photo">
-          <label for="editor-photo" class="editor__photo-label">
-              <span class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent">
-                  <p class="btn__label paragraph--med"><i class="fas fa-upload btn__icon"></i>
-                      Upload Photo</p>
-              </span>
-          </label>
-      </div>
-  </aside>
-  <div class="editor__group-main">
-    <div class="row">
-        <div class="col-md-4 ">
-
+    <aside class="editor__group-sidebar">
+        <div class="editor__group-title">
+            <i class="fas fa-user"></i>
+            <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Personal Info</p>
         </div>
-        <div class="col-md-4">
-
+        <div class="editor__photo">
+            <div class="editor__photo-img" style="background-image: url('assets/images/headshot.jpg');"></div>
+            <div class="editor__photo-check checkbox">
+                <input type="checkbox" id="use-profile-photo">
+                <label for="use-profile-photo">Use profile photo</label>
+            </div>
+            <input type="file" class="editor__photo-input" id="editor-photo">
+            <label for="editor-photo" class="editor__photo-label">
+                <span class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent">
+                    <p class="btn__label paragraph--med"><i class="fas fa-upload btn__icon"></i>
+                        Upload Photo</p>
+                </span>
+            </label>
         </div>
-      <div class="co-md-4  ">
-          <!-- <button><a (click)="goToPreview()">preview</a></button> -->
-      </div>
+    </aside>
+    <div class="editor__group-main">
+        <div class="row">
+            <div class="col-md-4 ">
 
+            </div>
+            <div class="col-md-4">
 
-      </div>
-      <div class="row">
-          <div class="col-12 editor__group-main-form editor__group-main-form--alt">
-              <div class="row">
-                  <div class="col-12 col-xl-4">
-                      <div class="editor__group-main-wrapper">
-                          <label>Title before</label>
-                          <input type="text" placeholder="Title before" [(ngModel)]="personalInformation.title">
-                      </div>
-                  </div>
-                  <div class="col-12 col-lg-6 col-xl-4">
-                      <div class="editor__group-main-wrapper">
-                          <label>First Name </label>
-                          <input type="text" placeholder="First Name" [(ngModel)]="personalInformation.firstName">
-                      </div>
-                  </div>
-                  <div class="col-12 col-lg-6 col-xl-4">
-                      <div class="editor__group-main-wrapper">
-                          <label>Last Name</label>
-                          <input type="text" placeholder="Last Name" [(ngModel)]="personalInformation.lastName">
-                      </div>
-                  </div>
-              </div>
-
-
-              <div class="row">
-                    <mat-form-field>
-                            <mat-label>Outline form field</mat-label>
-                            <input matInput placeholder="Placeholder">
-                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                            <mat-hint>Hint</mat-hint>
-                          </mat-form-field>
-                  <div class="col-md-6">
-                  
-                  </div>
-                <div class="col-12 col-lg-6">
-
-                       
-
-                    <mat-form-field appearance="outline">
-                            <mat-label>Outline form field</mat-label>
-                        <mat-datepicker #Start></mat-datepicker>
-                        <input type="text" class="form-control" placeholder="From" [(ngModel)]="personalInformation.dateOfBirth"
-                            [matDatepicker]="Start" (click)="Start.open()">
-                    </mat-form-field>
-                
-                
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="editor__group-main-wrapper">
-                        <label>Nationality</label>
-                        <input type="text" placeholder="Nationality" [(ngModel)]="personalInformation.nationality">
-                    </div>
-                </div>
+            </div>
+            <div class="co-md-4  ">
+                <!-- <button><a (click)="goToPreview()">preview</a></button> -->
             </div>
 
-              <div class="row">
-                  <div class="col-12 col-lg-6">
-                      <div class="editor__group-main-wrapper">
-                          <label>Phone Number</label>
-                          <input type="tel" placeholder="Phone Number" [(ngModel)]="personalInformation.phoneNumber">
-                      </div>
-                  </div>
-                  <div class="col-12 col-lg-6">
-                      <div class="editor__group-main-wrapper">
-                          <label>Email Address</label>
-                          <input type="email" placeholder="Email Address" [(ngModel)]="personalInformation.email">
-                      </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-12">
-                      <div class="editor__group-main-wrapper">
-                          <label>Website Link</label>
-                          <input type="text" placeholder="Website Link" [(ngModel)]="personalInformation.web">
-                      </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-12">
-                      <div class="row">
-                          <div class="col-12">
-                              <label>Address</label>
-                          </div>
-                          <div class="col-12 col-lg-6">
-                              <div class="editor__group-main-wrapper">
-                                  <input type="text" placeholder="Street line" [(ngModel)]="personalInformation.address.street">
-                              </div>
-                          </div>
-                          <div class="col-12 col-lg-6">
-                              <div class="editor__group-main-wrapper">
-                                  <input type="text" placeholder="City" [(ngModel)]="personalInformation.address.city">
-                              </div>
-                          </div>
-                          <div class="col-12 col-lg-6">
-                              <div class="editor__group-main-wrapper">
-                                  <input type="text" placeholder="Postal Code" [(ngModel)]="personalInformation.address.postalCode">
-                              </div>
-                          </div>
-                          <div class="col-12 col-lg-6">
-                              <div class="editor__group-main-wrapper">
-                                  <input type="text" placeholder="Country" [(ngModel)]="personalInformation.address.country">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-12">
-                      <label>Profile</label>
-                      <ckeditor [editor]="Editor"  data=""></ckeditor>
-                  </div>
-              </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12 editor__group-main-form editor__group-main-form--alt">
+                <div class="row">
+                    <div class="col-12 col-xl-4">
+                        <div class="editor__group-main-wrapper">
+
+                            <input type="text" [(ngModel)]="personalInformation.title" required>
+                            <label>Title before</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-4">
+                        <div class="editor__group-main-wrapper">
+
+                            <input type="text" [(ngModel)]="personalInformation.firstName" required>
+                            <label>First Name </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-4">
+                        <div class="editor__group-main-wrapper">
+
+                            <input type="text" [(ngModel)]="personalInformation.lastName" required>
+                            <label>Last Name</label>
+                        </div>
+                    </div>
+                </div>
 
 
-          </div>
-      </div>
-  </div>
+                <div class="row">
+
+                    <div class="col-12 col-lg-6 editor__group-main-wrapper">
+
+
+
+                        
+                            <mat-datepicker #Start></mat-datepicker>
+                            <input type="text"  [(ngModel)]="personalInformation.dateOfBirth"
+                                [matDatepicker]="Start" (click)="Start.open()" required >
+                 
+                                <label style="left: 13px;">From</label>
+
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="editor__group-main-wrapper">
+                          
+                            <input type="text"  [(ngModel)]="personalInformation.nationality" required>
+                            <label>Nationality</label> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="editor__group-main-wrapper">
+                            
+                            <input type="tel"  [(ngModel)]="personalInformation.phoneNumber" required>
+                            <label>Phone Number</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="editor__group-main-wrapper">
+                            
+                            <input type="email"  [(ngModel)]="personalInformation.email" required>
+                            <label>Email Address</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="editor__group-main-wrapper">
+                            
+                            <input type="text"  [(ngModel)]="personalInformation.web" required>
+                            <label>Website Link</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Address</label>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="editor__group-main-wrapper">
+                                    <input type="text" placeholder=""
+                                        [(ngModel)]="personalInformation.address.street" required>
+                                        <label for="">Street line</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="editor__group-main-wrapper">
+                                    <input type="text" placeholder=""
+                                        [(ngModel)]="personalInformation.address.city" required>
+                                        <label for="">City</label>
+
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="editor__group-main-wrapper">
+                                    <input type="text" placeholder=""
+                                        [(ngModel)]="personalInformation.address.postalCode" required>
+                                        <label for="">Postal Code</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="editor__group-main-wrapper">
+                                    <input type="text" placeholder=""
+                                        [(ngModel)]="personalInformation.address.country" required>
+                                        <label for="">Country</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label>Profile</label>
+                        <ckeditor [editor]="Editor" data=""></ckeditor>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
 </div>
