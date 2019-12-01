@@ -24,6 +24,7 @@ export class AchievementsComponent implements OnInit {
 
   ngOnInit() {
     this.__achivements.push(new Acheivment())
+    this.resumeService._resume.achivements=this.__achivements;
   }
 
   addAchivements(){

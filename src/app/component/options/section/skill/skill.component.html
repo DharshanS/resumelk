@@ -57,7 +57,7 @@
                               <div class="col-12 col-lg-6"  >
                                   <div class="editor__group-main-wrapper">
                                       <label>Skill Level</label>
-                                      <select required data-skills-level  >
+                                      <select required data-skills-level  [(ngModel)]="skillCategories[selected].skillNames[i].skillLevel" >
                                           <option value="" disabled selected hidden>Skill
                                               Level</option>
                                           <option value="beginner">Beginner</option>

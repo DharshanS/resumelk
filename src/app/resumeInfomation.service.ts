@@ -26,19 +26,8 @@ export class ResumeInformation{
 
     "education":[],
 
-    "skills":[{
-      "category":"Marketing Automation Systems",
-      "name":"Hubspot Certified",
-      "skilLevel":3
-      },{
-        "category":"Marketing Automation Systems",
-        "name":"Hubspot Certified",
-        "skilLevel":3
-        },{
-          "category":"Marketing Automation Systems",
-          "name":"Hubspot Certified",
-          "skilLevel":3
-          }]
+    "skills":[]
+
       ,
 
       "achivements":[
@@ -58,13 +47,12 @@ export class ResumeInformation{
 
 
         "awards":[
-          {
-          "name":"Olympic","issuer":"Olympic","url":"https://www.tamildhool.com","month":"JUN","year":"1987","description":"One of the most difficult parts in writing a resume is composing the descriptions of your jobs, "}
+
         ]
 ,
 
         "certificates":[
-        {"certificateName":" IBM WEB Shpere","authority":"IBM","certicateCode":"WE2344","dateOfCerticate":{"month":"APRIL","year":"2018"}}
+
         ],
 
         "publictions":[{"title":"Java Spring","publisher":"Dharshan","url":"https://www.tamildhool.com","date":{"month":"APRIL","year":"2018"},"description":"One of the most difficult parts in writing a resume is composing the descriptions of your jobs"}]

@@ -55,17 +55,21 @@
 </div>
 </div>
 
-<div class="section" *ngIf="__resume.skills.length">
+<div class="section" *ngIf="__resume.skills.length > 0">
     <div class="col-1 section">
         <div   class="p-title b-bottom">
             SKILL
         </div>
     </div>
 <div class="skills" *ngFor="let skill of __resume.skills">
-<div class="portfolio">
-    <div class="left-text ">{{skill.category}}</div>
-    <div class="left-text center-col">{{skill.name}}</div>
-    <div class="right-text ">skill level : {{skill.skilLevel}} </div>
+<div class="portfolio"*ngFor="let s of skill.skillNames">
+
+
+    <div class="left-text ">{{skill.skillCategoryName}}</div>
+    <div class="left-text center-col">{{s.skillName}}</div>
+    <div class="left-text "> {{s.skillLevel}} </div>
+
+
 </div>
 <div class="col-1">
     <div>
@@ -104,7 +108,7 @@
 
 </div>
 
-<div class="section col-1">
+<div class="section col-1" *ngIf=" __resume.achivements.length > 0">
     <div class="p-title b-bottom">
         ACHIVEMENTS
     </div>
@@ -182,7 +186,7 @@
 </div>
 
 
-<div class="section col-1">
+<div class="section col-1" *ngIf=" __resume.certificates.length > 0">
     <div  class="p-title b-bottom">
         CERTIFICATES
     </div>
