@@ -7,6 +7,7 @@ import { EditorService } from '../editor.service';
 import { DynamicComponentsService }         from '../dynamic-components.service';
 
 import { TextComponent } from '../section/text/text.component';
+import { Personal } from '../section/personal/Personal';
 
 
 @Component({
@@ -22,6 +23,8 @@ export class EditorComponent implements OnInit {
   serializedDate;
   top;
   displayScrollButton="none";
+
+  personal=new Personal();
 
 
   componentRef: any;

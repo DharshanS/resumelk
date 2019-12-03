@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges
+} from "@angular/core";
 import { trigger, transition, style, animate } from "@angular/animations";
 import { EditorService } from "../editor.service";
 import { DynamicComponentsService } from "../dynamic-components.service";
@@ -14,12 +21,16 @@ import { DynamicComponentsService } from "../dynamic-components.service";
     ])
   ]
 })
-export class ListComponent implements OnInit {
+//https://www.facebook.com/groups/rapidrevracing/
+export class ListComponent implements OnInit,OnChanges {
   moreIcon = "far fa-plus-square sidebar__menu-icon";
   moreIconShow = false;
   removeIcon = "icon-remove";
 
+  @Input() name="Dharshan";
   @Input() customelist: any;
+
+  @Input() listOfComponantsDisplaying: any;
 
   @Output()
   change: EventEmitter<any> = new EventEmitter<any>();
@@ -31,7 +42,13 @@ export class ListComponent implements OnInit {
     private cus: DynamicComponentsService
   ) {}
 
-  ngOnInit() {}
+  ngOnChanges(){
+    console.log('on changes..')
+  }
+
+  ngOnInit() {
+    this.listOfComponantsDisplaying = this.editor.moreSections;
+  }
   moreDeatails(event) {
     // $("#effect").toggle('blind', {}, 500);
 
@@ -50,16 +67,19 @@ export class ListComponent implements OnInit {
     if (index != 0) this.editor.moreSections[index].flag = false;
   }
 
-  addToDisplayBucket(index) {
+  addToDisplayBucket(index, name) {
     this.editor.moreSections[index].active = true;
     this.editor.moreSections[index].flag = true;
+    this.listOfComponantsDisplaying[index].active = true;
+    this.listOfComponantsDisplaying[index].flag = true;
+    //  this.scroll(name, index);
   }
 
   scroll(el, i) {
     if (i == 11) {
       this.addCustomComponent();
     }
-    this.addToDisplayBucket(i);
+    console.log("scorall called :" + el);
     let els = document.getElementById(el);
     els.scrollIntoView({
       behavior: "smooth",
@@ -67,7 +87,7 @@ export class ListComponent implements OnInit {
       inline: "nearest"
     });
   }
-//Add dynamic component
+  //Add dynamic component
   addCustomComponent() {
     let comp = this.cus.createComponent();
     this.change.emit(comp);

@@ -43,10 +43,10 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import {
   MatInputModule, MatButtonModule, MatSelectModule, MatIconModule
-  , MatNativeDateModule
+  , MatNativeDateModule,MatDatepickerModule,MatFormFieldModule
 } from '@angular/material';
 
-import { MatDatepickerModule, MatFormFieldModule } from '@angular/material';
+
 
 
 
@@ -59,8 +59,6 @@ import { DynamicComponentsService } from './dynamic-components.service';
   declarations: [
 
     MainComponent,
-
-    
     EditorComponent,
     PersonalComponent,
     ExperienceComponent,
@@ -89,6 +87,7 @@ import { DynamicComponentsService } from './dynamic-components.service';
     ScrollEventModule,
     CommonModule,
     OptionRoutingModule,
+  //  BrowserModule,
     //   ReactiveFormsModule,
     FormsModule,
     //  BsDatepickerModule.forRoot(),
@@ -98,6 +97,7 @@ import { DynamicComponentsService } from './dynamic-components.service';
     MatInputModule,
     MatNativeDateModule,
     MatSelectModule,
+    MatButtonModule,
 
     NgSelectModule,
     CKEditorModule,

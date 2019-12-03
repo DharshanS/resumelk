@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input,HostListener } from "@angular/core";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { ResumeInformation } from "../../../../resumeInfomation.service";
 
@@ -12,21 +12,20 @@ import { Personal } from './Personal';
   styleUrls: ["./personal.component.css"],
 
 })
-export class PersonalComponent implements OnInit {
+export class PersonalComponent implements OnInit{
   public Editor = ClassicEditor;
-
-
   @Input() flag: boolean;
-
-  personalInformation:Personal;
+  @Input() personalInformation:Personal;
 
   constructor(
     private resumeService: ResumeInformation,
     private router: Router
   ) {}
 
+
   ngOnInit() {
-    this.personalInformation=new Personal();
+    console.log("OnInit ...")
+   this.personalInformation=new Personal();
     this.resumeService._resume.personalInformation = this.personalInformation;
   }
 
@@ -40,5 +39,10 @@ export class PersonalComponent implements OnInit {
   goToPreview() {
 
     this.router.navigate(["/preview"]);
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    alert('Key was pressed');
   }
 }
