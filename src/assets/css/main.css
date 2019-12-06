@@ -1487,10 +1487,10 @@ select,
 input {
   display: block;
   width: 100%;
-  border: 1px solid #cecdcd;
+  border: .5px solid #c4c4c44f;
   border-radius: 3px;
   font-weight: 400;
-  background: #72727317;
+  background: #fafafa;
   -webkit-appearance: none;
   -moz-appearance: none;
   transition: all .25s;}

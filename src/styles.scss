@@ -304,7 +304,9 @@ label{
 }
 .editor__group-main-wrapper select.selected ~label,
 .editor__group-main-wrapper input:focus ~ label,
-.editor__group-main-wrapper input:valid ~ label
+.editor__group-main-wrapper input:valid ~ label,
+.editor__group-main-wrapper input:hover ~ label,
+.editor__group-main-wrapper label:hover
 {
   top: -5px !important;
   color: #03a9f4 !important;
