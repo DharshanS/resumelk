@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild,ViewContainerRef,ComponentFactoryResolver, OnChanges,SimpleChanges} from '@angular/core';
+import { Component, OnInit,ViewChild,ViewContainerRef,ComponentFactoryResolver, OnChanges,SimpleChanges,AfterViewInit} from '@angular/core';
 
 import * as $ from 'jquery';
 import{FormControl,FormGroup} from '@angular/forms';
@@ -17,7 +17,7 @@ import { Personal } from '../section/personal/Personal';
   entryComponents: [TextComponent]
 
 })
-export class EditorComponent implements OnInit {
+export class EditorComponent implements OnInit,AfterViewInit {
 
   date;
   serializedDate;
@@ -72,6 +72,7 @@ export class EditorComponent implements OnInit {
 
 
     ngAfterViewInit() {
+      console.log('after view init')
       // Hack: Scrolls to top of Page after page view initialized
       this.top = document.getElementById('top');
 
@@ -113,6 +114,11 @@ export class EditorComponent implements OnInit {
     }
 
 
+
+
+      scroll(el: HTMLElement) {
+        el.scrollIntoView();
+      }
 
 
 

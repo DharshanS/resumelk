@@ -66,19 +66,19 @@
 
 
 
-                        
+
                             <mat-datepicker #Start></mat-datepicker>
                             <input type="text"  [(ngModel)]="personalInformation.dateOfBirth"
                                 [matDatepicker]="Start" (click)="Start.open()" required >
-                 
+
                                 <label style="left: 13px;">From</label>
 
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="editor__group-main-wrapper">
-                          
+
                             <input type="text"  [(ngModel)]="personalInformation.nationality" required>
-                            <label>Nationality</label> 
+                            <label>Nationality</label>
                         </div>
                     </div>
                 </div>
@@ -86,14 +86,14 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <div class="editor__group-main-wrapper">
-                            
+
                             <input type="tel"  [(ngModel)]="personalInformation.phoneNumber" required>
                             <label>Phone Number</label>
                         </div>
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="editor__group-main-wrapper">
-                            
+
                             <input type="email"  [(ngModel)]="personalInformation.email" required>
                             <label>Email Address</label>
                         </div>
@@ -102,7 +102,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="editor__group-main-wrapper">
-                            
+
                             <input type="text"  [(ngModel)]="personalInformation.web" required>
                             <label>Website Link</label>
                         </div>
@@ -149,7 +149,7 @@
                 <div class="row">
                     <div class="col-12">
                         <label>Profile</label>
-                        <ckeditor [editor]="Editor" data=""></ckeditor>
+                        <ckeditor [editor]="Editor" data="" [(ngModel)]="personalInformation.description"></ckeditor>
                     </div>
                 </div>
 

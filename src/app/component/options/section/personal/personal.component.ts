@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,HostListener } from "@angular/core";
+import { Component, OnInit, Input,HostListener, DoCheck } from "@angular/core";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { ResumeInformation } from "../../../../resumeInfomation.service";
 
@@ -12,7 +12,7 @@ import { Personal } from './Personal';
   styleUrls: ["./personal.component.css"],
 
 })
-export class PersonalComponent implements OnInit{
+export class PersonalComponent implements OnInit,DoCheck{
   public Editor = ClassicEditor;
   @Input() flag: boolean;
   @Input() personalInformation:Personal;
@@ -41,8 +41,13 @@ export class PersonalComponent implements OnInit{
     this.router.navigate(["/preview"]);
   }
 
-  @HostListener('document:keydown', ['$event'])
+ // @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
-    alert('Key was pressed');
+   console.log('key enter')
   }
+
+  ngDoCheck(){
+  //  console.log(this.Editor.getData())
+  }
+
 }

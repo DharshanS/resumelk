@@ -4,7 +4,10 @@ import {
   Input,
   Output,
   EventEmitter,
-  OnChanges
+  OnChanges,
+  DoCheck,
+  AfterViewInit,
+  AfterContentChecked
 } from "@angular/core";
 import { trigger, transition, style, animate } from "@angular/animations";
 import { EditorService } from "../editor.service";
@@ -22,12 +25,12 @@ import { DynamicComponentsService } from "../dynamic-components.service";
   ]
 })
 //https://www.facebook.com/groups/rapidrevracing/
-export class ListComponent implements OnInit,OnChanges {
+export class ListComponent
+  implements OnInit, OnChanges, DoCheck, AfterViewInit, AfterContentChecked {
   moreIcon = "far fa-plus-square sidebar__menu-icon";
   moreIconShow = false;
   removeIcon = "icon-remove";
 
-  @Input() name="Dharshan";
   @Input() customelist: any;
 
   @Input() listOfComponantsDisplaying: any;
@@ -37,15 +40,22 @@ export class ListComponent implements OnInit,OnChanges {
 
   selectedEductionPos = 0;
 
+  name: any;
+  index: number;
+  isItemAdd = false;
+
   constructor(
     private editor: EditorService,
     private cus: DynamicComponentsService
   ) {}
 
-  ngOnChanges(){
-    console.log('on changes..')
+  ngOnChanges() {
+    console.log("on changes..");
   }
 
+  ngDoCheck() {
+    console.log("on changes. docheck.");
+  }
   ngOnInit() {
     this.listOfComponantsDisplaying = this.editor.moreSections;
   }
@@ -67,29 +77,42 @@ export class ListComponent implements OnInit,OnChanges {
     if (index != 0) this.editor.moreSections[index].flag = false;
   }
 
-  addToDisplayBucket(index, name) {
+  addToDisplayBucket(index,name) {
     this.editor.moreSections[index].active = true;
     this.editor.moreSections[index].flag = true;
-    this.listOfComponantsDisplaying[index].active = true;
-    this.listOfComponantsDisplaying[index].flag = true;
-    //  this.scroll(name, index);
+    setTimeout(()=>{
+
+    },2000)
+   this.scroll(name, index);
+   this.scroll(name, index);
   }
 
-  scroll(el, i) {
-    if (i == 11) {
+  scroll(el: HTMLElement,index) {
+    if (index == 11) {
       this.addCustomComponent();
     }
+
+    
+    el.scrollIntoView({behavior: 'smooth'});
     console.log("scorall called :" + el);
-    let els = document.getElementById(el);
-    els.scrollIntoView({
+    el.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest"
     });
   }
+
   //Add dynamic component
   addCustomComponent() {
     let comp = this.cus.createComponent();
     this.change.emit(comp);
+  }
+
+  ngAfterViewInit() {
+    console.log("ngAfterViewInit");
+  }
+
+  ngAfterContentChecked() {
+    console.log("ngAfterContentChecked");
   }
 }

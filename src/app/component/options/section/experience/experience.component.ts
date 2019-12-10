@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input,DoCheck } from "@angular/core";
 import { EditorService } from "../../editor.service";
 import { Experiance } from "./experience";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
@@ -9,7 +9,7 @@ import { ResumeInformation } from "../../../../resumeInfomation.service";
   templateUrl: "./experience.component.html",
   styleUrls: ["./experience.component.css"]
 })
-export class ExperienceComponent implements OnInit {
+export class ExperienceComponent implements OnInit,DoCheck {
   @Input() flag: boolean;
 
   work_experiences = [];
@@ -38,7 +38,12 @@ export class ExperienceComponent implements OnInit {
     this.selected = index;
   }
 
+  ngDoCheck(){
+ // console.log(this.Editor.getData())
+}
+
   continue() {
     console.log(this.work_experiences);
   }
+
 }

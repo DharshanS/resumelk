@@ -1,4 +1,4 @@
-export class ResumeInformation{
+export class ResumeInformation2{
   _resume=
   {
     "personalInformation":{
@@ -90,7 +90,7 @@ export class ResumeInformation{
 
 
 
-export class ResumeInformation2{
+export class ResumeInformation{
   _resume=
   {
     "personalInformation":{

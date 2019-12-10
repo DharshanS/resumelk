@@ -17,7 +17,7 @@
                         <span> Boss </span>
                         <span>2 level </span>
                     </div>
-
+                    <button (click)="scroll(experience)">Click to scroll</button>
 
 
 
@@ -42,10 +42,7 @@
 
               </div>
                     <div class="col-12">
-                        <button class="btn btn-primary scroll-top " [style.display]="block" data-scroll="up" type="button"
-                        (click)="scrollUp()">
-                        <i class="fa fa-chevron-up"></i>
-                      </button>
+
                         <app-personal [flag]="sections.moreSections[0].flag"></app-personal>
                         <app-experience [flag]="sections.moreSections[1].flag"></app-experience>
                         <app-education [flag]="sections.moreSections[2].flag"></app-education>

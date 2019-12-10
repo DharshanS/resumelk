@@ -11,6 +11,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { PreviewComponent } from './component/preview/preview.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { TempOneComponent } from './component/preview/templates/temp-one/temp-one.component';
+import { TempTwoComponent } from './component/preview/templates/temp-two/temp-two.component';
 import { HttpClientModule } from '@angular/common/http'
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
@@ -30,6 +31,7 @@ import { AppComponent } from './app.component';
     PreviewComponent,
     FooterComponent,
     TempOneComponent,
+    TempTwoComponent
   ],
   imports: [
 

@@ -8,12 +8,12 @@ import { ResumeInformation } from "../../../../resumeInfomation.service";
 
 @Component({
 
-  selector: 'app-temp-one',
-  templateUrl: './temp-one.component.html',
-  styleUrls: ['./temp-one.component.css'],
+  selector: 'app-temp-two',
+  templateUrl: './temp-two.component.html',
+  styleUrls: ['./temp-two.component.scss'],
   encapsulation: ViewEncapsulation.Native
 })
-export class TempOneComponent implements OnInit {
+export class TempTwoComponent implements OnInit {
 
   @ViewChild('tasknote',{static: false}) input: ElementRef;
 
