@@ -11,13 +11,14 @@ import { ResumeInformation } from "../../../../resumeInfomation.service";
   selector: 'app-temp-one',
   templateUrl: './temp-one.component.html',
   styleUrls: ['./temp-one.component.css'],
+ 
   encapsulation: ViewEncapsulation.Native
 })
 export class TempOneComponent implements OnInit {
 
   @ViewChild('tasknote',{static: false}) input: ElementRef;
 
-
+  public color = '#ccc';
 
   public Editor = ClassicEditor;
 
