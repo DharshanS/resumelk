@@ -3,7 +3,7 @@ import resumeJson from '../../../../../assets/json/resume.json';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import { ResumeInformation } from "../../../../resumeInfomation.service";
-
+import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 
 @Component({
@@ -27,13 +27,25 @@ export class TempOneComponent implements OnInit {
 
 
 
-constructor( private resumeService: ResumeInformation,){
+constructor( private resumeService: ResumeInformation,private sanitizer: DomSanitizer, private renderer2: Renderer2, private el: ElementRef){
 
 }
+
 
   ngOnInit() {
     this.__resume=this.resumeService._resume;
     console.log("---Inside ngOnInit---");
+  }
+
+  onChangeColorHex8(color: string) {
+    console.log('color',color)
+    // this.renderer2.setStyle(this.el.nativeElement.querySelector('.name'), 'color', color);
+    let myClass = this.el.nativeElement.querySelectorAll('.title-box');
+    console.log('myClass',myClass)
+    myClass.forEach(e => {
+      console.log('myClass23',e)
+      this.renderer2.setStyle(e,'color', color);
+    })
   }
   ngDoCheck() {
     console.log("---Inside ngDoCheck---");
@@ -78,4 +90,5 @@ constructor( private resumeService: ResumeInformation,){
     console.log("---Inside ngOnDestroy---");
   }
 
+  
 }

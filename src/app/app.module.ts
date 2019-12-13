@@ -21,6 +21,8 @@ import { ColorPickerModule } from 'ngx-color-picker';
 
 
 import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { TempThreeComponent } from './component/preview/templates/temp-three/temp-three.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +33,15 @@ import { AppComponent } from './app.component';
     PreviewComponent,
     FooterComponent,
     TempOneComponent,
-    TempTwoComponent
+    TempTwoComponent,
+    TempThreeComponent
   ],
   imports: [
 
    // BrowserModule,
     HttpClientModule,
     ColorPickerModule,
-    BrowserModule,
+    // BrowserModule,
     AngularEditorModule,
     BrowserAnimationsModule,
     AppRoutingModule,

@@ -1,7 +1,6 @@
 
-{{color}}
 
- <div class="main-pdf" style="background: {{color}};">
+ <div class="main-pdf" >
   <div class="pdf-bg-color">
 
 <div class="component-container"  #tasknote >
@@ -22,14 +21,6 @@
 
      </div>
 </div>
-
-<input type="text" class="form-control"  [(colorPicker)]="color2"
-[cpPresetColors]="['#7B1FA2', '#039BE5', '#FF5252', '#D32F2F', '#283593']"
-[cpPosition]="'right'"
-[style.background]="color2"
-[cpAlphaChannel]="'always'"
-[cpOutputFormat]="'hex'"
-[value]="color2">
 
 
 
@@ -261,4 +252,15 @@
 
 </div>
 </div>
+
+
+
+<!-- <input type="text" class="form-control"  [(colorPicker)]="color2"
+[cpPresetColors]="['#7B1FA2', '#039BE5', '#FF5252', '#D32F2F', '#283593']"
+[cpPosition]="'right'"
+[style.background]="color2"
+[cpAlphaChannel]="'always'"
+[cpOutputFormat]="'hex'"
+(colorPickerChange)="rgbaText=onChangeColorHex8($event);"
+[value]="color2"> -->
 
