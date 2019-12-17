@@ -40,7 +40,11 @@
     }
 
     .col-1 {
-        display: grid;   .main-pdf{
+        display: grid;  
+        
+        grid-template-columns: repeat(1, 100%)
+    }
+    .main-pdf{
         background: #383737ab;
         padding: .3in;
         height: 100vh;
@@ -51,9 +55,6 @@
         background: #fff;
         padding: .2in;
     }
-        grid-template-columns: repeat(1, 100%)
-    }
-
     .main-pdf{
         background: #383737ab;
         padding: .3in;
