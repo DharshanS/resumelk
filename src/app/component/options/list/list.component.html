@@ -3,13 +3,17 @@
         <li class="sidebar__menu-item editor__menu w-100 float-left">{{name}}
             <!-- <a href="" class="sidebar__menu-label"><i class="fas fa-sliders-h sidebar__menu-icon"></i>Fill in v
                 your Resume</a> -->
+
             <div data-sortable *ngFor="let item of editor.moreSections;index as i">
 
                 <div class="menu-item" *ngIf="item" @fade [class.select-item]=item.active>
                     <div class="" (click)=addToDisplayBucket(i,item.name)>
                         <i class="close-lock-icon fas {{item.icon}}"> </i>
+
                     <i class="fas {{item.class}} "></i>
                     <label>{{item.label}}</label>
+                    <!-- <a pageScroll [pageScrollOffset]="0" [pageScrollDuration]="2000" :href="#{{item.name}}" >{{item.label}}</a> -->
+
                 </div>
                 </div>
             </div>
@@ -42,6 +46,7 @@
                                     <i class="close-lock-icon fas fa-plus"></i>
                                 <i class="fas {{item.class}} "></i>
                                 <label>{{item.label}}</label>
+
                             </div>
                             </div>
                         </div>

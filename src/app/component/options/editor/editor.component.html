@@ -17,9 +17,6 @@
                         <span> Boss </span>
                         <span>2 level </span>
                     </div>
-                    <button (click)="scroll(experience)">Click to scroll</button>
-
-
 
 
                 </div>
@@ -27,7 +24,7 @@
 
 
 
-                    <app-list [customelist]=componentRefList (change)=listUpdate($event)></app-list>
+                    <app-list [customelist]=componentRefList (change)=listUpdate($event) (scrolleToElementNotify)=scrollToElement($event)></app-list>
 
 
                     <button class="btn btn-primary scroll-top " [style.display]="displayScrollButton" data-scroll="up" type="button"

@@ -40,20 +40,12 @@ import { StrengthsComponent } from './section/strengths/strengths.component';
 import { SocialMediaComponent } from './section/social-media/social-media.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-
 import {
   MatInputModule, MatButtonModule, MatSelectModule, MatIconModule
   , MatNativeDateModule,MatDatepickerModule,MatFormFieldModule
 } from '@angular/material';
-
-
-
-
-
-
-
 import { DynamicComponentsService } from './dynamic-components.service';
-
+import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 @NgModule({
   declarations: [
@@ -77,7 +69,7 @@ import { DynamicComponentsService } from './dynamic-components.service';
     GaphsComponent,
     StrengthsComponent,
     SocialMediaComponent,
-    HeaderComponent
+    HeaderComponent,
 
 
 
@@ -87,6 +79,8 @@ import { DynamicComponentsService } from './dynamic-components.service';
     ScrollEventModule,
     CommonModule,
     OptionRoutingModule,
+
+    NgxPageScrollModule,
   //  BrowserModule,
     //   ReactiveFormsModule,
     FormsModule,

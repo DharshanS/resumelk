@@ -1,125 +1,120 @@
-import { Component, OnInit,ViewChild,ViewContainerRef,ComponentFactoryResolver, OnChanges,SimpleChanges,AfterViewInit} from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ViewContainerRef,
+  ComponentFactoryResolver,
+  ElementRef,
+  AfterViewInit,
+  AfterContentChecked,
+  Inject
+} from "@angular/core";
 
-import * as $ from 'jquery';
-import{FormControl,FormGroup} from '@angular/forms';
-import {ScrollEvent} from  'ngx-scroll-event';
-import { EditorService } from '../editor.service';
-import { DynamicComponentsService }         from '../dynamic-components.service';
+import { DOCUMENT } from '@angular/common';
+import * as $ from "jquery";
+import { FormControl } from "@angular/forms";
+import { ScrollEvent } from "ngx-scroll-event";
+import { EditorService } from "../editor.service";
+import { DynamicComponentsService } from "../dynamic-components.service";
+import { PageScrollService } from 'ngx-page-scroll-core';
 
-import { TextComponent } from '../section/text/text.component';
-import { Personal } from '../section/personal/Personal';
-
+import { TextComponent } from "../section/text/text.component";
+import { Personal } from "../section/personal/Personal";
 
 @Component({
-  selector: 'app-editor',
-  templateUrl: './editor.component.html',
-  styleUrls: ['./editor.component.css'],
+  selector: "app-editor",
+  templateUrl: "./editor.component.html",
+  styleUrls: ["./editor.component.css"],
   entryComponents: [TextComponent]
-
 })
-export class EditorComponent implements OnInit,AfterViewInit {
-
+export class EditorComponent implements OnInit, AfterViewInit,AfterContentChecked {
   date;
   serializedDate;
   top;
-  displayScrollButton="none";
+  displayScrollButton = "none";
 
-  personal=new Personal();
-
+  personal = new Personal();
 
   componentRef: any;
   componentRefList: any[] = [];
 
   components: [TextComponent];
 
-  @ViewChild('customContainer', {  static: true,read: ViewContainerRef }) container;
+  @ViewChild("customContainer", { static: true, read: ViewContainerRef }) container;
+  @ViewChild("experience", { static: true, read: ElementRef }) experiance;
 
-    //personalInfoGroup: FormGroup;
-    constructor(private resolver: ComponentFactoryResolver,
-      private sections:EditorService,
-      private custom: DynamicComponentsService,
-      private resume: EditorService,
-      private resolve:ComponentFactoryResolver) {
+  //personalInfoGroup: FormGroup;
+  constructor(
+    private resolver: ComponentFactoryResolver,
+    private sections: EditorService,
+    private custom: DynamicComponentsService,
+    private resume: EditorService,
+    private resolve: ComponentFactoryResolver,
+    private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any
+  ) {}
 
+  ngOnInit() {
+    this.date = new FormControl(new Date());
+    this.serializedDate = new FormControl(new Date().toISOString());
+    this.pageScrollService.scroll({
+      document: this.document,
+      scrollTarget: '.experience',
+    });
+  }
+
+  listUpdate(item) {
+    const factory = this.resolve.resolveComponentFactory(item.component);
+    let componentRef = this.container.createComponent(factory);
+    componentRef.instance.title = "Text";
+    this.componentRefList.push(componentRef);
+  }
+
+//method notified by list componant when user add the new componant
+  scrollToElement($event){
+      console.log("scrollToElement notified"+$event)
+      setTimeout(() => {
+        let el = document.getElementById($event);
+        el.scrollIntoView({ behavior: "smooth", block: "end" ,inline:"end"});
+      }, 100);
+  }
+
+
+  ngAfterViewInit() {
+    console.log("after view init");
+    // Hack: Scrolls to top of Page after page view initialized
+    this.top = document.getElementById("top");
+
+  }
+
+  savePersonlInfor() {}
+
+  public handleScroll(event: ScrollEvent) {
+    if ($(document).scrollTop() > 100) {
+      this.displayScrollButton = "block";
     }
 
-
-
-
-
-
-
-    ngOnInit() {
-
-      this.date = new FormControl(new Date());
-      this.serializedDate = new FormControl((new Date()).toISOString());
-
-
+    if (event.isReachingBottom) {
     }
-
-
-
-
-
-  listUpdate(item){
-
-      const factory=this.resolve.resolveComponentFactory(item.component);
-      let componentRef=this.container.createComponent(factory);
-      componentRef.instance.title="Text";
-      this.componentRefList.push(componentRef)
+    if (event.isReachingTop) {
+      this.displayScrollButton = "none";
     }
-
-
-
-    ngAfterViewInit() {
-      console.log('after view init')
-      // Hack: Scrolls to top of Page after page view initialized
-      this.top = document.getElementById('top');
-
-
-
+    if (event.isWindowEvent) {
     }
+  }
 
+  public scrollUp() {
+    this.top.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
+  }
 
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+  }
 
-
-    savePersonlInfor() {
-
-    }
-
-
-    public handleScroll(event: ScrollEvent) {
-
-    if($(document).scrollTop()>100){
-      this.displayScrollButton="block";
-    }
-
-      if (event.isReachingBottom) {
-
-      }
-      if (event.isReachingTop) {
-        this.displayScrollButton="none";
-
-      }
-      if (event.isWindowEvent) {
-
-      }
-
-    }
-
-    public scrollUp(){
-
-      this.top.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-
-    }
-
-
-
-
-      scroll(el: HTMLElement) {
-        el.scrollIntoView();
-      }
-
-
-
+  ngAfterContentChecked() {
+    console.log("ngAfterContentChecked editor");
+  }
 }

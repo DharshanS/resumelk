@@ -30,16 +30,16 @@ export class ListComponent
   moreIcon = "far fa-plus-square sidebar__menu-icon";
   moreIconShow = false;
   removeIcon = "icon-remove";
-
   @Input() customelist: any;
-
   @Input() listOfComponantsDisplaying: any;
-
   @Output()
   change: EventEmitter<any> = new EventEmitter<any>();
 
-  selectedEductionPos = 0;
+  //when add the component into editor this should notify to scroller function which parent has
+  @Output()
+  scrolleToElementNotify: EventEmitter<any> = new EventEmitter<any>();
 
+  selectedEductionPos = 0;
   name: any;
   index: number;
   isItemAdd = false;
@@ -79,27 +79,24 @@ export class ListComponent
 
   addToDisplayBucket(index,name) {
     this.editor.moreSections[index].active = true;
-    this.editor.moreSections[index].flag = true;
-    setTimeout(()=>{
+    this.editor.moreSections[index].flag = true
 
-    },2000)
-   this.scroll(name, index);
-   this.scroll(name, index);
+    this.scrolleToElementNotify.emit(name);
   }
 
   scroll(el: HTMLElement,index) {
-    if (index == 11) {
-      this.addCustomComponent();
-    }
+    // if (index == 11) {
+    //   this.addCustomComponent();
+    // }
 
-    
-    el.scrollIntoView({behavior: 'smooth'});
-    console.log("scorall called :" + el);
-    el.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest"
-    });
+
+    // el.scrollIntoView({behavior: 'smooth'});
+    // console.log("scorall called :" + el);
+    // el.scrollIntoView({
+    //   behavior: "smooth",
+    //   block: "start",
+    //   inline: "nearest"
+    // });
   }
 
   //Add dynamic component
@@ -113,6 +110,6 @@ export class ListComponent
   }
 
   ngAfterContentChecked() {
-    console.log("ngAfterContentChecked");
+    console.log("ngAfterContentChecked list");
   }
 }

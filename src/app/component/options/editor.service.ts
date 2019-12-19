@@ -9,7 +9,7 @@ export class EditorService {
 
   moreSections=[
   {"id":1,"label":"Personal Info","flag":true,"class":"fa-user","name":"personal","icon":"fa-lock","active":true},
-  {"id":2,"label":"Work Experience","flag":false,"class":"fa-suitcase","name":"experience","icon":"fa-times","active":false},
+  {"id":2,"label":"Work Experience","flag":true,"class":"fa-suitcase","name":"experience","icon":"fa-times","active":false},
   {"id":3,"label":"Eductions","flag":false,"class":"fa-graduation-cap","name":"education","icon":"fa-times","active":false},
   {"id":4,"label":"Skills","flag":false,"class":"fa-chart-bar","name":"skill","icon":"fa-times","active":false},
   {"id":5,"label":"Certificates Info","flag":false,"name":"certificates","class":"fa-certificate","icon":"fa-times","active":false},
