@@ -1,9 +1,9 @@
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 
-$bg-color: #003980;
-$bg-color2: #ebedf3;
-$btn-color: #151aa7;
-
+$bg-color: #009bcb;
+$bg-color2: #f8f7fc;
+$btn-color: #009bcb;
+$color-2:#2fbae1;
 body {
   margin: 0;
   font-weight: 400;
@@ -21,6 +21,7 @@ html {
 .editor-body-bg-color {
   background: linear-gradient(180deg, $bg-color 250px, $bg-color2 0%);
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .sidebar {
   background: transparent;
@@ -154,7 +155,7 @@ table th {
   display: flow-root;
 }
 .menu-item {
-  width: 48%;
+  width: 41%;
   float: left;
   padding: 20px;
   color: #555a67;

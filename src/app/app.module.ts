@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ResumeInformation } from "./resumeInfomation.service";
-import { ColorPickerModule } from 'ngx-color-picker';
+
 
 
 
@@ -40,7 +40,6 @@ import { TempThreeComponent } from './component/preview/templates/temp-three/tem
 
    // BrowserModule,
     HttpClientModule,
-    ColorPickerModule,
     // BrowserModule,
     AngularEditorModule,
     BrowserAnimationsModule,

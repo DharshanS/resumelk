@@ -45,7 +45,7 @@ import {
   , MatNativeDateModule,MatDatepickerModule,MatFormFieldModule
 } from '@angular/material';
 import { DynamicComponentsService } from './dynamic-components.service';
-import { NgxPageScrollModule } from 'ngx-page-scroll';
+
 
 @NgModule({
   declarations: [
@@ -80,7 +80,7 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
     CommonModule,
     OptionRoutingModule,
 
-    NgxPageScrollModule,
+
   //  BrowserModule,
     //   ReactiveFormsModule,
     FormsModule,

@@ -16,7 +16,7 @@ import { FormControl } from "@angular/forms";
 import { ScrollEvent } from "ngx-scroll-event";
 import { EditorService } from "../editor.service";
 import { DynamicComponentsService } from "../dynamic-components.service";
-import { PageScrollService } from 'ngx-page-scroll-core';
+
 
 import { TextComponent } from "../section/text/text.component";
 import { Personal } from "../section/personal/Personal";
@@ -49,17 +49,14 @@ export class EditorComponent implements OnInit, AfterViewInit,AfterContentChecke
     private sections: EditorService,
     private custom: DynamicComponentsService,
     private resume: EditorService,
-    private resolve: ComponentFactoryResolver,
-    private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any
+    private resolve: ComponentFactoryResolver
+   
   ) {}
 
   ngOnInit() {
     this.date = new FormControl(new Date());
     this.serializedDate = new FormControl(new Date().toISOString());
-    this.pageScrollService.scroll({
-      document: this.document,
-      scrollTarget: '.experience',
-    });
+   
   }
 
   listUpdate(item) {
