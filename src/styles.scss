@@ -1,8 +1,8 @@
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 
-$bg-color: #009bcb;
+$bg-color: #007aa0;
 $bg-color2: #f8f7fc;
-$btn-color: #009bcb;
+$btn-color: #007aa0;
 $color-2:#2fbae1;
 body {
   margin: 0;
@@ -315,3 +315,9 @@ label{
   // left: 22px;
 }
 
+.fixde-div{
+  position: fixed;
+  top: 64px;
+  z-index: 1020;
+  width: 19%;
+}

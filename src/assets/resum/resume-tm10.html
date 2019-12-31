@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,800&display=swap"
+        rel="stylesheet">
+    <title>Royal_Blue_small</title>
+    <style>
+        :root {
+            --h-bg-colo: #323232;
+            --color:#555;
+            --title:#fff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            color: #555555;
+        }
+
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col,
+        .col-1,
+        .col-10,
+        .col-11,
+        .col-12,
+        .col-2,
+        .col-3,
+        .col-4,
+        .col-5,
+        .col-6,
+        .col-7,
+        .col-8,
+        .col-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+
+
+        .col-1 {
+            flex: 0 0 8.333333%;
+            max-width: 8.333333%;
+            position: relative;
+        }
+
+        .col-2 {
+            flex: 0 0 16.666667%;
+            max-width: 16.666667%;
+        }
+
+        .col-4 {
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+
+        .col-3 {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        .col-5 {
+            flex: 0 0 41.666667%;
+            max-width: 41.666667%;
+        }
+
+        .col-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        .col-7 {
+            flex: 0 0 58.333333%;
+            max-width: 58.333333%;
+        }
+
+        .col-8 {
+            flex: 0 0 66.666667%;
+            max-width: 66.666667%;
+        }
+
+        .col-9 {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+
+        .col-10 {
+            flex: 0 0 83.333333%;
+            max-width: 83.333333%;
+        }
+
+        .col-11 {
+            flex: 0 0 91.666667%;
+            max-width: 91.666667%;
+        }
+
+        .col-12 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .main-page {
+            width: 21cm;
+            min-height: 29.7cm;
+            margin: 1cm auto;
+            border: 1px #D3D3D3 solid;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            padding-left: 3mm;
+    padding-right: 3mm;
+    padding-top: 15px;
+    border: 1px solid rgb(242, 0, 67);
+    margin-top: 21px;
+    margin-right: 0px;
+    max-width: 31.333333% !important;
+}
+
+        .name {
+            font-weight: 500;
+            font-size: 22px;
+            text-transform: uppercase;
+            color: var(--color);
+            text-align: center;
+
+        }
+
+        .title {
+            font-size: 14px;
+            text-transform: capitalize;
+            color: rgb(255, 255, 255);
+            line-height: 30px;
+        }
+
+        .user-details {
+   
+            list-style-type: none;
+            padding: 0px;
+            margin: 0;;
+            font-size: 13px;
+        }
+        .user-details li {
+            padding: 4px 0px;
+        }
+            .technical-skills{
+            list-style-type: none;
+            padding: 0px;
+            font-size: 13px;
+            }
+            .technical-skills li{
+                font-weight: bold;
+                list-style: disc;
+                margin-left: 25px;
+
+            }
+            .technical-skills span{
+                font-weight: 500;
+                padding-left: 3px;
+            }
+            .professional-box label {
+                font-weight: 600;
+            }
+        .sub-box {
+            padding: 20px 35px;
+        }
+
+        .title-box {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 16px !important;
+            /* color: var(--title) !important; */
+            border-bottom: 2px solid ;
+            padding-bottom: 0;
+            margin-top: 20px;
+        }
+
+        .title-sub {
+            font-size: 16px !important;
+            color: var(--color) !important;
+            padding: 6px 0;
+            font-weight: bold;
+        }
+
+        .skill-ul li {
+            float: left;
+            padding-right: 25px;
+        }
+
+        .p-0 {
+            padding: 0;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .span-text {
+            font-size: 12px;
+            width: 100%;
+            color: #3f4548;
+            margin-top: 6px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        .key-skills-box {
+            display: inline-block;
+            font-size: 11px;
+            margin: 5px;
+            border-radius: 4px;
+            padding: 3px;
+            color: #fff;
+        }
+
+        .professional-box {
+            padding: 10px 0;
+        }
+        .user-img {
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    margin: auto;
+}
+.user-img img {
+    width: 100%;
+    border-radius: 50px;
+}
+/* .name {
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: var(--name-color);
+    text-align: center;
+    margin-bottom: 15px;
+} */
+.title {
+    text-align: center !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    color: #000;
+}
+.border-color{
+border-color: rgb(242, 0, 67);
+}
+.title-color{
+color: #555;
+}
+.box-color{
+    background: rgb(242, 0, 67);
+}
+.border-box{
+    padding: 0 3mm;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid ;
+}
+.call-icon{
+    color: rgb(222,60,63);
+    border: solid 1px;
+    padding: 5px;
+    border-radius: 23px;
+    font-size: 12px;
+}
+.mail-icon{
+  color: rgb(108,83,59);
+  border: solid 1px;
+    padding: 5px;
+    border-radius: 23px;
+    font-size: 12px;
+}
+.location-icon{
+    
+    color: rgb(120,0,49);
+  border: solid 1px;
+    padding: 5px;
+    border-radius: 23px;
+    font-size: 12px;
+    width: 22px;
+    height: 22px;
+
+}
+    </style>
+</head>
+
+<body>
+    <div class="main-page">
+        <!-- <div class="header">
+            <div class="row">
+                    <div class="col-7">
+                            <ul class="user-details">
+                                <li><span><i class="fa fa-phone"></i>&nbsp;&nbsp;+94758627689</span></li>
+                                <li><span><i class="fa fa-envelope"></i>&nbsp;&nbsp;lojan@gmail.com</span></li>
+                                <li><span><i class="fa fa-map-marker"></i>&nbsp;&nbsp;lojan@gmail.com</span></li>
+        
+                            </ul>
+                        </div>
+                <div class="col-5" style="text-align: right;">
+                    <div class="name">marty mcfy</div>
+                    <div class="title">business analyst</div>
+                </div>
+               
+            </div>
+        </div> -->
+
+
+
+
+        <div class="row">
+
+     
+         <div class="col-8">
+                <div class="col-12 ">
+                        <div class="title-box title-color border-color">professional experience</div>
+                
+        
+        
+                        <div class="p-0 col-12 row">
+        
+                            <div class="col-6 p-0 bold">Bussiness Analyst</div>
+                            <div class="col-6 p-0 text-right">Menia Park,US</div>
+        
+        
+                            <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;Jul 14 - Present</span><br>
+                            <label class="span-text">Alph Foods is the leading provider of restaurant reviews to users across
+                                North America and has revenues of $ 10+ mn. per year</label>
+        
+                            <ul style="margin: 0;">
+                                <li class="span-text">Worked with the CMO of the company & created digital marketing strategy
+                                    which resulted in 60% increased following</li>
+        
+                            </ul>
+                            <div class="professional-box">
+                                <label>Marketing Campaign Management</label>
+                                <ul style="margin: 0;">
+                                    <li class="span-text">Supported 50+ clients on multiple campaign projects</li>
+                                    <li class="span-text">Responsible for winning back 30+ clients by delivering exceptional
+                                        results in the campaigns</li>
+                                    <li class="span-text">Managed the entire spectrum of clients ranging from small to key
+                                        accounts resulting in 10% increase in revenue</li>
+                                </ul>
+                            </div>
+                            <div class="professional-box">
+                                <label>Campaign Performance Analysis</label>
+                                <ul style="margin: 0;">
+                                    <li class="span-text">Conducted in depth analysis of the market & client specific data to
+                                        improve the campaign performance</li>
+                                    <li class="span-text">Increased traffic on the site by 60% by analyzing multiple metrics
+                                        such as page views, ad impressions etc.</li>
+                                    <li class="span-text">Led the competitor benchmarking exercise for 7 key accounts to assist
+                                        them in improving their overall performance</li>
+                                </ul>
+                            </div>
+        
+        
+        
+        
+                        </div>
+        
+                        
+                    </div>
+        
+                    <div class="col-12">
+                        <div class="title-box title-color border-color">INTERNSHIPS</div>
+                        
+        
+        
+                        <div class="p-0 col-12 row">
+        
+                            <div class="col-6 p-0 bold">Marketing Intern</div>
+                            <div class="col-6 p-0 text-right">Menia Park,US</div>
+        
+        
+                            <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;Jul 14 - Present</span><br>
+                            <label class="span-text">Alph Foods is the leading provider of restaurant reviews to users across
+                                North America and has revenues of $ 10+ mn. per year</label>
+        
+                            <ul style="margin: 0;">
+                                <li class="span-text">Worked with the CMO of the company & created digital marketing strategy
+                                    which resulted in 60% increased following</li>
+        
+                            </ul>
+                            <div class="professional-box">
+                                <label>Marketing Campaign Management</label>
+                                <ul style="margin: 0;">
+                                    <li class="span-text">Supported 50+ clients on multiple campaign projects</li>
+                                    <li class="span-text">Responsible for winning back 30+ clients by delivering exceptional
+                                        results in the campaigns</li>
+                                    <li class="span-text">Managed the entire spectrum of clients ranging from small to key
+                                        accounts resulting in 10% increase in revenue</li>
+                                </ul>
+                            </div>
+                            <div class="professional-box">
+                                <label>Campaign Performance Analysis</label>
+                                <ul style="margin: 0;">
+                                    <li class="span-text">Conducted in depth analysis of the market & client specific data to
+                                        improve the campaign performance</li>
+                                    <li class="span-text">Increased traffic on the site by 60% by analyzing multiple metrics
+                                        such as page views, ad impressions etc.</li>
+                                    <li class="span-text">Led the competitor benchmarking exercise for 7 key accounts to assist
+                                        them in improving their overall performance</li>
+                                </ul>
+                            </div>
+        
+        
+        
+        
+                        </div>
+        
+                        
+                    </div>
+         </div>
+
+
+
+
+         <div class="col-4 header">
+            <div class="col-12" >
+                <div class="border-box border-color">
+                    <div class="user-img">
+                        <img src="images/images.jpg" alt="">
+                    </div>
+                    <div class="name">marty mcfy</div>
+                    <div class="title">business analyst</div>
+                </div>
+                <div class="border-box border-color">
+                    <ul class="user-details">
+                        <li><span><i class="fa fa-phone call-icon"></i>&nbsp;&nbsp;+94758627689</span></li>
+                        <li><span><i class="fa fa-envelope mail-icon"></i>&nbsp;&nbsp;lojan@gmail.com</span></li>
+                        <li><span><i class="fa fa-map-marker location-icon"></i>&nbsp;&nbsp;lojan@gmail.com</span></li>
+
+                    </ul>
+                </div>
+
+
+                </div>
+    
+        
+         <div class="col-12">
+                <div class="title-box title-color border-color">Summery</div>
+                <p style="text-align: justify;">Enterprising marketing professional skilled at marketing, communications, branding, campaign
+                    management, and campaign analysis. Over a career of 2+ years, gained exposure to and executed
+                    multiple marketing initiatives. Adept at launching marketing campaigns resulting in significant
+                    sales and user acquisition. Skilled at analysing & improving the performance of campaigns through
+                    data analysis and competitive benchmarking.
+                </p>
+         </div>
+         <div class="col-12">
+                <div class="title-box title-color border-color">Key Skills</div>
+
+                <span class="key-skills-box box-color">Marketing Campaigns</span>
+                <span class="key-skills-box box-color">Campaign Analysis</span>
+                <span class="key-skills-box box-color">Corporate Communications</span>
+                <span class="key-skills-box box-color">User Growth</span>
+                <span class="key-skills-box box-color">Key Metric Analysis</span>
+
+            </div>
+            <div class="col-12">
+                <div class="title-box title-color border-color">TECHNICAL SKILLS</div>
+                <ul class="technical-skills">
+                        <li>Languages<span>: Python, Java, Nodejs, HTML, CSS, JavaScript</span></li>
+                        <li>Frameworks<span>: Codeigniter, YII, Drupal, Spring, Flask</span></li>
+                        <li>OS<span>: Windows, Linux</span></li>
+
+                    </ul>
+            </div>
+     </div>
+        </div>
+
+ 
+
+        <div class="row">
+            
+        </div>
+    </div>
+</body>
+
+</html>
