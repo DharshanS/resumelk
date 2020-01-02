@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { Certificate } from "./Certificate";
-import { ResumeInformation } from "../../../../resumeInfomation.service";
+import { ResumeBucket } from "../../../../resume.service";
 
 @Component({
   selector: "app-certificate",
@@ -14,7 +14,7 @@ export class CertificateComponent implements OnInit {
 
   certificates = [];
   selected = 0;
-  constructor( private resumeService: ResumeInformation) {}
+  constructor( private resumeService: ResumeBucket) {}
 
   ngOnInit() {
     this.certificates = [new Certificate()];

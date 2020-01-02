@@ -1,0 +1,170 @@
+<!-- <label for="" class="color-box">dfgsghjk</label> -->
+<div class="color-main-box">
+  <span style="font-size: 14px;">Select theme </span>
+
+  <div class="color-box color-ccc" (click)="onChangeColorHex8('#004d6b','#fff')">
+
+  </div>
+  <div class="tem-img-1 tem-img"><img src="../../../../../assets/images/temp/temp1.png" alt=""
+      class="tem-img-hov ccc-temp">
+  </div>
+  <div class="tem-img-2 tem-img"><img src="../../../../../assets/images/temp/tem-2.PNG" alt=""
+      class="tem-img-hov ccc-temp"></div>
+  <div class="color-box color-1f3471" (click)="onChangeColorHex8('#1f3471','#fff')">
+
+  </div>
+  <div class="color-box color-323232" (click)="onChangeColorHex8('#323232','#fff')">
+
+  </div>
+  <div class="color-box color-0070c0" (click)="onChangeColorHex8('#0070c0','#fff')">
+
+  </div>
+  <div class="color-box color-7d1914" (click)="onChangeColorHex8('#7d1914','#fff')">
+
+  </div>
+  <div class="color-box color-2D3E50" (click)="onChangeColorHex8('#2D3E50','#fff')">
+
+  </div>
+
+  <div class=" color-box color-2c3e50" (click)="onChangeColorHex8('#2c3e50','#fff')"></div>
+  <div class="color-box color-00b7ea" (click)="onChangeColorHex8('#00b7ea','#29B6F6')"></div>
+  <div class="color-box color-46E0B5" (click)="onChangeColorHex8('#46E0B5','#fff')"></div>
+</div>
+
+
+<div class="main-page">
+  <!-- <input [(colorPicker)]="color" [style.background]="color" (colorPickerChange)="rgbaText=onChangeColorHex8($event);"/> -->
+  <div class="temp-header">
+    <div class="row">
+      <div class="col-7">
+        <div class="name">{{__resume.personal.title}} {{"."+__resume.personal.firstName}}</div>
+        <div class="title">{{__resume.workExperiance[__resume.workExperiance.length-1].jobTitle}}</div>
+      </div>
+      <div class="col-3">
+        <ul class="user-details">
+          <li><span><i class="fas fa-phone-square-alt"></i>&nbsp;{{__resume.personal.mobileNumber}}</span>
+          </li>
+          <li><span><i class="fas fa-envelope-square"></i>&nbsp;{{__resume.personal.email}}</span></li>
+          <li><span><i class="fas fa-home"></i>&nbsp;{{__resume.personal.phoneNumber}}</span></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 sub-box">
+      <div class="border-left">
+        <div class="title-icon"><i class="fas fa-address-card"></i></div>
+        <div class="title-box">Summery</div>
+        <p>{{__resume.personal.description}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 sub-box">
+      <div class="border-left">
+        <div class="title-icon"><i class="fas fa-address-card"></i></div>
+        <div class="title-box">Key Skills</div>
+
+        <span class="key-skills-box" *ngFor="let item of __resume.skills">{{item.category}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 sub-box">
+      <div class="border-left">
+        <div class="title-icon"><i class="fas fa-address-card"></i></div>
+        <div class="title-box ">professional experience</div>
+
+
+        <div class="p-0 col-12 row">
+
+
+
+          <div class="professional-box" *ngFor="let item of __resume.workExperiance">
+            <label>{{item.companyName}}</label>
+            <ul style="margin: 0;">
+           {{item.description}}
+            </ul>
+          </div>
+          <!-- <div class="professional-box">
+            <label>Campaign Performance Analysis</label>
+            <ul style="margin: 0;">
+              <li class="span-text">Conducted in depth analysis of the market & client specific data to
+                improve the campaign performance</li>
+              <li class="span-text">Increased traffic on the site by 60% by analyzing multiple metrics
+                such as page views, ad impressions etc.</li>
+              <li class="span-text">Led the competitor benchmarking exercise for 7 key accounts to assist
+                them in improving their overall performance</li>
+            </ul>
+          </div> -->
+
+
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <div class="col-12 sub-box" *ngIf=" __resume.awards.length>0">
+      <div class="border-left">
+        <div class="title-icon"><i class="fas fa-address-card"></i></div>
+        <div class="title-box">Awards</div>
+
+        <div class="p-0 col-12 row">
+
+
+          <div class="professional-box" *ngFor="let item of __resume.awards">
+            <label>{{item.name}}</label><br>
+            <label>Issuer :&nbsp; </label><span>{{ item.issuer }}</span><br>
+            <label>Date :&nbsp; </label><span>{{ item.month }} / {{ item.year }} </span>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+    <div class="col-12 sub-box" *ngIf=" __resume.certificates.length>0">
+      <div class="border-left">
+        <div class="title-icon"><i class="fas fa-address-card"></i></div>
+        <div class="title-box">certificates</div>
+
+        <div class="p-0 col-12 row">
+
+
+          <div class="professional-box" *ngFor="let item of __resume.certificates">
+            <label>{{item.certificateName}}</label><br>
+            <label>Authority :&nbsp; </label><span>{{ item.authority }}</span><br>
+            <label>Date :&nbsp; </label><span>{{ item.dateOfCerticate.month }} / {{ item.dateOfCerticate.year }} </span>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </div>
+</div>

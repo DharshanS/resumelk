@@ -5,6 +5,7 @@ export class Personal{
   dateOfBirth:string;
   nationality:string;
   phoneNumber:string;
+  mobileNumber:string;
   email:string;
   web:string;
   git:string;

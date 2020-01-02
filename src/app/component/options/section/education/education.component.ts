@@ -1,7 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import { Education } from './Education';
-import { ResumeInformation } from "../../../../resumeInfomation.service";
+import { ResumeBucket } from "../../../../resume.service";
 
 @Component({
   selector: 'app-education',
@@ -21,7 +21,7 @@ export class EducationComponent implements OnInit {
 
 
   constructor(
-    private resumeService: ResumeInformation
+    private resumeService: ResumeBucket
 
   ) {
 

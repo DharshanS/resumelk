@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { ResumeInformation } from "../../../../resumeInfomation.service";
+import { ResumeBucket } from "../../../../resume.service";
 import { Publication } from './Publication';
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
@@ -17,7 +17,7 @@ export class PublicationComponent implements OnInit {
   selected = 0;
 
 
-  constructor( private resumeService: ResumeInformation) { }
+  constructor( private resumeService: ResumeBucket) { }
 
   publications=[];
 

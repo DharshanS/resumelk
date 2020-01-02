@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Skill, SkillName } from './Skill';
-import { ResumeInformation } from "../../../../resumeInfomation.service";
+import { ResumeBucket } from "../../../../resume.service";
 
 @Component({
   selector: 'app-skill',
@@ -21,7 +21,7 @@ export class SkillComponent implements OnInit {
 
 
 
-  constructor(    private resumeService: ResumeInformation) { }
+  constructor(    private resumeService: ResumeBucket) { }
 
   ngOnInit() {
     this.skillCategories.push(new Skill())

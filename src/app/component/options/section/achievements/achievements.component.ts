@@ -1,7 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Acheivment } from './Achivment';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { ResumeInformation } from "../../../../resumeInfomation.service";
+import { ResumeBucket } from "../../../../resume.service";
 
 @Component({
   selector: 'app-achievements',
@@ -20,7 +20,7 @@ export class AchievementsComponent implements OnInit {
   @Input() flag:boolean;
 
 
-  constructor( private resumeService: ResumeInformation) { }
+  constructor( private resumeService: ResumeBucket) { }
 
   ngOnInit() {
     this.__achivements.push(new Acheivment())

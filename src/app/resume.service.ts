@@ -1,9 +1,9 @@
-export class ResumeInformation2{
+export class ResumeBucket2{
   _resume=
   {
-    "personalInformation":{
+    "personal":{
         "title":"Mr",
-        "firstName":"",
+        "firstName":"Dharshan",
         "lastName":"Dharshan",
         "dateOfBirth":"1986-04-02",
         "nationality":"SriLankan",
@@ -90,16 +90,17 @@ export class ResumeInformation2{
 
 
 
-export class ResumeInformation{
+export class ResumeBucket{
   _resume=
   {
-    "personalInformation":{
+    "personal":{
         "title":"Mr",
-        "firstName":"",
+        "firstName":"Dharshan",
         "lastName":"Dharshan",
         "dateOfBirth":"1986-04-02",
         "nationality":"SriLankan",
-        "phoneNumber":"0770885997",
+        "phoneNumber":"081-2219393",
+        "mobileNumber":"0770885997",
         "email":"cdharshans@gmail.com",
         "web":"https://stg.miracleofasia.com",
         "git":"github.com/dharshan@sitha",
@@ -110,7 +111,7 @@ export class ResumeInformation{
             "country":"Sri Lanka"
 
         },
-        "description":"A System Software Engineer having 3 years of extensive experience in developing web-based components, User Interfaces and state-of-the- art software"
+        "description":"Enterprising marketing professional skilled at marketing, communications, branding, campaign management, and campaign analysis. Over a career of 2+ years, gained exposure to and executed multiple marketing initiatives. Adept at launching marketing campaigns resulting in significant sales and user acquisition. Skilled at analysing & improving the performance of campaigns through data analysis and competitive benchmarking."
 
 
     },
@@ -137,18 +138,19 @@ export class ResumeInformation{
 
     }],
 
-    "education":[],
+    "education":[{"instituation":"Royal","date":""}],
 
     "skills":[{
-      "category":"Marketing Automation Systems",
+      "category":"Fluent in English",
       "name":"Hubspot Certified",
       "skilLevel":3
       },{
-        "category":"Marketing Automation Systems",
+        "category":"Indepth Core Java",
         "name":"Hubspot Certified",
         "skilLevel":3
-        },{
-          "category":"Marketing Automation Systems",
+        },
+        {
+          "category":" Automation Business Systems",
           "name":"Hubspot Certified",
           "skilLevel":3
           }]
@@ -206,7 +208,44 @@ export class ResumeInformation{
         ],
 
         "strengths":[{"name":"Programming Skills","description":"Java,PHP,Vue,Anguler"}]
-}
 
+
+
+
+
+
+}
+_currentTemplate;
+_templateNames=[
+  {
+    "name":"einstein",
+    "id":1,
+
+  },
+  {
+    "name":"newton",
+    "id":2,
+
+  },
+  {
+    "name":"hawking",
+    "id":3,
+
+  },
+  {
+    "name":"darwin",
+    "id":4,
+
+  },  {
+    "name":"curie",
+    "id":5,
+
+  },
+  {
+    "name":"aristotle",
+    "id":6
+  }
+
+]
 
 }

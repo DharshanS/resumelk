@@ -39,21 +39,21 @@
                     <div class="col-12 col-xl-4">
                         <div class="editor__group-main-wrapper">
 
-                            <input type="text" [(ngModel)]="personalInformation.title" required>
+                            <input type="text" [(ngModel)]="personal.title" required>
                             <label>Title before</label>
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 col-xl-4">
                         <div class="editor__group-main-wrapper">
 
-                            <input type="text" [(ngModel)]="personalInformation.firstName" required>
+                            <input type="text" [(ngModel)]="personal.firstName" required>
                             <label>First Name </label>
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 col-xl-4">
                         <div class="editor__group-main-wrapper">
 
-                            <input type="text" [(ngModel)]="personalInformation.lastName" required>
+                            <input type="text" [(ngModel)]="personal.lastName" required>
                             <label>Last Name</label>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
 
 
                             <mat-datepicker #Start></mat-datepicker>
-                            <input type="text"  [(ngModel)]="personalInformation.dateOfBirth"
+                            <input type="text"  [(ngModel)]="personal.dateOfBirth"
                                 [matDatepicker]="Start" (click)="Start.open()" required >
 
                                 <label style="left: 13px;">From</label>
@@ -77,7 +77,7 @@
                     <div class="col-12 col-lg-6">
                         <div class="editor__group-main-wrapper">
 
-                            <input type="text"  [(ngModel)]="personalInformation.nationality" required>
+                            <input type="text"  [(ngModel)]="personal.nationality" required>
                             <label>Nationality</label>
                         </div>
                     </div>
@@ -87,14 +87,14 @@
                     <div class="col-12 col-lg-6">
                         <div class="editor__group-main-wrapper">
 
-                            <input type="tel"  [(ngModel)]="personalInformation.phoneNumber" required>
+                            <input type="tel"  [(ngModel)]="personal.phoneNumber" required>
                             <label>Phone Number</label>
                         </div>
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="editor__group-main-wrapper">
 
-                            <input type="email"  [(ngModel)]="personalInformation.email" required>
+                            <input type="email"  [(ngModel)]="personal.email" required>
                             <label>Email Address</label>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                     <div class="col-12">
                         <div class="editor__group-main-wrapper">
 
-                            <input type="text"  [(ngModel)]="personalInformation.web" required>
+                            <input type="text"  [(ngModel)]="personal.web" required>
                             <label>Website Link</label>
                         </div>
                     </div>
@@ -117,14 +117,14 @@
                             <div class="col-12 col-lg-6">
                                 <div class="editor__group-main-wrapper">
                                     <input type="text" placeholder=""
-                                        [(ngModel)]="personalInformation.address.street" required>
+                                        [(ngModel)]="personal.address.street" required>
                                         <label for="">Street line</label>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
                                 <div class="editor__group-main-wrapper">
                                     <input type="text" placeholder=""
-                                        [(ngModel)]="personalInformation.address.city" required>
+                                        [(ngModel)]="personal.address.city" required>
                                         <label for="">City</label>
 
                                 </div>
@@ -132,14 +132,14 @@
                             <div class="col-12 col-lg-6">
                                 <div class="editor__group-main-wrapper">
                                     <input type="text" placeholder=""
-                                        [(ngModel)]="personalInformation.address.postalCode" required>
+                                        [(ngModel)]="personal.address.postalCode" required>
                                         <label for="">Postal Code</label>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
                                 <div class="editor__group-main-wrapper">
                                     <input type="text" placeholder=""
-                                        [(ngModel)]="personalInformation.address.country" required>
+                                        [(ngModel)]="personal.address.country" required>
                                         <label for="">Country</label>
                                 </div>
                             </div>
@@ -149,7 +149,7 @@
                 <div class="row">
                     <div class="col-12">
                         <label>Profile</label>
-                        <ckeditor [editor]="Editor" data="" [(ngModel)]="personalInformation.description"></ckeditor>
+                        <!-- <ckeditor [editor]="Editor" data="'test'" [(ngModel)]=""></ckeditor> -->
                     </div>
                 </div>
 

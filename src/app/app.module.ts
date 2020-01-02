@@ -1,46 +1,31 @@
-// import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { AppRoutingModule } from './app-routing.module';
-
-import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { HeaderComponent } from './component/header/header.component';
-// import { TemplatesComponent } from './component/templates/wrapper/templates.component';
-import { PreviewComponent } from './component/preview/preview.component';
-import { FooterComponent } from './component/footer/footer.component';
-import { TempOneComponent } from './component/preview/templates/temp-one/temp-one.component';
-import { TempTwoComponent } from './component/preview/templates/temp-two/temp-two.component';
-import { HttpClientModule } from '@angular/common/http'
-import { AngularEditorModule } from '@kolkov/angular-editor';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { ResumeInformation } from "./resumeInfomation.service";
-
-
-
-
-import { AppComponent } from './app.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { TempThreeComponent } from './component/preview/templates/temp-three/temp-three.component';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { MDBBootstrapModule } from "angular-bootstrap-md";
+import { AppRoutingModule } from "./app-routing.module";
+import { FormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { DashboardComponent } from "./component/dashboard/dashboard.component";
+import { HeaderComponent } from "./component/header/header.component";
+import { TemplatesComponent } from "./component/templates/templates.component";
+import { FooterComponent } from "./component/footer/footer.component";
+import { HttpClientModule } from "@angular/common/http";
+import { AngularEditorModule } from "@kolkov/angular-editor";
+import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
+import { ResumeBucket } from "./resume.service";
+import { ColorPickerModule } from "ngx-color-picker";
+import { AppComponent } from "./app.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     HeaderComponent,
-    // TemplatesComponent,
-    PreviewComponent,
-    FooterComponent,
-    TempOneComponent,
-    TempTwoComponent,
-    TempThreeComponent
+    TemplatesComponent,
+    FooterComponent
   ],
   imports: [
-
-   // BrowserModule,
     HttpClientModule,
-    // BrowserModule,
+    ColorPickerModule,
     AngularEditorModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -48,13 +33,10 @@ import { TempThreeComponent } from './component/preview/templates/temp-three/tem
     CKEditorModule,
     MDBBootstrapModule,
     MDBBootstrapModule.forRoot(),
-
-
-
-
+    BrowserModule
   ],
 
-  providers: [ResumeInformation],
+  providers: [ResumeBucket],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

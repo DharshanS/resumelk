@@ -1,6 +1,6 @@
 import { Component, OnInit, Input,HostListener, DoCheck } from "@angular/core";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { ResumeInformation } from "../../../../resumeInfomation.service";
+import { ResumeBucket } from "../../../../resume.service";
 
 import { Router } from "@angular/router";
 import { Personal } from './Personal';
@@ -15,18 +15,18 @@ import { Personal } from './Personal';
 export class PersonalComponent implements OnInit,DoCheck{
   public Editor = ClassicEditor;
   @Input() flag: boolean;
-  @Input() personalInformation:Personal;
+  @Input() personal:Personal;
 
   constructor(
-    private resumeService: ResumeInformation,
+    private resumeService: ResumeBucket,
     private router: Router
   ) {}
 
 
   ngOnInit() {
     console.log("OnInit ...")
-   this.personalInformation=new Personal();
-    this.resumeService._resume.personalInformation = this.personalInformation;
+   this.personal=new Personal();
+    this.resumeService._resume.personal = this.personal;
   }
 
   CustomFeildOne = "Custom field";

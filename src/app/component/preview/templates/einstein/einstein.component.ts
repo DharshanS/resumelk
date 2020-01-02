@@ -2,23 +2,22 @@ import { Component, OnInit ,Renderer2,ViewEncapsulation,ElementRef,ViewChild} fr
 import resumeJson from '../../../../../assets/json/resume.json';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
-import { ResumeInformation } from "../../../../resumeInfomation.service";
-import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
+import { ResumeBucket } from "../../../../resume.service";
+
 
 
 @Component({
 
-  selector: 'app-temp-one',
-  templateUrl: './temp-one.component.html',
-  styleUrls: ['./temp-one.component.css'],
- 
+  selector: 'app-temp-two',
+  templateUrl: './einstein.component.html',
+  styleUrls: ['./einstein.component.scss'],
   encapsulation: ViewEncapsulation.Native
 })
-export class TempOneComponent implements OnInit {
+export class EinsteinComponent implements OnInit {
 
   @ViewChild('tasknote',{static: false}) input: ElementRef;
 
-  public color = '#ccc';
+
 
   public Editor = ClassicEditor;
 
@@ -27,26 +26,51 @@ export class TempOneComponent implements OnInit {
 
 
 
-constructor( private resumeService: ResumeInformation,private sanitizer: DomSanitizer, private renderer2: Renderer2, private el: ElementRef){
+constructor( private resumeService: ResumeBucket,){
 
 }
 
-
   ngOnInit() {
+  
     this.__resume=this.resumeService._resume;
     console.log("---Inside ngOnInit---");
   }
 
-  onChangeColorHex8(color: string) {
+  onChangeColorHex8(color: string,color2:string) {
     console.log('color',color)
     // this.renderer2.setStyle(this.el.nativeElement.querySelector('.name'), 'color', color);
-    let myClass = this.el.nativeElement.querySelectorAll('.title-box');
-    console.log('myClass',myClass)
-    myClass.forEach(e => {
+    let bgColor = this.el.nativeElement.querySelectorAll('.bg-color');
+    let names = this.el.nativeElement.querySelectorAll('.name');
+    let title_boxs = this.el.nativeElement.querySelectorAll('.title-box');
+    let title_icons = this.el.nativeElement.querySelectorAll('.title-icon');
+    let key_skills_boxs= this.el.nativeElement.querySelectorAll('.key-skills-box');
+    
+    console.log('myClass',bgColor)
+    bgColor.forEach(e => {
+      console.log('myClass23',e)
+      this.renderer2.setStyle(e,'background', color);
+    })
+    title_icons.forEach(e => {
+      console.log('myClass23',e)
+      this.renderer2.setStyle(e,'background', color);
+    })
+    key_skills_boxs.forEach(e => {
+      console.log('myClass23',e)
+      this.renderer2.setStyle(e,'background', color);
+    })
+    
+    title_boxs.forEach(e => {
       console.log('myClass23',e)
       this.renderer2.setStyle(e,'color', color);
     })
+    names.forEach(e => {
+      this.renderer2.setStyle(e,'color', color2);
+    })
+
   }
+
+
+
   ngDoCheck() {
     console.log("---Inside ngDoCheck---");
   }
@@ -90,5 +114,6 @@ constructor( private resumeService: ResumeInformation,private sanitizer: DomSani
     console.log("---Inside ngOnDestroy---");
   }
 
-  
+
+
 }

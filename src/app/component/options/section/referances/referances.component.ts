@@ -1,7 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Referance } from './Referance';
-import { ResumeInformation } from "../../../../resumeInfomation.service";
+import { ResumeBucket } from "../../../../resume.service";
 @Component({
   selector: 'app-referances',
   templateUrl: './referances.component.html',
@@ -9,7 +9,7 @@ import { ResumeInformation } from "../../../../resumeInfomation.service";
 })
 export class ReferancesComponent implements OnInit {
 
-  constructor(private resumeService: ResumeInformation) { }
+  constructor(private resumeService: ResumeBucket) { }
 
   public Editor = ClassicEditor;
   @Input() flag:boolean;

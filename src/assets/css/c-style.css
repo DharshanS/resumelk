@@ -1,7 +1,7 @@
 /*!
  * Dashboard UI Kit - v2.0
  * Copyright 2018 ZawiaStudio
- * @zawiastudio | zawiastudio.com 
+ * @zawiastudio | zawiastudio.com
  */
 
  html {
@@ -4589,7 +4589,7 @@ html {
     content: "\f222"
 }
 
-.fa-mercury:before {
+.fa-einstein:before {
     content: "\f223"
 }
 
@@ -8984,12 +8984,12 @@ a.fc-more:hover {
      background: linear-gradient(180deg, #13a89e, #019086);
      border-color: #2aafa6;
      }
-    
+
      .c-btn--success:hover {
   background: #34a544;
       background: linear-gradient(180deg,#108a82, #0da096)
     }
-    
+
      .c-btn--success:focus {
       background: #329e40;
       background: linear-gradient(180deg, #329e40, #2d933b)

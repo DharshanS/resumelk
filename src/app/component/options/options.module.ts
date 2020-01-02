@@ -79,13 +79,7 @@ import { DynamicComponentsService } from './dynamic-components.service';
     ScrollEventModule,
     CommonModule,
     OptionRoutingModule,
-
-
-  //  BrowserModule,
-    //   ReactiveFormsModule,
     FormsModule,
-    //  BsDatepickerModule.forRoot(),
-    // DatepickerModule.forRoot(),
     MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule,

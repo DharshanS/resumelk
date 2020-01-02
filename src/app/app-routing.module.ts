@@ -1,38 +1,42 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {DashboardComponent} from './component/dashboard/dashboard.component';
-import {PreviewComponent} from './component/preview/preview.component';
-
-
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { DashboardComponent } from "./component/dashboard/dashboard.component";
+import { TemplatesComponent } from "./component/templates/templates.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: DashboardComponent
   },
 
-  // {
-  //   path: '',
-  //   component: TemplatesComponent
-  // },
+  {
+    path: "templates",
+    component: TemplatesComponent
+  },
 
   {
-    path: 'dashboard',
+    path: "dashboard",
     component: DashboardComponent
   },
   {
-    path: 'templates',
-    loadChildren: "./component/templates/templates.module#TemplatesModule"
+    path: "edit",
+    loadChildren: () =>
+      import("./component/preview/preview.module").then(m => m.PreviewModule)
+  },
+
+  {
+    path: "preview",
+    component: DashboardComponent
   },
   {
-    path: 'preview',
-    component: PreviewComponent
-  },
-  { path: 'editor/:id', loadChildren: () => import('./component/options/options.module').then(m => m.OptionsModule) },
+    path: "editor/:id",
+    loadChildren: () =>
+      import("./component/options/options.module").then(m => m.OptionsModule)
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

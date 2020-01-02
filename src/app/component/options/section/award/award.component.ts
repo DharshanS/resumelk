@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { ResumeInformation } from "../../../../resumeInfomation.service";
+import { ResumeBucket } from "../../../../resume.service";
 import { Award } from './Award';
 
 @Component({
@@ -16,7 +16,7 @@ export class AwardComponent implements OnInit {
   @Input() flag:boolean;
   months=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-  constructor( private resumeService: ResumeInformation,
+  constructor( private resumeService: ResumeBucket,
     ) { }
 
   ngOnInit() {
