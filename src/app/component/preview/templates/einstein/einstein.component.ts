@@ -26,12 +26,12 @@ export class EinsteinComponent implements OnInit {
 
 
 
-constructor( private resumeService: ResumeBucket,){
+constructor( private resumeService: ResumeBucket,private renderer2: Renderer2, private el: ElementRef){
 
 }
 
   ngOnInit() {
-  
+
     this.__resume=this.resumeService._resume;
     console.log("---Inside ngOnInit---");
   }
@@ -44,7 +44,7 @@ constructor( private resumeService: ResumeBucket,){
     let title_boxs = this.el.nativeElement.querySelectorAll('.title-box');
     let title_icons = this.el.nativeElement.querySelectorAll('.title-icon');
     let key_skills_boxs= this.el.nativeElement.querySelectorAll('.key-skills-box');
-    
+
     console.log('myClass',bgColor)
     bgColor.forEach(e => {
       console.log('myClass23',e)
@@ -58,7 +58,7 @@ constructor( private resumeService: ResumeBucket,){
       console.log('myClass23',e)
       this.renderer2.setStyle(e,'background', color);
     })
-    
+
     title_boxs.forEach(e => {
       console.log('myClass23',e)
       this.renderer2.setStyle(e,'color', color);
