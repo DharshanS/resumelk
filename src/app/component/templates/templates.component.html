@@ -8,13 +8,19 @@
               <div class="select-template__grid">
                   <div class="select-template__grid-item" *ngFor="let item of resume._templateNames">
                       <div class="select-template__item" [style.background-image]="getBackground(item.name)"
+
                       >
+                 
                           <div class="select-template__item-overlay">
-                              <button class="btn btn--no-shadow btn--shorter btn--icon btn--primary-alt btn--full u-margin-bottom-med">
-                                  <p class="btn__label">Select</p><i class="fas fa-chevron-right btn__icon btn__icon--font btn__icon--alt"></i>
+                              <button class="btn btn--no-shadow btn--shorter btn--icon btn--primary-alt select-btn-p u-margin-bottom-med">
+                                Select<i class="fas fa-chevron-right btn__icon btn__icon--font btn__icon--alt"></i>
                               </button>
-                              <button class="btn btn--no-shadow btn--shorter btn--white btn--full" data-popup-trigger="preview-popup" data-popup-src="assets/images/template-1.jpg">
-                                  <p class="btn__label"(click)="selectTemplateName(item.name)" (click)="basicModal.show()" mdbWavesEffect >Preview</p>
+                              <button class="btn btn--no-shadow btn--shorter btn--white select-btn-p " 
+                              data-popup-trigger="preview-popup" 
+                              data-popup-src="assets/images/templates/darwin.png" 
+                              (click)="selectTemplateName(item.name)" 
+                              (click)="basicModal.show()">
+                                 Preview
                               </button>
                           </div>
                       </div>
@@ -40,16 +46,11 @@
       <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
-                <span aria-hidden="true">×</span>
-              </button>
-              <h4 class="modal-title w-100" id="myModalLabel">Resume</h4>
-            </div>
-            <div class="modal-body">
+      
+            <div class="modal-body scrollbar">
                 <!-- <div w3-include-html="https://www.w3schools.com/graphics/google_maps_intro.asp"></div>  -->
-
-                <div  class="prev-temp" style="background-image: url('assets/images/templates/temp-1.png');"></div>
+          
+                <div  class="prev-temp" [ngStyle]="{'background-image': 'url('+imgUrl+')'}" id="tmp-r" ></div>
                 <!-- <app-sun *ngIf="true"></app-sun> -->
                 <!-- <router-outlet></router-outlet> -->
 
@@ -57,8 +58,8 @@
             </div>
 
             <div class="modal-footer">
-              <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
-              <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="goToProductDetails()" mdbWavesEffect>Select</button>
+              <button type="button" mdbBtn  class="waves-light btn btn--no-shadow btn--shorter btn--white " aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+              <button type="button" mdbBtn  class="relative waves-light btn btn--no-shadow btn--shorter btn--icon btn--primary-alt  u-margin-bottom-med" (click)="goToProductDetails()" style="color: #fff;" mdbWavesEffect>Select</button>
             </div>
 
           </div>

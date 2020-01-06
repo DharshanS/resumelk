@@ -7,7 +7,6 @@ import { EinsteinComponent } from './templates/einstein/einstein.component';
 import { MoonComponent } from './templates/moon/moon.component';
 import { PreviewRoutingModule } from './preview-routing.module';
 import { PreviewComponent } from './preview.component';
-import { ColorPickerModule } from 'ngx-color-picker';
 import { CommonModule } from "@angular/common";
 
 
@@ -19,7 +18,6 @@ import { CommonModule } from "@angular/common";
     PreviewComponent
   ],
   imports: [
-    ColorPickerModule,
     PreviewRoutingModule,
     CommonModule
   ],

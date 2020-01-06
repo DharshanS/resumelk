@@ -1,0 +1,39 @@
+.modal-content{
+    width: 762px;
+    height: 850px;
+    right: 20%;
+
+}
+
+.prev-temp{
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+    position: relative;
+
+}
+.modal-body{
+    padding: 0;
+    height: 72vh;
+    overflow: auto;
+}
+
+::-webkit-scrollbar
+{
+	width: 0px;
+	background-color: #4f606d;
+}
+.modal-footer{
+    padding: .3rem;
+    
+}
+.select-btn-p{
+    // padding: 5px;
+    color: #fff !important;
+
+}
+
+.btn--white {
+    background-color: #ffffff;
+    color: #484848 !important;
+}

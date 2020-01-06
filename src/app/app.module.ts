@@ -12,7 +12,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { AngularEditorModule } from "@kolkov/angular-editor";
 import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
 import { ResumeBucket } from "./resume.service";
-import { ColorPickerModule } from "ngx-color-picker";
 import { AppComponent } from "./app.component";
 
 @NgModule({
@@ -25,7 +24,6 @@ import { AppComponent } from "./app.component";
   ],
   imports: [
     HttpClientModule,
-    ColorPickerModule,
     AngularEditorModule,
     BrowserAnimationsModule,
     AppRoutingModule,

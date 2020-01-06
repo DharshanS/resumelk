@@ -6,13 +6,13 @@ import { ResumeBucket } from "./../../resume.service";
 @Component({
   selector: 'app-templates',
   templateUrl: './templates.component.html',
-  styleUrls: ['./templates.component.css']
+  styleUrls: ['./templates.component.scss']
 })
 export class TemplatesComponent implements OnInit,AfterViewInit {
 
 
   selectedTemplate=1;
-
+ imgUrl;
 
   constructor(private router: Router,private resume:ResumeBucket,private _sanitizer: DomSanitizer) { }
 
@@ -45,6 +45,7 @@ export class TemplatesComponent implements OnInit,AfterViewInit {
   }
 
   selectTemplateName(name){
+    this.imgUrl ="assets/images/templates/"+name+".png"
    this.resume._currentTemplate=name;
   }
   goToProductDetails() {
