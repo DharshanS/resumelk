@@ -28,7 +28,7 @@
                   <div class="col-12 col-lg-6">
                       <div class="editor__group-main-wrapper">
                           
-                          <input type="text" placeholder=" award name # {{awards.length}}" [(ngModel)]="awards[selected].name"
+                          <input type="text"  [(ngModel)]="awards[selected].name"
                               data-skills-category required>
                               <label>Award Name {{awards.length}}</label>
                       </div>
@@ -38,7 +38,7 @@
 
                       <div class="editor__group-main-wrapper">
                           
-                          <input type="text" placeholder="issuer"
+                          <input type="text" 
                               data-skills-category [(ngModel)]="awards[selected].issuer" required>
                               <label>Issuer</label>
                       </div>
@@ -50,7 +50,7 @@
                               <div class="col-12 ">
                                   <div class="editor__group-main-wrapper">
                                       
-                                      <input type="text" placeholder="url" required
+                                      <input type="text"  required
                                           data-skills-name [(ngModel)]="awards[selected].url">
                                           <label>URL to award</label>
                                   </div>
@@ -109,6 +109,12 @@
       </div>
   </div>
 
-
+  <div class="row">
+    <div class="col-12 text-right">
+        <span class="edit-box-delete-icon">
+            <i class="fas fa-trash editor__group-item-delete" ></i>
+        </span>
+    </div>
+</div>
 
 </div>

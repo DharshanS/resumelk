@@ -1297,10 +1297,12 @@ li, .contact input,
     .editor__group-list {
       margin-bottom: 1.5625rem; } }
   .editor__group-item {
+    margin-bottom: 10px;
     padding: 1rem 2.1875rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    background: #fafafa;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -1329,6 +1331,7 @@ li, .contact input,
     .editor__group-item-delete {
       -webkit-transition: all .25s;
       -o-transition: all .25s;
+      color: #e00000;
       transition: all .25s; }
       .editor__group-item-delete:hover {
         color: var(--btn-h-color); }
@@ -2452,7 +2455,7 @@ table {
   color: #afafaf; }
 
 .u-color-gray-alt-14 {
-  color: #c8c8c8; }
+  color: #595e63; }
 
 .u-bg-gray-alt-10 {
   background-color: #f5f5f5; }

@@ -239,6 +239,7 @@ table th {
 .right-sec {
   flex: 0 0 70%;
   max-width: 70%;
+  margin-bottom: 23px;
 }
 
 #show-slide {
@@ -330,4 +331,33 @@ label{
   top: 64px;
   z-index: 1020;
   width: 27%;
+}
+
+.edit-box-delete-icon{
+  position: relative;
+  right: 31px;
+  top: -5px;
+  color: #645f5f;
+  font-size: 15px;
+  color: #e00000;
+}
+
+.editor__photo-label {
+  span {
+    background: transparent;
+    border: solid 3px #0f5a90;
+    padding: 3px 27px;
+}
+
+span:hover {
+  background:#0f5a90;
+ 
+}
+.btn__label:hover  {
+  color: #ffffff;
+}
+
+ .btn .btn__label {
+  color: #0f5a90;
+}
 }

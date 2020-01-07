@@ -28,7 +28,7 @@
                     <div class="col-12 col-lg-6">
                         <div class="editor__group-main-wrapper">
                             
-                            <input type="text" placeholder="company"
+                            <input type="text" 
                                 data-skills-category [(ngModel)]="__referances[selected].company" required>
                                 <label>Company </label>
                         </div>
@@ -38,7 +38,7 @@
 
                         <div class="editor__group-main-wrapper">
                             
-                            <input type="text" placeholder="Person Name"
+                            <input type="text" 
                                 data-skills-category [(ngModel)]="__referances[selected].personName" required>
                                 <label>Person Name</label>
                         </div>
@@ -50,7 +50,7 @@
                                 <div class="col-6 ">
                                     <div class="editor__group-main-wrapper">
                                         
-                                        <input type="text" placeholder="contact" required
+                                        <input type="text"  required
                                             data-skills-name [(ngModel)]="__referances[selected].contact1" required>
                                             <label>Contact 1</label>
                                     </div>
@@ -59,7 +59,7 @@
                                 <div class="col-6 ">
                                     <div class="editor__group-main-wrapper">
                                         
-                                        <input type="text" placeholder="contact" required
+                                        <input type="text"  required
                                             data-skills-name [(ngModel)]="  __referances[selected].contact2" required>
                                             <label>Contact 2</label>
                                     </div>
@@ -88,7 +88,13 @@
 
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-12 text-right">
+            <span class="edit-box-delete-icon">
+                <i class="fas fa-trash editor__group-item-delete" ></i>
+            </span>
+        </div>
+    </div>
 
 
   </div>
