@@ -12,8 +12,8 @@
     <style>
         :root {
             --h-bg-colo: #323232;
-            --color:#555;
-            --title:#fff;
+            --color: #555;
+            --title: #fff;
         }
 
         body {
@@ -127,13 +127,14 @@
 
         .header {
             padding-left: 3mm;
-    padding-right: 3mm;
-    padding-top: 15px;
-    border: 1px solid rgb(242, 0, 67);
-    margin-top: 21px;
-    margin-right: 0px;
-    max-width: 31.333333% !important;
-}
+            padding-right: 3mm;
+            height: 112vh;
+            padding-top: 15px;
+            border: 1px solid rgb(242, 0, 67);
+            margin-top: 21px;
+            margin-right: 0px;
+            max-width: 31.333333% !important;
+        }
 
         .name {
             font-weight: 500;
@@ -152,33 +153,40 @@
         }
 
         .user-details {
-   
+
             list-style-type: none;
             padding: 0px;
-            margin: 0;;
+            margin: 0;
+            ;
             font-size: 13px;
         }
+
         .user-details li {
             padding: 4px 0px;
         }
-            .technical-skills{
+
+        .technical-skills {
             list-style-type: none;
             padding: 0px;
             font-size: 13px;
-            }
-            .technical-skills li{
-                font-weight: bold;
-                list-style: disc;
-                margin-left: 25px;
+        }
 
-            }
-            .technical-skills span{
-                font-weight: 500;
-                padding-left: 3px;
-            }
-            .professional-box label {
-                font-weight: 600;
-            }
+        .technical-skills li {
+            font-weight: bold;
+            list-style: disc;
+            margin-left: 25px;
+
+        }
+
+        .technical-skills span {
+            font-weight: 500;
+            padding-left: 3px;
+        }
+
+        .professional-box label {
+            font-weight: 600;
+        }
+
         .sub-box {
             padding: 20px 35px;
         }
@@ -188,7 +196,7 @@
             font-weight: bold;
             font-size: 16px !important;
             /* color: var(--title) !important; */
-            border-bottom: 2px solid ;
+            border-bottom: 2px solid;
             padding-bottom: 0;
             margin-top: 20px;
         }
@@ -240,17 +248,20 @@
         .professional-box {
             padding: 10px 0;
         }
+
         .user-img {
-    width: 120px;
-    height: 120px;
-    padding: 10px;
-    margin: auto;
-}
-.user-img img {
-    width: 100%;
-    border-radius: 50px;
-}
-/* .name {
+            width: 120px;
+            height: 120px;
+            padding: 10px;
+            margin: auto;
+        }
+
+        .user-img img {
+            width: 100%;
+            border-radius: 50px;
+        }
+
+        /* .name {
     font-weight: 700;
     font-size: 30px;
     text-transform: uppercase;
@@ -258,243 +269,522 @@
     text-align: center;
     margin-bottom: 15px;
 } */
-.title {
-    text-align: center !important;
-    font-size: 20px !important;
-    font-weight: bold !important;
-    color: #000;
-}
-.border-color{
-border-color: rgb(242, 0, 67);
-}
-.title-color{
-color: #555;
-}
-.box-color{
-    background: rgb(242, 0, 67);
-}
-.border-box{
-    padding: 0 3mm;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid ;
-}
-.call-icon{
-    color: rgb(222,60,63);
-    border: solid 1px;
-    padding: 5px;
-    border-radius: 23px;
-    font-size: 12px;
-}
-.mail-icon{
-  color: rgb(108,83,59);
-  border: solid 1px;
-    padding: 5px;
-    border-radius: 23px;
-    font-size: 12px;
-}
-.location-icon{
-    
-    color: rgb(120,0,49);
-  border: solid 1px;
-    padding: 5px;
-    border-radius: 23px;
-    font-size: 12px;
-    width: 22px;
-    height: 22px;
+        .title {
+            text-align: center !important;
+            font-size: 20px !important;
+            font-weight: bold !important;
+            color: #000;
+        }
 
-}
+        .border-color,.bo-color {
+            border-color: rgb(242, 0, 67);
+        }
+
+        .title-color {
+            color: #555;
+        }
+
+        .box-color {
+            background: rgb(242, 0, 67);
+        }
+
+        .border-box {
+            padding: 0 3mm;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid;
+        }
+
+        .call-icon {
+            color: rgb(222, 60, 63);
+            border: solid 1px;
+            padding: 5px;
+            border-radius: 23px;
+            font-size: 12px;
+        }
+
+        .mail-icon {
+            color: rgb(108, 83, 59);
+            border: solid 1px;
+            padding: 5px;
+            border-radius: 23px;
+            font-size: 12px;
+        }
+
+        .location-icon {
+
+            color: rgb(120, 0, 49);
+            border: solid 1px;
+            padding: 5px;
+            border-radius: 23px;
+            font-size: 12px;
+            width: 22px;
+            height: 22px;
+
+        }
     </style>
 </head>
 
 <body>
-    <div class="main-page">
-        <!-- <div class="header">
-            <div class="row">
-                    <div class="col-7">
-                            <ul class="user-details">
-                                <li><span><i class="fa fa-phone"></i>&nbsp;&nbsp;+94758627689</span></li>
-                                <li><span><i class="fa fa-envelope"></i>&nbsp;&nbsp;lojan@gmail.com</span></li>
-                                <li><span><i class="fa fa-map-marker"></i>&nbsp;&nbsp;lojan@gmail.com</span></li>
-        
-                            </ul>
-                        </div>
-                <div class="col-5" style="text-align: right;">
-                    <div class="name">marty mcfy</div>
-                    <div class="title">business analyst</div>
-                </div>
-               
-            </div>
-        </div> -->
-
-
+    <div class="main-page"> 
 
 
         <div class="row">
 
-     
-         <div class="col-8">
-                <div class="col-12 ">
-                        <div class="title-box title-color border-color">professional experience</div>
-                
-        
-        
-                        <div class="p-0 col-12 row">
-        
-                            <div class="col-6 p-0 bold">Bussiness Analyst</div>
-                            <div class="col-6 p-0 text-right">Menia Park,US</div>
-        
-        
-                            <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;Jul 14 - Present</span><br>
-                            <label class="span-text">Alph Foods is the leading provider of restaurant reviews to users across
-                                North America and has revenues of $ 10+ mn. per year</label>
-        
-                            <ul style="margin: 0;">
-                                <li class="span-text">Worked with the CMO of the company & created digital marketing strategy
-                                    which resulted in 60% increased following</li>
-        
-                            </ul>
-                            <div class="professional-box">
-                                <label>Marketing Campaign Management</label>
-                                <ul style="margin: 0;">
-                                    <li class="span-text">Supported 50+ clients on multiple campaign projects</li>
-                                    <li class="span-text">Responsible for winning back 30+ clients by delivering exceptional
-                                        results in the campaigns</li>
-                                    <li class="span-text">Managed the entire spectrum of clients ranging from small to key
-                                        accounts resulting in 10% increase in revenue</li>
-                                </ul>
-                            </div>
-                            <div class="professional-box">
-                                <label>Campaign Performance Analysis</label>
-                                <ul style="margin: 0;">
-                                    <li class="span-text">Conducted in depth analysis of the market & client specific data to
-                                        improve the campaign performance</li>
-                                    <li class="span-text">Increased traffic on the site by 60% by analyzing multiple metrics
-                                        such as page views, ad impressions etc.</li>
-                                    <li class="span-text">Led the competitor benchmarking exercise for 7 key accounts to assist
-                                        them in improving their overall performance</li>
-                                </ul>
-                            </div>
-        
-        
-        
-        
-                        </div>
-        
-                        
-                    </div>
-        
-                    <div class="col-12">
-                        <div class="title-box title-color border-color">INTERNSHIPS</div>
-                        
-        
-        
-                        <div class="p-0 col-12 row">
-        
-                            <div class="col-6 p-0 bold">Marketing Intern</div>
-                            <div class="col-6 p-0 text-right">Menia Park,US</div>
-        
-        
-                            <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;Jul 14 - Present</span><br>
-                            <label class="span-text">Alph Foods is the leading provider of restaurant reviews to users across
-                                North America and has revenues of $ 10+ mn. per year</label>
-        
-                            <ul style="margin: 0;">
-                                <li class="span-text">Worked with the CMO of the company & created digital marketing strategy
-                                    which resulted in 60% increased following</li>
-        
-                            </ul>
-                            <div class="professional-box">
-                                <label>Marketing Campaign Management</label>
-                                <ul style="margin: 0;">
-                                    <li class="span-text">Supported 50+ clients on multiple campaign projects</li>
-                                    <li class="span-text">Responsible for winning back 30+ clients by delivering exceptional
-                                        results in the campaigns</li>
-                                    <li class="span-text">Managed the entire spectrum of clients ranging from small to key
-                                        accounts resulting in 10% increase in revenue</li>
-                                </ul>
-                            </div>
-                            <div class="professional-box">
-                                <label>Campaign Performance Analysis</label>
-                                <ul style="margin: 0;">
-                                    <li class="span-text">Conducted in depth analysis of the market & client specific data to
-                                        improve the campaign performance</li>
-                                    <li class="span-text">Increased traffic on the site by 60% by analyzing multiple metrics
-                                        such as page views, ad impressions etc.</li>
-                                    <li class="span-text">Led the competitor benchmarking exercise for 7 key accounts to assist
-                                        them in improving their overall performance</li>
-                                </ul>
-                            </div>
-        
-        
-        
-        
-                        </div>
-        
-                        
-                    </div>
-         </div>
 
+            <div class="col-8">
+                     <!-- Experience -->
 
-
-
-         <div class="col-4 header">
-            <div class="col-12" >
-                <div class="border-box border-color">
-                    <div class="user-img">
-                        <img src="images/images.jpg" alt="">
-                    </div>
-                    <div class="name">marty mcfy</div>
-                    <div class="title">business analyst</div>
-                </div>
-                <div class="border-box border-color">
-                    <ul class="user-details">
-                        <li><span><i class="fa fa-phone call-icon"></i>&nbsp;&nbsp;+94758627689</span></li>
-                        <li><span><i class="fa fa-envelope mail-icon"></i>&nbsp;&nbsp;lojan@gmail.com</span></li>
-                        <li><span><i class="fa fa-map-marker location-icon"></i>&nbsp;&nbsp;lojan@gmail.com</span></li>
-
-                    </ul>
-                </div>
-
-
-                </div>
+                     <div class="col-12 col-box">
+                        <div class="title-box font-color bo-color">Experience</div>
+                        <div class="professional-box">
+                            <label>Marketing Campaign Management</label>
     
-        
-         <div class="col-12">
-                <div class="title-box title-color border-color">Summery</div>
-                <p style="text-align: justify;">Enterprising marketing professional skilled at marketing, communications, branding, campaign
-                    management, and campaign analysis. Over a career of 2+ years, gained exposure to and executed
-                    multiple marketing initiatives. Adept at launching marketing campaigns resulting in significant
-                    sales and user acquisition. Skilled at analysing & improving the performance of campaigns through
-                    data analysis and competitive benchmarking.
-                </p>
-         </div>
-         <div class="col-12">
-                <div class="title-box title-color border-color">Key Skills</div>
-
-                <span class="key-skills-box box-color">Marketing Campaigns</span>
-                <span class="key-skills-box box-color">Campaign Analysis</span>
-                <span class="key-skills-box box-color">Corporate Communications</span>
-                <span class="key-skills-box box-color">User Growth</span>
-                <span class="key-skills-box box-color">Key Metric Analysis</span>
-
+    
+                            <div class="p-0 col-12 row">
+    
+                                <div class="col-6 p-0  c-name">Company Name</div>
+                                <div class="col-6 p-0 text-right">Menia Park,SL</div>
+                                <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                                    14/12/2019</span><br>
+    
+    
+    
+                                <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                    across
+                                    North America and has revenues of $ 10+ mn. per year</span>
+    
+    
+    
+    
+    
+                            </div>
+                        </div>
+    
+                        <div class="professional-box">
+                            <label>software engineer </label>
+    
+    
+                            <div class="p-0 col-12 row">
+    
+                                <div class="col-6 p-0  c-name">Company Name</div>
+                                <div class="col-6 p-0 text-right">Menia Park,US</div>
+                                <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                                    14/12/2019</span><br>
+    
+    
+    
+                                <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                    across
+                                    North America and has revenues of $ 10+ mn. per year</span>
+    
+    
+    
+    
+    
+                            </div>
+                        </div>
+    
+    
+    
+                    </div>
+    
+                    <!-- Education -->
+    
+                    <div class="col-12 col-box">
+                        <div class="title-box font-color bo-color">Education</div>
+                        <div class="professional-box">
+                            <label>Aeronautics and Aviation Science</label>
+    
+    
+                            <div class="p-0 col-12 row">
+    
+                                <div class="col-6 p-0  c-name">Institution name</div>
+                                <div class="col-6 p-0 text-right">Menia Park,SL</div>
+                                <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                                    14/12/2019</span><br>
+    
+    
+    
+                                <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                    across
+                                    North America and has revenues of $ 10+ mn. per year</span>
+    
+    
+    
+    
+    
+                            </div>
+                        </div>
+    
+    
+    
+                        <div class="professional-box">
+                            <label>Business Administration</label>
+    
+    
+                            <div class="p-0 col-12 row">
+    
+                                <div class="col-6 p-0  c-name">Institution name</div>
+                                <div class="col-6 p-0 text-right">Menia Park,US</div>
+                                <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                                    14/12/2019</span><br>
+    
+    
+    
+                                <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                    across
+                                    North America and has revenues of $ 10+ mn. per year</span>
+    
+    
+    
+    
+    
+                            </div>
+                        </div>
+    
+    
+    
+                    </div>
+    
+                    <!-- Certificates -->
+    
+                    <div class="col-12 col-box">
+                        <div class="title-box font-color bo-color">Certificates</div>
+                        <div class="professional-box">
+                            <label>certification for project managers</label>
+    
+    
+                            <div class="p-0 col-12 row">
+    
+                                <div class="col-6 p-0  c-name">Certification URL / Code</div>
+                                <div class="col-6 p-0 text-right">Authority</div>
+                                <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;04/2019 -
+                                    12/2019</span><br>
+    
+    
+    
+                                <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                    across
+                                    North America and has revenues of $ 10+ mn. per year</span>
+    
+    
+    
+    
+    
+                            </div>
+                        </div>
+    
+                        <div class="professional-box">
+                            <label>Business Administration</label>
+    
+    
+                            <div class="p-0 col-12 row">
+    
+                                <div class="col-6 p-0  c-name">Institution name</div>
+                                <div class="col-6 p-0 text-right">Menia Park,US</div>
+                                <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                                    14/12/2019</span><br>
+    
+    
+    
+                                <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                    across
+                                    North America and has revenues of $ 10+ mn. per year</span>
+    
+    
+    
+    
+    
+                            </div>
+                        </div>
+    
+    
+    
+                    </div>
+    
+                    <div class="col-12 col-box">
+                        <div class="title-box font-color bo-color">Awards</div>
+                        <div class="professional-box">
+                            <label>Awards Name</label>
+    
+    
+                            <div class="p-0 col-12 row">
+    
+                                <div class="col-8 p-0  c-name">URL to award</div>
+                                <div class="col-4 p-0 text-right">Issuer</div>
+                                <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;04/2019 -
+                                    12/2019</span><br>
+    
+    
+    
+                                <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                    across
+                                    North America and has revenues of $ 10+ mn. per year</span>
+    
+    
+    
+    
+    
+                            </div>
+                        </div>
+                        </div>
             </div>
-            <div class="col-12">
-                <div class="title-box title-color border-color">TECHNICAL SKILLS</div>
-                <ul class="technical-skills">
+
+
+
+
+            <div class="col-4 header">
+                <div class="col-12">
+                    <div class="border-box border-color">
+                        <div class="user-img">
+                            <img src="images/images.jpg" alt="">
+                        </div>
+                        <div class="name">marty mcfy</div>
+                        <div class="title">business analyst</div>
+                    </div>
+                    <div class="border-box border-color">
+                        <ul class="user-details">
+                            <li><span><i class="fa fa-phone call-icon"></i>&nbsp;&nbsp;+94758627689</span></li>
+                            <li><span><i class="fa fa-envelope mail-icon"></i>&nbsp;&nbsp;lojan@gmail.com</span></li>
+                            <li><span><i class="fa fa-map-marker location-icon"></i>&nbsp;&nbsp;lojan@gmail.com</span>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-12">
+                    <div class="title-box title-color border-color">Summery</div>
+                    <p style="text-align: justify;">Enterprising marketing professional skilled at marketing,
+                        communications, branding, campaign
+                        management, and campaign analysis. Over a career of 2+ years, gained exposure to and executed
+                        multiple marketing initiatives. Adept at launching marketing campaigns resulting in significant
+                        sales and user acquisition. Skilled at analysing & improving the performance of campaigns
+                        through
+                        data analysis and competitive benchmarking.
+                    </p>
+                </div>
+                <div class="col-12">
+                    <div class="title-box title-color border-color">Key Skills</div>
+
+                    <span class="key-skills-box box-color">Marketing Campaigns</span>
+                    <span class="key-skills-box box-color">Campaign Analysis</span>
+                    <span class="key-skills-box box-color">Corporate Communications</span>
+                    <span class="key-skills-box box-color">User Growth</span>
+                    <span class="key-skills-box box-color">Key Metric Analysis</span>
+
+                </div>
+                <div class="col-12">
+                    <div class="title-box title-color border-color">TECHNICAL SKILLS</div>
+                    <ul class="technical-skills">
                         <li>Languages<span>: Python, Java, Nodejs, HTML, CSS, JavaScript</span></li>
                         <li>Frameworks<span>: Codeigniter, YII, Drupal, Spring, Flask</span></li>
                         <li>OS<span>: Windows, Linux</span></li>
 
                     </ul>
+                </div>
             </div>
-     </div>
         </div>
 
- 
+
+    </div>
+
+
+    <!-- Page 2 -->
+    <div class="main-page">
+
+
+
 
         <div class="row">
-            
+
+
+            <div class="col-8">
+           
+                <!-- Awards -->
+
+                <div class="col-12 col-box">
+                 
+
+                    <div class="professional-box">
+                        <label>Business Administration</label>
+
+
+                        <div class="p-0 col-12 row">
+
+                            <div class="col-6 p-0  c-name">Institution name</div>
+                            <div class="col-6 p-0 text-right">Menia Park,US</div>
+                            <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                                14/12/2019</span><br>
+
+
+
+                            <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                across
+                                North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!-- Achievements -->
+
+                <div class="col-12 col-box">
+                    <div class="title-box font-color bo-color">Achievements</div>
+                    <div class="professional-box">
+                        <label>Achievements Name</label>
+
+
+                        <div class="p-0 col-12 row">
+
+
+
+
+                            <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                across
+                                North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="professional-box">
+                        <label>Achievements2 Name</label>
+
+
+                        <div class="p-0 col-12 row">
+
+
+
+
+
+                            <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                across
+                                North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <!-- Reference -->
+
+                <div class="col-12 col-box">
+                    <div class="title-box font-color bo-color">Reference</div>
+
+                    <div class="professional-box">
+                        <label>Person Name</label>
+
+
+                        <div class="p-0 col-12 row">
+
+                            <div class="col-12 p-0  c-name">Job Title , Company Name </div>
+                            <div class="col-12 p-0  c-name">0758907689 </div>
+                            <div class="col-12 p-0  c-name">abc@gmail.com </div>
+                        </div>
+                    </div>
+
+                    <div class="professional-box">
+                        <label>Person2 Name</label>
+
+
+                        <div class="p-0 col-12 row">
+
+                            <div class="col-12 p-0  c-name">Job Title , Company Name </div>
+                            <div class="col-12 p-0  c-name">0758907689 </div>
+                            <div class="col-12 p-0  c-name">abc@gmail.com </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+   
+
+                  <!-- Publications-->
+
+                  <div class="col-12 col-box">
+                    <div class="title-box font-color bo-color">Publications</div>
+                    <div class="professional-box">
+                        
+
+
+                        <div class="p-0 col-12 row">
+                            <div class="col-8 p-0"><label>Publications Book Name</label></div>
+                            <div class="col-4 p-0 text-right">Publisher</div>
+                            <div class="col-8 p-0  c-name">Publications URL/ISBN</div>
+                            <div class="col-4 p-0 text-right">04/2019 - 12/2019</div>
+                            <!-- <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;04/2019 - 12/2019</span><br> -->
+
+
+                            <br>
+                            <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                across
+                                North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="professional-box">
+                        
+
+
+                        <div class="p-0 col-12 row">
+                            <div class="col-8 p-0"><label>Publications Book2 Name</label></div>
+                            <div class="col-4 p-0 text-right">Publisher</div>
+                            <div class="col-8 p-0  c-name">Publications URL/ISBN</div>
+                            <div class="col-4 p-0 text-right">04/2019 - 12/2019</div>
+                            <!-- <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;04/2019 - 12/2019</span><br> -->
+
+
+                            <br>
+                            <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                across
+                                North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                        </div>
+                    </div>
+                    </div>
+
+
+
+            </div>
+            <div class="col-4 header"></div>
+
+        </div>
+
+
+
+        <div class="row">
+
         </div>
     </div>
 </body>
