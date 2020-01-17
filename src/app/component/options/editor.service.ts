@@ -53,4 +53,20 @@ export class EditorService {
   //All the editor inputs bind to this object and convert to choosen template
 
   constructor() { }
+
+
+  remove(component){
+
+    this.moreSections.forEach((item,index)=>{
+      if(item.name==component){
+        console.log(" name : " +component);
+        this.moreSections[index].active=false;
+        this.moreSections[index].flag=false;
+
+
+      }
+    })
+  }
+
+
 }

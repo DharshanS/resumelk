@@ -1,3 +1,6 @@
+
+
+
 export class ResumeBucket2{
   _resume=
   {
@@ -247,5 +250,6 @@ _templateNames=[
   }
 
 ]
+
 
 }
