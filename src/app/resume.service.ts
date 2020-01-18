@@ -218,7 +218,7 @@ export class ResumeBucket{
 
 
 }
-_currentTemplate;
+_currentTemplate="";
 _templateNames=[
   {
     "name":"einstein",

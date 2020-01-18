@@ -8,6 +8,7 @@ import { MoonComponent } from './templates/moon/moon.component';
 import { PreviewRoutingModule } from './preview-routing.module';
 import { PreviewComponent } from './preview.component';
 import { CommonModule } from "@angular/common";
+import { NewtonComponent } from './templates/newton/newton.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CommonModule } from "@angular/common";
     SunComponent,
     EinsteinComponent,
     MoonComponent,
-    PreviewComponent
+    PreviewComponent,
+    NewtonComponent
   ],
   imports: [
     PreviewRoutingModule,

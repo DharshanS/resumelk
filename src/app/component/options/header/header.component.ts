@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ResumeBucket } from 'src/app/resume.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private resume:ResumeBucket,private router: Router) { }
 
   ngOnInit() {
+  }
+
+
+  routeToPreview(){
+    alert('test...'+this.resume._currentTemplate);
+    this.router.navigate(['/preview/'+this.resume._currentTemplate]);
+   // this.router.navigate(['/PreviewComponent/'+ this.resume._currentTemplate]);
+
+
   }
 
 }

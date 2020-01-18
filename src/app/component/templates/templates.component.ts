@@ -12,7 +12,7 @@ export class TemplatesComponent implements OnInit,AfterViewInit {
 
 
   selectedTemplate=1;
- imgUrl;
+  imgUrl;
 
   constructor(private router: Router,private resume:ResumeBucket,private _sanitizer: DomSanitizer) { }
 
@@ -45,7 +45,7 @@ export class TemplatesComponent implements OnInit,AfterViewInit {
   }
 
   selectTemplateName(name){
-    this.imgUrl ="assets/images/templates/"+name+".png"
+   this.imgUrl ="assets/images/templates/"+name+".png"
    this.resume._currentTemplate=name;
   }
   goToProductDetails() {

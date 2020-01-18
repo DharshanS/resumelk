@@ -26,7 +26,9 @@ const routes: Routes = [
 
   {
     path: "preview",
-    component: DashboardComponent
+    loadChildren: () =>
+    import("./component/preview/preview.module").then(m => m.PreviewModule)
+
   },
   {
     path: "editor/:id",

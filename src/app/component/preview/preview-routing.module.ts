@@ -4,6 +4,7 @@ import { SunComponent } from "./templates/sun/sun.component";
 import { EinsteinComponent } from "./templates/einstein/einstein.component";
 import { MoonComponent } from "./templates/moon/moon.component";
 import { PreviewComponent } from "./preview.component";
+import { NewtonComponent } from './templates/newton/newton.component';
 
 const optionsRoute: Routes = [
   {
@@ -22,8 +23,13 @@ const optionsRoute: Routes = [
 
       },
       {
-        path: "template-einstein",
+        path: "einstein",
         component: EinsteinComponent
+
+      },
+      {
+        path: "newton",
+        component: NewtonComponent
 
       }
 
