@@ -5,6 +5,7 @@ import { EinsteinComponent } from "./templates/einstein/einstein.component";
 import { MoonComponent } from "./templates/moon/moon.component";
 import { PreviewComponent } from "./preview.component";
 import { NewtonComponent } from './templates/newton/newton.component';
+import { HawkingComponent } from './templates/hawking/hawking.component';
 
 const optionsRoute: Routes = [
   {
@@ -30,6 +31,11 @@ const optionsRoute: Routes = [
       {
         path: "newton",
         component: NewtonComponent
+
+      },
+      {
+        path: "hawking",
+        component: HawkingComponent
 
       }
 
