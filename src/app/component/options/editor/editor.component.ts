@@ -7,7 +7,8 @@ import {
   ElementRef,
   AfterViewInit,
   AfterContentChecked,
-  Inject
+  Inject,
+  HostListener
 } from "@angular/core";
 
 import { DOCUMENT } from '@angular/common';
@@ -26,6 +27,14 @@ import { Personal } from "../section/personal/Personal";
   entryComponents: [TextComponent]
 })
 export class EditorComponent implements OnInit, AfterViewInit,AfterContentChecked {
+
+
+
+
+  isShow: boolean;
+  topPosToStartShowing = 50;
+
+
   date;
   serializedDate;
   top;
@@ -53,6 +62,7 @@ export class EditorComponent implements OnInit, AfterViewInit,AfterContentChecke
   ngOnInit() {
     this.date = new FormControl(new Date());
     this.serializedDate = new FormControl(new Date().toISOString());
+
   }
 
   listUpdate(item) {
@@ -81,19 +91,6 @@ export class EditorComponent implements OnInit, AfterViewInit,AfterContentChecke
 
   savePersonlInfor() {}
 
-  public handleScroll(event: ScrollEvent) {
-    if ($(document).scrollTop() > 100) {
-      this.displayScrollButton = "block";
-    }
-
-    if (event.isReachingBottom) {
-    }
-    if (event.isReachingTop) {
-      this.displayScrollButton = "none";
-    }
-    if (event.isWindowEvent) {
-    }
-  }
 
   public scrollUp() {
     this.top.scrollIntoView({
@@ -109,5 +106,43 @@ export class EditorComponent implements OnInit, AfterViewInit,AfterContentChecke
 
   ngAfterContentChecked() {
     console.log("ngAfterContentChecked editor");
+  }
+
+  @HostListener('scroll', ['$event'])
+  scrollHandler(event) {
+    console.debug("Scroll Event");
+  }
+
+
+  checkScroll() {
+
+    console.log("Log...")
+    // window의 scroll top
+    // Both window.pageYOffset and document.documentElement.scrollTop returns the same result in all the cases. window.pageYOffset is not supported below IE 9.
+
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+    console.log('[scroll]', scrollPosition);
+
+    if (scrollPosition >= this.topPosToStartShowing) {
+      this.isShow = true;
+    } else {
+      this.isShow = false;
+    }
+  }
+
+  // TODO: Cross browsing
+  gotoTop() {
+
+    setTimeout(() => {
+      let el = document.getElementById('personal');
+      el.scrollIntoView({ behavior: "smooth", block: "end" ,inline:"end"});
+    }, 100);
+
+  }
+
+  onScroll($event){
+    alert('test')
+    console.log($event);
   }
 }

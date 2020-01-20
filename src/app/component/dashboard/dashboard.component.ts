@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {HostListener, Component, OnInit,Inject } from '@angular/core';
+import { BrowserModule} from '@angular/platform-browser';
+
+import { WINDOW } from "../../window.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -11,5 +14,10 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  @HostListener("window:scroll", [])
+onWindowScroll() {
+ alert('test')
+}
 
 }

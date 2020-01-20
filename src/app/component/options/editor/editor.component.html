@@ -1,14 +1,14 @@
 
-<div class="editor-body-bg-color">
+<div class="editor-body-bg-color" >
     <div class="container-fluid">
 
         <div class="row mr-0 ml-0 mt-0 pl-4 pr-4">
             <!-- <label for="show-slide">Show</label> -->
             <input type="checkbox" name="" id="show-slide">
             <div class="left-div">
-        
+
                 <div class="fixde-div">
-        
+
                 <label for="show-slide" class="close-icon"><i class="fas fa-times"></i></label>
                 <div class="user-details-box">
                     <div class="user-img-box">
@@ -23,7 +23,7 @@
 
 
                 </div>
-             
+
                 <div class="left-menu">
 
 
@@ -38,12 +38,10 @@
                 </div>
             </div>
             </div>
-            <div class="right-sec">
+            <div class="right-sec" (scroll)="scrollHandler($event)">
 
-              <div>
 
-              </div>
-                    <div class="col-12">
+                    <div class="col-12"  >
 
                         <app-personal [flag]="sections.moreSections[0].flag"></app-personal>
                         <app-experience [flag]="sections.moreSections[1].flag"></app-experience>
@@ -68,11 +66,12 @@
                         </div>
 
 
-                </div>
+                    </div>
+
 
             </div>
 
-
+            <button (click)="gotoTop()">👆</button>
         </div>
 
 

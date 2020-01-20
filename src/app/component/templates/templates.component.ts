@@ -49,6 +49,7 @@ export class TemplatesComponent implements OnInit,AfterViewInit {
    this.resume._currentTemplate=name;
   }
   goToProductDetails() {
+ console.log('Test')
     this.router.navigate(['/editor',this.resume._currentTemplate]);
   }
 

@@ -14,6 +14,7 @@ import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
 import { ResumeBucket } from "./resume.service";
 import { AppComponent } from "./app.component";
 
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -10,16 +10,16 @@
                       <div class="select-template__item" [style.background-image]="getBackground(item.name)"
 
                       >
-                 
+
                           <div class="select-template__item-overlay">
-                              <button class="btn btn--no-shadow btn--shorter btn--icon btn--primary-alt select-btn-p u-margin-bottom-med">
-                                Select<i class="fas fa-chevron-right btn__icon btn__icon--font btn__icon--alt"></i>
+                              <button class="btn btn--no-shadow btn--shorter btn--icon btn--primary-alt select-btn-p u-margin-bottom-med"  (click)="selectTemplateName(item.name)" (click)="goToProductDetails()">
+                                Select<i class="fas fa-chevron-right btn__icon btn__icon--font btn__icon--alt" ></i>
                               </button>
-                              <button class="btn btn--no-shadow btn--shorter btn--white select-btn-p " 
+                              <button class="btn btn--no-shadow btn--shorter btn--white select-btn-p "
                               data-toggle="modal" data-target="#exampleModal"
-                              data-popup-trigger="preview-popup" 
-                              data-popup-src="assets/images/templates/darwin.png" 
-                              (click)="selectTemplateName(item.name)" 
+                              data-popup-trigger="preview-popup"
+                              data-popup-src="assets/images/templates/darwin.png"
+                              (click)="selectTemplateName(item.name)"
                               (click)="basicModal.show()"
                               >
                                  Preview
@@ -45,16 +45,16 @@
       <!-- <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Launch demo modal</button> -->
 
 
-  
+
 
 
       <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-      
+
             <div class="modal-body scrollbar">
                 <!-- <div w3-include-html="https://www.w3schools.com/graphics/google_maps_intro.asp"></div>  -->
-          
+
                 <div  class="prev-temp" [ngStyle]="{'background-image': 'url('+imgUrl+')'}" id="tmp-r" ></div>
                 <!-- <app-sun *ngIf="true"></app-sun> -->
                 <!-- <router-outlet></router-outlet> -->
