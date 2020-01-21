@@ -1,8 +1,8 @@
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 
-$bg-color:  #0f5a90;
+$bg-color:  #00756a;
 $bg-color2: #f8f7fc;
-$btn-color:  #0f5a90;
+$btn-color:  #00756a;
 $color-2:#5d5d5d;
 body {
   margin: 0;
@@ -31,7 +31,7 @@ table th {
   // background-color: #053a75 !important;
 }
 .add-custom {
-  background-color: #053a75 !important;
+  background-color: $bg-color !important;
   padding: 10px 20px;
   color: #fff;
   margin-top: 30px;
@@ -41,7 +41,7 @@ table th {
 }
 .btn__label {
   transition: all 0.25s;
-  color: #053a75;
+  color: $bg-color;
   font-weight: 600;
   font-size: 14px;
 }
@@ -194,14 +194,14 @@ table th {
 }
 .select-item{
   box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.05);
-  border: solid #007aa0 2px;
+  border: solid $bg-color 2px;
 
   .close-lock-icon {
     display: block;
-    color: #007aa0 !important;
+    color: $bg-color  !important;
   }
   label,i {
-    color: #007aa0 !important;
+    color: $bg-color !important;
   }
 }
 .item-list{
@@ -345,12 +345,12 @@ label{
 .editor__photo-label {
   span {
     background: transparent;
-    border: solid 3px #0f5a90;
+    border: solid 3px $bg-color;
     padding: 3px 27px;
 }
 
 span:hover {
-  background:#0f5a90;
+  background:$bg-color;
  
 }
 .btn__label:hover  {
@@ -358,6 +358,19 @@ span:hover {
 }
 
  .btn .btn__label {
-  color: #0f5a90;
+  color: $bg-color;
 }
+}
+
+.goto-top{
+  position: relative;
+  right: -66px;
+  float: right;
+  top: -50px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background: $bg-color;
+  font-size: 22px;
+  border-radius: 31px;
 }
