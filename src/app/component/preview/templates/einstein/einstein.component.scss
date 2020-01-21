@@ -4,23 +4,24 @@
 } */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,800&display=swap");
 
-:root {
-  --h-bg-colo: #425B67;
-  --name-color: #fff;
-  --box-border-color: #000;
-}
-$h-bg-colo: #425B67;
-$name-color: #fff;
-$box-border-color: #000;
+@import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css");
+
+
+
+
+// Einstein New Css
+$h-bg-colo: #323232;
+$color: #555;
+$title: #fff;
+
+
+
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  --h-bg-colo: #425B67;
-  --name-color: #fff;
-  --box-border-color: #000;
+  color: #555555;
 }
-
 
 * {
   box-sizing: border-box;
@@ -64,16 +65,14 @@ body {
   max-width: 16.666667%;
 }
 
-
+.col-4 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
 
 .col-3 {
   flex: 0 0 25%;
   max-width: 25%;
-}
-
-.col-4 {
-  flex: 0 0 33.333333%;
-  max-width: 33.333333%;
 }
 
 .col-5 {
@@ -117,7 +116,6 @@ body {
 }
 
 .main-page {
-  font-family: 'Open Sans', sans-serif !important;
   width: 21cm;
   min-height: 29.7cm;
   margin: 1cm auto;
@@ -127,61 +125,86 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.bg-color {
-  background: $h-bg-colo;
-}
-
 .header {
-
-  padding: 20px
+  padding-left: 3mm;
+  padding-right: 3mm;
+  height: 112vh;
+  padding-top: 15px;
+  border: 1px solid rgb(242, 0, 67);
+  margin-top: 21px;
+  margin-right: 0px;
+  max-width: 31.333333% !important;
 }
 
 .name {
-  font-weight: 700;
-  font-size: 30px;
+  font-weight: 500;
+  font-size: 22px;
   text-transform: uppercase;
-  color: $name-color;
+  color: $color;
   text-align: center;
-  margin-bottom: 15px;
 
 }
 
 .title {
-  font-size: 17px;
+  font-size: 14px;
   text-transform: capitalize;
-  color: $name-color;
+  color: rgb(255, 255, 255);
   line-height: 30px;
 }
 
 .user-details {
-  color: rgb(255, 255, 255);
+
   list-style-type: none;
+  padding: 0px;
+  margin: 0;
+  ;
+  font-size: 13px;
+}
+
+.user-details li {
+  padding: 4px 0px;
+}
+
+.technical-skills {
+  list-style-type: none;
+  padding: 0px;
+  font-size: 13px;
+}
+
+.technical-skills li {
+  font-weight: bold;
+  list-style: disc;
+  margin-left: 25px;
+
+}
+
+.technical-skills span {
+  font-weight: 500;
+  padding-left: 3px;
+}
+
+.professional-box label {
+  font-weight: 600;
 }
 
 .sub-box {
-  padding: 10px 21px
+  padding: 20px 35px;
 }
 
 .title-box {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 16px !important;
-  color: $h-bg-colo !important;
+  /* color: var(--title) !important; */
+  border-bottom: 2px solid;
   padding-bottom: 0;
-  margin-bottom: 15px;
-  border-bottom: 1px solid $h-bg-colo;
-  padding-left: 10px;
-}
-
-.border-b {
-  border: 1px solid $h-bg-colo;
-  /* margin-top: 12px; */
+  margin-top: 20px;
 }
 
 .title-sub {
   font-size: 16px !important;
-  color: $h-bg-colo !important;
-  padding: 6px 11px;
+  color: $color !important;
+  padding: 6px 0;
   font-weight: bold;
 }
 
@@ -214,33 +237,16 @@ p {
 }
 
 .key-skills-box {
-  /* background-color: grey; */
   display: inline-block;
   font-size: 11px;
   margin: 5px;
   border-radius: 4px;
-  padding: 4px 10px;
+  padding: 3px;
   color: #fff;
-  background-color:$h-bg-colo;
 }
 
 .professional-box {
   padding: 10px 0;
-}
-
-.address {
-  width: 100%;
-  display: flex;
-  color: $h-bg-colo;
-  border: 1px solid $box-border-color;
-  /* background-color: rgb(229, 240, 248); */
-  position: relative;
-  justify-content: center;
-}
-
-.address span {
-  padding: 7px 13px;
-  text-align: center;
 }
 
 .user-img {
@@ -254,12 +260,74 @@ p {
   width: 100%;
   border-radius: 50px;
 }
-.in-box {
-margin: 0px 13px;
-/* border-left: solid 1px; */
-padding: 0 22px;
+
+/* .name {
+font-weight: 700;
+font-size: 30px;
+text-transform: uppercase;
+color: var(--name-color);
+text-align: center;
+margin-bottom: 15px;
+} */
+.title {
+  text-align: center !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  color: #000;
 }
 
+.border-color,.bo-color {
+  border-color: rgb(242, 0, 67);
+}
+
+.title-color {
+  color: #555;
+}
+
+.box-color {
+  background: rgb(242, 0, 67);
+}
+
+.border-box {
+  padding: 0 3mm;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid;
+}
+
+.call-icon {
+  color: rgb(222, 60, 63);
+  border: solid 1px;
+  padding: 5px;
+  border-radius: 23px;
+  font-size: 12px;
+}
+
+.mail-icon {
+  color: rgb(108, 83, 59);
+  border: solid 1px;
+  padding: 5px;
+  border-radius: 23px;
+  font-size: 12px;
+}
+
+.location-icon {
+
+  color: rgb(120, 0, 49);
+  border: solid 1px;
+  padding: 5px;
+  border-radius: 23px;
+  font-size: 12px;
+  width: 22px;
+  height: 22px;
+
+}
+
+
+
+
+
+// end
 
 
 

@@ -15,7 +15,7 @@ import { DomSanitizer, SafeStyle } from "@angular/platform-browser";
 @Component({
   selector: "app-sun",
   templateUrl: "./sun.component.html",
-  styleUrls: ["./sun.component.css"],
+  styleUrls: ["./sun.component.scss"],
 
   encapsulation: ViewEncapsulation.Native
 })

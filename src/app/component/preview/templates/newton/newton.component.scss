@@ -5,12 +5,12 @@
 
 //https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,800&display=swap"
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,800&display=swap");
-
+$h-bg-colo: #425B67;
+$name-color: #fff;
+$box-border-color: #000;
 
         :root {
-            --h-bg-colo: #425B67;
-            --name-color: #fff;
-            --box-border-color: #000;
+          
         }
 
         .main-page {
@@ -125,7 +125,7 @@
         }
 
         .bg-color {
-            background: var(--h-bg-colo);
+            background:  $h-bg-colo;
         }
 
         .header {
@@ -137,7 +137,7 @@
             font-weight: 700;
             font-size: 30px;
             text-transform: uppercase;
-            color: var(--name-color);
+            color:  $name-color;
             text-align: center;
             margin-bottom: 15px;
 
@@ -146,7 +146,7 @@
         .title {
             font-size: 17px;
             text-transform: capitalize;
-            color: var(--name-color);
+            color:  $name-color;
             line-height: 30px;
         }
 
@@ -163,21 +163,21 @@
             text-transform: uppercase;
             font-weight: bold;
             font-size: 16px !important;
-            color: var(--h-bg-colo) !important;
+            color:  $h-bg-colo !important;
             padding-bottom: 0;
             margin-bottom: 15px;
-            border-bottom: 1px solid var(--h-bg-colo);
+            border-bottom: 1px solid  $h-bg-colo;
             padding-left: 10px;
         }
 
         .border-b {
-            border: 1px solid var(--h-bg-colo);
+            border: 1px solid  $h-bg-colo;
             /* margin-top: 12px; */
         }
 
         .title-sub {
             font-size: 16px !important;
-            color: var(--h-bg-colo) !important;
+            color:  $h-bg-colo !important;
             padding: 6px 0px;
             font-weight: bold;
         }
@@ -218,7 +218,7 @@
             border-radius: 4px;
             padding: 4px 10px;
             color: #fff;
-            background-color: var(--h-bg-colo);
+            background-color:  $h-bg-colo;
         }
 
         .professional-box {
@@ -228,8 +228,8 @@
         .address {
             width: 100%;
             display: flex;
-            color: var(--h-bg-colo);
-            border: 1px solid var(--box-border-color);
+            color:  $h-bg-colo;
+            border: 1px solid  $box-border-color;
             /* background-color: rgb(229, 240, 248); */
             position: relative;
             justify-content: center;
