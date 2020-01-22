@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { EditorComponent } from './editor/editor.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
 import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 // import {MaterialModule} from './material.module';
@@ -62,8 +62,6 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     AchievementsComponent,
     CustomComponent,
     ListComponent,
-    MatAutocompleteModule,
-    MatSelectModule,
     TextComponent,
     ReferancesComponent,
     VolunteeringComponent,
@@ -81,7 +79,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     ScrollEventModule,
     CommonModule,
     OptionRoutingModule,
+    MatAutocompleteModule,
     FormsModule,
+     ReactiveFormsModule,
     MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule,

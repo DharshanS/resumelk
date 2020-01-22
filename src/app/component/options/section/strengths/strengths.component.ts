@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 //import { FLAGS } from '@angular/core/src/render3/interfaces/view';
 
 @Component({
@@ -8,7 +11,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class StrengthsComponent implements OnInit {
 
-
+  stremgArray=[];
+  stremg;
   @Input() flag:boolean;
 
   users = [
@@ -24,8 +28,21 @@ addStrengths = (term) => ({id: term, name: term});
   constructor() { }
 
 
+  myControl = new FormControl();
+  options: string[] = ['Ability to learn from mistakes', 'Ability to prioritize', 'Accuracy'];
+  filteredOptions: Observable<string[]>;
 
   ngOnInit() {
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value))
+    );
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
 
   selectEvent(item) {
@@ -39,5 +56,17 @@ addStrengths = (term) => ({id: term, name: term});
 
   onFocused(e){
     // do something when input is focused
+  }
+
+  pushData(e){
+    this.stremgArray.push(e);
+    console.log("stremgArray",this.stremgArray);    
+  }
+  remove(index){
+
+
+    if (index !== -1) {
+      this.stremgArray.splice(index, 1);
+  } 
   }
 }

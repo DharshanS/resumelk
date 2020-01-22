@@ -8,3 +8,26 @@
 .listOfStrenths{
   background-color: #736e6e26;
 }
+.strength-item-li{
+  float: left;
+  margin-right: 10px;
+  background: rgba(0, 117, 106, 0.28);
+  color: #00756a;
+  border-radius: 7px;
+  font-size: 13px;
+  padding: 0px 11px;
+}
+
+
+.strength-item-box{
+
+}
+
+
+.close-btn{
+  margin-left: 8px;
+}
+.close-btn:hover{
+  cursor: pointer;
+  color: #7c0404;
+}

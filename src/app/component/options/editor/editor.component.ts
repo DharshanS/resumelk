@@ -84,6 +84,8 @@ console.log("onWindowScroll");
   onWScroll(e:any){
     console.log("onWScroll",e);
     
+
+
     this.gotoTopShow = true;
   }
 
@@ -92,6 +94,7 @@ console.log("onWindowScroll");
     let componentRef = this.container.createComponent(factory);
     componentRef.instance.title = "Text";
     this.componentRefList.push(componentRef);
+    
   }
 
 //method notified by list componant when user add the new componant

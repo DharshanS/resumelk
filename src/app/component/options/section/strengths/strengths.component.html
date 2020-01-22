@@ -4,16 +4,19 @@
   <span class="head"><h4>strengths  {{selectedUserIds}}</h4></span>
 
   <div class="col-lg-12">
-    <!-- <input type="text" placeholder="Pick one" aria-label="Number" matInput  [matAutocomplete]="auto">
+    <form class="example-form">
+    <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [(ngModel)]="stremg" [matAutocomplete]="auto">
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option  [value]="option">
-        option
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+       {{option}}
       </mat-option>
-    </mat-autocomplete> -->
+    </mat-autocomplete>
+    <button (click)="pushData(stremg)">Push</button>
 
     
+  </form>
     <div class="">
-      <ng-select [items]="users" class="listOfStrenths"
+      <!-- <ng-select [items]="users" class="listOfStrenths"
       bindLabel="name"
       bindValue="id"
       [addTag]="addStrengths"
@@ -21,7 +24,22 @@
 
      >
 
-</ng-select>
+</ng-select> -->
+
+{{stremgArray}}
+
+<ul>
+  <li *ngFor="let item of stremgArray; index as i" class="strength-item-li"> 
+    <span class="strength-item-box">
+      {{item}} </span><span class="close-btn" (click)="remove(i)"><i class="fas fa-times"></i>
+      </span>
+    </li>
+</ul>
+
+
+
+
+
 </div>
 
 <!-- <div class="col-md-6">Add New Item</div> -->
