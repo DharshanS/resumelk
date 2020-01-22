@@ -12,14 +12,14 @@
                 <label for="show-slide" class="close-icon"><i class="fas fa-times"></i></label>
                 <div class="user-details-box">
                     <div class="user-img-box">
-                        <img src="assets/images/images.jpg" alt="" class="user-img">
+                        <img src="assets/images/headshot.jpg" alt="" class="user-img">
 
                     </div>
                     <div class="user-name">Slave Kornllow</div>
-                    <div class="user-des">
+                    <!-- <div class="user-des">
                         <span> Boss </span>
                         <span>2 level </span>
-                    </div>
+                    </div> -->
 
 
                 </div>
@@ -42,6 +42,10 @@
 
 
                     <div class="col-12"  >
+
+                     
+
+
 
                         <app-personal [flag]="sections.moreSections[0].flag"></app-personal>
                         <app-experience [flag]="sections.moreSections[1].flag"></app-experience>
@@ -69,7 +73,7 @@
                     </div>
 
 
-                    <button (click)="gotoTop()" class="goto-top"><i class="fas fa-arrow-up"></i></button>
+                    <button (click)="gotoTop()" class="goto-top" *ngIf="gotoTopShow"><i class="fas fa-arrow-up"></i></button>
             </div>
 
         </div>

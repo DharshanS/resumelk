@@ -1,5 +1,6 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit,Renderer2,ViewEncapsulation,ElementRef,ViewChild } from '@angular/core';
 import {Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-preview',
@@ -8,7 +9,9 @@ import {Router } from '@angular/router';
 })
 export class PreviewComponent implements OnInit {
 
-  constructor(private router: Router ) {
+
+  @ViewChild('hawking',{static: false}) myClass: ElementRef;
+  constructor(private router: Router,private sanitizer: DomSanitizer,private renderer2: Renderer2, private el: ElementRef ) {
 
 //  console.log(this.router.url);
 //  this.router.navigate(['/edit/james']);
@@ -18,6 +21,18 @@ export class PreviewComponent implements OnInit {
   }
 
 
+  onChangeColorHex8(color: string,color2:string) {
+    console.log('color',color)
+   
+    let names = this.myClass.nativeElement.querySelectorAll('.bo-color');
+  
+    console.log('myClass',names)
+    names.forEach(e => {
+      console.log('myClass23',e)
+      this.renderer2.setStyle(e,'color', color);
+    })
+ 
+  }
 
 
 }

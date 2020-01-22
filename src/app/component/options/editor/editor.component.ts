@@ -33,7 +33,7 @@ export class EditorComponent implements OnInit, AfterViewInit,AfterContentChecke
 
   isShow: boolean;
   topPosToStartShowing = 50;
-
+  gotoTopShow:boolean=false;
 
   date;
   serializedDate;
@@ -57,12 +57,34 @@ export class EditorComponent implements OnInit, AfterViewInit,AfterContentChecke
     private custom: DynamicComponentsService,
     private resume: EditorService,
     private resolve: ComponentFactoryResolver,
-  ) {}
+    @Inject(DOCUMENT) private document: Document
+  
+  ) {
+    console.log(this.document.location.href);
+  }
 
   ngOnInit() {
     this.date = new FormControl(new Date());
     this.serializedDate = new FormControl(new Date().toISOString());
 
+  }
+  @HostListener('window:scroll', ['$event']) onScrollEvent($event){
+    console.log($event);
+    console.log("scrolling");
+  } 
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+console.log("onWindowScroll");
+
+
+      this.gotoTopShow = true;
+   
+  }
+
+  onWScroll(e:any){
+    console.log("onWScroll",e);
+    
+    this.gotoTopShow = true;
   }
 
   listUpdate(item) {

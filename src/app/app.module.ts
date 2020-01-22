@@ -14,7 +14,6 @@ import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
 import { ResumeBucket } from "./resume.service";
 import { AppComponent } from "./app.component";
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +27,9 @@ import { AppComponent } from "./app.component";
     AngularEditorModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    
     FormsModule,
+
     CKEditorModule,
     MDBBootstrapModule,
     MDBBootstrapModule.forRoot(),

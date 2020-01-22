@@ -45,7 +45,7 @@ import {
   , MatNativeDateModule,MatDatepickerModule,MatFormFieldModule
 } from '@angular/material';
 import { DynamicComponentsService } from './dynamic-components.service';
-
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -62,6 +62,8 @@ import { DynamicComponentsService } from './dynamic-components.service';
     AchievementsComponent,
     CustomComponent,
     ListComponent,
+    MatAutocompleteModule,
+    MatSelectModule,
     TextComponent,
     ReferancesComponent,
     VolunteeringComponent,

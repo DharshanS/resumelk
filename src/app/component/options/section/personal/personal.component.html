@@ -70,7 +70,7 @@
 
 
                             <mat-datepicker #Start></mat-datepicker>
-                            <input type="text"  [(ngModel)]="personal.dateOfBirth"
+                            <input type="text"  [(ngModel)]="personal.dateOfBirth" readonly
                                 [matDatepicker]="Start" (click)="Start.open()" required >
 
                                 <label style="left: 13px;">From</label>

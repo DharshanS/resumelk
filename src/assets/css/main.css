@@ -6,8 +6,8 @@ html,
 body {
   overflow-x: hidden;
   font-size: 12px;
-  --btn-color:#0f73ee;
-  --btn-h-color:#009bcb;
+  --btn-color:#00756a;
+  --btn-h-color:#00756a;
 }
   @media screen and (min-width: 576px) {
     html,
@@ -941,9 +941,9 @@ li, .contact input,
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
-  background-color: #dcedff; }
+  background-color: #3dffed36 }
   .resume-preview-box__overlay {
-    background-color: rgba(179, 216, 255, 0.8);
+    background-color: rgba(0, 117, 106, 0.28);
     padding: 2.5rem;
     -webkit-transition: all .25s;
     -o-transition: all .25s;
@@ -1135,7 +1135,7 @@ li, .contact input,
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 117, 106, 0.28);
       padding: 0 2.5rem;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1302,7 +1302,7 @@ li, .contact input,
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    background: #fafafa;
+    background: rgba(0, 117, 106, 0.28);
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -1331,13 +1331,15 @@ li, .contact input,
     .editor__group-item-delete {
       -webkit-transition: all .25s;
       -o-transition: all .25s;
-      color: #e00000;
+      color: #cc0505;
       transition: all .25s; }
       .editor__group-item-delete:hover {
         color: var(--btn-h-color); }
     .editor__group-item-label {
       display: -webkit-box;
       display: -ms-flexbox;
+      color: #2f2e2e;
+      font-weight: 500;
       display: flex;
       -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1346,7 +1348,8 @@ li, .contact input,
       -ms-flex-pack: start;
       justify-content: flex-start; }
       .editor__group-item-label i {
-        margin-right: 10px; }
+        margin-right: 10px;
+        color: #00756a; }
     .editor__group-item--active {
       background-color: #f6f6f6;
       color: var(--btn-color); }
@@ -2463,3 +2466,13 @@ table {
 .u-no-scroll {
   overflow-y: hidden;
   height: 100vh; }
+#create-btn p{
+  color: #fff;
+}
+
+#create-btn:hover{
+  background: transparent;
+}
+#create-btn p:hover{
+  color:var(--btn-color);
+}

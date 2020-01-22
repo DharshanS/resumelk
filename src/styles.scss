@@ -1,4 +1,6 @@
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
+$h-bg-color: #323232;
+$name-color: #258ef9;
 
 $bg-color:  #00756a;
 $bg-color2: #f8f7fc;
@@ -19,7 +21,7 @@ html {
   background-color: $bg-color2;
 }
 .editor-body-bg-color {
-  background: linear-gradient(180deg, $bg-color 270px, $bg-color2 0%);
+  background: linear-gradient(180deg, $bg-color 320px, $bg-color2 0%);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -79,6 +81,7 @@ table th {
 .navbar-light .navbar-nav .nav-link,
 .active > .nav-link {
   color: #fff !important;
+  font-weight: 500;
 }
 .navbar.navbar-light .breadcrumb .nav-item.active > .nav-link,
 .navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
@@ -107,6 +110,7 @@ table th {
 .user-details-box {
   text-align: center;
   color: #fff;
+  margin-left: 65px;
 }
 .user-name {
   font-weight: 500;
@@ -206,7 +210,7 @@ table th {
 }
 .item-list{
   margin: auto;
-  width: 74%;
+  width: 100%;
   margin-left: 38px;
 }
 .menu-item:hover {
@@ -304,12 +308,21 @@ input,select{
   color: #292929;
 }
 label{
-  position: absolute;
-  top: 9px;
-  left: 0;
-  padding: 10px 25px;
+  // position: absolute;
+  // top: 9px;
+  // left: 0;
+  // padding: 10px 25px;
+  // color: #797979;
+  // transition: 0.5s !important;
+
+  position:absolute;
+  top:9px;
+  left:0;
+  padding:10px 25px;
+  // font-size:16px;
   color: #797979;
-  transition: 0.5s !important;
+  pointer-events: none;
+  transition: .5s;
 }
 
 
@@ -328,9 +341,9 @@ label{
 
 .fixde-div{
   position: fixed;
-  top: 64px;
+  top: 110px;
   z-index: 1020;
-  width: 27%;
+  width: 20%;
 }
 
 .edit-box-delete-icon{
@@ -345,19 +358,23 @@ label{
 .editor__photo-label {
   span {
     background: transparent;
-    border: solid 3px $bg-color;
+    border: solid 3px $btn-color;
     padding: 3px 27px;
 }
 
 span:hover {
-  background:$bg-color;
+  background:transparent;
  
 }
-.btn__label:hover  {
-  color: #ffffff;
+
+span:hover ~  .btn__label  {
+  color: $bg-color;
 }
 
  .btn .btn__label {
+  color: $bg-color;
+}
+.btn__label:hover  {
   color: $bg-color;
 }
 }
@@ -370,7 +387,128 @@ span:hover {
   width: 40px;
   height: 40px;
   color: #fff;
-  background: $bg-color;
+  background: $btn-color;
   font-size: 22px;
   border-radius: 31px;
 }
+
+
+
+// color Theme
+
+
+.professional-box {
+  padding: 10px 0;
+}
+.sub-colo {
+  color: $name-color !important;
+}
+
+.color-main-box {
+    position: fixed;
+    top: 25px;
+    right: 16px;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    padding: 10px;
+    border-radius: 10px;
+    width: 102px;
+    text-align: center;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+.color-box {
+
+    // background: #004d6b;
+    margin: 7px auto;
+    width: 60px;
+    height: 34px;
+}
+.color-box:hover {
+    cursor: pointer;
+}
+.color-ccc {   
+  background: #004d6b;
+}
+.color-1f3471 {
+  background:  #1f3471;
+}
+.color-323232{
+    background: #323232; 
+}
+.color-0070c0 {
+  background: #0070c0;
+}
+.color-7d1914{
+    background: #7d1914;
+}
+.color-7d191 {
+  background: #7d1914;
+}
+.color-2c3e50 {
+  background: #2c3e50;
+}
+.color-00b7ea{
+  background: #00b7ea;
+}
+.ccc-temp {
+  top: 24px;
+}
+ .tem-img {
+
+  width: 196px;
+  position: fixed;
+
+}
+.tem-img::before{
+    position: absolute;
+    content: "";
+    border: 12px solid;
+    right: -24px;
+    border-color: #ffffff00 transparent #dedbdb00 #1f3471;
+    top: 1px;
+}
+.tem-img-hov{
+    width: 100%;
+}
+.tem-img-1{
+    display: none;
+    right: 110px;
+    top: 60px;
+}
+.tem-img-2{
+    display: none;
+    right: 110px;
+    top: 60px;
+}
+.tem-img-3{
+    display: none;
+    right: 110px;
+    top: 60px;
+}
+// .color-ccc:hover {
+//     width: 100px;
+//     background: #03A9F4;
+// }
+
+.color-ccc:hover ~ .tem-img-1{
+    display: block;
+    // border: solid 5px #03A9F4;
+    // color: red;
+  }
+  
+//   .color-ccc:hover ~ .tem-img,
+//   .color-323232:hover ~ .tem-img-hov,
+//   .color-0070c0:hover ~ .tem-img-hov,
+//   .color-7d191:hover ~ .tem-img-hov,
+//   .color-2c3e50:hover ~ .tem-img-hov{
+//     display: block;
+//   }
+  .color-1f3471:hover ~ .tem-img-2{
+    display: block;
+  }
+
+  .myClass{
+    color: #ccc;
+  }

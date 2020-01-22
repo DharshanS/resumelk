@@ -1,7 +1,7 @@
-$bg-color: #003980;
-$bg-color2:#EBEDF3;
-$btn-color: #151AA7;
 
+$bg-color:  #00756a;
+$bg-color2: #f8f7fc;
+$btn-color:  #00756a;
 @media(max-width:1366px){
     :root, body, html {
       background: linear-gradient(180deg, $bg-color 32%, $bg-color2 0%);
