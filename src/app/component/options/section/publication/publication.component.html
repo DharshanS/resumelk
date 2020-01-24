@@ -5,7 +5,7 @@
           <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Publications</p>
       </div>
       <ul class="editor__group-list" data-sortable data-skills-list  >
-          <li class="editor__group-item editor__group-item--active" data-skills-list-item *ngFor="let item of publications;index as i" (click)=selectedItem(i)>
+          <li class="editor__group-item " data-skills-list-item *ngFor="let item of publications;index as i" (click)=selectedItem(i)>
               <div class="editor__group-item-label">
                   <i class="fas fa-bars"></i>
                   <p class="paragraph--med u-weight-smb">{{publications[i].title}}</p>
@@ -50,7 +50,7 @@
                               <div class="col-12 ">
                                   <div class="editor__group-main-wrapper">
                                       
-                                      <input type="text" placeholder="" required  [(ngModel)]="publications[selected].url"
+                                      <input type="text"  required  [(ngModel)]="publications[selected].url"
                                           data-skills-name>
                                           <label>Publications URL/ISBN</label>
                                   </div>
