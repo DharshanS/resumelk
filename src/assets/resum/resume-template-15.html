@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,800&display=swap"
+        rel="stylesheet">
+    <style>
+      :root {
+            --h-bg-colo: #425B67;
+            --name-color: #fff;
+            --box-border-color: #000;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+        }
+
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        p {
+    font-size: 12px;
+}
+        .col,
+        .col-1,
+        .col-10,
+        .col-11,
+        .col-12,
+        .col-2,
+        .col-3,
+        .col-4,
+        .col-5,
+        .col-6,
+        .col-7,
+        .col-8,
+        .col-9 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+
+
+        .col-1 {
+            flex: 0 0 8.333333%;
+            max-width: 8.333333%;
+            position: relative;
+        }
+
+        .col-2 {
+            flex: 0 0 16.666667%;
+            max-width: 16.666667%;
+        }
+
+
+
+        .col-3 {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        .col-4 {
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+
+        .col-5 {
+            flex: 0 0 41.666667%;
+            max-width: 41.666667%;
+        }
+
+        .col-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        .col-7 {
+            flex: 0 0 58.333333%;
+            max-width: 58.333333%;
+        }
+
+        .col-8 {
+            flex: 0 0 66.666667%;
+            max-width: 66.666667%;
+        }
+
+        .col-9 {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+
+        .col-10 {
+            flex: 0 0 83.333333%;
+            max-width: 83.333333%;
+        }
+
+        .col-11 {
+            flex: 0 0 91.666667%;
+            max-width: 91.666667%;
+        }
+
+        .col-12 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+       .color-1{
+          background: #dcdbe1;
+       }
+       .color-2{
+           color: #c8122b;
+           border-color: #c8122b;
+       }
+       .color-4{
+        background: #c8122b;
+       }
+       .color-3{
+           color: #000;
+       }
+
+       .main-page {
+            width: 21cm;
+            height: 29.7cm;
+            min-height: 29.7cm;
+            margin: 1cm auto;
+            border: 1px #D3D3D3 solid;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .top-border{
+            width: 100%;
+    height: 15px;
+    margin-left: -15px;
+        }
+
+        .user-img {
+            width: 135px;
+    margin-left: 11%;
+    margin-top: 19px;
+}
+.user-img img{
+    width: 100%;
+    border-radius: 82px;
+}
+.contact-box{
+    background: #fff;
+    margin-left: -11%;
+    margin-top: 19px;
+    padding: 10px 0;
+    margin-bottom: 19px;
+}
+.user-details {
+ 
+            list-style-type: none;
+        }
+        .user-details-social{
+            list-style-type: none;
+    padding: 0px;
+    margin: 0;
+
+        }
+        .title-box {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px !important;
+    border-bottom: 1px solid;
+    padding-bottom: 6px;
+}
+.professional-box {
+    padding: 10px 0;
+}
+.professional-box label {
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: capitalize;
+        }
+
+        .sub-box {
+            padding: 20px 35px;
+        }
+        .span-text {
+            font-size: 12px;
+            width: 100%;
+            color: #3f4548;
+            margin-top: 6px;
+        }
+.name-icon{
+    border: solid 1px;
+    border-radius: 17px;
+    padding: 5px;
+    margin-right: 10px;
+    font-size: 10px;
+}
+.name-tag {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 10px;
+    padding: 18px;
+    margin-bottom: 20px;
+}
+.name-tag label{
+    width: 100%;
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: right;
+}
+.name-tag span{
+    text-align: right;
+    font-size: 20px;
+    width: 100%;
+    display: block;
+}
+.prsonal-box{
+    margin: 20px 0px;
+}
+.key-skills-box {
+    display: inline-block;
+    font-size: 11px;
+    margin: 5px;
+    border-radius: 4px;
+    padding: 3px;
+    color: #fff;
+}
+.margin-top{
+    margin-top: 30px;
+}
+.row-hight{
+    height: 100%;
+}
+.user-details li {
+    padding: 4px 0px;
+}
+    </style>
+</head>
+<body>
+     <!-- Page 1 -->
+     <div class="main-page">
+    <div class="row row-hight">
+        <div class="col-4 color-1">
+            <div class="top-border color-4"></div>
+            <div class="user-img">
+            
+                <img src="https://www.cricbuzz.com/stats/img/faceImages/508.jpg" alt="">
+            </div>
+
+
+            <div class="contact-box">
+                <ul class="user-details">
+                    <li><span><i class="fa fa-phone"></i>&nbsp;&nbsp;+94758627689</span></li>
+                    <li><span><i class="fa fa-envelope"></i>&nbsp;&nbsp;lojan@gmail.com</span></li>
+                    <li><span><i class="fa fa-map-marker"></i>&nbsp;&nbsp;29 Deal Pl, Colombo,SL</span></li>
+
+                </ul>
+
+
+            </div>
+            <div class="col-12 prsonal-box">
+                <div class="title-box font-color color-2">Personal Details</div>
+                <ul class="user-details-social">
+                    <li><span><i class="fa fa-phone"></i>&nbsp;&nbsp;+94758627689</span></li>
+                    <li><span><i class="fa fa-envelope"></i>&nbsp;&nbsp;lojan@gmail.com</span></li>
+                    <li><span><i class="fa fa-map-marker"></i>&nbsp;&nbsp;29 Deal Pl, Colombo,SL</span></li>
+
+                </ul>
+            </div>
+            <div class="col-12 prsonal-box">
+             
+                <div class="title-box font-color color-2">Summery</div>
+                <p style="text-align: justify;">Enterprising marketing professional skilled at marketing,
+                    communications, branding, campaign
+                    management, and campaign analysis. Over a career of 2+ years, gained exposure to and executed
+                    multiple marketing initiatives. Adept at launching marketing campaigns resulting in significant
+                    sales and user acquisition. Skilled at analysing & improving the performance of campaigns
+                    through
+                    data analysis and competitive benchmarking.
+                </p>
+            </div>
+
+            <div class="col-12 prsonal-box">
+                <div class="title-box font-color color-2">KEY SKILLS</div>
+                <span class="key-skills-box color-4">Marketing Campaigns</span>
+                <span class="key-skills-box color-4">Campaign Analysis</span>
+                <span class="key-skills-box color-4">Corporate Communications</span>
+                <span class="key-skills-box color-4">User Growth</span>
+                <span class="key-skills-box color-4">Key Metric Analysis</span>
+            </div>
+
+            <div class="col-12 prsonal-box">
+                <div class="title-box font-color color-2">ECHNICAL SKILLS</div>
+                <span class="key-skills-box color-4">Marketing Campaigns</span>
+                <span class="key-skills-box color-4">Campaign Analysis</span>
+                <span class="key-skills-box color-4">Corporate Communications</span>
+                <span class="key-skills-box color-4">User Growth</span>
+                <span class="key-skills-box color-4">Key Metric Analysis</span>
+            </div>
+       
+            
+
+    </div>
+        <div class="col-8 margin-top">
+            <div class="row name-tag color-1">
+                <div class="col-12">
+                    <label for="" class="color-2">Jonathan Simth</label>
+                    <span>
+                        web Developer
+                
+                    </span>
+                </div>
+                
+            </div>
+            <div class="col-12 col-box">
+                <div class="title-box font-color color-3"><i class="fa fa-phone name-icon color-2"></i>Experience</div>
+                <div class="professional-box">
+                    <label>Marketing Campaign Management</label>
+
+
+                    <div class="p-0 col-12 row">
+
+                        <div class="col-6 p-0  c-name">Company Name</div>
+                        <div class="col-6 p-0 text-right">Menia Park,SL</div>
+                        <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                            14/12/2019</span><br>
+
+
+
+                        <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                            across
+                            North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="professional-box">
+                    <label>software engineer </label>
+
+
+                    <div class="p-0 col-12 row">
+
+                        <div class="col-6 p-0  c-name">Company Name</div>
+                        <div class="col-6 p-0 text-right">Menia Park,US</div>
+                        <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                            14/12/2019</span><br>
+
+
+
+                        <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                            across
+                            North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-12 col-box">
+                <div class="title-box font-color color-3"><i class="fas fa-book-open color-2"></i>EDUCATION</div>
+                <div class="professional-box">
+                    <label>Aeronautics And Aviation Science</label>
+
+
+                    <div class="p-0 col-12 row">
+
+                        <div class="col-6 p-0  c-name">Company Name</div>
+                        <div class="col-6 p-0 text-right">Menia Park,SL</div>
+                        <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                            14/12/2019</span><br>
+
+
+
+                        <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                            across
+                            North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="professional-box">
+                    <label>Business Administration</label>
+
+
+                    <div class="p-0 col-12 row">
+
+                        <div class="col-6 p-0  c-name">Company Name</div>
+                        <div class="col-6 p-0 text-right">Menia Park,US</div>
+                        <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                            14/12/2019</span><br>
+
+
+
+                        <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                            across
+                            North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="col-12 col-box">
+                <div class="title-box font-color color-3"><i class="fa fa-phone name-icon color-2"></i>CERTIFICATES</div>
+                <div class="professional-box">
+                    <label>Certification For Project Managers</label>
+
+
+                    <div class="p-0 col-12 row">
+
+                        <div class="col-6 p-0  c-name">Company Name</div>
+                        <div class="col-6 p-0 text-right">Menia Park,SL</div>
+                        <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                            14/12/2019</span><br>
+
+
+
+                        <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                            across
+                            North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="professional-box">
+                    <label>Business Administration</label>
+
+
+                    <div class="p-0 col-12 row">
+
+                        <div class="col-6 p-0  c-name">Company Name</div>
+                        <div class="col-6 p-0 text-right">Menia Park,US</div>
+                        <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                            14/12/2019</span><br>
+
+
+
+                        <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                            across
+                            North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+           
+        </div>
+    </div>
+    </div>
+
+     <!-- Page 2 -->
+     <div class="main-page">
+        <div class="row row-hight">
+            <div class="col-4 color-1"></div>
+            <div class="col-8 margin-top">
+                <div class="col-12 col-box">
+                    <div class="title-box font-color color-3"><i class="fa fa-phone name-icon color-2"></i>AWARDS</div>
+                    <div class="professional-box">
+                        <label>Awards Name</label>
+    
+    
+                        <div class="p-0 col-12 row">
+    
+                            <div class="col-6 p-0  c-name">Company Name</div>
+                            <div class="col-6 p-0 text-right">Menia Park,SL</div>
+                            <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                                14/12/2019</span><br>
+    
+    
+    
+                            <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                across
+                                North America and has revenues of $ 10+ mn. per year</span>
+    
+    
+    
+    
+    
+                        </div>
+                    </div>
+    
+    
+    
+    
+                </div>
+           
+
+                <div class="col-12 col-box">
+                    <div class="title-box font-color color-3"><i class="fa fa-phone name-icon color-2"></i>ACHIEVEMENTS</div>
+                    <div class="professional-box">
+                        <label>ACHIEVEMENTS</label>
+    
+                        <div class="p-0 col-12 row">
+
+
+
+
+                            <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                across
+                                North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                        </div>
+                    </div>
+    
+                    <div class="professional-box">
+                        <label>ACHIEVEMENTS</label>
+    
+                        <div class="p-0 col-12 row">
+
+
+
+
+                            <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                across
+                                North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                        </div>
+                    </div>
+    
+    
+                </div>
+
+
+            </div>
+        </div>
+        </div>
+</body>
+</html>
