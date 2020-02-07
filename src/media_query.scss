@@ -4,19 +4,48 @@ $bg-color2: #f8f7fc;
 $btn-color:  #00756a;
 @media(max-width:1366px){
     :root, body, html {
-      background: linear-gradient(180deg, $bg-color 32%, $bg-color2 0%);
       background-repeat: no-repeat;
-      background-color: $bg-color2
+      background-color: $bg-color2;
+    }
+
+    .editor-body-bg-color{
+      background: linear-gradient(180deg, #00756a 267px, #f8f7fc 0%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     }
     .followers-main{
       width: 100%
     }
     .left-menu{
         width: 100%;
-        padding: 20px 0px;
-
-  
+        padding: 20px 0px;  
+        PADDING-RIGHT: 33px;
+        height: 85vh;
+        overflow: auto;
     }
+    .left-div {
+      // flex: 0 0 30%;
+    }
+
+    .menu-item {
+      width: 47%;
+      margin-right: 8px;
+      margin-bottom: 8px;
+     
+  }
+    .item-list {
+      margin-left: 6px;
+  }
+  .div-sticky {
+    top: 20px;
+  }
+  .editor__photo {
+    padding: 0 1rem;}
+    
+    .fixde-div {
+      width: 23% !important;
+     
+  }
   }
   
   

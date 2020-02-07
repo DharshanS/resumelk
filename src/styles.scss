@@ -289,7 +289,7 @@ table th {
   }
 }
 
-@import "media_query";
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -403,11 +403,14 @@ span:hover ~  .btn__label  {
 .sub-colo {
   color: $name-color !important;
 }
-
+.color-1{
+  
+}
 .color-main-box {
     position: fixed;
     top: 25px;
     right: 16px;
+    z-index: 9999;
     flex-direction: column;
     background: #fff;
     box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
@@ -512,3 +515,39 @@ span:hover ~  .btn__label  {
   .myClass{
     color: #ccc;
   }
+
+  .div-sticky {
+    height: 84vh;
+    overflow: auto;
+    top: 85px;
+    padding-right: 11px;
+  }
+  
+  
+  #style-1::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px #20ab9e;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+  }
+  
+  #style-1::-webkit-scrollbar
+  {
+    width: 3px;
+    background-color: #F5F5F5;
+  }
+  
+  #style-1::-webkit-scrollbar-thumb
+  {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px #20ab9e;
+    background-color: #555;
+  }
+
+
+
+
+
+
+
+  @import "media_query";

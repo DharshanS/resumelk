@@ -24,12 +24,12 @@ export class PreviewComponent implements OnInit {
   onChangeColorHex8(color: string,color2:string) {
     console.log('color',color)
    
-    let names = this.myClass.nativeElement.querySelectorAll('.bo-color');
+    let names = this.myClass.nativeElement.querySelectorAll('.color-1');
   
     console.log('myClass',names)
     names.forEach(e => {
       console.log('myClass23',e)
-      this.renderer2.setStyle(e,'color', color);
+      this.renderer2.setStyle(e,'background', color);
     })
  
   }

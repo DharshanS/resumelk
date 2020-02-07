@@ -1,4 +1,4 @@
-
+<div class="" #hawking>
 <!-- <app-header></app-header> -->
 <div class="color-main-box">
     <span style="font-size: 14px;">Select theme </span>
@@ -23,9 +23,28 @@
     </div>
     <div class=" color-box color-2c3e50" (click)="onChangeColorHex8('#2c3e50','#fff')"></div>
    <div class="color-box color-00b7ea" (click)="onChangeColorHex8('#00b7ea','#fff')"></div>
+
+
+   
+   <button (click)="onChangeColorHex8('#7d1914','#fff')"> click</button>
+   <p class="myClass color-1"> Test1</p>
+   <p class="myClass "> Test1</p>
+   <p class="myClass "> Test1</p>
+   <p class="myClass"> Test1</p>
+   <p class="h1"> Test13</p>
+
+      <!-- <input type="text" class="form-control"  [(colorPicker)]="color2"
+   [cpPresetColors]="['#7B1FA2', '#039BE5', '#FF5252', '#D32F2F', '#283593']"
+   [cpPosition]="'right'"
+   [style.background]="color2"
+   [cpAlphaChannel]="'always'"
+   [cpOutputFormat]="'hex'"
+   [value]="color2"
+   (colorPickerChange)="rgbaText=onChangeColorHex8($event)";
+   > -->
 </div>
 
-    <main class="preview" #hawking>
+    <main class="preview" >
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -42,3 +61,4 @@
         </div>
     </main>
 
+</div>

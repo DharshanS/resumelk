@@ -40,16 +40,7 @@ export class SunComponent implements OnInit {
   ///  console.log("---Inside ngOnInit---");
   }
 
-  onChangeColorHex8(color: string) {
-    console.log("color", color);
-    // this.renderer2.setStyle(this.el.nativeElement.querySelector('.name'), 'color', color);
-    let myClass = this.el.nativeElement.querySelectorAll(".title-box");
-  //  console.log("myClass", myClass);
-    myClass.forEach(e => {
-     // console.log("myClass23", e);
-      this.renderer2.setStyle(e, "color", color);
-    });
-  }
+
   ngDoCheck() {
   //  console.log("---Inside ngDoCheck---");
   }
