@@ -23,7 +23,7 @@ export class PublicationComponent implements OnInit {
 
   ngOnInit() {
     this.publications.push(new Publication());
-    this.resumeService._resume.publictions=this.publications;
+    this.resumeService._resume.publications=this.publications;
   }
 
   addPublication(){

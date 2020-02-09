@@ -13,6 +13,8 @@ import { AngularEditorModule } from "@kolkov/angular-editor";
 import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
 import { ResumeBucket } from "./resume.service";
 import { AppComponent } from "./app.component";
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpErrorInterceptor } from './interceptors/HttpErrorInterceptor';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,13 @@ import { AppComponent } from "./app.component";
     BrowserModule
   ],
 
-  providers: [ResumeBucket],
+  providers: [ResumeBucket,
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpErrorInterceptor,
+    multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -8,7 +8,7 @@ import { ResumeBucket } from "./../../resume.service";
   templateUrl: './templates.component.html',
   styleUrls: ['./templates.component.scss']
 })
-export class TemplatesComponent implements OnInit,AfterViewInit {
+export class TemplatesComponent implements OnInit {
 
 
   selectedTemplate=1;

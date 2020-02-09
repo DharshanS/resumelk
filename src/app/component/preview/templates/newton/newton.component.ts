@@ -41,7 +41,7 @@ constructor( private resumeService: ResumeBucket,private renderer2: Renderer2, p
 
 
   ngDoCheck() {
-    console.log("---Inside ngDoCheck---");
+    //console.log("---Inside ngDoCheck---");
   }
   ngAfterContentInit() {
     console.log("---Inside ngAfterContentInit---");

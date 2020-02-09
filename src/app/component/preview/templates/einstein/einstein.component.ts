@@ -1,8 +1,9 @@
-import { Component, OnInit ,Renderer2,ViewEncapsulation,ElementRef,ViewChild} from '@angular/core';
+import { Component, OnInit ,Renderer2,ViewEncapsulation,ElementRef,ViewChild,ViewChildren, ViewContainerRef} from '@angular/core';
 import resumeJson from '../../../../../assets/json/resume.json';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import { ResumeBucket } from "../../../../resume.service";
+//import { ConsoleReporter } from 'jasmine';
 
 
 
@@ -15,9 +16,9 @@ import { ResumeBucket } from "../../../../resume.service";
 })
 export class EinsteinComponent implements OnInit {
 
-  @ViewChild('tasknote',{static: false}) input: ElementRef;
-
-
+  @ViewChild('tasknote',{static:true}) input: ElementRef;
+  @ViewChild ('pages',{static:true}) pages: ElementRef;
+  page2Flag=false;
 
   public Editor = ClassicEditor;
 
@@ -52,26 +53,38 @@ constructor( private resumeService: ResumeBucket,private renderer2: Renderer2, p
 
     console.log('height---' + this.input.nativeElement.offsetHeight);  //<<<===here
     console.log('width---' + this.input.nativeElement.offsetWidth);
-    // console.log("---Inside ngAfterViewInit---"+JSON.stringify(resumeJson));
+    // console.log("childrens"+this.sectionRef);
 
 
-    var arraylist=this.input.nativeElement.querySelectorAll('.section');
+    let arraylist=this.input.nativeElement.querySelectorAll('.section');
     //this.input.nativeElement.insertAdjacentHTML('beforeend', '<div class="page-break col-1" ></div>');
 
-    var section=0;
-    var bottom=0;
-    for(var i=0;i<arraylist.length;i++){
+    console.log(arraylist.length)
+    let section=0;
+    for(let i=0;i<arraylist.length;i++){
       section=section+arraylist[i].offsetHeight;
 
-      if(section>842){
-        this.input.nativeElement.querySelectorAll('.section')[i].insertAdjacentHTML('beforebegin', '<div class="page-break col-1" ></div>');
-        section=0;
+
+      if(this.resumeService.A4_SIZE<section){
+
+        let element=this.input.nativeElement.querySelectorAll('.section')[i];
+       // this.input.nativeElement.querySelectorAll('.section')[i].insertAdjacentHTML('beforebegin', '<div class="page-break col-1" ></div>');
+        this.page2Flag=true;
+        setTimeout(() => {
+          if(typeof(element)!== 'undefined')
+       this.pages.nativeElement.querySelector('.page2').appendChild(element);
+        }, 1000);
+        console.log(typeof(element));
+
+       // this.input.nativeElement.querySelectorAll('.section')[i].remove();
+       // section=0;
       }
+
+
+
+
     }
 
-
-
-    //console.log('width---' + arraylist[9].insertAdjacentHTML);
 
 
   }

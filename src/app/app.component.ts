@@ -13,7 +13,7 @@ export class AppComponent implements OnChanges,OnInit {
 
 
   ngOnInit() {
-    console.log('On inti');
+    console.log('App intialize...');
     this.validatingForm = new FormGroup({
       loginFormModalEmail: new FormControl('', Validators.email),
       loginFormModalPassword: new FormControl('', Validators.required)

@@ -3,7 +3,7 @@ import resumeJson from '../../../../../assets/json/resume.json';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import { ResumeBucket } from "../../../../resume.service";
-import { DomSanitizer } from '@angular/platform-browser'; 
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -43,7 +43,7 @@ constructor(private sanitizer: DomSanitizer, private resumeService: ResumeBucket
 
 
   ngDoCheck() {
-    console.log("---Inside ngDoCheck---");
+   // console.log("---Inside ngDoCheck---");
   }
   ngAfterContentInit() {
     console.log("---Inside ngAfterContentInit---");

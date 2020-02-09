@@ -27,10 +27,6 @@ import { Personal } from "../section/personal/Personal";
   entryComponents: [TextComponent]
 })
 export class EditorComponent implements OnInit, AfterViewInit,AfterContentChecked {
-
-
-
-
   isShow: boolean;
   topPosToStartShowing = 50;
   gotoTopShow:boolean=false;

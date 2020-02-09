@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, OnInit } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { SunComponent } from "./templates/sun/sun.component";
 import { EinsteinComponent } from "./templates/einstein/einstein.component";
@@ -48,4 +48,10 @@ const optionsRoute: Routes = [
   imports: [RouterModule.forChild(optionsRoute)],
   exports: [RouterModule]
 })
-export class PreviewRoutingModule {}
+export class PreviewRoutingModule {
+
+  OnInit(){
+    console.log('OnInit.........')
+  }
+
+}
