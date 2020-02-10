@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import {catchError, retry} from 'rxjs/internal/operators';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -52,7 +55,7 @@ export class EditorService {
 
   //All the editor inputs bind to this object and convert to choosen template
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
 
   remove(component){
@@ -69,4 +72,29 @@ export class EditorService {
   }
 
 
+  async updateResume(resume){
+    console.log('update resume')
+    let url="https://resume.lk/api/v1/resume"
+
+    return this.http.post(url, resume).subscribe(data=>{
+console.log(data);
+    })
+      // .pipe(
+      //   catchError(this.handleError('resume-error', resume))
+      // );
+  }
+
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      this.log(`${operation} failed: ${error.message}`);
+
+      return of(result as T);
+    };
+  }
+
+  private log(message: string) {
+    console.log(message);
+  }
 }

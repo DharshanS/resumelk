@@ -5,7 +5,8 @@ import {
   ViewContainerRef,
   ComponentFactoryResolver,
   ComponentRef,
-  ComponentFactory
+  ComponentFactory,
+  CUSTOM_ELEMENTS_SCHEMA
 } from '@angular/core';
 
 import { OptionRoutingModule } from './options-routing.module';
@@ -46,6 +47,7 @@ import {
 } from '@angular/material';
 import { DynamicComponentsService } from './dynamic-components.service';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
 
 @NgModule({
   declarations: [
@@ -96,7 +98,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
   ],
 
   //exports:[MatDatepickerModule],
-
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [CustomComponent, TextComponent],
   providers: [EditorService, DynamicComponentsService, MatDatepickerModule],
 

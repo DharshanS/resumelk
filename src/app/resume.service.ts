@@ -187,13 +187,7 @@ _templateNames=[
 ]
 A4_SIZE=800;
 
-updateResume(resume){
-  let url="https://resume.lk/api/v1/resume"
-  return this.http.post(url, resume)
-    .pipe(
-      catchError(this.handleError('resume-error', resume))
-    );
-}
+
 
 private handleError<T>(operation = 'operation', result?: T) {
   return (error: any): Observable<T> => {

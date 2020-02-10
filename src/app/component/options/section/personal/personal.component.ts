@@ -1,7 +1,6 @@
 import { Component, OnInit, Input,HostListener, DoCheck } from "@angular/core";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { ResumeBucket } from "../../../../resume.service";
-
 import { Router } from "@angular/router";
 import { Personal } from './Personal';
 

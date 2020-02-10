@@ -15,10 +15,12 @@ import { DOCUMENT } from '@angular/common';
 import * as $ from "jquery";
 import { FormControl } from "@angular/forms";
 import { ScrollEvent } from "ngx-scroll-event";
+import {ResumeReq} from "./resumeReq";
 import { EditorService } from "../editor.service";
 import { DynamicComponentsService } from "../dynamic-components.service";
 import { TextComponent } from "../section/text/text.component";
 import { Personal } from "../section/personal/Personal";
+import { ResumeBucket } from 'src/app/resume.service';
 
 @Component({
   selector: "app-editor",
@@ -26,10 +28,10 @@ import { Personal } from "../section/personal/Personal";
   styleUrls: ["./editor.component.css"],
   entryComponents: [TextComponent]
 })
-export class EditorComponent implements OnInit, AfterViewInit,AfterContentChecked {
+export class EditorComponent implements OnInit, AfterViewInit, AfterContentChecked {
   isShow: boolean;
   topPosToStartShowing = 50;
-  gotoTopShow:boolean=false;
+  gotoTopShow: boolean = false;
 
   date;
   serializedDate;
@@ -50,11 +52,11 @@ export class EditorComponent implements OnInit, AfterViewInit,AfterContentChecke
   constructor(
     private resolver: ComponentFactoryResolver,
     private sections: EditorService,
+    private resume:ResumeBucket,
     private custom: DynamicComponentsService,
-    private resume: EditorService,
     private resolve: ComponentFactoryResolver,
     @Inject(DOCUMENT) private document: Document
-  
+
   ) {
     console.log(this.document.location.href);
   }
@@ -64,24 +66,16 @@ export class EditorComponent implements OnInit, AfterViewInit,AfterContentChecke
     this.serializedDate = new FormControl(new Date().toISOString());
 
   }
-  @HostListener('window:scroll', ['$event']) onScrollEvent($event){
-    console.log($event);
-    console.log("scrolling");
-  } 
+
   @HostListener("window:scroll", [])
   onWindowScroll() {
-console.log("onWindowScroll");
+    console.log("onWindowScroll");
+    this.gotoTopShow = true;
 
-
-      this.gotoTopShow = true;
-   
   }
 
-  onWScroll(e:any){
-    console.log("onWScroll",e);
-    
-
-
+  onWScroll(e: any) {
+    console.log("onWScroll", e);
     this.gotoTopShow = true;
   }
 
@@ -90,16 +84,16 @@ console.log("onWindowScroll");
     let componentRef = this.container.createComponent(factory);
     componentRef.instance.title = "Text";
     this.componentRefList.push(componentRef);
-    
+
   }
 
-//method notified by list componant when user add the new componant
-  scrollToElement($event){
-      console.log("scrollToElement notified"+$event)
-      setTimeout(() => {
-        let el = document.getElementById($event);
-        el.scrollIntoView({ behavior: "smooth", block: "end" ,inline:"end"});
-      }, 100);
+  //method notified by list componant when user add the new componant
+  scrollToElement($event) {
+    console.log("scrollToElement notified" + $event)
+    setTimeout(() => {
+      let el = document.getElementById($event);
+      el.scrollIntoView({ behavior: "smooth", block: "end", inline: "end" });
+    }, 100);
   }
 
 
@@ -110,7 +104,7 @@ console.log("onWindowScroll");
 
   }
 
-  savePersonlInfor() {}
+  savePersonlInfor() { }
 
 
   public scrollUp() {
@@ -127,11 +121,13 @@ console.log("onWindowScroll");
 
   ngAfterContentChecked() {
     console.log("ngAfterContentChecked editor");
+
+    this.sections.updateResume(ResumeReq);
   }
 
   @HostListener('scroll', ['$event'])
   scrollHandler(event) {
-    console.debug("Scroll Event");
+  //  console.debug("Scroll Event");
   }
 
 
@@ -157,12 +153,12 @@ console.log("onWindowScroll");
 
     setTimeout(() => {
       let el = document.getElementById('personal');
-      el.scrollIntoView({ behavior: "smooth", block: "end" ,inline:"end"});
+      el.scrollIntoView({ behavior: "smooth", block: "end", inline: "end" });
     }, 100);
 
   }
 
-  onScroll($event){
+  onScroll($event) {
     alert('test')
     console.log($event);
   }
