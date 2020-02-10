@@ -41,6 +41,34 @@
 
 <script src="assets/js/mdb.min.js"></script>
 
+
+
+
+<script>
+
+function scrollAppear(){
+        var introTexts = document.querySelectorAll('//*[@id="main-editor"]/div[2]/div/div[2]/div[2]/button');
+
+
+        introTexts.forEach(e =>{
+            var introPosition = e.getBoundingClientRect().top;
+            console.log(introPosition);
+            var screenPosition = window.innerHeight ;
+        if(introPosition < screenPosition){
+            e.classList.add('intro-appear');
+        }
+        console.log(screenPosition);
+            
+        })
+        
+    }
+
+    window.addEventListener("scroll",scrollAppear);
+
+
+
+
+</script>
 </body>
 
 </html>

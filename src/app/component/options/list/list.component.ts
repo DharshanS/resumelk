@@ -7,7 +7,8 @@ import {
   OnChanges,
   DoCheck,
   AfterViewInit,
-  AfterContentChecked
+  AfterContentChecked,
+  ElementRef
 } from "@angular/core";
 import { trigger, transition, style, animate } from "@angular/animations";
 import { EditorService } from "../editor.service";
@@ -46,6 +47,7 @@ export class ListComponent
 
   constructor(
     public editor: EditorService,
+    private elementRef:ElementRef,
     private cus: DynamicComponentsService
   ) {}
 
@@ -106,8 +108,14 @@ export class ListComponent
   }
 
   ngAfterViewInit() {
+
+ 
+
+
+
     console.log("ngAfterViewInit");
   }
+
 
   ngAfterContentChecked() {
     console.log("ngAfterContentChecked list");

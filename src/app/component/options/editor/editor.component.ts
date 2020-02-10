@@ -59,6 +59,9 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
 
   ) {
     console.log(this.document.location.href);
+    document.addEventListener('scroll', function() {
+      console.log('keys pressed');
+   });
   }
 
   ngOnInit() {
@@ -94,17 +97,36 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
       let el = document.getElementById($event);
       el.scrollIntoView({ behavior: "smooth", block: "end", inline: "end" });
     }, 100);
+      this.gotoTopShow = true;
+      var introTexts = document.querySelector('goto-top');
+      var introPosition =introTexts.getBoundingClientRect().top;
+      console.log("screenPosition"+introPosition);
+      // introTexts.classList.add('intro-appear');
+
+      // introTexts.forEach(e =>{
+      //     var introPosition = e.getBoundingClientRect().top;
+      //     console.log(introPosition);
+      //     var screenPosition = window.innerHeight ;
+      // if(introPosition < screenPosition){
+      //     e.classList.add('intro-appear');
+      // }
+      // console.log("screenPosition"+screenPosition);
+          
+      // })
   }
 
 
   ngAfterViewInit() {
-    console.log("after view init");
-    // Hack: Scrolls to top of Page after page view initialized
+ 
     this.top = document.getElementById("top");
 
   }
 
-  savePersonlInfor() { }
+
+  onClick(event) {
+    console.log("event"+event);
+  }
+  savePersonlInfor() {}
 
 
   public scrollUp() {

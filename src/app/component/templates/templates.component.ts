@@ -54,6 +54,6 @@ export class TemplatesComponent implements OnInit {
   }
 
   getBackground(image) {
-    return this._sanitizer.bypassSecurityTrustStyle(`linear-gradient(rgba(29, 29, 29, 0), rgba(16, 16, 23, 0.5)), url(${'assets/images/templates/'+image+'.png'})`);
+    return this._sanitizer.bypassSecurityTrustStyle(`url(${'assets/images/templates/'+image+'.png'})`);
 }
 }

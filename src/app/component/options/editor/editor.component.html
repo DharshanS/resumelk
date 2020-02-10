@@ -1,5 +1,5 @@
 
-<div class="editor-body-bg-color" >
+<div class="editor-body-bg-color"  id="main-editor">
   
 
 
@@ -82,8 +82,8 @@
 
                     <!-- *ngIf="gotoTopShow" -->
                     <div class="" style="    position: sticky !important;
-                    bottom: -1px;">
-                               <button (click)="gotoTop()" class="goto-top" ><i class="fas fa-arrow-up"></i></button>
+                    bottom: -26px;">
+                               <button (click)="gotoTop()" class="goto-top" *ngIf="gotoTopShow" ><i class="fas fa-arrow-up"></i></button>
                             </div>
            </div>
 

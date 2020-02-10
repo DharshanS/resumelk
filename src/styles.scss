@@ -390,9 +390,17 @@ span:hover ~  .btn__label  {
   background: $btn-color;
   font-size: 22px;
   border-radius: 31px;
+  transition: all 0.8s ease-in-out;
+  // opacity: 0;
+  transform: translateY(30px);
 }
 
+.intro-appear{
+  opacity: 1;
+  color: rgb(2, 104, 129);
+  transform:translateY(0px);
 
+}
 
 // color Theme
 
