@@ -122,7 +122,7 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
   ngAfterContentChecked() {
     console.log("ngAfterContentChecked editor");
 
-    this.sections.updateResume(ResumeReq);
+   // this.sections.updateResume(ResumeReq);
   }
 
   @HostListener('scroll', ['$event'])
