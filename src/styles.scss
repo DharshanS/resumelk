@@ -21,7 +21,7 @@ html {
   background-color: $bg-color2;
 }
 .editor-body-bg-color {
-  background: linear-gradient(180deg, $bg-color 320px, $bg-color2 0%);
+  background: linear-gradient(180deg, $bg-color 280px, $bg-color2 0%);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -150,7 +150,7 @@ table th {
   padding-left: 6%;
 }
 .left-menu {
-  padding: 66px 0px;
+  padding: 0px;
   text-align: center;
   margin-left: 22px;
   width: 100%;
@@ -159,37 +159,40 @@ table th {
   display: flow-root;
 }
 .menu-item {
-  width: 39%;
+  text-align: left;
+  width: 87%;
   position: relative;
   margin-right: 20px;
   margin-bottom: 10px;
   float: left;
-  padding: 20px;
-  color: $color-2;
+  padding: 16px;
+  color: #5d5d5d;
   font-weight: 500;
   font-size: 16px;
-  height: 78px;
+  height: 56px;
   border-radius: 8px;
+  border: solid #ececec 1px;
 
   i {
-    display: block;
-    margin: 0px !important;
-    font-size: 22px;
-    position: relative;
-    top: -2px;
-    color: $color-2;
+      /* display: block; */
+      margin: 0px !important;
+      font-size: 22px;
+      position: relative;
+      top: -2px;
+      margin-right: 12px !important;
+      color: #5d5d5d;
   }
   .close-lock-icon {
     display: none;
     cursor: pointer;
     position: relative;
-    top: -13px;
+    top: 9px;
     right: -12px;
     float: right;
-    font-size: 10px !important;
+    font-size: 13px !important;
   }
   label {
-    color:  $color-2 !important;
+    color: #5d5d5d !important;
     font-weight: 500;
     font-size: 14px;
     top: -7px;
@@ -198,7 +201,7 @@ table th {
 }
 .select-item{
   box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.05);
-  border: solid $bg-color 2px;
+  // border: solid $bg-color 2px;
 
   .close-lock-icon {
     display: block;
@@ -383,7 +386,7 @@ span:hover ~  .btn__label  {
   position: relative;
   right: -66px;
   float: right;
-  top: -50px;
+  top: -114px;
   width: 40px;
   height: 40px;
   color: #fff;
@@ -527,7 +530,7 @@ span:hover ~  .btn__label  {
   .div-sticky {
     height: 84vh;
     overflow: auto;
-    top: 85px;
+    top: 50px;
     padding-right: 11px;
   }
   
@@ -535,21 +538,21 @@ span:hover ~  .btn__label  {
   #style-1::-webkit-scrollbar-track
   {
     -webkit-box-shadow: inset 0 0 6px #20ab9e;
-    border-radius: 10px;
+    // border-radius: 10px;
     background-color: #F5F5F5;
   }
   
   #style-1::-webkit-scrollbar
   {
-    width: 3px;
+    width: 00px;
     background-color: #F5F5F5;
   }
   
   #style-1::-webkit-scrollbar-thumb
   {
-    border-radius: 10px;
+    // border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px #20ab9e;
-    background-color: #555;
+    // background-color: #555;
   }
 
 

@@ -70,12 +70,12 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
 
   }
 
-  @HostListener("window:scroll", [])
-  onWindowScroll() {
-    console.log("onWindowScroll");
-    this.gotoTopShow = true;
+  // @HostListener("window:scroll", [])
+  // onWindowScroll() {
+  //   console.log("onWindowScroll");
+  //   this.gotoTopShow = true;
 
-  }
+  // }
 
   onWScroll(e: any) {
     console.log("onWScroll", e);
