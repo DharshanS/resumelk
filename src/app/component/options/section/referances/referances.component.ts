@@ -34,4 +34,7 @@ export class ReferancesComponent implements OnInit {
     this.selected=i;
 
   }
+  removeRefernace(){
+
+  }
 }

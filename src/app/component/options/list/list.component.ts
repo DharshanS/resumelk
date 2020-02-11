@@ -45,7 +45,7 @@ export class ListComponent
   isItemAdd = false;
 
   constructor(
-    private editor: EditorService,
+    public editor: EditorService,
     private cus: DynamicComponentsService
   ) {}
 

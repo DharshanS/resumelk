@@ -50,12 +50,12 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
 
   //personalInfoGroup: FormGroup;
   constructor(
-    private resolver: ComponentFactoryResolver,
-    private sections: EditorService,
-    private resume:ResumeBucket,
-    private custom: DynamicComponentsService,
-    private resolve: ComponentFactoryResolver,
-    @Inject(DOCUMENT) private document: Document
+    public resolver: ComponentFactoryResolver,
+    public sections: EditorService,
+    public resume:ResumeBucket,
+    public custom: DynamicComponentsService,
+    public resolve: ComponentFactoryResolver,
+    @Inject(DOCUMENT) public document: Document
 
   ) {
     console.log(this.document.location.href);

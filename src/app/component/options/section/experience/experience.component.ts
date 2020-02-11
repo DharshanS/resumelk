@@ -17,7 +17,7 @@ export class ExperienceComponent implements OnInit,DoCheck {
   public Editor = ClassicEditor;
   selected = 0;
 
-  constructor(private editor: EditorService, private resumeService: ResumeBucket,) {}
+  constructor(public editor: EditorService, private resumeService: ResumeBucket,) {}
 
   ngOnInit() {
 

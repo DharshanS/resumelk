@@ -41,7 +41,7 @@
                     <div data-sortable *ngFor="let item of editor.moreSections;index as i">
 
                             <div class="menu-item " *ngIf="!item.flag" @fade>
-                                    <div class="" (click)="addToDisplayBucket(i)">
+                                    <div class="" (click)="addToDisplayBucket(i,item.name)">
                                     <!-- <i class="close-lock-icon fas {{item.icon}}" (click)="removeFromDisplayBucket(i)"></i> -->
                                     <i class="close-lock-icon fas fa-plus"></i>
                                 <i class="fas {{item.class}} "></i>

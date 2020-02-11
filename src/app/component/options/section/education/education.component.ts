@@ -21,7 +21,7 @@ export class EducationComponent implements OnInit {
   eductionsPlace = [];
 
 
-  constructor(private resumeService: ResumeBucket,private editor: EditorService) {
+  constructor(private resumeService: ResumeBucket,public editor: EditorService) {
   }
 
   ngOnInit() {
