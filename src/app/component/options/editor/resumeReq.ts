@@ -1,7 +1,8 @@
 export class ResumeReq{
-  userId:number
-  userName:string
-  templateId:string
-  resumeJson:{}
+ public userId:number;
+  userName:string;
+  templateId:number;
+  resumeJson:Object;
+constructor(){}
 
 }

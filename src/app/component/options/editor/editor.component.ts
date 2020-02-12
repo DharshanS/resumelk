@@ -48,6 +48,8 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
   @ViewChild("customContainer", { static: true, read: ViewContainerRef }) container;
   @ViewChild("experience", { static: true, read: ElementRef }) experiance;
 
+  resumeObject:ResumeReq;
+
   //personalInfoGroup: FormGroup;
   constructor(
     public resolver: ComponentFactoryResolver,
@@ -67,6 +69,7 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
   ngOnInit() {
     this.date = new FormControl(new Date());
     this.serializedDate = new FormControl(new Date().toISOString());
+    this.resumeObject=new ResumeReq();
 
   }
 
@@ -111,13 +114,13 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
       //     e.classList.add('intro-appear');
       // }
       // console.log("screenPosition"+screenPosition);
-          
+
       // })
   }
 
 
   ngAfterViewInit() {
- 
+
     this.top = document.getElementById("top");
 
   }
@@ -126,7 +129,18 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
   onClick(event) {
     console.log("event"+event);
   }
-  savePersonlInfor() {}
+
+  updateOption() {
+    alert('test')
+   this.resumeObject.userId=7;
+   this.resumeObject.userName="Dharshan";
+   this.resumeObject.templateId=1;
+   this.resumeObject.resumeJson={
+    "name": "Indika Munaweera"
+   }
+
+   this.sections.updateResume(this.resumeObject);
+  }
 
 
   public scrollUp() {
@@ -144,7 +158,7 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
   ngAfterContentChecked() {
     console.log("ngAfterContentChecked editor");
 
-   // this.sections.updateResume(ResumeReq);
+
   }
 
   @HostListener('scroll', ['$event'])
