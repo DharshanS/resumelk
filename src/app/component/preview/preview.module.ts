@@ -10,7 +10,7 @@ import { PreviewComponent } from './preview.component';
 import { CommonModule } from "@angular/common";
 import { NewtonComponent } from './templates/newton/newton.component';
 import { HawkingComponent } from './templates/hawking/hawking.component';
-
+import { EditorService } from './../options/editor.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,6 @@ import { HawkingComponent } from './templates/hawking/hawking.component';
     PreviewRoutingModule,
     CommonModule
   ],
-
+  providers: [EditorService]
 })
 export class PreviewModule { }

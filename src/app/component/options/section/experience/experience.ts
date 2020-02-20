@@ -1,4 +1,5 @@
-export class Experiance {
+export class WorkExperiance {
+
   companyName: string;
   jobTitle: string;
   country: string;
@@ -8,6 +9,7 @@ export class Experiance {
   descrption: string;
 
   constructor() {
+    this.companyName="creative";
     this.timePeriod = new TimePeriod();
   }
 }
@@ -26,4 +28,8 @@ export class TimePeriod {
 export class Date {
   month: string;
   year: string;
+  constructor(){
+    this.month="";
+    this.year="";
+  }
 }

@@ -16,6 +16,8 @@ export class PersonalComponent implements OnInit,DoCheck{
   @Input() flag: boolean;
   @Input() personal:Personal;
 
+
+
   constructor(
     private resumeService: ResumeBucket,
     private router: Router
@@ -24,8 +26,8 @@ export class PersonalComponent implements OnInit,DoCheck{
 
   ngOnInit() {
     console.log("OnInit ...")
-   this.personal=new Personal();
-    this.resumeService._resume.personal = this.personal;
+    this.fillInitialValue();
+
   }
 
   CustomFeildOne = "Custom field";
@@ -47,6 +49,25 @@ export class PersonalComponent implements OnInit,DoCheck{
 
   ngDoCheck(){
   //  console.log(this.Editor.getData())
+  }
+
+  isPersonalInfoNull(){
+    if(this.resumeService._resume.personal==null){
+      return true;
+    }
+    return false;
+  }
+
+  fillInitialValue(){
+    //This should be change
+    if(!this.isPersonalInfoNull){
+      console.log("Personal info null...")
+      this.personal=new Personal();
+     this.resumeService._resume.personal = this.personal;
+   }else{
+    console.log("Personal info updates...")
+   this.personal = this.resumeService._resume.personal;
+   }
   }
 
 }

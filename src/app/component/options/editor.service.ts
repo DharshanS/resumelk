@@ -1,18 +1,16 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {catchError, retry} from 'rxjs/internal/operators';
+//import { Injectable } from '@angular/core';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
+//import {catchError, retry} from 'rxjs/internal/operators';
 import { Observable, of } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
 export class EditorService {
 
 
+  apiUrl="http://44.229.50.57:8081/resumeservice/api/v1/resume";
 
   moreSections=[
   {"id":1,"label":"Personal Info","flag":true,"class":"fa-user","name":"personal","icon":"fa-lock","active":true},
-  {"id":2,"label":"Experience","flag":true,"class":"fa-suitcase","name":"experience","icon":"fa-times","active":false},
+  {"id":2,"label":"Experience","flag":false,"class":"fa-suitcase","name":"experience","icon":"fa-times","active":false},
   {"id":3,"label":"Eduction","flag":false,"class":"fa-graduation-cap","name":"education","icon":"fa-times","active":false},
   {"id":4,"label":"Skills","flag":false,"class":"fa-chart-bar","name":"skill","icon":"fa-times","active":false},
   {"id":5,"label":"Certifications","flag":false,"name":"Certifications","class":"fa-certificate","icon":"fa-times","active":false},
@@ -26,32 +24,7 @@ export class EditorService {
   {"id":12,"label":"Custom","flag":false,"class":"fa-suitcase ","icon":"fa-times","name":"custom" ,"title":"Title","active":false}
 ];
 
- work_experience= {
-    "companyName":"Experinace #",
-    "jobTitle":"",
-    "country":"",
-    "city":"",
-    "timePeriod":{
-      "from":{
-        "month":"",
-        "year":""
-      },
-      "to":{
-        "month":"",
-        "year":""
-      }
-    },
-    "currentWork":false,
-    "descrption":""
 
-
-
-
-  }
-
-  getWorkExperianceObject(){
-    return this.work_experience;
-  }
 
   //All the editor inputs bind to this object and convert to choosen template
 
@@ -72,16 +45,25 @@ export class EditorService {
   }
 
 
-  async updateResume(resume){
-    console.log('update resume')
-    let url="https://resume.lk/api/v1/resume"
+  createResume(resume){
+    this.http.post(this.apiUrl,resume,{withCredentials:true}).subscribe(data=>{
+     console.log("response");
+     console.log(data);
+   });
+ }
 
-    return this.http.post(url, resume).subscribe(data=>{
-console.log(data);
-    })
-      // .pipe(
-      //   catchError(this.handleError('resume-error', resume))
-      // );
+
+
+ async updateResume(resume){
+
+     this.http.put(this.apiUrl,resume,{withCredentials:true}).subscribe(data=>{
+      console.log("response");
+      console.log(data);
+    });
+  }
+
+  getResume(code){
+    return  this.http.get(`${this.apiUrl}?userCode=${code}`,{withCredentials:true});
   }
 
 

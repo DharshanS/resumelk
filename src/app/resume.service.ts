@@ -35,65 +35,13 @@ export class ResumeBucket{
 
 
     },
-    "workExperiance":[
-        {
-        "companyName":"Creative Solution",
-        "jobTitle":"Seniour Software Engineer",
-        "country":"Sri Lanka",
-        "city":"Kandy",
-        "timePeriod":{
-            "from" :{
-                "month":"JUNE",
-                "year":2015
-
-
-            },
-            "to":{
-                 "month":"MAY",
-                "year":2020
-            }
-
-        },
-         "description":"One of the most difficult parts in writing a resume is composing the descriptions of your jobs, volunteer work, projects, and other relevant experiences. Each description of your work history and volunteer experience should be clear and concise, yet descriptive. After reading your description, a prospective employer should know exactly what your responsibilities were, what skills you have developed, where your strengths lie, and what you have achieved."
-
-    }],
+    "workExperiance":[],
 
     "education":[
-      {"instituation":"Ranabima Royal College",
-      "fieldOfStuday":"A/L",
-      "timePeriod":{
-        "from" :{
-            "month":"JUNE",
-            "year":2015
-
-
-        },
-        "to":{
-             "month":"MAY",
-            "year":2020
-        }},
-        "country":"Sri Lanka",
-        "city":"Kandy",
-        "description":"One of the most difficult parts in writing a resume is composing the descriptions of your jobs, volunteer work, projects, and other relevant experiences. Each description of your work history and volunteer experience should be clear and concise, yet descriptive. After reading your description, a prospective employer should know exactly what your responsibilities were, what skills you have developed, where your strengths lie, and what you have achieved."
-
-      },
 
     ],
 
-    "skills":[{
-      "category":"Fluent in English",
-      "name":"Hubspot Certified",
-      "skilLevel":3
-      },{
-        "category":"Indepth Core Java",
-        "name":"Hubspot Certified",
-        "skilLevel":3
-        },
-        {
-          "category":" Automation Business Systems",
-          "name":"Hubspot Certified",
-          "skilLevel":3
-          }]
+    "skills":[]
       ,
 
       "achivements":[

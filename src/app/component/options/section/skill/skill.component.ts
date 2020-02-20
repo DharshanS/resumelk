@@ -11,31 +11,23 @@ export class SkillComponent implements OnInit {
 
 
   @Input() flag:boolean;
-
-
-
   selected=0;
-
-  skillCategories = [];
-
-
-
-
   constructor(    private resumeService: ResumeBucket) { }
 
   ngOnInit() {
-    this.skillCategories.push(new Skill())
-    this.resumeService._resume.skills=this.skillCategories;
+    if( this.resumeService._resume.skills.length==0)
+    this.resumeService._resume.skills.push(new Skill())
+
   }
 
   addNewSkillCategory() {
-    this.skillCategories.push(new Skill());
+    this.resumeService._resume.skills.push(new Skill());
 
 
   }
 
   addNewSkill(j,i) {
-    this.skillCategories[j].skillNames.push(new SkillName())
+    this.resumeService._resume.skills[j].skillNames.push(new SkillName())
   }
 
   selectedItem(i){
@@ -45,11 +37,11 @@ export class SkillComponent implements OnInit {
 
   removeSkillCategory(index){
     if(index!==0)
-    this.skillCategories.splice(index,1);
+    this.resumeService._resume.skills.splice(index,1);
   }
   removeSkill(j,i){
     if(i!==0)
-    this.skillCategories[j].skillNames.splice(i,1);
+    this.resumeService._resume.skills[j].skillNames.splice(i,1);
   }
 
 }

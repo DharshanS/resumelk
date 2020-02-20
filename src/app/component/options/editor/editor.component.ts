@@ -70,15 +70,10 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
     this.date = new FormControl(new Date());
     this.serializedDate = new FormControl(new Date().toISOString());
     this.resumeObject=new ResumeReq();
+    this.getResume();
 
   }
 
-  // @HostListener("window:scroll", [])
-  // onWindowScroll() {
-  //   console.log("onWindowScroll");
-  //   this.gotoTopShow = true;
-
-  // }
 
   onWScroll(e: any) {
     console.log("onWScroll", e);
@@ -97,13 +92,17 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
   scrollToElement($event) {
     console.log("scrollToElement notified" + $event)
     setTimeout(() => {
+      console.log($event);
       let el = document.getElementById($event);
       el.scrollIntoView({ behavior: "smooth", block: "end", inline: "end" });
     }, 100);
-      this.gotoTopShow = true;
-      var introTexts = document.querySelector('goto-top');
-      var introPosition =introTexts.getBoundingClientRect().top;
-      console.log("screenPosition"+introPosition);
+
+
+      // this.gotoTopShow = true;
+
+      // var introTexts = document.querySelector('goto-top');
+      // var introPosition =introTexts.getBoundingClientRect().top;
+      // console.log("screenPosition"+introPosition);
       // introTexts.classList.add('intro-appear');
 
       // introTexts.forEach(e =>{
@@ -130,17 +129,7 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
     console.log("event"+event);
   }
 
-  updateOption() {
-    alert('test')
-   this.resumeObject.userId=7;
-   this.resumeObject.userName="Dharshan";
-   this.resumeObject.templateId=1;
-   this.resumeObject.resumeJson={
-    "name": "Indika Munaweera"
-   }
 
-   this.sections.updateResume(this.resumeObject);
-  }
 
 
   public scrollUp() {
@@ -197,5 +186,40 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
   onScroll($event) {
     alert('test')
     console.log($event);
+  }
+
+  createResume(){
+    this.resumeObject.userId=8;
+    this.resumeObject.userName="Dharshan";
+    this.resumeObject.templateId=1;
+    this.resumeObject.resumeJson={
+     name:"Dharshan"
+    }
+
+  }
+
+
+  async updateOption() {
+  this.resumeObject.userCode=8;
+  this.resumeObject.userName="Dharshan";
+  this.resumeObject.resumeId='5e4be10d2ab79c00013c086f'
+  this.resumeObject.templateId=1;
+  this.resumeObject.resumeName="einstein"
+  this.resumeObject.resumeJson=this.resume._resume;
+  console.log(this.resumeObject.resumeJson);
+   this.sections.updateResume(this.resumeObject);
+  }
+
+
+  getResume(){
+    let userCode=8
+    this.sections.getResume(userCode).subscribe((data:any[])=>{
+      console.log("get response");
+
+      this.resume._resume=data[0].resumeJson;
+      this.resume._currentTemplate=data[0].resumeName;
+
+      //this.resume._resume=data['body']['resumeJson'];
+    })
   }
 }

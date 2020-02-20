@@ -8,9 +8,9 @@
 
 
       <ul class="editor__group-list" data-sortable data-skills-list >
-        <li class="editor__group-item" [ngClass]="{active: selected==i}" *ngFor="let item of skillCategories;index as i"  (click)=selectedItem(i)>
+        <li class="editor__group-item" [ngClass]="{active: selected==i}" *ngFor="let item of resumeService._resume.skills;index as i"  (click)=selectedItem(i)>
             <div class="editor__group-item-label" >
-                <i class="fas fa-bars"></i>{{skillCategories[i].skillCategoryName}}
+                <i class="fas fa-bars"></i>{{resumeService._resume.skills[i].skillCategoryName}}
                 <!-- <p class="paragraph--*ngFor="let item of work_experiences;index as i"med u-weight-smb"></p> -->
             </div>
             <i class="fas fa-times editor__group-item-delete" (click)="removeSkillCategory(i)" data-education-delete></i>
@@ -38,26 +38,26 @@
                       <div class="editor__group-main-wrapper">
 
                           <input type="text"
-                              data-skills-category [(ngModel)]="skillCategories[selected].skillCategoryName" readonly>
+                              data-skills-category [(ngModel)]="resumeService._resume.skills[selected].skillCategoryName">
                               <label>Skill category name</label>
                       </div>
                   </div>
                   <div class="col-12" data-skills-item>
-                      <div class="editor__skills"  *ngFor="let item of skillCategories[selected].skillNames;index as i">
+                      <div class="editor__skills"  *ngFor="let item of resumeService._resume.skills[selected].skillNames;index as i">
                           <div class="row editor__skills-row">
                               <div class="col-12 col-lg-6">
                                   <div class="editor__group-main-wrapper">
 
-                                      <input type="text"  required [(ngModel)]="skillCategories[selected].skillNames[i].skillName"
+                                      <input type="text"  required [(ngModel)]="resumeService._resume.skills[selected].skillNames[i].skillName"
                                           data-skills-name required>
                                           <label>Skill Name</label>
                                   </div>
                               </div>
-                              <!--[(ngModel)]="skillCategories[selected][item].skillName"-->
+                              <!--[(ngModel)]="resumeService._resume.skills[selected][item].skillName"-->
                               <div class="col-12 col-lg-6"  >
                                   <div class="editor__group-main-wrapper">
                                       <label>Skill Level</label>
-                                      <select required data-skills-level  [(ngModel)]="skillCategories[selected].skillNames[i].skillLevel" >
+                                      <select required data-skills-level  [(ngModel)]="resumeService._resume.skills[selected].skillNames[i].skillLevel" >
                                           <option value="" disabled selected hidden>Skill
                                               Level</option>
                                           <option value="beginner">Beginner</option>

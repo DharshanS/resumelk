@@ -25,8 +25,8 @@ export class EducationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.eductionsPlace.push(new Education())
-    this.resumeService._resume.education = this.eductionsPlace;
+    if(this.resumeService._resume.education.length==0)
+    this.resumeService._resume.education.push(new Education())
   }
 
   removeEducation(index) {

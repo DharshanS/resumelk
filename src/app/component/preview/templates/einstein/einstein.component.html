@@ -1,6 +1,6 @@
 
 <div  #pages>
-  <div class="main-page" #tasknote>
+  <div class="main-page" #tasknote *ngIf="__resume!=null">
 
 
     <div class="row">
@@ -10,7 +10,7 @@
         <!-- Experience -->
 
         <div class="col-12 col-box section" >
-          <div class="title-box font-color bo-color" *ngIf="  __resume.workExperiance.length>0">Experience</div>
+          <div class="title-box font-color bo-color" *ngIf="__resume.workExperiance.length > 0">Experience</div>
           <div class="professional-box" *ngFor="let item of __resume.workExperiance">
             <label>{{item.jobTitle}}</label>
 
@@ -41,12 +41,12 @@
         <div class="col-12 col-box section">
           <div class="title-box font-color bo-color" *ngIf="__resume.education.length >0">Education</div>
           <div class="professional-box" *ngFor="let item of __resume.education">
-            <label>{{item.fieldOfStuday}}</label>
+            <label>{{item.feildOfStudy}}</label>
 
 
             <div class="p-0 col-12 row">
 
-              <div class="col-6 p-0  c-name">{{item.instituation}}</div>
+              <div class="col-6 p-0  c-name">{{item.institutionName}}</div>
               <div class="col-6 p-0 text-right"><span>{{item.city}}, &nbsp;</span><span>{{item.country}}</span></div>
               <span class="span-text"><i
                   class="far fa-calendar-alt"></i>&nbsp;{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
@@ -123,7 +123,7 @@
               <div class="col-8 p-0"><label>{{item.title}}</label></div>
               <div class="col-4 p-0 text-right">{{item.publisher}}</div>
               <div class="col-8 p-0  c-name">{{item.url}}</div>
-              <div class="col-4 p-0 text-right">{{item.date.month+'-'+item.date.year}}</div>
+              <!-- <div class="col-4 p-0 text-right">{{item.date.month+'-'+item.date.year}}</div> -->
               <br>
               <span class="span-text">{{item.description}}</span>
             </div>
@@ -156,7 +156,7 @@
               <img src="assets/images/headshot.jpg" alt="">
             </div>
             <div class="name">{{__resume.personal.firstName}}</div>
-            <div class="title">{{__resume.workExperiance[__resume.workExperiance.length-1].jobTitle}}</div>
+            <div class="title">{{__resume.workExperiance[0].jobTitle}}</div>
           </div>
           <div class="border-box border-color">
             <ul class="user-details">
@@ -189,7 +189,12 @@
         <div class="col-12">
           <div class="title-box title-color border-color">TECHNICAL SKILLS</div>
           <ul class="technical-skills">
-            <li *ngFor="let item of __resume.skills"><span>{{item.category}}</span></li>
+            <li *ngFor="let item of __resume.skills">
+
+              <span  >{{item.skillCategoryName}}</span>
+
+
+            </li>
 
 
           </ul>

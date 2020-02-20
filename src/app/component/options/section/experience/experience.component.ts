@@ -1,6 +1,6 @@
 import { Component, OnInit, Input,DoCheck } from "@angular/core";
 import { EditorService } from "../../editor.service";
-import { Experiance } from "./experience";
+import { WorkExperiance } from "./experience";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { ResumeBucket } from "../../../../resume.service";
 
@@ -11,9 +11,6 @@ import { ResumeBucket } from "../../../../resume.service";
 })
 export class ExperienceComponent implements OnInit,DoCheck {
   @Input() flag: boolean;
-
-  work_experiences = [];
-
   public Editor = ClassicEditor;
   selected = 0;
 
@@ -21,17 +18,19 @@ export class ExperienceComponent implements OnInit,DoCheck {
 
   ngOnInit() {
 
-    this.work_experiences.push(new Experiance());
-    this.resumeService._resume.workExperiance=this.work_experiences;
+    if(this.resumeService._resume.workExperiance.length==0)
+    this.resumeService._resume.workExperiance.push(new WorkExperiance())
+
   }
 
   addexperience() {
-    console.log(this.work_experiences);
-    this.work_experiences.push(new Experiance());
+
+    console.log(this.resumeService._resume.workExperiance);
+   // this.work_experiences.push(new WorkExperiance());
   }
 
   removeExperience(index) {
-    if (index !== 0) this.work_experiences.splice(index, 1);
+    if (index !== 0) this.resumeService._resume.workExperiance.splice(index, 1);
   }
 
   selectedItem(index) {
@@ -43,7 +42,7 @@ export class ExperienceComponent implements OnInit,DoCheck {
 }
 
   continue() {
-    console.log(this.work_experiences);
+
   }
 
 }

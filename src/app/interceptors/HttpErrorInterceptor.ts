@@ -4,7 +4,7 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse
 import { Observable, throwError } from 'rxjs';
 
 
-@Injectable()
+//@Injectable()
 export class HttpErrorInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request)
@@ -17,11 +17,13 @@ export class HttpErrorInterceptor implements HttpInterceptor {
           } else {
             // The backend returned an unsuccessful response code.
             // The response body may contain clues as to what went wrong,
-            console.error(
-              `Backend returned code ${error.status}, ` +
-              `body was: ${error.error}`);
-          }
+          //   console.error(
+          //     `Backend returned code ${error.status}, ` +
+          //     `body was: ${error.error}`);
+          // }
           // return an observable with a user-facing error message
+          console.log(error);
+          }
           return throwError(
             'Something bad happened; please try again later.');
         })

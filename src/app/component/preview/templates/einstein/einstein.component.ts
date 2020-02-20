@@ -3,6 +3,7 @@ import resumeJson from '../../../../../assets/json/resume.json';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import { ResumeBucket } from "../../../../resume.service";
+import { EditorService } from "../../../options/editor.service";
 //import { ConsoleReporter } from 'jasmine';
 
 
@@ -27,13 +28,13 @@ export class EinsteinComponent implements OnInit {
 
 
 
-constructor( private resumeService: ResumeBucket,private renderer2: Renderer2, private el: ElementRef){
+constructor( private resumeService: ResumeBucket,private renderer2: Renderer2, private el: ElementRef, public sections: EditorService,){
 
 }
 
   ngOnInit() {
 
-    this.__resume=this.resumeService._resume;
+   this.getResume();
     console.log("---Inside ngOnInit---");
   }
 
@@ -96,5 +97,17 @@ constructor( private resumeService: ResumeBucket,private renderer2: Renderer2, p
   }
 
 
+  getResume(){
+    let userCode=8
+    this.sections.getResume(userCode).subscribe((data:any[])=>{
+      console.log("get response");
 
+      this.__resume=data[0].resumeJson;
+      this.__resume.currentTemplate=data[0].resumeName;
+
+      console.log("preview response");
+      console.log(this.__resume);
+      //this.resume._resume=data['body']['resumeJson'];
+    })
+  }
 }

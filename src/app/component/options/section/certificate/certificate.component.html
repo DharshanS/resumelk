@@ -1,4 +1,4 @@
-<div class="editor__group" id="certificates" *ngIf="flag" >
+<div class="editor__group" id="Certifications" *ngIf="flag" >
   <aside class="editor__group-sidebar">
       <div class="editor__group-title">
           <i class="fas fa-chart-bar"></i>
@@ -27,8 +27,8 @@
               <div class="row editor__skills-row" data-skills-form-items>
                   <div class="col-12 col-lg-6">
                       <div class="editor__group-main-wrapper">
-                          
-                          <input type="text" 
+
+                          <input type="text"
                               data-skills-category [(ngModel)]="certificates[selected].certificateName" required>
                               <label>Certification name</label>
                       </div>
@@ -37,8 +37,8 @@
                   <div class="col-12 col-lg-6">
 
                       <div class="editor__group-main-wrapper">
-                          
-                          <input type="text" 
+
+                          <input type="text"
                               data-skills-category [(ngModel)]="certificates[selected].authority" required>
                               <label>Authority</label>
                       </div>
@@ -49,7 +49,7 @@
                           <div class="row editor__skills-row">
                               <div class="col-12 ">
                                   <div class="editor__group-main-wrapper">
-                                      
+
                                       <input type="text"  required
                                           data-skills-name [(ngModel)]="certificates[selected].certicateCode" required>
                                           <label>Certification URL / Code</label>
