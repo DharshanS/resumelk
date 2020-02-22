@@ -5,10 +5,10 @@
           <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Awards</p>
       </div>
       <ul class="editor__group-list" data-sortable data-skills-list>
-          <li class="editor__group-item editor__group-item--active" [ngClass]="{active: selected==i}" data-skills-list-item *ngFor="let item of awards;index as i" (click)="selectedItem(i)">
+          <li class="editor__group-item editor__group-item--active" [ngClass]="{active: selected==i}" data-skills-list-item *ngFor="let item of resumeService._resume.awards;index as i" (click)="selectedItem(i)">
               <div class="editor__group-item-label">
                   <i class="fas fa-bars"></i>
-                  <p class="paragraph--med u-weight-smb">{{awards[i].name}}</p>
+                  <p class="paragraph--med u-weight-smb">{{resumeService._resume.awards[i].name}}</p>
               </div>
               <i class="fas fa-times editor__group-item-delete" data-skills-delete (click)="removeAward(i)"></i>
           </li>
@@ -27,19 +27,19 @@
               <div class="row editor__skills-row" data-skills-form-items>
                   <div class="col-12 col-lg-6">
                       <div class="editor__group-main-wrapper">
-                          
-                          <input type="text"  [(ngModel)]="awards[selected].name"
+
+                          <input type="text"  [(ngModel)]="resumeService._resume.awards[selected].name"
                               data-skills-category required>
-                              <label>Award Name {{awards.length}}</label>
+                              <label>Award Name {{resumeService._resume.awards.length}}</label>
                       </div>
 
                   </div>
                   <div class="col-12 col-lg-6">
 
                       <div class="editor__group-main-wrapper">
-                          
-                          <input type="text" 
-                              data-skills-category [(ngModel)]="awards[selected].issuer" required>
+
+                          <input type="text"
+                              data-skills-category [(ngModel)]="resumeService._resume.awards[selected].issuer" required>
                               <label>Issuer</label>
                       </div>
                   </div>
@@ -49,9 +49,9 @@
                           <div class="row editor__skills-row">
                               <div class="col-12 ">
                                   <div class="editor__group-main-wrapper">
-                                      
+
                                       <input type="text"  required
-                                          data-skills-name [(ngModel)]="awards[selected].url">
+                                          data-skills-name [(ngModel)]="resumeService._resume.awards[selected].url">
                                           <label>URL to award</label>
                                   </div>
                               </div>
@@ -69,7 +69,7 @@
                               <div class="col-12 col-lg-4">
                                   <div class="editor__group-main-wrapper">
 
-                                      <select required data-skills-level [(ngModel)]="awards[selected].month">
+                                      <select required data-skills-level [(ngModel)]="resumeService._resume.awards[selected].month">
                                           <option value="" disabled selected hidden>Month</option>
                                           <option [ngValue]="item" *ngFor="let item of months;let i = index">{{item}}</option>
 
@@ -79,7 +79,7 @@
                               <div class="col-12 col-lg-4">
                                   <div class="editor__group-main-wrapper">
 
-                                      <select required data-skills-level [(ngModel)]="awards[selected].year">
+                                      <select required data-skills-level [(ngModel)]="resumeService._resume.awards[selected].year">
                                           <option value="" disabled selected hidden >Year</option>
                                           <option [ngValue]="1990+i" *ngFor="let item of [].constructor(50);let i = index">{{1990+i}}</option>
 

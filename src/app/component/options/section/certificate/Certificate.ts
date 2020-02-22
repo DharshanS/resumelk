@@ -7,6 +7,7 @@ export class Certificate {
   certicateCode:string;
   dateOfCerticate:TimePeriod
 
+
   constructor(){
     this.dateOfCerticate=new TimePeriod();
   }
@@ -17,4 +18,5 @@ export class Certificate {
 export class TimePeriod{
   month:string;
   year:string;
+  constructor(){}
 }

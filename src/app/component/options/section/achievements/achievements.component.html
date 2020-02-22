@@ -5,10 +5,10 @@
           <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Achievements</p>
       </div>
       <ul class="editor__group-list" data-sortable data-skills-list>
-          <li class="editor__group-item editor__group-item--active" [ngClass]="{active: selected==i}" data-skills-list-item *ngFor="let item of __achivements;index as i"  (click)=selectedItem(i)>
+          <li class="editor__group-item editor__group-item--active" [ngClass]="{active: selected==i}" data-skills-list-item *ngFor="let item of resumeService._resume.achivements;index as i"  (click)=selectedItem(i)>
               <div class="editor__group-item-label">
                   <i class="fas fa-bars"></i>
-                  <p class="paragraph--med u-weight-smb">{{__achivements[i].name}}</p>
+                  <p class="paragraph--med u-weight-smb">{{resumeService._resume.achivements[i].name}}</p>
               </div>
               <i class="fas fa-times editor__group-item-delete" (click)="removeAchivements(i)" data-skills-delete></i>
           </li>
@@ -30,7 +30,7 @@
                   <div class="editor__group-main-wrapper">
                       <label>Name </label>
                       <input type="text"
-                          data-skills-category [(ngModel)]="__achivements[selected].name">
+                          data-skills-category [(ngModel)]="resumeService._resume.achivements[selected].name">
                   </div>
 
               </div>
@@ -42,7 +42,7 @@
 
                               <ckeditor [editor]="Editor"  data=""></ckeditor>
                               <!-- <angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor> -->
-                        <!-- <ckeditor [editor]="Editor" data="write something about your achivements"  [(ngModel)]="__achivements[selected].description"></ckeditor> -->
+                        <!-- <ckeditor [editor]="Editor" data="write something about your achivements"  [(ngModel)]="resumeService._resume.achivements[selected].description"></ckeditor> -->
 
                           </div>
                       </div>

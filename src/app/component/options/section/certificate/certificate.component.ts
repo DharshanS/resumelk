@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, AfterViewInit, AfterContentChecked } from "@angular/core";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { Certificate } from "./Certificate";
 import { ResumeBucket } from "../../../../resume.service";
@@ -8,24 +8,44 @@ import { ResumeBucket } from "../../../../resume.service";
   templateUrl: "./certificate.component.html",
   styleUrls: ["./certificate.component.css"]
 })
-export class CertificateComponent implements OnInit {
+export class CertificateComponent implements OnInit, AfterViewInit, AfterContentChecked {
   @Input() flag: boolean;
   public Editor = ClassicEditor;
 
-  certificates = [];
+
   selected = 0;
-  constructor( private resumeService: ResumeBucket) {}
+  constructor(private resumeService: ResumeBucket) { }
 
   ngOnInit() {
-    this.certificates = [new Certificate()];
-    this.resumeService._resume.certificates=this.certificates;
+    console.log("Certifate initiated...")
+
+
+  }
+
+  ngAfterViewInit() {
+
+    console.log("Certifate view initiated...")
+
+  }
+
+  ngAfterContentChecked() {
+
+    if (this.flag) {
+      if (this.resumeService.checklenthOfarray(this.resumeService._resume.certificates)) {
+        this.resumeService._resume.certificates.push(new Certificate());
+      }
+    }
+
+
+
+
   }
 
   addNewCertificate() {
-    this.certificates.push(new Certificate());
+    this.resumeService._resume.certificates.push(new Certificate());
   }
   removeCertificate(index) {
-    if (index !== 0) this.certificates.splice(index, 1);
+    if (index !== 0) this.resumeService._resume.certificates.splice(index, 1);
   }
 
   selectedItem(i) {

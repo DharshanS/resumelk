@@ -5,10 +5,10 @@
           <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Publications</p>
       </div>
       <ul class="editor__group-list" data-sortable data-skills-list  >
-          <li class="editor__group-item " data-skills-list-item *ngFor="let item of publications;index as i" (click)=selectedItem(i)>
+          <li class="editor__group-item " data-skills-list-item *ngFor="let item of this.resumeService._resume.publications;index as i" (click)=selectedItem(i)>
               <div class="editor__group-item-label">
                   <i class="fas fa-bars"></i>
-                  <p class="paragraph--med u-weight-smb">{{publications[i].title}}</p>
+                  <p class="paragraph--med u-weight-smb">{{this.resumeService._resume.publications[i].title}}</p>
               </div>
               <i class="fas fa-times editor__group-item-delete" data-skills-delete (click)=removePublication(i)></i>
           </li>
@@ -28,7 +28,7 @@
                   <div class="col-12 col-lg-6">
                       <div class="editor__group-main-wrapper">
 
-                          <input type="text" required [(ngModel)]="publications[selected].title"
+                          <input type="text" required [(ngModel)]="this.resumeService._resume.publications[selected].title"
                               data-skills-category>
                               <label>Title</label>
                       </div>
@@ -38,7 +38,7 @@
 
                       <div class="editor__group-main-wrapper">
 
-                          <input type="text" required [(ngModel)]="publications[selected].publisher"
+                          <input type="text" required [(ngModel)]="this.resumeService._resume.publications[selected].publisher"
                               data-skills-category>
                               <label>Publisher</label>
                       </div>
@@ -50,9 +50,9 @@
                               <div class="col-12 ">
                                   <div class="editor__group-main-wrapper">
 
-                                      <input type="text"  required  [(ngModel)]="publications[selected].url"
+                                      <input type="text"  required  [(ngModel)]="this.resumeService._resume.publications[selected].url"
                                           data-skills-name>
-                                          <label>Publications URL/ISBN</label>
+                                          <label>URL/ISBN</label>
                                   </div>
                               </div>
 
@@ -68,7 +68,7 @@
                               <div class="col-12 col-lg-4">
                                   <div class="editor__group-main-wrapper">
                                       <label>Month</label>
-                                      <select required data-skills-level  [(ngModel)]="publications[selected].publicationDate.month">
+                                      <select required data-skills-level  [(ngModel)]="this.resumeService._resume.publications[selected].publicationDate.month">
                                           <option value="" disabled selected hidden>Month</option>
                                           <option value="beginner">Beginner</option>
                                           <option value="intermediate">Intermediate</option>
@@ -79,7 +79,7 @@
                               <div class="col-12 col-lg-4">
                                   <div class="editor__group-main-wrapper" >
                                       <label>Year</label>
-                                      <select required data-skills-level [(ngModel)]="publications[selected].publicationDate.year">
+                                      <select required data-skills-level [(ngModel)]="this.resumeService._resume.publications[selected].publicationDate.year">
                                           <option value="" disabled selected hidden>Year</option>
                                           <option value="beginner">Beginner</option>
                                           <option value="intermediate">Intermediate</option>
@@ -96,7 +96,7 @@
                       <div class="editor__skills">
                           <div class="col-12 p-0">
                               <label>Description</label>
-                              <ckeditor [editor]="Editor"  data="" [(ngModel)]="publications[selected].description" ></ckeditor>
+                              <ckeditor [editor]="Editor"  data="" [(ngModel)]="this.resumeService._resume.publications[selected].description" ></ckeditor>
                           </div>
                       </div>
                   </div>

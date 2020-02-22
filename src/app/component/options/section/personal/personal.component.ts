@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,HostListener, DoCheck } from "@angular/core";
+import { Component, OnInit, Input,HostListener, DoCheck, AfterContentChecked } from "@angular/core";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { ResumeBucket } from "../../../../resume.service";
 import { Router } from "@angular/router";
@@ -11,7 +11,12 @@ import { Personal } from './Personal';
   styleUrls: ["./personal.component.css"],
 
 })
-export class PersonalComponent implements OnInit,DoCheck{
+export class PersonalComponent implements OnInit,DoCheck,AfterContentChecked{
+  ngAfterContentChecked(): void {
+    if(this.flag && this.resumeService._resume.personal==null){
+      this.resumeService._resume.personal=new Personal();
+    }
+  }
   public Editor = ClassicEditor;
   @Input() flag: boolean;
   @Input() personal:Personal;
@@ -25,8 +30,7 @@ export class PersonalComponent implements OnInit,DoCheck{
 
 
   ngOnInit() {
-    console.log("OnInit ...")
-    this.fillInitialValue();
+
 
   }
 
@@ -51,23 +55,6 @@ export class PersonalComponent implements OnInit,DoCheck{
   //  console.log(this.Editor.getData())
   }
 
-  isPersonalInfoNull(){
-    if(this.resumeService._resume.personal==null){
-      return true;
-    }
-    return false;
-  }
 
-  fillInitialValue(){
-    //This should be change
-    if(!this.isPersonalInfoNull){
-      console.log("Personal info null...")
-      this.personal=new Personal();
-     this.resumeService._resume.personal = this.personal;
-   }else{
-    console.log("Personal info updates...")
-   this.personal = this.resumeService._resume.personal;
-   }
-  }
 
 }

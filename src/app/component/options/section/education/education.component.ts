@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterContentChecked } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import { Education } from './Education';
 import { ResumeBucket } from "../../../../resume.service";
@@ -9,7 +9,13 @@ import { EditorService } from "../../editor.service";
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.css']
 })
-export class EducationComponent implements OnInit {
+export class EducationComponent implements OnInit,AfterContentChecked {
+  ngAfterContentChecked(): void {
+    if(this.flag && this.resumeService.checklenthOfarray(this.resumeService._resume.education)){
+        this.resumeService._resume.education.push(new Education());
+      }
+
+  }
 
   @Input() flag: boolean;
   public Editor = ClassicEditor;
@@ -46,5 +52,8 @@ export class EducationComponent implements OnInit {
   continue() {
     console.log(this.eductionsPlace)
   }
+
+
+
 
 }

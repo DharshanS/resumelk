@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, AfterContentChecked } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ResumeBucket } from "../../../../resume.service";
 import { Award } from './Award';
@@ -8,7 +8,7 @@ import { Award } from './Award';
   templateUrl: './award.component.html',
   styleUrls: ['./award.component.css']
 })
-export class AwardComponent implements OnInit {
+export class AwardComponent implements OnInit,AfterContentChecked {
 
   public Editor = ClassicEditor;
   awards=[];
@@ -20,17 +20,17 @@ export class AwardComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.awards.push(new Award())
-    this.resumeService._resume.awards=this.awards;
+    console.log("AwardComponent initiated");
+
   }
 
   addAward(){
-    this.awards.push(new Award())
+    this.resumeService._resume.awards.push(new Award())
    // alert(JSON.stringify(this.awards));
   }
   removeAward(index){
     if(index!=0)
-    this.awards.splice(index,1)
+    this.resumeService._resume.awards.splice(index,1)
   }
 
   selectedItem(index){
@@ -41,9 +41,13 @@ export class AwardComponent implements OnInit {
 
   calculateDate(year,date){
 
+  }
 
-   // alert(Number(year)+Number(date))
-
+  ngAfterContentChecked(){
+    console.log("AwardComponent content cheack");
+    if(this.flag && this.resumeService._resume.awards.length==0){
+      this.resumeService._resume.awards.push(new Award())
+    }
   }
 
 }

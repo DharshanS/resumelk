@@ -52,23 +52,17 @@ export class ResumeBucket{
         ],
 
         "referances":[
-          {"company":"Ngnix","personName":"Dharshan","mobile":"0770885997","email":"cdharshans@gmail.com","description":"","title":"Software Architect"}
+
 
         ],
 
 
-        "awards":[
-          {
-          "name":"Olympic","issuer":"Olympic","url":"https://www.tamildhool.com","month":"JUN","year":"1987","description":"One of the most difficult parts in writing a resume is composing the descriptions of your jobs, "}
-        ]
+        "awards":[]
 ,
 
-        "certificates":[
-        {"certificateName":" IBM WEB Shpere","authority":"IBM","certicateCode":"WE2344",
-        "dateOfCerticate":{"month":"APRIL","year":"2018"},"url":"","type":"Intermediate","description":"One of the most difficult parts in writing a resume is composing the descriptions of your jobs"}
-        ],
+        "certificates":[],
 
-        "publications":[{"title":"Java Spring","publisher":"Dharshan","url":"https://www.tamildhool.com","date":{"month":"APRIL","year":"2018"},"description":"One of the most difficult parts in writing a resume is composing the descriptions of your jobs"}]
+        "publications":[]
 ,
         "Volunteerings":[{"institutaionName":"IDM","role":"Manager",
           "country":"SriLanka","city":"Kandy","timePeriod":{"from":{"month":"JUNE","year":"1987"},"to":{"month":"JUNE","year":"1997"}}}]
@@ -148,6 +142,15 @@ private handleError<T>(operation = 'operation', result?: T) {
 
 private log(message: string) {
   console.log(message);
+}
+
+
+checklenthOfarray(data:any[]){
+if(data.length==0){
+  console.log("Data Nulll")
+return true;
+}
+return false;
 }
 
 }

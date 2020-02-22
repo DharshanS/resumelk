@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input, AfterContentChecked } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Referance } from './Referance';
 import { ResumeBucket } from "../../../../resume.service";
@@ -7,34 +7,35 @@ import { ResumeBucket } from "../../../../resume.service";
   templateUrl: './referances.component.html',
   styleUrls: ['./referances.component.css']
 })
-export class ReferancesComponent implements OnInit {
+export class ReferancesComponent implements OnInit, AfterContentChecked {
+  ngAfterContentChecked(): void {
+    if (this.flag && this.resumeService.checklenthOfarray(this.resumeService._resume.referances)) {
+      this.resumeService._resume.referances.push(new Referance())
+    }
+  }
 
   constructor(private resumeService: ResumeBucket) { }
 
   public Editor = ClassicEditor;
-  @Input() flag:boolean;
-  selected=0;
+  @Input() flag: boolean;
+  selected = 0;
 
-  __referances:any;
+  __referances: any;
 
 
   ngOnInit() {
-    this.__referances=[new Referance()];
-   this.resumeService._resume.referances=this.__referances;
+
   }
 
 
-  addNewReferance(){
-
+  addNewReferance() {
     this.__referances.push(new Referance())
   }
 
-  selectedItem(i){
-   // alert(i);
-    this.selected=i;
+  selectedItem(i) {
+    this.selected = i;
 
   }
-  removeRefernace(){
-
+  removeRefernace() {
   }
 }

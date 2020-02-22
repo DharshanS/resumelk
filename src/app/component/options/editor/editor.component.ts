@@ -145,6 +145,7 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
   }
 
   ngAfterContentChecked() {
+
     console.log("ngAfterContentChecked editor");
 
 
@@ -184,7 +185,6 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
   }
 
   onScroll($event) {
-    alert('test')
     console.log($event);
   }
 
@@ -215,7 +215,6 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
     let userCode=8
     this.sections.getResume(userCode).subscribe((data:any[])=>{
       console.log("get response");
-
       this.resume._resume=data[0].resumeJson;
       this.resume._currentTemplate=data[0].resumeName;
 

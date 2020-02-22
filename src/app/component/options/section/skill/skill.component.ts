@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,AfterContentChecked } from '@angular/core';
 import { Skill, SkillName } from './Skill';
 import { ResumeBucket } from "../../../../resume.service";
 
@@ -7,7 +7,7 @@ import { ResumeBucket } from "../../../../resume.service";
   templateUrl: './skill.component.html',
   styleUrls: ['./skill.component.css']
 })
-export class SkillComponent implements OnInit {
+export class SkillComponent implements OnInit,AfterContentChecked {
 
 
   @Input() flag:boolean;
@@ -15,11 +15,15 @@ export class SkillComponent implements OnInit {
   constructor(    private resumeService: ResumeBucket) { }
 
   ngOnInit() {
-    if( this.resumeService._resume.skills.length==0)
-    this.resumeService._resume.skills.push(new Skill())
 
   }
 
+  ngAfterContentChecked(){
+    if(this.flag &&  this.resumeService.checklenthOfarray(this.resumeService._resume.skills)){
+      this.resumeService._resume.skills.push(new Skill());
+    }
+
+  }
   addNewSkillCategory() {
     this.resumeService._resume.skills.push(new Skill());
 

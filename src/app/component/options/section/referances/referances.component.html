@@ -5,9 +5,9 @@
             <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Reference</p>
         </div>
         <ul class="editor__group-list" data-sortable data-skills-list>
-            <li class="editor__group-item "  [ngClass]="{active: selected==i}" data-skills-list-item  *ngFor="let item of __referances; index as i" (click)=selectedItem(i)>
+            <li class="editor__group-item "  [ngClass]="{active: selected==i}" data-skills-list-item  *ngFor="let item of this.resumeService._resume.referances; index as i" (click)=selectedItem(i)>
                 <div class="editor__group-item-label">
-                    <i class="fas fa-bars"></i>{{__referances[i].company}}
+                    <i class="fas fa-bars"></i>{{this.resumeService._resume.referances[i].company}}
                     <p class="paragraph--med u-weight-smb"></p>
                 </div>
                 <i class="fas fa-times editor__group-item-delete" data-skills-delete (click)="removeRefernace()"></i>
@@ -31,7 +31,7 @@
                         <div class="editor__group-main-wrapper">
 
                             <input type="text"
-                                data-skills-category [(ngModel)]="__referances[selected].personName" required>
+                                data-skills-category [(ngModel)]="this.resumeService._resume.referances[selected].personName" required>
                                 <label>Person Name</label>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                         <div class="editor__group-main-wrapper">
 
                             <input type="text"
-                                data-skills-category [(ngModel)]="__referances[selected].company" required>
+                                data-skills-category [(ngModel)]="this.resumeService._resume.referances[selected].company" required>
                                 <label>Company Name</label>
                         </div>
 
@@ -48,7 +48,7 @@
                         <div class="editor__group-main-wrapper">
 
                             <input type="text"
-                                data-skills-category [(ngModel)]="__referances[selected].company" required>
+                                data-skills-category [(ngModel)]="this.resumeService._resume.referances[selected].title" required>
                                 <label>Job Title </label>
                         </div>
 
@@ -60,7 +60,7 @@
                                     <div class="editor__group-main-wrapper">
 
                                         <input type="text"  required
-                                            data-skills-name [(ngModel)]="__referances[selected].contact1" required>
+                                            data-skills-name [(ngModel)]="this.resumeService._resume.referances[selected].contact1" required>
                                             <label>Contact 1</label>
                                     </div>
                                 </div>
@@ -69,7 +69,7 @@
                                     <div class="editor__group-main-wrapper">
 
                                         <input type="text"  required
-                                            data-skills-name [(ngModel)]="  __referances[selected].contact2" required>
+                                            data-skills-name [(ngModel)]="  this.resumeService._resume.referances[selected].contact2" required>
                                             <label>Contact 2</label>
                                     </div>
                                 </div>

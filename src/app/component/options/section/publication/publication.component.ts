@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, AfterContentChecked } from '@angular/core';
 import { ResumeBucket } from "../../../../resume.service";
 import { Publication } from './Publication';
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
@@ -8,7 +8,13 @@ import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
   templateUrl: './publication.component.html',
   styleUrls: ['./publication.component.css']
 })
-export class PublicationComponent implements OnInit {
+export class PublicationComponent implements OnInit,AfterContentChecked {
+  ngAfterContentChecked(): void {
+    if(this.flag && this.resumeService._resume.publications.length==0){
+
+    this.resumeService._resume.publications.push(new Publication())
+    }
+  }
 
   @Input() flag:boolean;
 
@@ -22,8 +28,7 @@ export class PublicationComponent implements OnInit {
   publications=[];
 
   ngOnInit() {
-    this.publications.push(new Publication());
-    this.resumeService._resume.publications=this.publications;
+
   }
 
   addPublication(){

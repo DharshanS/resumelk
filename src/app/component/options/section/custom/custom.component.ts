@@ -11,7 +11,7 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 export class CustomComponent implements  OnInit, OnDestroy  {
 
 
-
+@Input() flag:boolean;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 
@@ -21,7 +21,6 @@ export class CustomComponent implements  OnInit, OnDestroy  {
   ngOnDestroy() {
 
   }
-
 
 
 
