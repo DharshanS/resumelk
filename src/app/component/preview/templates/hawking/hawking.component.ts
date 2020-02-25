@@ -4,6 +4,7 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import { ResumeBucket } from "../../../../resume.service";
 import { DomSanitizer } from '@angular/platform-browser';
+import { EditorService } from "../../../options/editor.service";
 
 
 @Component({
@@ -29,7 +30,7 @@ export class HawkingComponent implements OnInit {
 
 
 
-constructor(private sanitizer: DomSanitizer, private resumeService: ResumeBucket,private renderer2: Renderer2, private el: ElementRef){
+constructor(private sections:EditorService, private sanitizer: DomSanitizer, private resumeService: ResumeBucket,private renderer2: Renderer2, private el: ElementRef){
 
 }
 
@@ -37,6 +38,7 @@ constructor(private sanitizer: DomSanitizer, private resumeService: ResumeBucket
 
     this.__resume=this.resumeService._resume;
     console.log("---Inside ngOnInit---");
+    this.getResume();
   }
 
  
@@ -85,6 +87,18 @@ constructor(private sanitizer: DomSanitizer, private resumeService: ResumeBucket
     console.log("---Inside ngOnDestroy---");
   }
 
+  getResume(){
+    let userCode=8
+    this.sections.getResume(userCode).subscribe((data:any[])=>{
+      console.log("get response");
 
+      this.__resume=data[0].resumeJson;
+      this.__resume.currentTemplate=data[0].resumeName;
+
+      console.log("preview response");
+      console.log(this.__resume);
+      //this.resume._resume=data['body']['resumeJson'];
+    })
+  }
 
 }

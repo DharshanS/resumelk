@@ -95,6 +95,7 @@ constructor( private resumeService: ResumeBucket,private renderer2: Renderer2, p
   ngOnDestroy() {
     console.log("---Inside ngOnDestroy---");
   }
+  
 
 
   getResume(){

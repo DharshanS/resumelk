@@ -2,10 +2,10 @@
 
 
 <div class="main-page">
- <div class="temp-header">
+  <div class="temp-header">
     <div class="row">
       <div class="col-7">
-        <div class="name">{{__resume.personal.title}} {{"."+__resume.personal.firstName}}</div>
+        <div class="name">{{__resume.personal.title}} {{"."+__resume.personal.firstName}} {{__resume.personal.lastName}}</div>
         <div class="title">{{__resume.workExperiance[__resume.workExperiance.length-1].jobTitle}}</div>
       </div>
       <div class="col-3">
@@ -35,10 +35,14 @@
     <div class="col-12 sub-box">
       <div class="border-left">
         <div class="title-icon"><i class="fas fa-address-card"></i></div>
-        <div class="title-box">Key Skills</div>
-
-        <span class="key-skills-box" *ngFor="let item of __resume.skills">{{item.category}}</span>
+        <div class="title-box">Skills</div>
+        <div class="pl-1" *ngFor="let skills of __resume.skills">
+          <span class="skill-sub-title">{{skills.skillCategoryName}}</span>
+          <span class="key-skills-box" *ngFor="let skill of skills.skillNames">
+              {{skill.skillName}}
+          </span>
       </div>
+ </div>
     </div>
   </div>
 
@@ -54,26 +58,20 @@
 
 
           <div class="professional-box" *ngFor="let item of __resume.workExperiance">
-            <label>{{item.companyName}}</label>
-            <ul style="margin: 0;">
-           {{item.description}}
-            </ul>
+            <label class="bold">{{item.jobTitle}}</label>
+            <div class="col-12 row">
+
+              <div class="col-6 p-0  c-name">{{item.companyName}}</div>
+              <div class="col-6 p-0 text-right">{{item.city}},{{item.city}}</div>
+              <span class="span-text"><i class="far fa-calendar-alt"></i>
+                &nbsp;{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
+                {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</span><br>
+
+
+
+              <span class="span-text">{{item.description}}</span>
+            </div>
           </div>
-          <!-- <div class="professional-box">
-            <label>Campaign Performance Analysis</label>
-            <ul style="margin: 0;">
-              <li class="span-text">Conducted in depth analysis of the market & client specific data to
-                improve the campaign performance</li>
-              <li class="span-text">Increased traffic on the site by 60% by analyzing multiple metrics
-                such as page views, ad impressions etc.</li>
-              <li class="span-text">Led the competitor benchmarking exercise for 7 key accounts to assist
-                them in improving their overall performance</li>
-            </ul>
-          </div> -->
-
-
-
-
         </div>
 
       </div>
@@ -128,11 +126,225 @@
       </div>
     </div>
 
+    <!--Education  -->
+
+
+    <div class="col-12 sub-box" *ngIf=" __resume.education.length>0">
+      <div class="border-left">
+        <div class="title-icon"><i class="fas fa-address-card"></i></div>
+        <div class="title-box">Education</div>
+
+        <div class="p-0 col-12 row">
+
+
+          <div class="professional-box" *ngFor="let item of __resume.education">
+            <label>{{item.feildOfStudy}}</label>
+
+
+            <div class="p-0 col-12 row">
+
+              <div class="col-6 p-0  c-name">{{item.institutionName}}</div>
+              <div class="col-6 p-0 text-right"><span>{{item.city}}, &nbsp;</span><span>{{item.country}}</span></div>
+              <span class="span-text"><i class="far fa-calendar-alt"></i>
+                &nbsp;{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
+                {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</span><br>
+
+
+
+              <span class="span-text">{{item.description}}</span>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!--Certificates  -->
+
+
+    <div class="col-12 sub-box" *ngIf=" __resume.certificates.length>0">
+      <div class="border-left">
+        <div class="title-icon"><i class="fas fa-address-card"></i></div>
+        <div class="title-box">Certificates</div>
+
+        <div class="p-0 col-12 row">
+
+
+          <div class="professional-box" *ngFor="let item of __resume.certificates">
+            <label>{{item.certificateName}}</label>
+
+
+            <div class="p-0 col-12 row">
+
+              <div class="col-6 p-0  c-name" *ngIf="item.url">Certification URL </div>
+              <div class="col-6 p-0 text-right">{{item.certicateCode}}</div>
+              <span class="span-text"><i class="far fa-calendar-alt"></i>
+                &nbsp;{{item.dateOfCerticate.month+"/"+item.dateOfCerticate.year}}</span><br>
+
+
+
+              <span class="span-text">{{item.description}}</span>
 
 
 
 
 
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!--Awards  -->
+
+
+    <div class="col-12 sub-box" *ngIf=" __resume.awards.length>0">
+      <div class="border-left">
+        <div class="title-icon"><i class="fas fa-address-card"></i></div>
+        <div class="title-box">Awards</div>
+
+        <div class="p-0 col-12 row">
+
+
+          <div class="professional-box" *ngFor="let item of __resume.awards">
+            <label>{{item.name}}</label>
+
+
+            <div class="p-0 col-12 row">
+
+              <div class="col-8 p-0  c-name">{{item.url}}</div>
+              <div class="col-4 p-0 text-right">{{item.issuer}}</div>
+              <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;{{item.month+"/"+item.year}}</span><br>
+
+
+
+              <span class="span-text">{{item.description}}</span>
+
+
+
+
+
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!--Achievements  -->
+
+
+    <div class="col-12 sub-box" *ngIf=" __resume.achivements.length>0">
+      <div class="border-left">
+        <div class="title-icon"><i class="fas fa-address-card"></i></div>
+        <div class="title-box">Achievements</div>
+
+        <div class="p-0 col-12 row">
+
+
+          <div class="professional-box" *ngFor="let item of __resume.achivements">
+            <label>{{item.name}}</label>
+
+
+            <div class="p-0 col-12 row">
+
+
+              <span class="span-text">{{item.description}}</span>
+
+
+
+
+
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+      <!--REFERENCE  -->
+
+
+      <div class="col-12 sub-box" *ngIf=" __resume.referances.length>0">
+        <div class="border-left">
+          <div class="title-icon"><i class="fas fa-address-card"></i></div>
+          <div class="title-box">REFERENCE</div>
+  
+          <div class="p-0 col-12 row">
+  
+  
+            <div class="professional-box" *ngFor="let item of __resume.referances">
+              <label>{{item.personName}}</label>
+
+
+              <div class="p-0 col-12 row">
+
+                  <div class="col-12 p-0  c-name">{{item.title}} , {{item.company}} </div>
+                  <div class="col-12 p-0  c-name">{{item.mobile}} </div>
+                  <div class="col-12 p-0  c-name">{{item.email}} </div>
+
+                  <div class="col-12 p-0  c-name">{{item.description}}</div>
+
+              </div>
+          </div>
+  
+  
+          </div>
+  
+        </div>
+      </div>
+
+      <!--Publications  -->
+
+
+      <div class="col-12 sub-box" *ngIf=" __resume.publications.length>0">
+        <div class="border-left">
+          <div class="title-icon"><i class="fas fa-address-card"></i></div>
+          <div class="title-box">Publications</div>
+  
+          <div class="p-0 col-12 row">
+  
+  
+            <div class="professional-box" *ngFor="let item of __resume.publications">
+
+
+
+              <div class="p-0 col-12 row">
+                  <div class="col-8 p-0"><label>{{item.title}}</label></div>
+                  <div class="col-4 p-0 text-right">{{item.publisher}}</div>
+                  <div class="col-8 p-0  c-name">{{item.url}}</div>
+                  <!-- <div class="col-4 p-0 text-right">04/2019 - 12/2019</div> -->
+                  <!-- <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;04/2019 - 12/2019</span><br> -->
+
+
+                  <br>
+                  <span class="span-text">{{item.description}}</span>
+
+
+
+
+
+              </div>
+          </div>
+  
+  
+          </div>
+  
+        </div>
+      </div>
 
   </div>
 </div>
