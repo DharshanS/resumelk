@@ -70,6 +70,7 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
     this.date = new FormControl(new Date());
     this.serializedDate = new FormControl(new Date().toISOString());
     this.resumeObject=new ResumeReq();
+    this.resume.loadResume(8)
     this.getResume();
 
   }
@@ -202,6 +203,7 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
   async updateOption() {
 
   this.resumeObject.resumeJson=this.resume._resume;
+  this.resumeObject.resumeName='newton';
   console.log(this.resumeObject.resumeJson);
    this.sections.updateResume(this.resumeObject);
   }

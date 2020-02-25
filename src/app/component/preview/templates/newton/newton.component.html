@@ -1,28 +1,25 @@
    
-   <div class="" #hawking>
-   <div class="main-page section" #tasknote>
+   <div class="" #newton>
+   <div class="main-page section" #tasknote >
         <div class="header color-1">
             <div class="row">
                 <div class="col-4 bg-color">
                     <div class="user-img">
                         <img src="images/images.jpg" alt="">
                     </div>
-                    <div class="name">marty mcfy</div>
-                    <div class="title">business analyst</div>
+                    <div class="name">{{__resume.personal.firstName}} {{__resume.personal.lastName}}</div>
+                    <div class="title">{{__resume.workExperiance[0].jobTitle}}</div>
                 </div>
                 <div class="col-8">
                     <div class="title-box">SUMMARY</div>
-                    <p>Enterprising marketing professional skilled at marketing, communications, branding, campaign
-                        management, and campaign analysis. Over a career of 2+ years, gained exposure to and executed
-                        multiple marketing initiatives. Adept at launching marketing campaigns resulting in significant
-                        sales and user acquisition. Skilled at analysing & improving the performance of campaigns
-                        through data analysis and competitive benchmarking.
+                    <p>{{__resume.personal.description}}
                     </p>
                 </div>
                 <div class="col-12 address">
-                    <span><i class="fas fa-phone-square-alt"></i>&nbsp;+94758627689</span>
-                    <span><i class="fas fa-envelope-square"></i>&nbsp;lojan@gmail.com</span>
-                    <span><i class="fas fa-home"></i>&nbsp;lojan@gmail.com</span>
+                    <span><i class="fas fa-phone-square-alt"></i>&nbsp;{{__resume.personal.phoneNumber}}</span>
+                    <span><i class="fas fa-envelope-square"></i>&nbsp;{{__resume.personal.email}}</span>
+                    <span><i class="fas fa-home"></i>&nbsp;{{__resume.personal.address.street}},
+                        {{__resume.personal.address.city}} {{__resume.personal.address.country}}</span>
 
                 </div>
             </div>
@@ -39,6 +36,15 @@
             <div class="col-12 sub-box">
                 <div class="border-b">
                     <div class="title-box">Key Skills</div>
+
+                    <span class="key-skills-box">Marketing Campaigns</span>
+                    <span class="key-skills-box">Campaign Analysis</span>
+                    <span class="key-skills-box">Corporate Communications</span>
+                    <span class="key-skills-box">User Growth</span>
+                    <span class="key-skills-box">Key Metric Analysis</span>
+                </div>
+                <div class="border-b">
+                    <div class="title-box">TECHNICAL SKILLS</div>
 
                     <span class="key-skills-box">Marketing Campaigns</span>
                     <span class="key-skills-box">Campaign Analysis</span>

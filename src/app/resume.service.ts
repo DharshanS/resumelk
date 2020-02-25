@@ -114,10 +114,13 @@ export class ResumeBucket {
 
   updateTemplate(resume){
     console.log(this.resumeObject)
-    this.resumeObject.resumeName=resume;
+    this.resumeObject.resumeName="newton";
        this.http.put(this.apiUrl,this.resumeObject,{withCredentials:true}).subscribe(data=>{
          console.log("response");
          console.log(data);
+          this.loadResume(8);
        });
   }
 }
+
+

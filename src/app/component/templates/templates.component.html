@@ -7,6 +7,7 @@
           <div class="col-12 col-md-10 offset-md-1">
               <div class="select-template__grid">
                   <div class="select-template__grid-item" *ngFor="let item of resume._templateNames">
+                  <label class="res-name">{{item.name}}</label>  
                       <div class="select-template__item" [style.background-image]="getBackground(item.name)"
 
                       >
