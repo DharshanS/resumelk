@@ -16,7 +16,7 @@ export class AwardComponent implements OnInit,AfterContentChecked {
   @Input() flag:boolean;
   months=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-  constructor( private resumeService: ResumeBucket,
+  constructor( public resumeService: ResumeBucket,
     ) { }
 
   ngOnInit() {

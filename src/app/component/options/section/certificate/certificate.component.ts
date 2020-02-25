@@ -14,7 +14,7 @@ export class CertificateComponent implements OnInit, AfterViewInit, AfterContent
 
 
   selected = 0;
-  constructor(private resumeService: ResumeBucket) { }
+  constructor(public resumeService: ResumeBucket) { }
 
   ngOnInit() {
     console.log("Certifate initiated...")

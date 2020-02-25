@@ -14,7 +14,7 @@ export class ReferancesComponent implements OnInit, AfterContentChecked {
     }
   }
 
-  constructor(private resumeService: ResumeBucket) { }
+  constructor(public resumeService: ResumeBucket) { }
 
   public Editor = ClassicEditor;
   @Input() flag: boolean;

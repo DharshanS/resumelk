@@ -20,7 +20,7 @@ export class AchievementsComponent implements OnInit,AfterContentChecked {
   @Input() flag:boolean;
 
 
-  constructor( private resumeService: ResumeBucket) { }
+  constructor( public resumeService: ResumeBucket) { }
 
   ngOnInit() {
 

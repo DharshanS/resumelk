@@ -7,20 +7,20 @@
     <div class="row">
       <label for="" class="col-md-12">New item</label>
       <div class="col-md-5"> <form class="editor__group-main-wrapper">
-      
-        <input type="text"  aria-label="Number" matInput [formControl]="myControl" [(ngModel)]="stremg" [matAutocomplete]="auto" appearance="outline">
+
+        <input type="text"  aria-label="Number" matInput [formControl]="myControl" [(ngModel)]="resume._resume.strengths" [matAutocomplete]="auto" appearance="outline">
         <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
           <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
            {{option}}
           </mat-option>
         </mat-autocomplete>
-        
-    
-        
+
+
+
       </form></div>
       <div class="col-md-4"><button class="btn strength-add-btn " (click)="pushData(stremg)">Create new</button></div>
     </div>
-   
+
     <div class="">
       <!-- <ng-select [items]="users" class="listOfStrenths"
       bindLabel="name"
@@ -35,7 +35,7 @@
 {{stremgArray}}
 
 <ul>
-  <li *ngFor="let item of stremgArray; index as i" class="strength-item-li"> 
+  <li *ngFor="let item of stremgArray; index as i" class="strength-item-li">
     <span class="strength-item-box">
       {{item}} </span><span class="close-btn" (click)="remove(i)"><i class="fas fa-times"></i>
       </span>

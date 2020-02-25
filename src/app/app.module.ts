@@ -15,6 +15,7 @@ import { ResumeBucket } from "./resume.service";
 import { AppComponent } from "./app.component";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpErrorInterceptor } from './interceptors/HttpErrorInterceptor';
+import { EditorService } from './component/options/editor.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { HttpErrorInterceptor } from './interceptors/HttpErrorInterceptor';
     AngularEditorModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    
+
     FormsModule,
 
     CKEditorModule,
@@ -44,6 +45,7 @@ import { HttpErrorInterceptor } from './interceptors/HttpErrorInterceptor';
     useClass: HttpErrorInterceptor,
     multi: true
     }
+
   ],
   bootstrap: [AppComponent]
 })

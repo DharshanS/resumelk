@@ -23,7 +23,7 @@ export class PublicationComponent implements OnInit,AfterContentChecked {
   selected = 0;
 
 
-  constructor( private resumeService: ResumeBucket) { }
+  constructor( public resumeService: ResumeBucket) { }
 
   publications=[];
 

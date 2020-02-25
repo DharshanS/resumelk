@@ -2,11 +2,14 @@
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 //import {catchError, retry} from 'rxjs/internal/operators';
 import { Observable, of } from 'rxjs';
+import { ResumeBucket } from 'src/app/resume.service';
 
 export class EditorService {
 
 
   apiUrl="http://44.229.50.57:8081/resumeservice/api/v1/resume";
+
+
 
   moreSections=[
   {"id":1,"label":"Personal Info","flag":true,"class":"fa-user","name":"personal","icon":"fa-lock","active":true},
@@ -56,6 +59,9 @@ export class EditorService {
 
  async updateResume(resume){
 
+  resume.userCode=8;
+  resume.userName="Dharshan";
+  resume.resumeId='5e4be10d2ab79c00013c086f'
      this.http.put(this.apiUrl,resume,{withCredentials:true}).subscribe(data=>{
       console.log("response");
       console.log(data);
@@ -65,6 +71,9 @@ export class EditorService {
   getResume(code){
     return  this.http.get(`${this.apiUrl}?userCode=${code}`,{withCredentials:true});
   }
+
+
+
 
 
   private handleError<T>(operation = 'operation', result?: T) {

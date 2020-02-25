@@ -15,7 +15,7 @@ import { DOCUMENT } from '@angular/common';
 import * as $ from "jquery";
 import { FormControl } from "@angular/forms";
 import { ScrollEvent } from "ngx-scroll-event";
-import {ResumeReq} from "./resumeReq";
+import {ResumeReq} from "../../../resumeReq";
 import { EditorService } from "../editor.service";
 import { DynamicComponentsService } from "../dynamic-components.service";
 import { TextComponent } from "../section/text/text.component";
@@ -200,11 +200,7 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
 
 
   async updateOption() {
-  this.resumeObject.userCode=8;
-  this.resumeObject.userName="Dharshan";
-  this.resumeObject.resumeId='5e4be10d2ab79c00013c086f'
-  this.resumeObject.templateId=1;
-  this.resumeObject.resumeName="einstein"
+
   this.resumeObject.resumeJson=this.resume._resume;
   console.log(this.resumeObject.resumeJson);
    this.sections.updateResume(this.resumeObject);

@@ -12,8 +12,10 @@ import { Personal } from './Personal';
 
 })
 export class PersonalComponent implements OnInit,DoCheck,AfterContentChecked{
+
   ngAfterContentChecked(): void {
     if(this.flag && this.resumeService._resume.personal==null){
+      console.log("length zero")
       this.resumeService._resume.personal=new Personal();
     }
   }
@@ -24,7 +26,7 @@ export class PersonalComponent implements OnInit,DoCheck,AfterContentChecked{
 
 
   constructor(
-    private resumeService: ResumeBucket,
+    public resumeService: ResumeBucket,
     private router: Router
   ) {}
 

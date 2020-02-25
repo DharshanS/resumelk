@@ -19,7 +19,7 @@ const optionsRoute: Routes = [
 
       },
       {
-        path: "template-moon",
+        path: "darwin",
         component: MoonComponent
 
       },

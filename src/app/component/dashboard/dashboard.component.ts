@@ -1,7 +1,5 @@
 import {HostListener, Component, OnInit,Inject } from '@angular/core';
-import { BrowserModule} from '@angular/platform-browser';
-
-import { WINDOW } from "../../window.service";
+import { ResumeBucket } from 'src/app/resume.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,9 +8,10 @@ import { WINDOW } from "../../window.service";
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service: ResumeBucket) { }
 
   ngOnInit() {
+    this.service.loadResume(8);
   }
 
   @HostListener("window:scroll", [])

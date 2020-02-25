@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
 
   routeToPreview(){
-    alert('test...'+this.resume._currentTemplate);
+    alert('Template'+this.resume._currentTemplate);
     this.router.navigate(['/preview/'+this.resume._currentTemplate]);
    // this.router.navigate(['/PreviewComponent/'+ this.resume._currentTemplate]);
 

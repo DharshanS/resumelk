@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   previewTemplates(){
 
-    alert('Header lose');
+    console.log(this.resume._currentTemplate)
     this.router.navigate(['/preview/'+this.resume._currentTemplate]);
 
 

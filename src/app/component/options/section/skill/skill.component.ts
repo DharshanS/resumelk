@@ -12,7 +12,7 @@ export class SkillComponent implements OnInit,AfterContentChecked {
 
   @Input() flag:boolean;
   selected=0;
-  constructor(    private resumeService: ResumeBucket) { }
+  constructor(    public resumeService: ResumeBucket) { }
 
   ngOnInit() {
 

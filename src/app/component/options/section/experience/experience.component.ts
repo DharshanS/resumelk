@@ -19,7 +19,7 @@ export class ExperienceComponent implements OnInit, DoCheck, AfterContentChecked
   public Editor = ClassicEditor;
   selected = 0;
 
-  constructor(public editor: EditorService, private resumeService: ResumeBucket, ) { }
+  constructor(public editor: EditorService, public resumeService: ResumeBucket, ) { }
 
   ngOnInit() {
 

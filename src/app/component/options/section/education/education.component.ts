@@ -27,7 +27,7 @@ export class EducationComponent implements OnInit,AfterContentChecked {
   eductionsPlace = [];
 
 
-  constructor(private resumeService: ResumeBucket,public editor: EditorService) {
+  constructor(public resumeService: ResumeBucket,public editor: EditorService) {
   }
 
   ngOnInit() {
