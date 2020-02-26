@@ -76,6 +76,22 @@ export class ResumeBucket {
     {
       "name": "aristotle",
       "id": 6
+    },
+    {
+      "name": "californiSmall",
+      "id": 7
+    },
+    {
+      "name": "modern",
+      "id": 8
+    },
+    {
+      "name": "paris",
+      "id": 9
+    },
+    {
+      "name": "professional",
+      "id": 6
     }
 
   ]
@@ -114,7 +130,7 @@ export class ResumeBucket {
 
   updateTemplate(resume){
     console.log(this.resumeObject)
-    this.resumeObject.resumeName="aristotle";
+    this.resumeObject.resumeName="californiSmall";
        this.http.put(this.apiUrl,this.resumeObject,{withCredentials:true}).subscribe(data=>{
          console.log("response");
          console.log(data);

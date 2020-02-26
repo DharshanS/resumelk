@@ -6,6 +6,10 @@ import { MoonComponent } from "./templates/moon/moon.component";
 import { PreviewComponent } from "./preview.component";
 import { NewtonComponent } from './templates/newton/newton.component';
 import { HawkingComponent } from './templates/hawking/hawking.component';
+import { CaliforniSmallComponent } from './templates/californi-small/californi-small.component';
+import { ModernComponent } from './templates/modern/modern.component';
+import { ParisComponent } from './templates/paris/paris.component';
+import { ProfessionalComponent } from './templates/professional/professional.component';
 
 const optionsRoute: Routes = [
   {
@@ -37,6 +41,23 @@ const optionsRoute: Routes = [
         path: "hawking",
         component: HawkingComponent
 
+      },
+      {
+        path:'californiSmall',
+        component:CaliforniSmallComponent
+      },
+    
+      {
+        path:'paris',
+        component:ParisComponent
+      },
+      {
+        path:'modern',
+        component:ModernComponent
+      },
+      {
+        path:'professional',
+        component:ProfessionalComponent
       }
 
 

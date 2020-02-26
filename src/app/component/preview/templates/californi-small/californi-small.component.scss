@@ -21,12 +21,13 @@ body {
     -moz-box-sizing: border-box;
 }
 
-.row {
+.row-ca {
     display: flex;
     flex-wrap: wrap;
 }
 p {
-font-size: 12px;
+    font-size: 14px !important;
+    line-height: 19px !important;
 }
 .col,
 .col-1,
@@ -202,7 +203,7 @@ font-size: 10px;
 }
 .name-tag {
 margin-left: -15px;
-margin-right: -15px;
+margin-right: -2px;
 margin-top: 10px;
 padding: 18px;
 margin-bottom: 20px;
@@ -234,9 +235,20 @@ color: #fff;
 .margin-top{
 margin-top: 30px;
 }
-.row-hight{
+.row-ca-hight{
 height: 100%;
 }
 .user-details li {
 padding: 4px 0px;
 }
+
+.pl-1 {
+    padding-left: 10px;
+  }
+  .skill-sub-title{
+  width: 100%;
+    display: grid;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
