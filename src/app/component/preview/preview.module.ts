@@ -11,6 +11,10 @@ import { CommonModule } from "@angular/common";
 import { NewtonComponent } from './templates/newton/newton.component';
 import { HawkingComponent } from './templates/hawking/hawking.component';
 import { EditorService } from './../options/editor.service';
+import { ParisComponent } from './templates/paris/paris.component';
+import { CaliforniSmallComponent } from './templates/californi-small/californi-small.component';
+import { ProfessionalComponent } from './templates/professional/professional.component';
+import { ModernComponent } from './templates/modern/modern.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { EditorService } from './../options/editor.service';
     MoonComponent,
     PreviewComponent,
     NewtonComponent,
-    HawkingComponent
+    HawkingComponent,
+    ParisComponent,
+    CaliforniSmallComponent,
+    ProfessionalComponent,
+    ModernComponent
   ],
   imports: [
     PreviewRoutingModule,
