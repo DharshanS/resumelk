@@ -15,6 +15,15 @@ import { ParisComponent } from './templates/paris/paris.component';
 import { CaliforniSmallComponent } from './templates/californi-small/californi-small.component';
 import { ProfessionalComponent } from './templates/professional/professional.component';
 import { ModernComponent } from './templates/modern/modern.component';
+import { AmsterdamComponent } from './templates/amsterdam/amsterdam.component';
+import { AthensComponent } from './templates/athens/athens.component';
+import { BarcelonaComponent } from './templates/barcelona/barcelona.component';
+import { BoxedNavyComponent } from './templates/boxed-navy/boxed-navy.component';
+import { GlobalCitizenGreenComponent } from './templates/global-citizen-green/global-citizen-green.component';
+import { MiamiComponent } from './templates/miami/miami.component';
+import { RoyalBlueComponent } from './templates/royal-blue/royal-blue.component';
+import { TrendyDesignComponent } from './templates/trendy-design/trendy-design.component';
+import { UniformBrownComponent } from './templates/uniform-brown/uniform-brown.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +36,16 @@ import { ModernComponent } from './templates/modern/modern.component';
     ParisComponent,
     CaliforniSmallComponent,
     ProfessionalComponent,
-    ModernComponent
+    ModernComponent,
+    AmsterdamComponent,
+    AthensComponent,
+    BarcelonaComponent,
+    BoxedNavyComponent,
+    GlobalCitizenGreenComponent,
+    MiamiComponent,
+    RoyalBlueComponent,
+    TrendyDesignComponent,
+    UniformBrownComponent
   ],
   imports: [
     PreviewRoutingModule,

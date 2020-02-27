@@ -10,6 +10,15 @@ import { CaliforniSmallComponent } from './templates/californi-small/californi-s
 import { ModernComponent } from './templates/modern/modern.component';
 import { ParisComponent } from './templates/paris/paris.component';
 import { ProfessionalComponent } from './templates/professional/professional.component';
+import { AmsterdamComponent } from './templates/amsterdam/amsterdam.component';
+import { AthensComponent } from './templates/athens/athens.component';
+import { BarcelonaComponent } from './templates/barcelona/barcelona.component';
+import { BoxedNavyComponent } from './templates/boxed-navy/boxed-navy.component';
+import { GlobalCitizenGreenComponent } from './templates/global-citizen-green/global-citizen-green.component';
+import { MiamiComponent } from './templates/miami/miami.component';
+import { RoyalBlueComponent } from './templates/royal-blue/royal-blue.component';
+import { TrendyDesignComponent } from './templates/trendy-design/trendy-design.component';
+import { UniformBrownComponent } from './templates/uniform-brown/uniform-brown.component';
 
 const optionsRoute: Routes = [
   {
@@ -58,6 +67,42 @@ const optionsRoute: Routes = [
       {
         path:'professional',
         component:ProfessionalComponent
+      },
+      {
+        path:'amsterdam',
+        component:AmsterdamComponent
+      }
+      ,{
+        path:'athens',
+        component:AthensComponent
+      },
+      {
+        path:'barcelona',
+        component:BarcelonaComponent
+      },
+      {
+        path:'boxed-navy',
+        component:BoxedNavyComponent
+      },
+      {
+        path:'global-citizen-green',
+        component:GlobalCitizenGreenComponent
+      },
+      {
+        path:'global-citizen-green',
+        component:MiamiComponent
+      },
+      {
+        path:'royal-blue',
+        component:RoyalBlueComponent
+      },
+      {
+        path:'trendy-design',
+        component:TrendyDesignComponent
+      },
+      {
+        path:'uniform-brown',
+        component:UniformBrownComponent
       }
 
 
