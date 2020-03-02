@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-import { ResumeBucket } from 'src/app/resume.service';
+import { ResumeService } from 'src/app/resume.service';
 //import { FLAGS } from '@angular/core/src/render3/interfaces/view';
 
 @Component({
@@ -26,7 +26,7 @@ export class StrengthsComponent implements OnInit {
 
 addStrengths = (term) => ({id: term, name: term});
 
-  constructor(public resume:ResumeBucket) { }
+  constructor(public resume:ResumeService) { }
 
 
   myControl = new FormControl();

@@ -9,7 +9,7 @@ import {
 import resumeJson from "../../../../../assets/json/resume.json";
 import { AngularEditorConfig } from "@kolkov/angular-editor";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { ResumeBucket } from "../../../../resume.service";
+import { ResumeService } from "../../../../resume.service";
 import { DomSanitizer, SafeStyle } from "@angular/platform-browser";
 
 @Component({
@@ -29,7 +29,7 @@ export class SunComponent implements OnInit {
   __resume: any;
 
   constructor(
-    private resumeService: ResumeBucket,
+    private resumeService: ResumeService,
     private sanitizer: DomSanitizer,
     private renderer2: Renderer2,
     private el: ElementRef

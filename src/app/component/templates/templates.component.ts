@@ -1,7 +1,7 @@
 import { Component, OnInit,AfterViewInit ,TemplateRef, AfterContentChecked} from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { ResumeBucket } from "./../../resume.service";
+import { ResumeService } from "./../../resume.service";
 import { EditorService } from '../options/editor.service';
 
 @Component({
@@ -15,13 +15,11 @@ export class TemplatesComponent implements OnInit {
   selectedTemplate=1;
   imgUrl;
 
-  constructor(private router: Router,public resume:ResumeBucket,private _sanitizer: DomSanitizer) {
-    this.imgUrl ="test";
-   }
+  constructor(private router: Router,public resume:ResumeService,private _sanitizer: DomSanitizer) { }
 
 
  ngOnInit(){
-   this.resume.loadResume(8);
+
  }
 
   navigateToEditor(){
@@ -30,7 +28,6 @@ export class TemplatesComponent implements OnInit {
 
   selectTemplateName(name){
    this.imgUrl ="assets/images/templates/"+name+".png"
-   console.log(name)
    this.resume.updateTemplate(name)
 
   }

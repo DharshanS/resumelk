@@ -1,5 +1,5 @@
 import {HostListener, Component, OnInit,Inject } from '@angular/core';
-import { ResumeBucket } from 'src/app/resume.service';
+import { ResumeService } from 'src/app/resume.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +8,7 @@ import { ResumeBucket } from 'src/app/resume.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(public service: ResumeBucket) { }
+  constructor(public service: ResumeService) { }
 
   ngOnInit() {
     this.service.loadResume(8);

@@ -1,6 +1,6 @@
 import { Component, OnInit,Input,AfterContentChecked } from '@angular/core';
 import { Skill, SkillName } from './Skill';
-import { ResumeBucket } from "../../../../resume.service";
+import { ResumeService } from "../../../../resume.service";
 
 @Component({
   selector: 'app-skill',
@@ -12,7 +12,7 @@ export class SkillComponent implements OnInit,AfterContentChecked {
 
   @Input() flag:boolean;
   selected=0;
-  constructor(    public resumeService: ResumeBucket) { }
+  constructor(    public resumeService: ResumeService) { }
 
   ngOnInit() {
 

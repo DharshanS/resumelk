@@ -2,7 +2,7 @@ import { Component, OnInit ,Renderer2,ViewEncapsulation,ElementRef,ViewChild} fr
 import resumeJson from '../../../../../assets/json/resume.json';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
-import { ResumeBucket } from "../../../../resume.service";
+import { ResumeService } from "../../../../resume.service";
 import { DomSanitizer } from '@angular/platform-browser';
 import { EditorService } from "../../../options/editor.service";
 
@@ -18,9 +18,9 @@ export class HawkingComponent implements OnInit {
 
   @ViewChild('tasknote',{static: false}) input: ElementRef;
 
-  
+
   @ViewChild('hawking',{static: false}) myClass: ElementRef;
-   
+
 
 
   public Editor = ClassicEditor;
@@ -30,7 +30,7 @@ export class HawkingComponent implements OnInit {
 
 
 
-constructor(private sections:EditorService, private sanitizer: DomSanitizer, private resumeService: ResumeBucket,private renderer2: Renderer2, private el: ElementRef){
+constructor(private sanitizer: DomSanitizer, private resumeService: ResumeService,private renderer2: Renderer2, private el: ElementRef){
 
 }
 
@@ -41,7 +41,7 @@ constructor(private sections:EditorService, private sanitizer: DomSanitizer, pri
     this.getResume();
   }
 
- 
+
 
 
   ngDoCheck() {

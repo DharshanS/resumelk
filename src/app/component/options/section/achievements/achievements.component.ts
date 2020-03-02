@@ -1,7 +1,7 @@
 import { Component, OnInit,Input,AfterContentChecked } from '@angular/core';
 import { Acheivment } from './Achivment';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { ResumeBucket } from "../../../../resume.service";
+import { ResumeService } from "../../../../resume.service";
 
 @Component({
   selector: 'app-achievements',
@@ -20,7 +20,7 @@ export class AchievementsComponent implements OnInit,AfterContentChecked {
   @Input() flag:boolean;
 
 
-  constructor( public resumeService: ResumeBucket) { }
+  constructor( public resumeService: ResumeService) { }
 
   ngOnInit() {
 

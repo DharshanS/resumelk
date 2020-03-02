@@ -2,7 +2,7 @@ import { Component, OnInit, Input, DoCheck, AfterContentChecked } from "@angular
 import { EditorService } from "../../editor.service";
 import { WorkExperiance } from "./experience";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { ResumeBucket } from "../../../../resume.service";
+import { ResumeService } from "../../../../resume.service";
 
 @Component({
   selector: "app-experience",
@@ -19,7 +19,7 @@ export class ExperienceComponent implements OnInit, DoCheck, AfterContentChecked
   public Editor = ClassicEditor;
   selected = 0;
 
-  constructor(public editor: EditorService, public resumeService: ResumeBucket, ) { }
+  constructor(public editor: EditorService, public resumeService: ResumeService, ) { }
 
   ngOnInit() {
 

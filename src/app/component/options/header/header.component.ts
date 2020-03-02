@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ResumeBucket } from 'src/app/resume.service';
+import { ResumeService } from 'src/app/resume.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private resume:ResumeBucket,private router: Router) { }
+  constructor(private resume:ResumeService,private router: Router) { }
 
   ngOnInit() {
   }

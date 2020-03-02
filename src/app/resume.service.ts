@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/internal/operators';
 import { Observable, of } from 'rxjs';
 
-export class ResumeBucket {
+export class ResumeService {
   apiUrl="http://44.229.50.57:8081/resumeservice/api/v1/resume";
   resumeObject:any;
   constructor(private http: HttpClient) { }
@@ -23,31 +23,13 @@ export class ResumeBucket {
       "awards": [],
       "certificates": [],
       "publications": [],
-      "Volunteerings": [{
-        "institutaionName": "IDM", "role": "Manager",
-        "country": "SriLanka", "city": "Kandy", "timePeriod": { "from": { "month": "JUNE", "year": "1987" }, "to": { "month": "JUNE", "year": "1997" } }
-      }],
-      "bobbies": [
-        { "name": "Football", "description": "" }
-      ],
-      "socialMedia": [
-        {
-          "link": "http://facebook.com",
-          "description": "facebook"
-        },
-        {
-          "link": "https://twitter.com/",
-          "description": "twitter"
-        },
-        {
-          "link": "",
-          "description": ""
-        }
-      ],
-
+      "Volunteerings": [],
+      "bobbies": [],
+      "socialMedia": [],
       "strengths": []
     }
   _currentTemplate = "";
+
   _templateNames = [
     {
       "name": "einstein",
@@ -160,7 +142,6 @@ export class ResumeBucket {
   loadResume(code){
     this.http.get(`${this.apiUrl}?userCode=${code}`,{withCredentials:true}).subscribe(data=>{
       this.resumeObject=data[0];
-      this._currentTemplate=data[0].resumeName;
     })
   }
 
@@ -173,6 +154,23 @@ export class ResumeBucket {
           this.loadResume(8);
        });
   }
+
+
+  async updateResume(resume){
+
+    resume.userCode=8;
+    resume.userName="Dharshan";
+    resume.resumeId='5e4be10d2ab79c00013c086f'
+       this.http.put(this.apiUrl,resume,{withCredentials:true}).subscribe(data=>{
+        console.log("response");
+        console.log(data);
+      });
+    }
+
+    getResume(code){
+      return  this.http.get(`${this.apiUrl}?userCode=${code}`,{withCredentials:true});
+    }
+
 }
 
 

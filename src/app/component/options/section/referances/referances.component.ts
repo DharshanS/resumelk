@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, AfterContentChecked } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Referance } from './Referance';
-import { ResumeBucket } from "../../../../resume.service";
+import { ResumeService } from "../../../../resume.service";
 @Component({
   selector: 'app-referances',
   templateUrl: './referances.component.html',
@@ -14,7 +14,7 @@ export class ReferancesComponent implements OnInit, AfterContentChecked {
     }
   }
 
-  constructor(public resumeService: ResumeBucket) { }
+  constructor(public resumeService: ResumeService) { }
 
   public Editor = ClassicEditor;
   @Input() flag: boolean;

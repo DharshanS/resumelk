@@ -1,7 +1,6 @@
 import { Component, OnInit, Renderer2, ElementRef } from "@angular/core";
 import { DomSanitizer } from "@angular/platform-browser";
-import { ResumeBucket } from "../../../../resume.service";
-import { EditorService } from "../../../options/editor.service";
+import { ResumeService } from "../../../../resume.service";
 
 @Component({
   selector: "app-temp-three",
@@ -12,7 +11,7 @@ export class MoonComponent implements OnInit {
   __resume: any;
 
   constructor(
-    private resumeService: ResumeBucket,
+    private resumeService: ResumeService,
     private sanitizer: DomSanitizer,
     private renderer2: Renderer2,
     private el: ElementRef,

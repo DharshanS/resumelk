@@ -1,5 +1,5 @@
 import { Component, OnInit,Input, AfterContentChecked } from '@angular/core';
-import { ResumeBucket } from "../../../../resume.service";
+import { ResumeService } from "../../../../resume.service";
 import { Publication } from './Publication';
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
@@ -23,7 +23,7 @@ export class PublicationComponent implements OnInit,AfterContentChecked {
   selected = 0;
 
 
-  constructor( public resumeService: ResumeBucket) { }
+  constructor( public resumeService: ResumeService) { }
 
   publications=[];
 

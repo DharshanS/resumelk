@@ -2,8 +2,8 @@ import { Component, OnInit ,Renderer2,ViewEncapsulation,ElementRef,ViewChild} fr
 import resumeJson from '../../../../../assets/json/resume.json';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
-import { ResumeBucket } from "../../../../resume.service";
-import { EditorService } from "../../../options/editor.service";
+import { ResumeService } from "../../../../resume.service";
+
 
 
 @Component({
@@ -26,7 +26,7 @@ export class NewtonComponent implements OnInit {
 
 
   @ViewChild('hawking',{static: false}) myClass: ElementRef;
-constructor( private resumeService: ResumeBucket,private renderer2: Renderer2, private el: ElementRef,public sections: EditorService){
+constructor( private resumeService: ResumeService,private renderer2: Renderer2, private el: ElementRef){
 
 }
 
@@ -85,15 +85,15 @@ constructor( private resumeService: ResumeBucket,private renderer2: Renderer2, p
 
   onChangeColorHex8(color: string,color2:string) {
     console.log('color',color)
-   
+
     let names = this.myClass.nativeElement.querySelectorAll('.color-1');
-  
+
     console.log('myClass',names)
     names.forEach(e => {
       console.log('myClass23',e)
       this.renderer2.setStyle(e,'background', color);
     })
- 
+
   }
 
   getResume(){

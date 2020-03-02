@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit, AfterContentChecked } from "@angular/core";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { Certificate } from "./Certificate";
-import { ResumeBucket } from "../../../../resume.service";
+import { ResumeService } from "../../../../resume.service";
 
 @Component({
   selector: "app-certificate",
@@ -14,7 +14,7 @@ export class CertificateComponent implements OnInit, AfterViewInit, AfterContent
 
 
   selected = 0;
-  constructor(public resumeService: ResumeBucket) { }
+  constructor(public resumeService: ResumeService) { }
 
   ngOnInit() {
     console.log("Certifate initiated...")

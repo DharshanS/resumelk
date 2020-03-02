@@ -1,6 +1,6 @@
 import { Component, OnInit,Input, AfterContentChecked } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { ResumeBucket } from "../../../../resume.service";
+import { ResumeService } from "../../../../resume.service";
 import { Award } from './Award';
 
 @Component({
@@ -16,7 +16,7 @@ export class AwardComponent implements OnInit,AfterContentChecked {
   @Input() flag:boolean;
   months=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-  constructor( public resumeService: ResumeBucket,
+  constructor( public resumeService: ResumeService,
     ) { }
 
   ngOnInit() {

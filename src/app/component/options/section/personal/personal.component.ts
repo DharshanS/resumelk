@@ -1,6 +1,6 @@
 import { Component, OnInit, Input,HostListener, DoCheck, AfterContentChecked } from "@angular/core";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { ResumeBucket } from "../../../../resume.service";
+import { ResumeService } from "../../../../resume.service";
 import { Router } from "@angular/router";
 import { Personal } from './Personal';
 
@@ -26,7 +26,7 @@ export class PersonalComponent implements OnInit,DoCheck,AfterContentChecked{
 
 
   constructor(
-    public resumeService: ResumeBucket,
+    public resumeService: ResumeService,
     private router: Router
   ) {}
 

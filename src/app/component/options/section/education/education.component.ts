@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, AfterContentChecked } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import { Education } from './Education';
-import { ResumeBucket } from "../../../../resume.service";
+import { ResumeService } from "../../../../resume.service";
 import { EditorService } from "../../editor.service";
 
 @Component({
@@ -27,7 +27,7 @@ export class EducationComponent implements OnInit,AfterContentChecked {
   eductionsPlace = [];
 
 
-  constructor(public resumeService: ResumeBucket,public editor: EditorService) {
+  constructor(public resumeService: ResumeService,public editor: EditorService) {
   }
 
   ngOnInit() {

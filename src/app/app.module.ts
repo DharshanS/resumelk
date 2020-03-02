@@ -11,7 +11,7 @@ import { FooterComponent } from "./component/footer/footer.component";
 import { HttpClientModule } from "@angular/common/http";
 import { AngularEditorModule } from "@kolkov/angular-editor";
 import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
-import { ResumeBucket } from "./resume.service";
+import { ResumeService } from "./resume.service";
 import { AppComponent } from "./app.component";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpErrorInterceptor } from './interceptors/HttpErrorInterceptor';
@@ -39,7 +39,7 @@ import { EditorService } from './component/options/editor.service';
     BrowserModule
   ],
 
-  providers: [ResumeBucket,
+  providers: [ResumeService,
     {
     provide: HTTP_INTERCEPTORS,
     useClass: HttpErrorInterceptor,

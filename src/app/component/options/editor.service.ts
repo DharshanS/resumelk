@@ -2,14 +2,9 @@
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 //import {catchError, retry} from 'rxjs/internal/operators';
 import { Observable, of } from 'rxjs';
-import { ResumeBucket } from 'src/app/resume.service';
+import { ResumeService } from 'src/app/resume.service';
 
 export class EditorService {
-
-
-  apiUrl="http://44.229.50.57:8081/resumeservice/api/v1/resume";
-
-
 
   moreSections=[
   {"id":1,"label":"Personal Info","flag":true,"class":"fa-user","name":"personal","icon":"fa-lock","active":true},
@@ -23,9 +18,7 @@ export class EditorService {
   {"id":9,"label":"Publications","flag":false,"class":"fa-suitcase ","icon":"fa-times","name":"publications","active":false},
   {"id":10,"label":"Text","flag":false,"class":"fa-suitcase ","icon":"fa-times","name":"text","active":false},
   {"id":11,"label":"strengths","flag":false,"class":"fa-suitcase ","icon":"fa-times","name":"strengths","active":false},
-
-  {"id":12,"label":"Custom","flag":false,"class":"fa-suitcase ","icon":"fa-times","name":"custom" ,"title":"Title","active":false}
-];
+  {"id":12,"label":"Custom","flag":false,"class":"fa-suitcase ","icon":"fa-times","name":"custom" ,"title":"Title","active":false}];
 
 
 
@@ -48,29 +41,11 @@ export class EditorService {
   }
 
 
-  createResume(resume){
-    this.http.post(this.apiUrl,resume,{withCredentials:true}).subscribe(data=>{
-     console.log("response");
-     console.log(data);
-   });
- }
 
 
 
- async updateResume(resume){
 
-  resume.userCode=8;
-  resume.userName="Dharshan";
-  resume.resumeId='5e4be10d2ab79c00013c086f'
-     this.http.put(this.apiUrl,resume,{withCredentials:true}).subscribe(data=>{
-      console.log("response");
-      console.log(data);
-    });
-  }
 
-  getResume(code){
-    return  this.http.get(`${this.apiUrl}?userCode=${code}`,{withCredentials:true});
-  }
 
 
 
