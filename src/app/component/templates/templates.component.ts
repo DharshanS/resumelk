@@ -15,7 +15,9 @@ export class TemplatesComponent implements OnInit {
   selectedTemplate=1;
   imgUrl;
 
-  constructor(private router: Router,public resume:ResumeBucket,private _sanitizer: DomSanitizer) { }
+  constructor(private router: Router,public resume:ResumeBucket,private _sanitizer: DomSanitizer) {
+    this.imgUrl ="test";
+   }
 
 
  ngOnInit(){
