@@ -91,7 +91,43 @@ export class ResumeBucket {
     },
     {
       "name": "professional",
-      "id": 6
+      "id": 10
+    },
+      {
+      "name": "amsterdam",
+      "id": 11
+    },
+    {
+      "name": "athens",
+      "id": 12
+    },
+    {
+      "name": "barcelona",
+      "id": 13
+    },
+    {
+      "name": "boxed-navy",
+      "id": 14
+    },
+    {
+      "name": "global-citizen-green",
+      "id": 15
+    },
+    {
+      "name": "miani",
+      "id": 16
+    },
+    {
+      "name": "royal-blue",
+      "id": 17
+    },
+    {
+      "name": "trendy-design",
+      "id": 18
+    },
+    {
+      "name": "uniform-brown",
+      "id": 19
     }
 
   ]
@@ -130,7 +166,7 @@ export class ResumeBucket {
 
   updateTemplate(resume){
     console.log(this.resumeObject)
-    this.resumeObject.resumeName="californiSmall";
+    this.resumeObject.resumeName="barcelona";
        this.http.put(this.apiUrl,this.resumeObject,{withCredentials:true}).subscribe(data=>{
          console.log("response");
          console.log(data);

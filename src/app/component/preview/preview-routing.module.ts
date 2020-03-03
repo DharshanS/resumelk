@@ -89,7 +89,7 @@ const optionsRoute: Routes = [
         component:GlobalCitizenGreenComponent
       },
       {
-        path:'global-citizen-green',
+        path:'miani',
         component:MiamiComponent
       },
       {

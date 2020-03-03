@@ -203,7 +203,7 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
   async updateOption() {
 
   this.resumeObject.resumeJson=this.resume._resume;
-  this.resumeObject.resumeName='californiSmall';
+  this.resumeObject.resumeName='barcelona';
   console.log(this.resumeObject.resumeJson);
    this.sections.updateResume(this.resumeObject);
   }
