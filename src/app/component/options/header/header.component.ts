@@ -9,16 +9,17 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private resume:ResumeService,private router: Router) { }
+  constructor(private resume: ResumeService, private router: Router) { }
 
   ngOnInit() {
+    this.resume.loadResume(8);
   }
 
 
-  routeToPreview(){
-    alert('Template'+this.resume._currentTemplate);
-    this.router.navigate(['/preview/'+this.resume._currentTemplate]);
-   // this.router.navigate(['/PreviewComponent/'+ this.resume._currentTemplate]);
+  routeToPreview() {
+
+    alert(this.resume.resumeObject['resumeName'])
+    this.router.navigate(['/preview/' + this.resume.resumeObject['resumeName']]);
 
 
   }

@@ -9,35 +9,35 @@ import { MainComponent } from './main/main.component';
 
 
 const optionsRoute: Routes = [
-    {
+  {
 
 
 
-        path: '',
-        component: MainComponent,
-        children: [
-            {
-                path: 'dashboard',
-             //   component: DashboardComponent
+    path: '',
+    component: MainComponent,
+    children: [
+      {
+        path: 'dashboard',
+        //   component: DashboardComponent
 
-            },
-            {
-                path: 'templates',
-              //  component: TemplatesComponent
+      },
+      {
+        path: 'templates',
+        //  component: TemplatesComponent
 
-            },
-            {
-                path: '',
-                component: EditorComponent
+      },
+      {
+        path: '/editor',
+        component: EditorComponent
 
-            },
-            {
-                path: 'preview',
-               // component: PreviewComponent
+      },
+      {
+        path: 'preview',
+        // component: PreviewComponent
 
-            }
-        ]
-    },
+      }
+    ]
+  },
 
 
 
@@ -45,8 +45,8 @@ const optionsRoute: Routes = [
 ]
 
 @NgModule({
-    imports: [RouterModule.forChild(optionsRoute)],
-    exports: [RouterModule]
+  imports: [RouterModule.forChild(optionsRoute)],
+  exports: [RouterModule]
 
 })
 export class OptionRoutingModule {

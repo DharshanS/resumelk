@@ -9,12 +9,12 @@ import { catchError, retry } from 'rxjs/internal/operators';
 import { Observable, of } from 'rxjs';
 
 export class ResumeService {
-  apiUrl="http://44.229.50.57:8081/resumeservice/api/v1/resume";
-  resumeObject:any;
+  apiUrl = "http://44.229.50.57:8081/resumeservice/api/v1/resume";
+  resumeObject: any;
   constructor(private http: HttpClient) { }
   _resume =
     {
-      "personal":null,
+      "personal": null,
       "workExperiance": [],
       "education": [],
       "skills": [],
@@ -58,58 +58,6 @@ export class ResumeService {
     {
       "name": "aristotle",
       "id": 6
-    },
-    {
-      "name": "californiSmall",
-      "id": 7
-    },
-    {
-      "name": "modern",
-      "id": 8
-    },
-    {
-      "name": "paris",
-      "id": 9
-    },
-    {
-      "name": "professional",
-      "id": 10
-    },
-      {
-      "name": "amsterdam",
-      "id": 11
-    },
-    {
-      "name": "isaac-newton",
-      "id": 12
-    },
-    {
-      "name": "barcelona",
-      "id": 13
-    },
-    {
-      "name": "boxed-navy",
-      "id": 14
-    },
-    {
-      "name": "global-citizen-green",
-      "id": 15
-    },
-    {
-      "name": "miani",
-      "id": 16
-    },
-    {
-      "name": "royal-blue",
-      "id": 17
-    },
-    {
-      "name": "trendy-design",
-      "id": 18
-    },
-    {
-      "name": "uniform-brown",
-      "id": 19
     }
 
   ]
@@ -139,38 +87,35 @@ export class ResumeService {
     return false;
   }
 
-  loadResume(code){
-    this.http.get(`${this.apiUrl}?userCode=${code}`,{withCredentials:true}).subscribe(data=>{
-      this.resumeObject=data[0];
+  loadResume(code) {
+    this.http.get(`${this.apiUrl}?userCode=${code}`, { withCredentials: true }).subscribe(data => {
+      this.resumeObject = data[0];
     })
   }
 
-  updateTemplate(resume){
+  updateTemplate(resume) {
     console.log(this.resumeObject)
-    this.resumeObject.resumeName="isaac-newton";
-       this.http.put(this.apiUrl,this.resumeObject,{withCredentials:true}).subscribe(data=>{
-         console.log("response");
-         console.log(data);
-          this.loadResume(8);
-       });
+    this.resumeObject.resumeName = resume;
+    this.http.put(this.apiUrl, this.resumeObject, { withCredentials: true }).subscribe(data => {
+      console.log("response");
+      this.loadResume(8);
+    });
   }
 
 
-  async updateResume(resume){
+  async updateResume(resume) {
 
-    resume.userCode=8;
-    resume.userName="Dharshan";
-    resume.resumeId='5e4be10d2ab79c00013c086f'
-       this.http.put(this.apiUrl,resume,{withCredentials:true}).subscribe(data=>{
-        console.log("response");
-        console.log(data);
-      });
-    }
+    resume.userCode = 8;
+    resume.userName = "Dharshan";
+    resume.resumeId = '5e4be10d2ab79c00013c086f'
+    this.http.put(this.apiUrl, resume, { withCredentials: true }).subscribe(data => {
+      console.log("response");
+      console.log(data);
+    });
+  }
 
-    getResume(code){
-      return  this.http.get(`${this.apiUrl}?userCode=${code}`,{withCredentials:true});
-    }
+  getResume(code) {
+    return this.http.get(`${this.apiUrl}?userCode=${code}`, { withCredentials: true });
+  }
 
 }
-
-

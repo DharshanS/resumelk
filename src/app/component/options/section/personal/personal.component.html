@@ -1,165 +1,161 @@
-<div class="editor__group" id="resumeService._resume.personal">
+<div class="editor__group" id="personal">
 
 
-    <aside class="editor__group-sidebar">
-        <div class="editor__group-title">
-            <i class="fas fa-user"></i>
-            <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Personal Information</p>
-        </div>
-        <div class="editor__photo">
-            <div class="editor__photo-img" style="background-image: url('assets/images/headshot.jpg');"></div>
-            <div class="editor__photo-check checkbox">
-                <input type="checkbox" id="use-profile-photo">
-                <label for="use-profile-photo">Use profile photo</label>
-            </div>
-            <input type="file" class="editor__photo-input" id="editor-photo">
-            <label for="editor-photo" class="editor__photo-label">
-                <span class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent">
-                    <p class="btn__label paragraph--med"><i class="fas fa-upload btn__icon"></i>
-                        Upload Photo</p>
-                </span>
-            </label>
-        </div>
-    </aside>
-    <div class="editor__group-main">
-        <div class="row">
-            <div class="col-md-4 ">
-
-            </div>
-            <div class="col-md-4">
-
-            </div>
-            <div class="co-md-4 ">
-                <!-- <button><a (click)="goToPreview()">preview</a></button> -->
-            </div>
-
-
-        </div>
-        <div class="row">
-            <div class="col-12 editor__group-main-form editor__group-main-form--alt">
-                <div class="row">
-
-                    <div class="col-12 col-xl-4">
-                        <div class="editor__group-main-wrapper">
-
-                            <input type="text" [(ngModel)]="resumeService._resume.personal.title" required>
-                            <label>Title before</label>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6 col-xl-4">
-                        <div class="editor__group-main-wrapper">
-
-                            <input type="text" [(ngModel)]="resumeService._resume.personal.firstName" required>
-                            <label>First Name </label>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6 col-xl-4">
-                        <div class="editor__group-main-wrapper">
-
-                            <input type="text" [(ngModel)]="resumeService._resume.personal.lastName" required>
-                            <label>Last Name</label>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row">
-
-                    <div class="col-12 col-lg-6 editor__group-main-wrapper">
-
-
-
-
-                            <mat-datepicker #Start></mat-datepicker>
-                            <input type="text"  [(ngModel)]="resumeService._resume.personal.dateOfBirth" readonly
-                                [matDatepicker]="Start" (click)="Start.open()" required >
-
-                                <label style="left: 13px;">From</label>
-
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <div class="editor__group-main-wrapper">
-
-                            <input type="text"  [(ngModel)]="resumeService._resume.personal.nationality" required>
-                            <label>Nationality</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <div class="editor__group-main-wrapper">
-
-                            <input type="tel"  [(ngModel)]="resumeService._resume.personal.phoneNumber" required>
-                            <label>Phone Number</label>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <div class="editor__group-main-wrapper">
-
-                            <input type="email"  [(ngModel)]="resumeService._resume.personal.email" required>
-                            <label>Email Address</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="editor__group-main-wrapper">
-
-                            <input type="text"  [(ngModel)]="resumeService._resume.personal.web" required>
-                            <label>Website Link</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-12">
-                                <label>Address</label>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="editor__group-main-wrapper">
-                                    <input type="text"
-                                        [(ngModel)]="resumeService._resume.personal.address.street" required>
-                                        <label for="">Street line</label>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="editor__group-main-wrapper">
-                                    <input type="text"
-                                        [(ngModel)]="resumeService._resume.personal.address.city" required>
-                                        <label for="">City</label>
-
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="editor__group-main-wrapper">
-                                    <input type="text"
-                                        [(ngModel)]="resumeService._resume.personal.address.postalCode" required>
-                                        <label for="">Postal Code</label>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="editor__group-main-wrapper">
-                                    <input type="text"
-                                        [(ngModel)]="resumeService._resume.personal.address.country" required>
-                                        <label for="">Country</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <label>Profile</label>
-                        <!-- <ckeditor [editor]="Editor" data="'test'" [(ngModel)]=""></ckeditor> -->
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
+  <aside class="editor__group-sidebar">
+    <div class="editor__group-title">
+      <i class="fas fa-user"></i>
+      <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Personal Information</p>
     </div>
+    <div class="editor__photo">
+      <div class="editor__photo-img" style="background-image: url('assets/images/headshot.jpg');"></div>
+      <div class="editor__photo-check checkbox">
+        <input type="checkbox" id="use-profile-photo">
+        <label for="use-profile-photo">Use profile photo</label>
+      </div>
+      <input type="file" class="editor__photo-input" id="editor-photo">
+      <label for="editor-photo" class="editor__photo-label">
+        <span class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent">
+          <p class="btn__label paragraph--med"><i class="fas fa-upload btn__icon"></i>
+            Upload Photo</p>
+        </span>
+      </label>
+    </div>
+  </aside>
+  <div class="editor__group-main">
+    <div class="row">
+      <div class="col-md-4 ">
+
+      </div>
+      <div class="col-md-4">
+
+      </div>
+      <div class="co-md-4 ">
+        <!-- <button><a (click)="goToPreview()">preview</a></button> -->
+      </div>
+
+
+    </div>
+    <div class="row">
+      <div class="col-12 editor__group-main-form editor__group-main-form--alt">
+        <div class="row">
+
+          <div class="col-12 col-xl-4">
+            <div class="editor__group-main-wrapper">
+
+              <input type="text" [(ngModel)]="resumeService._resume.personal.title" required>
+              <label>Title before</label>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-4">
+            <div class="editor__group-main-wrapper">
+
+              <input type="text" [(ngModel)]="resumeService._resume.personal.firstName" required>
+              <label>First Name </label>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-4">
+            <div class="editor__group-main-wrapper">
+
+              <input type="text" [(ngModel)]="resumeService._resume.personal.lastName" required>
+              <label>Last Name</label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+
+          <div class="col-12 col-lg-6 editor__group-main-wrapper">
+
+
+
+
+            <mat-datepicker #Start></mat-datepicker>
+            <input type="text" [(ngModel)]="resumeService._resume.personal.dateOfBirth" readonly [matDatepicker]="Start"
+              (click)="Start.open()" required>
+
+            <label style="left: 13px;">From</label>
+
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="editor__group-main-wrapper">
+
+              <input type="text" [(ngModel)]="resumeService._resume.personal.nationality" required>
+              <label>Nationality</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <div class="editor__group-main-wrapper">
+
+              <input type="tel" [(ngModel)]="resumeService._resume.personal.phoneNumber" required>
+              <label>Phone Number</label>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="editor__group-main-wrapper">
+
+              <input type="email" [(ngModel)]="resumeService._resume.personal.email" required>
+              <label>Email Address</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="editor__group-main-wrapper">
+
+              <input type="text" [(ngModel)]="resumeService._resume.personal.web" required>
+              <label>Website Link</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12">
+                <label>Address</label>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="editor__group-main-wrapper">
+                  <input type="text" [(ngModel)]="resumeService._resume.personal.address.street" required>
+                  <label for="">Street line</label>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="editor__group-main-wrapper">
+                  <input type="text" [(ngModel)]="resumeService._resume.personal.address.city" required>
+                  <label for="">City</label>
+
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="editor__group-main-wrapper">
+                  <input type="text" [(ngModel)]="resumeService._resume.personal.address.postalCode" required>
+                  <label for="">Postal Code</label>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="editor__group-main-wrapper">
+                  <input type="text" [(ngModel)]="resumeService._resume.personal.address.country" required>
+                  <label for="">Country</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <label>Profile</label>
+            <!-- <ckeditor [editor]="Editor" data="'test'" [(ngModel)]=""></ckeditor> -->
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
 
 
 </div>

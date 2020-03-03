@@ -1,8 +1,7 @@
-import { Component, OnInit,AfterViewInit ,TemplateRef, AfterContentChecked} from '@angular/core';
+import { Component, OnInit, AfterViewInit, TemplateRef, AfterContentChecked } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ResumeService } from "./../../resume.service";
-import { EditorService } from '../options/editor.service';
 
 @Component({
   selector: 'app-templates',
@@ -12,30 +11,31 @@ import { EditorService } from '../options/editor.service';
 export class TemplatesComponent implements OnInit {
 
 
-  selectedTemplate=1;
+  selectedTemplate = 1;
   imgUrl;
 
-  constructor(private router: Router,public resume:ResumeService,private _sanitizer: DomSanitizer) { }
+  constructor(private router: Router, public resume: ResumeService, private _sanitizer: DomSanitizer) { }
 
 
- ngOnInit(){
-
- }
-
-  navigateToEditor(){
+  ngOnInit() {
 
   }
 
-  selectTemplateName(name){
-   this.imgUrl ="assets/images/templates/"+name+".png"
-   this.resume.updateTemplate(name)
+  navigateToEditor() {
+
+  }
+
+  selectTemplateName(name) {
+    alert(name)
+    this.imgUrl = "assets/images/templates/" + name + ".png"
+    this.resume.updateTemplate(name)
 
   }
   goToProductDetails() {
-    this.router.navigate(['/editor',this.resume._currentTemplate]);
+    this.router.navigate(['/editor', this.resume.resumeObject['resumeName']]);
   }
 
   getBackground(image) {
-    return this._sanitizer.bypassSecurityTrustStyle(`url(${'assets/images/templates/'+image+'.png'})`);
-}
+    return this._sanitizer.bypassSecurityTrustStyle(`url(${'assets/images/templates/' + image + '.png'})`);
+  }
 }
