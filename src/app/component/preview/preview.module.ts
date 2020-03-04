@@ -16,14 +16,16 @@ import { CaliforniSmallComponent } from './templates/californi-small/californi-s
 import { ProfessionalComponent } from './templates/professional/professional.component';
 import { ModernComponent } from './templates/modern/modern.component';
 import { AmsterdamComponent } from './templates/amsterdam/amsterdam.component';
-import { BarcelonaComponent } from './templates/barcelona/barcelona.component';
-import { BoxedNavyComponent } from './templates/boxed-navy/boxed-navy.component';
-import { GlobalCitizenGreenComponent } from './templates/global-citizen-green/global-citizen-green.component';
-import { MiamiComponent } from './templates/miami/miami.component';
+
+
 import { RoyalBlueComponent } from './templates/royal-blue/royal-blue.component';
 import { TrendyDesignComponent } from './templates/trendy-design/trendy-design.component';
 import { UniformBrownComponent } from './templates/uniform-brown/uniform-brown.component';
 import { IsaacNewtonComponent } from './templates/isaac-newton/isaac-newton.component';
+import { CharlesDarwinComponent } from './templates/charles-darwin/charles-darwin.component';
+import { StephenHawkingComponent } from './templates/stephen-hawking/stephen-hawking.component';
+import { NikolaTeslaComponent } from './templates/nikola-tesla/nikola-tesla.component';
+import { ThomasEdisonComponent } from './templates/thomas-edison/thomas-edison.component';
 
 @NgModule({
   declarations: [
@@ -39,10 +41,10 @@ import { IsaacNewtonComponent } from './templates/isaac-newton/isaac-newton.comp
     ModernComponent,
     AmsterdamComponent,
     IsaacNewtonComponent,
-    BarcelonaComponent,
-    BoxedNavyComponent,
-    GlobalCitizenGreenComponent,
-    MiamiComponent,
+    NikolaTeslaComponent,
+    StephenHawkingComponent,
+    ThomasEdisonComponent,
+    CharlesDarwinComponent,
     RoyalBlueComponent,
     TrendyDesignComponent,
     UniformBrownComponent

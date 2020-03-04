@@ -11,15 +11,15 @@ import { ModernComponent } from './templates/modern/modern.component';
 import { ParisComponent } from './templates/paris/paris.component';
 import { ProfessionalComponent } from './templates/professional/professional.component';
 import { AmsterdamComponent } from './templates/amsterdam/amsterdam.component';
-
-import { BarcelonaComponent } from './templates/barcelona/barcelona.component';
-import { BoxedNavyComponent } from './templates/boxed-navy/boxed-navy.component';
-import { GlobalCitizenGreenComponent } from './templates/global-citizen-green/global-citizen-green.component';
-import { MiamiComponent } from './templates/miami/miami.component';
 import { RoyalBlueComponent } from './templates/royal-blue/royal-blue.component';
 import { TrendyDesignComponent } from './templates/trendy-design/trendy-design.component';
 import { UniformBrownComponent } from './templates/uniform-brown/uniform-brown.component';
 import { IsaacNewtonComponent } from './templates/isaac-newton/isaac-newton.component';
+import { CharlesDarwinComponent } from './templates/charles-darwin/charles-darwin.component';
+import { StephenHawkingComponent } from './templates/stephen-hawking/stephen-hawking.component';
+import { NikolaTeslaComponent } from './templates/nikola-tesla/nikola-tesla.component';
+import { ThomasEdisonComponent } from './templates/thomas-edison/thomas-edison.component';
+
 
 const optionsRoute: Routes = [
   {
@@ -78,20 +78,20 @@ const optionsRoute: Routes = [
         component:IsaacNewtonComponent
       },
       {
-        path:'barcelona',
-        component:BarcelonaComponent
+        path:'nikola-tesla',
+        component:NikolaTeslaComponent
       },
       {
-        path:'boxed-navy',
-        component:BoxedNavyComponent
+        path:'thomas-edison',
+        component:ThomasEdisonComponent
       },
       {
-        path:'global-citizen-green',
-        component:GlobalCitizenGreenComponent
+        path:'stephen-hawking',
+        component:StephenHawkingComponent
       },
       {
-        path:'miani',
-        component:MiamiComponent
+        path:'charles-darwin',
+        component:CharlesDarwinComponent
       },
       {
         path:'royal-blue',
