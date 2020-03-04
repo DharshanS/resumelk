@@ -16,7 +16,6 @@ import { CaliforniSmallComponent } from './templates/californi-small/californi-s
 import { ProfessionalComponent } from './templates/professional/professional.component';
 import { ModernComponent } from './templates/modern/modern.component';
 import { AmsterdamComponent } from './templates/amsterdam/amsterdam.component';
-import { AthensComponent } from './templates/athens/athens.component';
 import { BarcelonaComponent } from './templates/barcelona/barcelona.component';
 import { BoxedNavyComponent } from './templates/boxed-navy/boxed-navy.component';
 import { GlobalCitizenGreenComponent } from './templates/global-citizen-green/global-citizen-green.component';
@@ -24,6 +23,7 @@ import { MiamiComponent } from './templates/miami/miami.component';
 import { RoyalBlueComponent } from './templates/royal-blue/royal-blue.component';
 import { TrendyDesignComponent } from './templates/trendy-design/trendy-design.component';
 import { UniformBrownComponent } from './templates/uniform-brown/uniform-brown.component';
+import { IsaacNewtonComponent } from './templates/isaac-newton/isaac-newton.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { UniformBrownComponent } from './templates/uniform-brown/uniform-brown.c
     ProfessionalComponent,
     ModernComponent,
     AmsterdamComponent,
-    AthensComponent,
+    IsaacNewtonComponent,
     BarcelonaComponent,
     BoxedNavyComponent,
     GlobalCitizenGreenComponent,

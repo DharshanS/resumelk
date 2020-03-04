@@ -172,7 +172,41 @@
             </div>
 
 
-            
+                  <!-- Publications -->
+          <div class="col-12 sub-box" *ngIf="__resume.publications.length >  0">
+            <div class="border-b">
+                <div class="title-box">Publications</div>
+                <div class="in-box">
+
+
+                    <div class="col-12 p-0 col-box">
+                        <div class="professional-box" *ngFor="let item of __resume.publications">
+
+
+
+                            <div class="p-0 col-12 row">
+                                <div class="col-8 p-0"><label>{{item.title}}</label></div>
+                                <div class="col-4 p-0 text-right">{{item.publisher}}</div>
+                                <div class="col-8 p-0  c-name">{{item.url}}</div>
+                                <!-- <div class="col-4 p-0 text-right">04/2019 - 12/2019</div> -->
+                                <!-- <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;04/2019 - 12/2019</span><br> -->
+
+
+                                <br>
+                                <span class="span-text">{{item.description}}</span>
+
+
+
+
+
+                            </div>
+                        </div>
+
+                   
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
