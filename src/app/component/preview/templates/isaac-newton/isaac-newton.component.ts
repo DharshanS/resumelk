@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-athens',
-  templateUrl: './athens.component.html',
-  styleUrls: ['./athens.component.scss']
+  templateUrl: './isaac-newton.component.html',
+  styleUrls: ['./isaac-newton.component.scss']
 })
 export class IsaacNewtonComponent implements OnInit {
 
