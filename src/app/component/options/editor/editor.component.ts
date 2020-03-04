@@ -15,7 +15,7 @@ import { DOCUMENT } from '@angular/common';
 import * as $ from "jquery";
 import { FormControl } from "@angular/forms";
 import { ScrollEvent } from "ngx-scroll-event";
-import {ResumeReq} from "../../../resumeReq";
+import { ResumeReq } from "../../../resumeReq";
 import { EditorService } from "../editor.service";
 import { DynamicComponentsService } from "../dynamic-components.service";
 import { TextComponent } from "../section/text/text.component";
@@ -28,7 +28,7 @@ import { ResumeService } from 'src/app/resume.service';
   styleUrls: ["./editor.component.css"],
   entryComponents: [TextComponent]
 })
-export class EditorComponent implements OnInit, AfterViewInit, AfterContentChecked {
+export class EditorComponent implements OnInit {
   isShow: boolean;
   topPosToStartShowing = 50;
   gotoTopShow: boolean = false;
@@ -45,20 +45,20 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
   @ViewChild("customContainer", { static: true, read: ViewContainerRef }) container;
   @ViewChild("experience", { static: true, read: ElementRef }) experiance;
 
-  resumeObject:ResumeReq;
+  resumeObject: ResumeReq;
   constructor(
     public resolver: ComponentFactoryResolver,
     public sections: EditorService,
-    public resume:ResumeService,
+    public resume: ResumeService,
     public custom: DynamicComponentsService,
     public resolve: ComponentFactoryResolver,
     @Inject(DOCUMENT) public document: Document
 
   ) {
 
-    document.addEventListener('scroll', function() {
+    document.addEventListener('scroll', function () {
       console.log('keys pressed');
-   });
+    });
 
   }
 
@@ -69,12 +69,11 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
   }
 
 
- resumeInitializer()
- {
-  if(this.resumeObject==null){
-    this.resume.loadResume(8);
+  resumeInitializer() {
+    if (this.resumeObject == null) {
+      this.resume.loadResume();
+    }
   }
- }
 
   onWScroll(e: any) {
     console.log("onWScroll", e);
@@ -116,12 +115,6 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
     el.scrollIntoView();
   }
 
-  ngAfterContentChecked() {
-
-    console.log("ngAfterContentChecked editor");
-
-
-  }
 
   checkScroll() {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
@@ -147,12 +140,12 @@ export class EditorComponent implements OnInit, AfterViewInit, AfterContentCheck
     console.log($event);
   }
 
-  createResume(){
-    this.resumeObject.userId=8;
-    this.resumeObject.userName="Dharshan";
-    this.resumeObject.templateId=1;
-    this.resumeObject.resumeJson={
-     name:"Dharshan"
+  createResume() {
+    this.resumeObject.userId = 8;
+    this.resumeObject.userName = "Dharshan";
+    this.resumeObject.templateId = 1;
+    this.resumeObject.resumeJson = {
+      name: "Dharshan"
     }
 
   }

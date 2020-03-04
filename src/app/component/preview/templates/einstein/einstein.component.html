@@ -1,5 +1,4 @@
-
-<div  #pages>
+<div>
   <div class="main-page" #tasknote *ngIf="__resume!=null">
 
 
@@ -9,7 +8,7 @@
       <div class="col-8">
         <!-- Experience -->
 
-        <div class="col-12 col-box section" >
+        <div class="col-12 col-box section">
           <div class="title-box font-color bo-color" *ngIf="__resume.workExperiance.length > 0">Experience</div>
           <div class="professional-box" *ngFor="let item of __resume.workExperiance">
             <label>{{item.jobTitle}}</label>
@@ -105,7 +104,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-box section" >
+        <div class="col-12 col-box section">
           <div class="title-box font-color bo-color" *ngIf=" __resume.achivements.length > 0">Achievements</div>
           <div class="professional-box" *ngFor="let item of __resume.achivements">
             <label>{{item.name}}</label>
@@ -191,7 +190,7 @@
           <ul class="technical-skills">
             <li *ngFor="let item of __resume.skills">
 
-              <span  >{{item.skillCategoryName}}</span>
+              <span>{{item.skillCategoryName}}</span>
 
 
             </li>
@@ -211,12 +210,12 @@
 
 
   <!-- Page 2 -->
-  <div class="main-page page2" *ngIf="page2Flag" >
-    <div class="row" >
-      <div class="col-12"  #page2>
+  <div class="main-page page2" *ngIf="page2Flag">
+    <div class="row">
+      <div class="col-12" #page2>
 
       </div>
     </div>
   </div>
 
-  </div>
+</div>

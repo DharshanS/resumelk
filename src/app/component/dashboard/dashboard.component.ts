@@ -1,4 +1,4 @@
-import {HostListener, Component, OnInit,Inject } from '@angular/core';
+import { HostListener, Component, OnInit, Inject } from '@angular/core';
 import { ResumeService } from 'src/app/resume.service';
 
 @Component({
@@ -11,12 +11,12 @@ export class DashboardComponent implements OnInit {
   constructor(public service: ResumeService) { }
 
   ngOnInit() {
-    this.service.loadResume(8);
+    this.service.loadResume();
   }
 
   @HostListener("window:scroll", [])
-onWindowScroll() {
- alert('test')
-}
+  onWindowScroll() {
+
+  }
 
 }

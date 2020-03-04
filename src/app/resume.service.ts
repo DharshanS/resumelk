@@ -11,6 +11,7 @@ import { Observable, of } from 'rxjs';
 export class ResumeService {
   apiUrl = "http://44.229.50.57:8081/resumeservice/api/v1/resume";
   resumeObject: any;
+  userCode = 8;
   constructor(private http: HttpClient) { }
   _resume =
     {
@@ -87,8 +88,8 @@ export class ResumeService {
     return false;
   }
 
-  loadResume(code) {
-    this.http.get(`${this.apiUrl}?userCode=${code}`, { withCredentials: true }).subscribe(data => {
+  loadResume() {
+    this.http.get(`${this.apiUrl}?userCode=${this.userCode}`, { withCredentials: true }).subscribe(data => {
       this.resumeObject = data[0];
     })
   }
@@ -98,7 +99,7 @@ export class ResumeService {
     this.resumeObject.resumeName = resume;
     this.http.put(this.apiUrl, this.resumeObject, { withCredentials: true }).subscribe(data => {
       console.log("response");
-      this.loadResume(8);
+      this.loadResume();
     });
   }
 

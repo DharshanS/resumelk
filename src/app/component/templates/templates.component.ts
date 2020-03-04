@@ -18,7 +18,7 @@ export class TemplatesComponent implements OnInit {
 
 
   ngOnInit() {
-
+    this.resume.loadResume()
   }
 
   navigateToEditor() {
@@ -26,7 +26,6 @@ export class TemplatesComponent implements OnInit {
   }
 
   selectTemplateName(name) {
-    alert(name)
     this.imgUrl = "assets/images/templates/" + name + ".png"
     this.resume.updateTemplate(name)
 

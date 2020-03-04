@@ -17,8 +17,6 @@ import { EditorService } from "../../../options/editor.service";
 export class HawkingComponent implements OnInit {
 
   @ViewChild('tasknote', { static: false }) input: ElementRef;
-
-
   @ViewChild('hawking', { static: false }) myClass: ElementRef;
 
 
@@ -38,28 +36,10 @@ export class HawkingComponent implements OnInit {
     this.loadResume();
   }
 
-
-
-
-  ngDoCheck() {
-    // console.log("---Inside ngDoCheck---");
-  }
-  ngAfterContentInit() {
-    console.log("---Inside ngAfterContentInit---");
-  }
-  ngAfterContentChecked() {
-    console.log("---Inside ngAfterContentChecked---");
-  }
   ngAfterViewInit() {
-
-    //console.log('height---' + this.input.nativeElement.offsetHeight);  //<<<===here
-    //console.log('width---' + this.input.nativeElement.offsetWidth);
-    // console.log("---Inside ngAfterViewInit---"+JSON.stringify(resumeJson));
 
 
     var arraylist = this.input.nativeElement.querySelectorAll('.section');
-    //this.input.nativeElement.insertAdjacentHTML('beforeend', '<div class="page-break col-1" ></div>');
-
     var section = 0;
     var bottom = 0;
     for (var i = 0; i < arraylist.length; i++) {
@@ -72,16 +52,6 @@ export class HawkingComponent implements OnInit {
     }
 
 
-
-    //console.log('width---' + arraylist[9].insertAdjacentHTML);
-
-
-  }
-  ngAfterViewChecked() {
-    console.log("---Inside ngAfterViewChecked---");
-  }
-  ngOnDestroy() {
-    console.log("---Inside ngOnDestroy---");
   }
 
   loadResume() {

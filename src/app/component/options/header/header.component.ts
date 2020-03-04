@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor(private resume: ResumeService, private router: Router) { }
 
   ngOnInit() {
-    this.resume.loadResume(8);
+    this.resume.loadResume();
   }
 
 

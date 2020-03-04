@@ -17,12 +17,11 @@ import { EditorService } from "../../../options/editor.service";
 })
 export class EinsteinComponent implements OnInit {
 
-  @ViewChild('tasknote', { static: true }) input: ElementRef;
-  @ViewChild('pages', { static: true }) pages: ElementRef;
+  @ViewChild('tasknote', { static: false }) input: ElementRef;
+  @ViewChild('page2', { static: true }) pages: ElementRef;
   page2Flag = false;
 
-  constructor(private resumeService: ResumeService)
-   {}
+  constructor(private resumeService: ResumeService, private renderer2: Renderer2, private el: ElementRef) { }
 
   ngOnInit() {
   }
