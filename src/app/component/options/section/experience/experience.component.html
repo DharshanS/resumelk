@@ -9,9 +9,10 @@
         *ngFor="let  item of  resumeService.resumeComponents.workExperiance;index as i ">
         <div class="editor__group-item-label">
           <i class="fas fa-bars"></i>
-          {{item.companyName}}
+          <span>{{item.companyName}}</span>          
+          <i class="fas fa-times editor__group-item-delete" (click)="removeExperience(i)" data-education-delete></i>
         </div>
-        <i class="fas fa-times editor__group-item-delete" (click)="removeExperience(i)" data-education-delete></i>
+       
       </li>
     </ul>
 

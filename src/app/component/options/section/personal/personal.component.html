@@ -71,10 +71,10 @@
 
 
             <mat-datepicker #Start></mat-datepicker>
-            <input type="text" [(ngModel)]="resumeService.resumeComponents.personal.dateOfBirth" readonly
+            <input type="text" [(ngModel)]="resumeService.resumeComponents.personal.dateOfBirth" placeholder="From" readonly
               [matDatepicker]="Start" (click)="Start.open()" required>
 
-            <label style="left: 13px;">From</label>
+            <!-- <label style="left: 13px;">From</label> -->
 
           </div>
           <div class="col-12 col-lg-6">
@@ -148,7 +148,7 @@
         <div class="row">
           <div class="col-12">
             <label>Profile Description</label>
-            <ckeditor [editor]="Editor" [(ngModel)]="resumeService.resumeComponents.personal.description">
+            <ckeditor [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic','link','typing','title','heading','fontSize','codeBlock' ] }" [editor]="Editor" [(ngModel)]="resumeService.resumeComponents.personal.description">
             </ckeditor>
           </div>
         </div>

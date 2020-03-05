@@ -1339,15 +1339,21 @@ li, .contact input,
     .editor__group-item-label {
       display: -webkit-box;
       display: -ms-flexbox;
-      color: #2f2e2e;
+      font-size: 14px;
+      color: #595e63;
       font-weight: 500;
+
       display: flex;
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
-      -webkit-box-pack: start;
-      -ms-flex-pack: start;
-      justify-content: flex-start; }
+        grid-template-columns: 18px auto 20px;
+    display: grid;
+    align-items: center;
+    width: 100%; }
+    .editor__group-item i {
+      color: #00756a;
+  }
       .editor__group-item-label i {
         margin-right: 10px;
         color: #00756a; }
