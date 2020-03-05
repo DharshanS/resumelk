@@ -49,7 +49,7 @@ export class EditorComponent implements OnInit {
   constructor(
     public resolver: ComponentFactoryResolver,
     public sections: EditorService,
-    public resume: ResumeService,
+    public resumeService: ResumeService,
     public custom: DynamicComponentsService,
     public resolve: ComponentFactoryResolver,
     @Inject(DOCUMENT) public document: Document
@@ -71,7 +71,7 @@ export class EditorComponent implements OnInit {
 
   resumeInitializer() {
     if (this.resumeObject == null) {
-      this.resume.loadResume();
+      this.resumeService.loadResumeComponentsJson();
     }
   }
 
@@ -128,7 +128,6 @@ export class EditorComponent implements OnInit {
 
   // TODO: Cross browsing
   gotoTop() {
-
     setTimeout(() => {
       let el = document.getElementById('personal');
       el.scrollIntoView({ behavior: "smooth", block: "end", inline: "end" });
@@ -136,7 +135,7 @@ export class EditorComponent implements OnInit {
 
   }
 
-  onScroll($event) {
+  onScroll($event: any) {
     console.log($event);
   }
 
@@ -151,7 +150,8 @@ export class EditorComponent implements OnInit {
   }
 
 
-  async updateResume() {
+  async updateResumeTemplate() {
+    this.resumeService.updateResume()
   }
 
 

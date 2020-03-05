@@ -9,30 +9,25 @@ import { EditorService } from "../../editor.service";
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.css']
 })
-export class EducationComponent implements OnInit,AfterContentChecked {
+export class EducationComponent implements OnInit, AfterContentChecked {
   ngAfterContentChecked(): void {
-    if(this.flag && this.resumeService.checklenthOfarray(this.resumeService._resume.education)){
-        this.resumeService._resume.education.push(new Education());
-      }
+    if (this.flag && this.resumeService.checklenthOfarray(this.resumeService.resumeComponents.education)) {
+      this.resumeService.resumeComponents.education.push(new Education());
+    }
 
   }
-
   @Input() flag: boolean;
   public Editor = ClassicEditor;
-
   education: Education;
-
   selected = 0;
-
   eductionsPlace = [];
 
-
-  constructor(public resumeService: ResumeService,public editor: EditorService) {
+  constructor(public resumeService: ResumeService, public editor: EditorService) {
   }
 
   ngOnInit() {
-    if(this.resumeService._resume.education.length==0)
-    this.resumeService._resume.education.push(new Education())
+    if (this.resumeService.resumeComponents.education.length == 0)
+      this.resumeService.resumeComponents.education.push(new Education())
   }
 
   removeEducation(index) {
@@ -47,7 +42,6 @@ export class EducationComponent implements OnInit,AfterContentChecked {
   selectedItem(index) {
     this.selected = index;
   }
-
 
   continue() {
     console.log(this.eductionsPlace)

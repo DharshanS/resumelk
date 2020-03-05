@@ -15,7 +15,7 @@ import { ResumeService } from "./resume.service";
 import { AppComponent } from "./app.component";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpErrorInterceptor } from './interceptors/HttpErrorInterceptor';
-import { EditorService } from './component/options/editor.service';
+import { UtilityService } from './utility.service';
 
 @NgModule({
   declarations: [
@@ -39,14 +39,14 @@ import { EditorService } from './component/options/editor.service';
     BrowserModule
   ],
 
-  providers: [ResumeService,
+  providers: [ResumeService, UtilityService,
     {
-    provide: HTTP_INTERCEPTORS,
-    useClass: HttpErrorInterceptor,
-    multi: true
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
     }
 
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

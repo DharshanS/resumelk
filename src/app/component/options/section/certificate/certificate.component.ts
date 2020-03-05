@@ -8,47 +8,32 @@ import { ResumeService } from "../../../../resume.service";
   templateUrl: "./certificate.component.html",
   styleUrls: ["./certificate.component.css"]
 })
-export class CertificateComponent implements OnInit, AfterViewInit, AfterContentChecked {
+export class CertificateComponent implements OnInit {
   @Input() flag: boolean;
   public Editor = ClassicEditor;
 
-
-  selected = 0;
+  selectedCertificate = 0;
   constructor(public resumeService: ResumeService) { }
 
   ngOnInit() {
-    console.log("Certifate initiated...")
-
-
-  }
-
-  ngAfterViewInit() {
-
-    console.log("Certifate view initiated...")
-
   }
 
   ngAfterContentChecked() {
-
     if (this.flag) {
-      if (this.resumeService.checklenthOfarray(this.resumeService._resume.certificates)) {
-        this.resumeService._resume.certificates.push(new Certificate());
+      if (this.resumeService.checklenthOfarray(this.resumeService.resumeComponents.certificates)) {
+        this.resumeService.resumeComponents.certificates.push(new Certificate());
       }
     }
-
-
-
-
   }
 
   addNewCertificate() {
-    this.resumeService._resume.certificates.push(new Certificate());
+    this.resumeService.resumeComponents.certificates.push(new Certificate());
   }
   removeCertificate(index) {
-    if (index !== 0) this.resumeService._resume.certificates.splice(index, 1);
+    if (index !== 0) this.resumeService.resumeComponents.certificates.splice(index, 1);
   }
 
   selectedItem(i) {
-    this.selected = i;
+    this.selectedCertificate = i;
   }
 }

@@ -1,9 +1,10 @@
-import { Component, OnInit, Renderer2, ViewEncapsulation, ElementRef, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, Renderer2, ViewEncapsulation, ElementRef, ViewChild, ViewChildren, ViewContainerRef, AfterViewInit } from '@angular/core';
 import resumeJson from '../../../../../assets/json/resume.json';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import { ResumeService } from "../../../../resume.service";
 import { EditorService } from "../../../options/editor.service";
+import { timeout, timeInterval } from 'rxjs/operators';
 //import { ConsoleReporter } from 'jasmine';
 
 
@@ -17,16 +18,30 @@ import { EditorService } from "../../../options/editor.service";
 })
 export class EinsteinComponent implements OnInit {
 
-  @ViewChild('tasknote', { static: false }) input: ElementRef;
+  @ViewChild('tasknote', { static: true }) input: ElementRef;
   @ViewChild('page2', { static: true }) pages: ElementRef;
   page2Flag = false;
+  templateData: any;
 
-  constructor(private resumeService: ResumeService, private renderer2: Renderer2, private el: ElementRef) { }
+  constructor(public resumeService: ResumeService, private renderer2: Renderer2, private el: ElementRef) {
 
-  ngOnInit() {
   }
 
-  ngAfterViewInit() {
+  ngOnInit() {
+    console.log("On init")
+    this.resumeService.loadResumeComponentsJson();
+
+  }
+
+
+
+
+
+
+
+
+
+  templatePageBreak() {
     let arraylist = this.input.nativeElement.querySelectorAll('.section');
     console.log(arraylist.length)
     let section = 0;
@@ -34,7 +49,6 @@ export class EinsteinComponent implements OnInit {
       section = section + arraylist[i].offsetHeight;
       if (this.resumeService.A4_SIZE < section) {
         let element = this.input.nativeElement.querySelectorAll('.section')[i];
-        // this.input.nativeElement.querySelectorAll('.section')[i].insertAdjacentHTML('beforebegin', '<div class="page-break col-1" ></div>');
         this.page2Flag = true;
         setTimeout(() => {
           if (typeof (element) !== 'undefined')
@@ -44,6 +58,5 @@ export class EinsteinComponent implements OnInit {
       }
     }
   }
-
 
 }

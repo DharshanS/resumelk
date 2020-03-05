@@ -8,10 +8,10 @@ import { ResumeService } from 'src/app/resume.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(public service: ResumeService) { }
+  constructor(public resumeService: ResumeService) { }
 
   ngOnInit() {
-    this.service.loadResume();
+    this.resumeService.loadResumeComponentsJson();
   }
 
   @HostListener("window:scroll", [])

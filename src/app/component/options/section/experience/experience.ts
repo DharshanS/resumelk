@@ -5,11 +5,11 @@ export class WorkExperiance {
   country: string;
   city: string;
   timePeriod: TimePeriod;
-  currentWork: string;
-  descrption: string;
+  currentWork: boolean;
+  description: string;
 
   constructor() {
-    this.companyName="creative";
+    this.description = " ";
     this.timePeriod = new TimePeriod();
   }
 }
@@ -19,17 +19,17 @@ export class WorkExperiance {
 export class TimePeriod {
   from: Date;
   to: Date;
-  constructor(){
-    this.from=new Date();
-    this.to=new Date();
+  constructor() {
+    this.from = new Date();
+    this.to = new Date();
   }
 }
 
 export class Date {
   month: string;
   year: string;
-  constructor(){
-    this.month="";
-    this.year="";
+  constructor() {
+    this.month = "";
+    this.year = "";
   }
 }

@@ -42,21 +42,21 @@
           <div class="col-12 col-xl-4">
             <div class="editor__group-main-wrapper">
 
-              <input type="text" [(ngModel)]="resumeService._resume.personal.title" required>
+              <input type="text" [(ngModel)]="resumeService.resumeComponents.personal.title" required>
               <label>Title before</label>
             </div>
           </div>
           <div class="col-12 col-lg-6 col-xl-4">
             <div class="editor__group-main-wrapper">
 
-              <input type="text" [(ngModel)]="resumeService._resume.personal.firstName" required>
+              <input type="text" [(ngModel)]="resumeService.resumeComponents.personal.firstName" required>
               <label>First Name </label>
             </div>
           </div>
           <div class="col-12 col-lg-6 col-xl-4">
             <div class="editor__group-main-wrapper">
 
-              <input type="text" [(ngModel)]="resumeService._resume.personal.lastName" required>
+              <input type="text" [(ngModel)]="resumeService.resumeComponents.personal.lastName" required>
               <label>Last Name</label>
             </div>
           </div>
@@ -71,8 +71,8 @@
 
 
             <mat-datepicker #Start></mat-datepicker>
-            <input type="text" [(ngModel)]="resumeService._resume.personal.dateOfBirth" readonly [matDatepicker]="Start"
-              (click)="Start.open()" required>
+            <input type="text" [(ngModel)]="resumeService.resumeComponents.personal.dateOfBirth" readonly
+              [matDatepicker]="Start" (click)="Start.open()" required>
 
             <label style="left: 13px;">From</label>
 
@@ -80,7 +80,7 @@
           <div class="col-12 col-lg-6">
             <div class="editor__group-main-wrapper">
 
-              <input type="text" [(ngModel)]="resumeService._resume.personal.nationality" required>
+              <input type="text" [(ngModel)]="resumeService.resumeComponents.personal.nationality" required>
               <label>Nationality</label>
             </div>
           </div>
@@ -90,14 +90,14 @@
           <div class="col-12 col-lg-6">
             <div class="editor__group-main-wrapper">
 
-              <input type="tel" [(ngModel)]="resumeService._resume.personal.phoneNumber" required>
+              <input type="tel" [(ngModel)]="resumeService.resumeComponents.personal.phoneNumber" required>
               <label>Phone Number</label>
             </div>
           </div>
           <div class="col-12 col-lg-6">
             <div class="editor__group-main-wrapper">
 
-              <input type="email" [(ngModel)]="resumeService._resume.personal.email" required>
+              <input type="email" [(ngModel)]="resumeService.resumeComponents.personal.email" required>
               <label>Email Address</label>
             </div>
           </div>
@@ -106,7 +106,7 @@
           <div class="col-12">
             <div class="editor__group-main-wrapper">
 
-              <input type="text" [(ngModel)]="resumeService._resume.personal.web" required>
+              <input type="text" [(ngModel)]="resumeService.resumeComponents.personal.web" required>
               <label>Website Link</label>
             </div>
           </div>
@@ -119,26 +119,26 @@
               </div>
               <div class="col-12 col-lg-6">
                 <div class="editor__group-main-wrapper">
-                  <input type="text" [(ngModel)]="resumeService._resume.personal.address.street" required>
+                  <input type="text" [(ngModel)]="resumeService.resumeComponents.personal.address.street" required>
                   <label for="">Street line</label>
                 </div>
               </div>
               <div class="col-12 col-lg-6">
                 <div class="editor__group-main-wrapper">
-                  <input type="text" [(ngModel)]="resumeService._resume.personal.address.city" required>
+                  <input type="text" [(ngModel)]="resumeService.resumeComponents.personal.address.city" required>
                   <label for="">City</label>
 
                 </div>
               </div>
               <div class="col-12 col-lg-6">
                 <div class="editor__group-main-wrapper">
-                  <input type="text" [(ngModel)]="resumeService._resume.personal.address.postalCode" required>
+                  <input type="text" [(ngModel)]="resumeService.resumeComponents.personal.address.postalCode" required>
                   <label for="">Postal Code</label>
                 </div>
               </div>
               <div class="col-12 col-lg-6">
                 <div class="editor__group-main-wrapper">
-                  <input type="text" [(ngModel)]="resumeService._resume.personal.address.country" required>
+                  <input type="text" [(ngModel)]="resumeService.resumeComponents.personal.address.country" required>
                   <label for="">Country</label>
                 </div>
               </div>
@@ -147,8 +147,9 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <label>Profile</label>
-            <!-- <ckeditor [editor]="Editor" data="'test'" [(ngModel)]=""></ckeditor> -->
+            <label>Profile Description</label>
+            <ckeditor [editor]="Editor" [(ngModel)]="resumeService.resumeComponents.personal.description">
+            </ckeditor>
           </div>
         </div>
 

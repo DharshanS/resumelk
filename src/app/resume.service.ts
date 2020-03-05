@@ -5,15 +5,17 @@
 
 
 import { HttpClient } from '@angular/common/http';
-import { catchError, retry } from 'rxjs/internal/operators';
-import { Observable, of } from 'rxjs';
+import { Observable, of, from } from 'rxjs';
+
 
 export class ResumeService {
   apiUrl = "http://44.229.50.57:8081/resumeservice/api/v1/resume";
   resumeObject: any;
   userCode = 8;
-  constructor(private http: HttpClient) { }
-  _resume =
+  constructor(private http: HttpClient) {
+
+  }
+  resumeComponents =
     {
       "personal": null,
       "workExperiance": [],
@@ -35,17 +37,14 @@ export class ResumeService {
     {
       "name": "einstein",
       "id": 1,
-
     },
     {
       "name": "newton",
       "id": 2,
-
     },
     {
       "name": "hawking",
       "id": 3,
-
     },
     {
       "name": "darwin",
@@ -88,30 +87,32 @@ export class ResumeService {
     return false;
   }
 
-  loadResume() {
+  loadResumeComponentsJson() {
     this.http.get(`${this.apiUrl}?userCode=${this.userCode}`, { withCredentials: true }).subscribe(data => {
+      this.resumeComponents = data[0]['resumeJson'];
       this.resumeObject = data[0];
     })
   }
+  syncronusTemplateJsonLoad() {
+    return this.http.get(`${this.apiUrl}?userCode=${this.userCode}`, { withCredentials: true });
+  }
 
   updateTemplate(resume) {
-    console.log(this.resumeObject)
+
     this.resumeObject.resumeName = resume;
     this.http.put(this.apiUrl, this.resumeObject, { withCredentials: true }).subscribe(data => {
       console.log("response");
-      this.loadResume();
+      this.loadResumeComponentsJson();
     });
   }
 
 
-  async updateResume(resume) {
-
-    resume.userCode = 8;
-    resume.userName = "Dharshan";
-    resume.resumeId = '5e4be10d2ab79c00013c086f'
-    this.http.put(this.apiUrl, resume, { withCredentials: true }).subscribe(data => {
-      console.log("response");
-      console.log(data);
+  async updateResume() {
+    this.resumeObject.userCode = 8;
+    this.resumeObject.userName = "Dharshan";
+    this.resumeObject.resumeId = '5e4be10d2ab79c00013c086f'
+    this.http.put(this.apiUrl, this.resumeObject, { withCredentials: true }).subscribe(data => {
+      this.loadResumeComponentsJson();
     });
   }
 
@@ -119,4 +120,10 @@ export class ResumeService {
     return this.http.get(`${this.apiUrl}?userCode=${code}`, { withCredentials: true });
   }
 
+  getTemplateJson() {
+    return this.syncronusTemplateJsonLoad().subscribe(data => {
+      return data[0]["resumeJson"];
+    })
+
+  }
 }

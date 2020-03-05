@@ -1,94 +1,96 @@
-
-<div class="editor-body-bg-color"  id="main-editor">
-
+<div class="editor-body-bg-color" id="main-editor">
 
 
-<div class="" style="position: absolute;top:10px;">
+
+  <div class="" style="position: absolute;top:10px;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#00756a" fill-opacity="1" d="M0,96L26.7,106.7C53.3,117,107,139,160,154.7C213.3,171,267,181,320,170.7C373.3,160,427,128,480,117.3C533.3,107,587,117,640,112C693.3,107,747,85,800,74.7C853.3,64,907,64,960,96C1013.3,128,1067,192,1120,224C1173.3,256,1227,256,1280,256C1333.3,256,1387,256,1413,256L1440,256L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path>
-      </svg>
-</div>
-    <div class="container-fluid">
+      <path fill="#00756a" fill-opacity="1"
+        d="M0,96L26.7,106.7C53.3,117,107,139,160,154.7C213.3,171,267,181,320,170.7C373.3,160,427,128,480,117.3C533.3,107,587,117,640,112C693.3,107,747,85,800,74.7C853.3,64,907,64,960,96C1013.3,128,1067,192,1120,224C1173.3,256,1227,256,1280,256C1333.3,256,1387,256,1413,256L1440,256L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z">
+      </path>
+    </svg>
+  </div>
+  <div class="container-fluid">
 
-        <div class="row mr-0 ml-0 mt-0 pl-4 pr-4">
-            <!-- <label for="show-slide">Show</label> #f8f7fc-->
-            <input type="checkbox" name="" id="show-slide">
-            <div class="left-div">
+    <div class="row mr-0 ml-0 mt-0 pl-4 pr-4">
+      <!-- <label for="show-slide">Show</label> #f8f7fc-->
+      <input type="checkbox" name="" id="show-slide">
+      <div class="left-div">
 
-                <div class="fixde-div ">
+        <div class="fixde-div ">
 
-                <label for="show-slide" class="close-icon"><i class="fas fa-times"></i></label>
-                <div class="user-details-box">
-                    <div class="user-img-box">
-                        <img src="assets/images/headshot.jpg" alt="" class="user-img">
+          <label for="show-slide" class="close-icon"><i class="fas fa-times"></i></label>
+          <div class="user-details-box">
+            <div class="user-img-box">
+              <img src="assets/images/headshot.jpg" alt="" class="user-img">
 
-                    </div>
-                    <div class="user-name">Slave Kornllow</div>
-                    <!-- <div class="user-des">
+            </div>
+            <div class="user-name">Slave Kornllow</div>
+            <!-- <div class="user-des">
                         <span> Boss </span>
                         <span>2 level </span>
                     </div> -->
 
 
-                </div>
+          </div>
 
-                <div class="left-menu div-sticky" id="style-1">
-
-
-
-                    <app-list [customelist]=componentRefList (change)=listUpdate($event) (scrolleToElementNotify)=scrollToElement($event)></app-list>
+          <div class="left-menu div-sticky" id="style-1">
 
 
-                    <button class="btn btn-primary scroll-top " [style.display]="displayScrollButton" data-scroll="up" type="button"
-                    (click)="scrollUp()">
-                    <i class="fa fa-chevron-up"></i>
-                  </button>
-                </div>
-            </div>
-            </div>
-            <div class="right-sec" (scroll)="scrollHandler($event)" scroll>
+
+            <app-list [customelist]=componentRefList (change)=listUpdate($event)
+              (scrolleToElementNotify)=scrollToElement($event)></app-list>
 
 
-                    <div class="col-12"  >
+            <button class="btn btn-primary scroll-top " [style.display]="displayScrollButton" data-scroll="up"
+              type="button" (click)="scrollUp()">
+              <i class="fa fa-chevron-up"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="right-sec" (scroll)="scrollHandler($event)" scroll>
 
 
-                        <button (click)="updateOption()">Save Test</button>
+        <div class="col-12">
 
 
-                        <app-personal [flag]="sections.moreSections[0].flag"></app-personal>
-                        <app-experience [flag]="sections.moreSections[1].flag"></app-experience>
-                        <app-education [flag]="sections.moreSections[2].flag"></app-education>
-                        <app-skill [flag]="sections.moreSections[3].flag"></app-skill>
-
-                        <app-certificate [flag]="sections.moreSections[4].flag"></app-certificate>
-                        <app-award [flag]="sections.moreSections[5].flag" *ngIf="sections.moreSections[5].flag"></app-award>
-
-                        <app-achievements [flag]="sections.moreSections[7].flag"></app-achievements>
-
-                        <app-referances [flag]="sections.moreSections[6].flag"></app-referances>
-
-                        <app-publication [flag]="sections.moreSections[8].flag"></app-publication>
-
-                        <app-strengths [flag]="sections.moreSections[10].flag"></app-strengths>
+          <button (click)="updateResumeTemplate()">Update</button>
 
 
-                        <div #customContainer>
+          <app-personal [flag]="sections.moreSections[0].flag"></app-personal>
+          <app-experience [flag]="sections.moreSections[1].flag"></app-experience>
+          <app-education [flag]="sections.moreSections[2].flag"></app-education>
+          <app-skill [flag]="sections.moreSections[3].flag"></app-skill>
+
+          <app-certificate [flag]="sections.moreSections[4].flag"></app-certificate>
+          <app-award [flag]="sections.moreSections[5].flag" *ngIf="sections.moreSections[5].flag"></app-award>
+
+          <app-achievements [flag]="sections.moreSections[7].flag"></app-achievements>
+
+          <app-referances [flag]="sections.moreSections[6].flag"></app-referances>
+
+          <app-publication [flag]="sections.moreSections[8].flag"></app-publication>
+
+          <app-strengths [flag]="sections.moreSections[10].flag"></app-strengths>
 
 
-                        </div>
+          <div #customContainer>
 
 
-                    </div>
+          </div>
 
-                    <!-- *ngIf="gotoTopShow" -->
-                    <div class="" style="    position: sticky !important;
-                    bottom: -26px;">
-                               <button (click)="gotoTop()" class="goto-top" *ngIf="gotoTopShow" ><i class="fas fa-arrow-up"></i></button>
-                            </div>
-           </div>
 
         </div>
 
+        <!-- *ngIf="gotoTopShow" -->
+        <div class="" style="    position: sticky !important;
+                    bottom: -26px;">
+          <button (click)="gotoTop()" class="goto-top" *ngIf="gotoTopShow"><i class="fas fa-arrow-up"></i></button>
+        </div>
+      </div>
 
     </div>
+
+
+  </div>
 </div>

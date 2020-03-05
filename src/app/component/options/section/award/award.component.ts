@@ -1,4 +1,4 @@
-import { Component, OnInit,Input, AfterContentChecked } from '@angular/core';
+import { Component, OnInit, Input, AfterContentChecked } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ResumeService } from "../../../../resume.service";
 import { Award } from './Award';
@@ -8,45 +8,44 @@ import { Award } from './Award';
   templateUrl: './award.component.html',
   styleUrls: ['./award.component.css']
 })
-export class AwardComponent implements OnInit,AfterContentChecked {
+export class AwardComponent implements OnInit, AfterContentChecked {
 
   public Editor = ClassicEditor;
-  awards=[];
-  selected=0;
-  @Input() flag:boolean;
-  months=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  awards = [];
+  selected = 0;
+  @Input() flag: boolean;
+  months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-  constructor( public resumeService: ResumeService,
-    ) { }
+  constructor(public resumeService: ResumeService,
+  ) { }
 
   ngOnInit() {
     console.log("AwardComponent initiated");
 
   }
 
-  addAward(){
-    this.resumeService._resume.awards.push(new Award())
-   // alert(JSON.stringify(this.awards));
-  }
-  removeAward(index){
-    if(index!=0)
-    this.resumeService._resume.awards.splice(index,1)
-  }
-
-  selectedItem(index){
-    this.selected=index;
-  }
-
-
-
-  calculateDate(year,date){
+  addAward() {
+    this.resumeService.resumeComponents.awards.push(new Award())
 
   }
+  removeAward(index) {
+    if (index != 0)
+      this.resumeService.resumeComponents.awards.splice(index, 1)
+  }
 
-  ngAfterContentChecked(){
-    console.log("AwardComponent content cheack");
-    if(this.flag && this.resumeService._resume.awards.length==0){
-      this.resumeService._resume.awards.push(new Award())
+  selectedItem(index) {
+    this.selected = index;
+  }
+
+
+
+  calculateDate(year, date) {
+
+  }
+
+  ngAfterContentChecked() {
+    if (this.flag && this.resumeService.resumeComponents.awards.length == 0) {
+      this.resumeService.resumeComponents.awards.push(new Award())
     }
   }
 

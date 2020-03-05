@@ -9,8 +9,8 @@ import { ResumeService } from "../../../../resume.service";
 })
 export class ReferancesComponent implements OnInit, AfterContentChecked {
   ngAfterContentChecked(): void {
-    if (this.flag && this.resumeService.checklenthOfarray(this.resumeService._resume.referances)) {
-      this.resumeService._resume.referances.push(new Referance())
+    if (this.flag && this.resumeService.checklenthOfarray(this.resumeService.resumeComponents.referances)) {
+      this.resumeService.resumeComponents.referances.push(new Referance())
     }
   }
 

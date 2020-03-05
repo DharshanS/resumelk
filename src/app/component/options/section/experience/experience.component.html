@@ -1,171 +1,172 @@
-
 <div class="editor__group" #experience *ngIf="flag">
-  <aside class="editor__group-sidebar experience"  id="experience">
-      <div class="editor__group-title">
-          <i class="fas fa-graduation-cap"></i>
-          <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Experience</p>
-      </div>
-      <ul class="editor__group-list" data-sortable data-education-list >
-          <li class="editor__group-item" [ngClass]="{active: selected==i}" *ngFor="let item of resumeService._resume.workExperiance;index as i"  (click)=selectedItem(i)>
-              <div class="editor__group-item-label" >
-                  <i class="fas fa-bars"></i>{{resumeService._resume.workExperiance[i].companyName}}
-                  <!-- <p class="paragraph--*ngFor="let item of resumeService._resume.workExperiance;index as i"med u-weight-smb"></p> -->
-              </div>
-              <i class="fas fa-times editor__group-item-delete" (click)="removeExperience(i)" data-education-delete></i>
-          </li>
+  <aside class="editor__group-sidebar experience" id="experience">
+    <div class="editor__group-title">
+      <i class="fas fa-graduation-cap"></i>
+      <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Experience</p>
+    </div>
+    <ul class="editor__group-list" data-sortable data-education-list>
+      <li class="editor__group-item" [ngClass]="" (click)="selectedExperianceItem(i)"
+        *ngFor="let  item of  resumeService.resumeComponents.workExperiance;index as i ">
+        <div class="editor__group-item-label">
+          <i class="fas fa-bars"></i>
+          {{item.companyName}}
+        </div>
+        <i class="fas fa-times editor__group-item-delete" (click)="removeExperience(i)" data-education-delete></i>
+      </li>
+    </ul>
 
-
-      </ul>
-      <div class="editor__group-sidebar-btn">
-          <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent"
-              data-education-side-btn>
-              <p class="btn__label paragraph--med" (click)="addexperience()"><i class="fas fa-plus btn__icon"></i> Add
-                  New</p>
-          </button>
-      </div>
+    <div class="editor__group-sidebar-btn">
+      <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent" data-education-side-btn>
+        <p class="btn__label paragraph--med" (click)="addNewExperience()"><i class="fas fa-plus btn__icon"></i> Add
+          New</p>
+      </button>
+    </div>
   </aside>
-  <div class="editor__group-main" *ngIf="resumeService._resume.workExperiance.length > 0">
-      <div class="row">
-          <div class="col-12 editor__group-main-form editor__group-main-form--alt"
-              data-education-form>
-              <div class="row">
-                  <div class="col-12" data-education-form-items>
-                      <div class="row">
-                          <div class="col-12 col-lg-6">
-                              <div class="editor__group-main-wrapper" >
+  <div class="editor__group-main" *ngIf="resumeService.resumeComponents.workExperiance.length > 0">
+    <div class="row">
+      <div class="col-12 editor__group-main-form editor__group-main-form--alt" data-education-form>
+        <div class="row">
+          <div class="col-12" data-education-form-items>
+            <div class="row">
+              <div class="col-12 col-lg-6">
+                <div class="editor__group-main-wrapper">
 
-                                  <input type="text"
-                                      data-education-institution [(ngModel)]="resumeService._resume.workExperiance[selected].companyName" >
-                                      <label>Company name</label>
-                              </div>
-                          </div>
-                          <div class="col-12 col-lg-6">
-                              <div class="editor__group-main-wrapper">
-
-                                  <input type="text"
-                                      data-education-field [(ngModel)]="resumeService._resume.workExperiance[selected].jobTitle" >
-                                      <label>Job title</label>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-12 col-lg-6">
-                              <div class="editor__group-main-wrapper">
-
-                                  <input type="text" data-education-city [(ngModel)]="resumeService._resume.workExperiance[selected].city" required>
-                                  <label>City</label>
-                              </div>
-                          </div>
-                          <div class="col-12 col-lg-6">
-                              <div class="editor__group-main-wrapper">
-
-                                  <input type="text"
-                                      data-education-country [(ngModel)]="resumeService._resume.workExperiance[selected].country" required>
-                                      <label>Country</label>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-12 col-xl-6">
-                               <label>Time Period</label>
-                              <div class="row">
-                                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-start-month [(ngModel)]=resumeService._resume.workExperiance[selected].timePeriod.from.month>
-                                          <option value="" disabled selected hidden>Month</option>
-                                          <option value="January">January</option>
-                                          <option value="February">February</option>
-                                          <option value="March">March</option>
-                                          <option value="June">June</option>
-                                          <option value="July">July</option>
-                                          <option value="August">August</option>
-                                          <option value="September">September</option>
-                                          <option value="October">October</option>
-                                          <option value="November">November</option>
-                                          <option value="December">December</option>
-                                      </select>
-
-                                  </div>
-                                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-start-year [(ngModel)]=resumeService._resume.workExperiance[selected].timePeriod.from.year>
-                                          <option value="" disabled selected hidden>Year</option>
-                                          <option value="2018">2018</option>
-                                          <option value="2017">2017</option>
-                                          <option value="2016">2016</option>
-                                          <option value="2015">2015</option>
-                                          <option value="2014">2014</option>
-                                          <option value="2013">2013</option>
-                                          <option value="2012">2012</option>
-                                          <option value="2011">2011</option>
-                                          <option value="2010">2010</option>
-                                      </select>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-xl-6">
-                              <label class="d-none d-xl-inline-block">&nbsp;</label>
-                              <div class="row">
-                                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-end-month [(ngModel)]=resumeService._resume.workExperiance[selected].timePeriod.to.month>
-                                          <option value="" disabled selected hidden>Month</option>
-                                          <option value="January">January</option>
-                                          <option value="February">February</option>
-                                          <option value="March">March</option>
-                                          <option value="June">June</option>
-                                          <option value="July">July</option>
-                                          <option value="August">August</option>
-                                          <option value="September">September</option>
-                                          <option value="October">October</option>
-                                          <option value="November">November</option>
-                                          <option value="December">December</option>
-                                      </select>
-                                  </div>
-                                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-end-year [(ngModel)]=resumeService._resume.workExperiance[selected].timePeriod.to.year >
-                                          <option value="" disabled selected hidden>Year</option>
-                                          <option value="2018">2018</option>
-                                          <option value="2017">2017</option>
-                                          <option value="2016">2016</option>
-                                          <option value="2015">2015</option>
-                                          <option value="2014">2014</option>
-                                          <option value="2013">2013</option>
-                                          <option value="2012">2012</option>
-                                          <option value="2011">2011</option>
-                                          <option value="2010">2010</option>
-                                      </select>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="row justify-content-end">
-                          <div class="col-auto">
-                              <div class="checkbox">
-                                  <input type="checkbox" id="currently-study-here"
-                                      data-education-currently>
-                                  <label for="currently-study-here">Currently I study here</label>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="row">
-
-
-                      <div  class="col-12" data-skills-item>
-                        <label>Description</label>
-                        <ckeditor [editor]="Editor"  data=""></ckeditor>
-
+                  <input type="text" data-education-institution
+                    [(ngModel)]="resumeService.resumeComponents.workExperiance[selectedExperiance].companyName">
+                  <label>Company name</label>
                 </div>
               </div>
-                  </div>
+              <div class="col-12 col-lg-6">
+                <div class="editor__group-main-wrapper">
+
+                  <input type="text" data-education-field
+                    [(ngModel)]="resumeService.resumeComponents.workExperiance[selectedExperiance].jobTitle">
+                  <label>Job title</label>
+                </div>
               </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-lg-6">
+                <div class="editor__group-main-wrapper">
+
+                  <input type="text" data-education-city
+                    [(ngModel)]="resumeService.resumeComponents.workExperiance[selectedExperiance].city" required>
+                  <label>City</label>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="editor__group-main-wrapper">
+
+                  <input type="text" data-education-country
+                    [(ngModel)]="resumeService.resumeComponents.workExperiance[selectedExperiance].country" required>
+                  <label>Country</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-xl-6">
+                <label>Time Period</label>
+                <div class="row">
+                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
+                    <select required data-education-start-month
+                      [(ngModel)]=resumeService.resumeComponents.workExperiance[selectedExperiance].timePeriod.from.month>
+                      <option value="" disabled selectedExperiance hidden>Month</option>
+                      <option value="January">January</option>
+                      <option value="February">February</option>
+                      <option value="March">March</option>
+                      <option value="June">June</option>
+                      <option value="July">July</option>
+                      <option value="August">August</option>
+                      <option value="September">September</option>
+                      <option value="October">October</option>
+                      <option value="November">November</option>
+                      <option value="December">December</option>
+                    </select>
+
+                  </div>
+                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
+                    <select required data-education-start-year
+                      [(ngModel)]=resumeService.resumeComponents.workExperiance[selectedExperiance].timePeriod.from.year>
+                      <option value="" disabled selectedExperiance hidden>Year</option>
+                      <option value="2018">2018</option>
+                      <option value="2017">2017</option>
+                      <option value="2016">2016</option>
+                      <option value="2015">2015</option>
+                      <option value="2014">2014</option>
+                      <option value="2013">2013</option>
+                      <option value="2012">2012</option>
+                      <option value="2011">2011</option>
+                      <option value="2010">2010</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-xl-6">
+                <label class="d-none d-xl-inline-block">&nbsp;</label>
+                <div class="row">
+                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
+                    <select required data-education-end-month
+                      [(ngModel)]=resumeService.resumeComponents.workExperiance[selectedExperiance].timePeriod.to.month>
+                      <option value="" disabled selectedExperiance hidden>Month</option>
+                      <option value="January">January</option>
+                      <option value="February">February</option>
+                      <option value="March">March</option>
+                      <option value="June">June</option>
+                      <option value="July">July</option>
+                      <option value="August">August</option>
+                      <option value="September">September</option>
+                      <option value="October">October</option>
+                      <option value="November">November</option>
+                      <option value="December">December</option>
+                    </select>
+                  </div>
+                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
+                    <select required data-education-end-year
+                      [(ngModel)]=resumeService.resumeComponents.workExperiance[selectedExperiance].timePeriod.to.year>
+                      <option value="" disabled selectedExperiance hidden>Year</option>
+                      <option value="2018">2018</option>
+                      <option value="2017">2017</option>
+                      <option value="2016">2016</option>
+                      <option value="2015">2015</option>
+                      <option value="2014">2014</option>
+                      <option value="2013">2013</option>
+                      <option value="2012">2012</option>
+                      <option value="2011">2011</option>
+                      <option value="2010">2010</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-end">
+              <div class="col-auto">
+                <div class="checkbox">
+                  <input type="checkbox" id="currently-study-here"
+                    [(ngModel)]="resumeService.resumeComponents.workExperiance[selectedExperiance].currentWork"
+                    data-education-currently>
+                  <label for="currently-study-here">Currently I study here</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12" data-skills-item>
+                <label>Description</label>
+                <ckeditor [editor]="Editor"
+                  [(ngModel)]="resumeService.resumeComponents.workExperiance[selectedExperiance].description">
+                </ckeditor>
+
+              </div>
+            </div>
           </div>
+        </div>
       </div>
+    </div>
   </div>
   <div class="row">
-    <div class="col-12 text-right" >
-        <span class="edit-box-delete-icon" (click)="editor.remove('experience')">
-            <i class="fas fa-trash editor__group-item-delete" ></i>
-        </span>
+    <div class="col-12 text-right">
+      <span class="edit-box-delete-icon" (click)="removeExperienceCompanent('experience')">
+        <i class="fas fa-trash editor__group-item-delete"></i>
+      </span>
     </div>
+  </div>
 </div>
-</div>
-
-<!-- data-toggle="tooltip" data-placement="top" title="delete this section" -->

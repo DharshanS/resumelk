@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,AfterContentChecked } from '@angular/core';
+import { Component, OnInit, Input, AfterContentChecked } from '@angular/core';
 import { Skill, SkillName } from './Skill';
 import { ResumeService } from "../../../../resume.service";
 
@@ -7,45 +7,45 @@ import { ResumeService } from "../../../../resume.service";
   templateUrl: './skill.component.html',
   styleUrls: ['./skill.component.css']
 })
-export class SkillComponent implements OnInit,AfterContentChecked {
+export class SkillComponent implements OnInit, AfterContentChecked {
 
 
-  @Input() flag:boolean;
-  selected=0;
-  constructor(    public resumeService: ResumeService) { }
+  @Input() flag: boolean;
+  selected = 0;
+  constructor(public resumeService: ResumeService) { }
 
   ngOnInit() {
 
   }
 
-  ngAfterContentChecked(){
-    if(this.flag &&  this.resumeService.checklenthOfarray(this.resumeService._resume.skills)){
-      this.resumeService._resume.skills.push(new Skill());
+  ngAfterContentChecked() {
+    if (this.flag && this.resumeService.checklenthOfarray(this.resumeService.resumeComponents.skills)) {
+      this.resumeService.resumeComponents.skills.push(new Skill());
     }
 
   }
   addNewSkillCategory() {
-    this.resumeService._resume.skills.push(new Skill());
+    this.resumeService.resumeComponents.skills.push(new Skill());
 
 
   }
 
-  addNewSkill(j,i) {
-    this.resumeService._resume.skills[j].skillNames.push(new SkillName())
+  addNewSkill(j, i) {
+    this.resumeService.resumeComponents.skills[j].skillNames.push(new SkillName())
   }
 
-  selectedItem(i){
+  selectedItem(i) {
 
-    this.selected=i;
+    this.selected = i;
   }
 
-  removeSkillCategory(index){
-    if(index!==0)
-    this.resumeService._resume.skills.splice(index,1);
+  removeSkillCategory(index) {
+    if (index !== 0)
+      this.resumeService.resumeComponents.skills.splice(index, 1);
   }
-  removeSkill(j,i){
-    if(i!==0)
-    this.resumeService._resume.skills[j].skillNames.splice(i,1);
+  removeSkill(j, i) {
+    if (i !== 0)
+      this.resumeService.resumeComponents.skills[j].skillNames.splice(i, 1);
   }
 
 }

@@ -1,117 +1,121 @@
-<div class="editor__group"  id="publications" *ngIf="flag">
-  <aside class="editor__group-sidebar" >
-      <div class="editor__group-title">
-          <i class="fas fa-chart-bar"></i>
-          <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Publications</p>
-      </div>
-      <ul class="editor__group-list" data-sortable data-skills-list  >
-          <li class="editor__group-item " data-skills-list-item *ngFor="let item of this.resumeService._resume.publications;index as i" (click)=selectedItem(i)>
-              <div class="editor__group-item-label">
-                  <i class="fas fa-bars"></i>
-                  <p class="paragraph--med u-weight-smb">{{this.resumeService._resume.publications[i].title}}</p>
-              </div>
-              <i class="fas fa-times editor__group-item-delete" data-skills-delete (click)=removePublication(i)></i>
-          </li>
-      </ul>
-      <div class="editor__group-sidebar-btn">
-          <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent"
-              data-skills-side-btn (click)=addPublication()>
-              <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i> Add
-                  New</p>
-          </button>
-      </div>
+<div class="editor__group" id="publications" *ngIf="flag">
+  <aside class="editor__group-sidebar">
+    <div class="editor__group-title">
+      <i class="fas fa-chart-bar"></i>
+      <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Publications</p>
+    </div>
+    <ul class="editor__group-list" data-sortable data-skills-list>
+      <li class="editor__group-item " data-skills-list-item
+        *ngFor="let item of resumeService.resumeComponents.publications;index as i" (click)=selectedItem(i)>
+        <div class="editor__group-item-label">
+          <i class="fas fa-bars"></i>
+          <p class="paragraph--med u-weight-smb">{{resumeService.resumeComponents.publications[i].title}}</p>
+        </div>
+        <i class="fas fa-times editor__group-item-delete" data-skills-delete (click)=removePublication(i)></i>
+      </li>
+    </ul>
+    <div class="editor__group-sidebar-btn">
+      <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent" data-skills-side-btn
+        (click)=addPublication()>
+        <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i> Add
+          New</p>
+      </button>
+    </div>
   </aside>
-  <div class="editor__group-main"   >
-      <div class="row">
-          <div class="col-12 editor__group-main-form" data-skills-form>
-              <div class="row editor__skills-row" data-skills-form-items>
-                  <div class="col-12 col-lg-6">
-                      <div class="editor__group-main-wrapper">
+  <div class="editor__group-main">
+    <div class="row">
+      <div class="col-12 editor__group-main-form" data-skills-form>
+        <div class="row editor__skills-row" data-skills-form-items>
+          <div class="col-12 col-lg-6">
+            <div class="editor__group-main-wrapper">
 
-                          <input type="text" required [(ngModel)]="this.resumeService._resume.publications[selected].title"
-                              data-skills-category>
-                              <label>Title</label>
-                      </div>
+              <input type="text" required [(ngModel)]="resumeService.resumeComponents.publications[selected].title"
+                data-skills-category>
+              <label>Title</label>
+            </div>
 
-                  </div>
-                  <div class="col-12 col-lg-6">
+          </div>
+          <div class="col-12 col-lg-6">
 
-                      <div class="editor__group-main-wrapper">
+            <div class="editor__group-main-wrapper">
 
-                          <input type="text" required [(ngModel)]="this.resumeService._resume.publications[selected].publisher"
-                              data-skills-category>
-                              <label>Publisher</label>
-                      </div>
-                  </div>
-
-                  <div class="col-12" data-skills-item>
-                      <div class="editor__skills">
-                          <div class="row editor__skills-row">
-                              <div class="col-12 ">
-                                  <div class="editor__group-main-wrapper">
-
-                                      <input type="text"  required  [(ngModel)]="this.resumeService._resume.publications[selected].url"
-                                          data-skills-name>
-                                          <label>URL/ISBN</label>
-                                  </div>
-                              </div>
-
-                          </div>
-
-                      </div>
-                  </div>
-
-
-                  <div class="col-12" data-skills-item>
-                      <div class="editor__skills">
-                          <div class="row editor__skills-row">
-                              <div class="col-12 col-lg-4">
-                                  <div class="editor__group-main-wrapper">
-                                      <label>Month</label>
-                                      <select required data-skills-level  [(ngModel)]="this.resumeService._resume.publications[selected].publicationDate.month">
-                                          <option value="" disabled selected hidden>Month</option>
-                                          <option value="beginner">Beginner</option>
-                                          <option value="intermediate">Intermediate</option>
-                                          <option value="expert">Expert</option>
-                                      </select>
-                                  </div>
-                              </div>
-                              <div class="col-12 col-lg-4">
-                                  <div class="editor__group-main-wrapper" >
-                                      <label>Year</label>
-                                      <select required data-skills-level [(ngModel)]="this.resumeService._resume.publications[selected].publicationDate.year">
-                                          <option value="" disabled selected hidden>Year</option>
-                                          <option value="beginner">Beginner</option>
-                                          <option value="intermediate">Intermediate</option>
-                                          <option value="expert">Expert</option>
-                                      </select>
-                                  </div>
-                              </div>
-                          </div>
-
-                      </div>
-                  </div>
-
-                  <div class="col-12" data-skills-item>
-                      <div class="editor__skills">
-                          <div class="col-12 p-0">
-                              <label>Description</label>
-                              <ckeditor [editor]="Editor"  data="" [(ngModel)]="this.resumeService._resume.publications[selected].description" ></ckeditor>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+              <input type="text" required [(ngModel)]="resumeService.resumeComponents.publications[selected].publisher"
+                data-skills-category>
+              <label>Publisher</label>
+            </div>
           </div>
 
+          <div class="col-12" data-skills-item>
+            <div class="editor__skills">
+              <div class="row editor__skills-row">
+                <div class="col-12 ">
+                  <div class="editor__group-main-wrapper">
+
+                    <input type="text" required [(ngModel)]="resumeService.resumeComponents.publications[selected].url"
+                      data-skills-name>
+                    <label>URL/ISBN</label>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="col-12" data-skills-item>
+            <div class="editor__skills">
+              <div class="row editor__skills-row">
+                <div class="col-12 col-lg-4">
+                  <div class="editor__group-main-wrapper">
+                    <label>Month</label>
+                    <select required data-skills-level
+                      [(ngModel)]="resumeService.resumeComponents.publications[selected].publicationDate.month">
+                      <option value="" disabled selected hidden>Month</option>
+                      <option value="beginner">Beginner</option>
+                      <option value="intermediate">Intermediate</option>
+                      <option value="expert">Expert</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                  <div class="editor__group-main-wrapper">
+                    <label>Year</label>
+                    <select required data-skills-level
+                      [(ngModel)]="resumeService.resumeComponents.publications[selected].publicationDate.year">
+                      <option value="" disabled selected hidden>Year</option>
+                      <option value="beginner">Beginner</option>
+                      <option value="intermediate">Intermediate</option>
+                      <option value="expert">Expert</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-12" data-skills-item>
+            <div class="editor__skills">
+              <div class="col-12 p-0">
+                <label>Description</label>
+                <ckeditor [editor]="Editor" data=""
+                  [(ngModel)]="resumeService.resumeComponents.publications[selected].description"></ckeditor>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+    </div>
   </div>
 
   <div class="row">
     <div class="col-12 text-right">
-        <span class="edit-box-delete-icon">
-            <i class="fas fa-trash editor__group-item-delete" ></i>
-        </span>
+      <span class="edit-box-delete-icon">
+        <i class="fas fa-trash editor__group-item-delete"></i>
+      </span>
     </div>
-</div>
+  </div>
 
 </div>

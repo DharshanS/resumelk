@@ -3,47 +3,51 @@ import { EditorService } from "../../editor.service";
 import { WorkExperiance } from "./experience";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { ResumeService } from "../../../../resume.service";
+import { UtilityService } from 'src/app/utility.service';
 
 @Component({
   selector: "app-experience",
   templateUrl: "./experience.component.html",
   styleUrls: ["./experience.component.css"]
 })
-export class ExperienceComponent implements OnInit, DoCheck, AfterContentChecked {
-  ngAfterContentChecked(): void {
-    if (this.flag && this.resumeService._resume.workExperiance.length == 0)
-      this.resumeService._resume.workExperiance.push(new WorkExperiance())
-
-  }
+export class ExperienceComponent implements OnInit {
   @Input() flag: boolean;
   public Editor = ClassicEditor;
-  selected = 0;
+  selectedExperiance = 0;
 
-  constructor(public editor: EditorService, public resumeService: ResumeService, ) { }
+  constructor(public editorService: EditorService, public resumeService: ResumeService, private utilityService: UtilityService) { }
 
   ngOnInit() {
-
+    console.log("Experiance ")
+    console.log(this.resumeService.resumeComponents.workExperiance);
   }
 
-  addexperience() {
-
-    console.log(this.resumeService._resume.workExperiance);
-    // this.work_experiences.push(new WorkExperiance());
+  addNewExperience(): void {
+    this.createNewExperianceObject();
   }
 
-  removeExperience(index) {
-    if (index !== 0) this.resumeService._resume.workExperiance.splice(index, 1);
+  removeExperience(index: number): void {
+    if (index !== 0) this.resumeService.resumeComponents.workExperiance.splice(index, 1);
+  }
+  removeExperienceCompanent(name: string): void {
+    this.editorService.removeComponent(name);
+    this.resumeService.resumeComponents.workExperiance = [];
+    this.flag = false;
   }
 
-  selectedItem(index) {
-    this.selected = index;
+  selectedExperianceItem(index: number): void {
+    this.selectedExperiance = index;
+    console.log(this.selectedExperiance);
+  }
+  createNewExperianceObject(): void {
+    this.resumeService.resumeComponents.workExperiance.push(new WorkExperiance())
   }
 
-  ngDoCheck() {
-    // console.log(this.Editor.getData())
-  }
+  ngAfterContentChecked(): void {
+    if (this.flag && this.utilityService.isLengthOfZero(this.resumeService.resumeComponents.workExperiance)) {
+      this.createNewExperianceObject();
+    }
 
-  continue() {
 
   }
 

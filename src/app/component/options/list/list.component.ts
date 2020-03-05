@@ -25,9 +25,9 @@ import { DynamicComponentsService } from "../dynamic-components.service";
     ])
   ]
 })
-//https://www.facebook.com/groups/rapidrevracing/
+
 export class ListComponent
-  implements OnInit, OnChanges, DoCheck, AfterViewInit, AfterContentChecked {
+  implements OnInit {
   moreIcon = "far fa-plus-square sidebar__menu-icon";
   moreIconShow = false;
   removeIcon = "icon-remove";
@@ -47,22 +47,16 @@ export class ListComponent
 
   constructor(
     public editor: EditorService,
-    private elementRef:ElementRef,
+    private elementRef: ElementRef,
     private cus: DynamicComponentsService
-  ) {}
+  ) { }
 
-  ngOnChanges() {
-    console.log("on changes..");
-  }
 
-  ngDoCheck() {
-    console.log("on changes. docheck.");
-  }
   ngOnInit() {
     this.listOfComponantsDisplaying = this.editor.moreSections;
   }
   moreDeatails(event) {
-    // $("#effect").toggle('blind', {}, 500);
+
 
     if (this.moreIconShow) {
       this.moreIconShow = false;
@@ -79,45 +73,19 @@ export class ListComponent
     if (index != 0) this.editor.moreSections[index].flag = false;
   }
 
-  addToDisplayBucket(index,name) {
+  addToDisplayBucket(index, name) {
     this.editor.moreSections[index].active = true;
     this.editor.moreSections[index].flag = true
 
     this.scrolleToElementNotify.emit(name);
   }
 
-  scroll(el: HTMLElement,index) {
-    // if (index == 11) {
-    //   this.addCustomComponent();
-    // }
-
-
-    // el.scrollIntoView({behavior: 'smooth'});
-    // console.log("scorall called :" + el);
-    // el.scrollIntoView({
-    //   behavior: "smooth",
-    //   block: "start",
-    //   inline: "nearest"
-    // });
+  scroll(el: HTMLElement, index) {
   }
-
-  //Add dynamic component
   addCustomComponent() {
     let comp = this.cus.createComponent();
     this.change.emit(comp);
   }
 
-  ngAfterViewInit() {
 
- 
-
-
-
-    console.log("ngAfterViewInit");
-  }
-
-
-  ngAfterContentChecked() {
-    console.log("ngAfterContentChecked list");
-  }
 }

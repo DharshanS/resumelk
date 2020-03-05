@@ -20,7 +20,7 @@ export class PreviewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.resumeService.loadResume();
+    this.resumeService.loadResumeComponentsJson();
   }
 
 

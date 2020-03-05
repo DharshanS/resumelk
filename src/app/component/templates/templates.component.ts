@@ -14,24 +14,24 @@ export class TemplatesComponent implements OnInit {
   selectedTemplate = 1;
   imgUrl;
 
-  constructor(private router: Router, public resume: ResumeService, private _sanitizer: DomSanitizer) { }
+  constructor(private router: Router, public resumeService: ResumeService, private _sanitizer: DomSanitizer) { }
 
 
   ngOnInit() {
-    this.resume.loadResume()
+    this.resumeService.loadResumeComponentsJson();
   }
 
   navigateToEditor() {
 
   }
 
-  selectTemplateName(name) {
+  selectTemplateName(name: string) {
     this.imgUrl = "assets/images/templates/" + name + ".png"
-    this.resume.updateTemplate(name)
+    this.resumeService.updateTemplate(name)
 
   }
   goToProductDetails() {
-    this.router.navigate(['/editor', this.resume.resumeObject['resumeName']]);
+    this.router.navigate(['/editor', this.resumeService.resumeObject['resumeName']]);
   }
 
   getBackground(image) {

@@ -12,16 +12,10 @@ export class HeaderComponent implements OnInit {
   constructor(private resume: ResumeService, private router: Router) { }
 
   ngOnInit() {
-
-
   }
 
   previewTemplates() {
-
-    alert(this.resume.resumeObject['resumeName'])
     this.router.navigate(['/preview/' + this.resume.resumeObject['resumeName']]);
-
-
   }
 
 }

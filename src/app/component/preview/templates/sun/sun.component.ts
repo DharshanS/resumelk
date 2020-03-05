@@ -6,7 +6,6 @@ import {
   ElementRef,
   ViewChild
 } from "@angular/core";
-import resumeJson from "../../../../../assets/json/resume.json";
 import { AngularEditorConfig } from "@kolkov/angular-editor";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { ResumeService } from "../../../../resume.service";
@@ -33,19 +32,18 @@ export class SunComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private renderer2: Renderer2,
     private el: ElementRef
-  ) {}
+  ) { }
 
   ngOnInit() {
-    this.__resume = this.resumeService._resume;
-  ///  console.log("---Inside ngOnInit---");
+
   }
 
 
   ngDoCheck() {
-  //  console.log("---Inside ngDoCheck---");
+    //  console.log("---Inside ngDoCheck---");
   }
   ngAfterContentInit() {
-//console.log("---Inside ngAfterContentInit---");
+    //console.log("---Inside ngAfterContentInit---");
   }
   ngAfterContentChecked() {
     console.log("---Inside ngAfterContentChecked---");
@@ -66,20 +64,13 @@ export class SunComponent implements OnInit {
       if (section > 842) {
         this.input.nativeElement
           .querySelectorAll(".section")
-          [i].insertAdjacentHTML(
-            "beforebegin",
-            '<div class="page-break col-1" ></div>'
-          );
+        [i].insertAdjacentHTML(
+          "beforebegin",
+          '<div class="page-break col-1" ></div>'
+        );
         section = 0;
       }
     }
+  }
 
-    //console.log('width---' + arraylist[9].insertAdjacentHTML);
-  }
-  ngAfterViewChecked() {
-    console.log("---Inside ngAfterViewChecked---");
-  }
-  ngOnDestroy() {
-    console.log("---Inside ngOnDestroy---");
-  }
 }
