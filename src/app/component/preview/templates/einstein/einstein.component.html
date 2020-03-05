@@ -16,15 +16,13 @@
 
             <div class="p-0 col-12 row">
 
-              <div class="col-6 p-0  c-name">Company Name</div>
-              <div class="col-6 p-0 text-right">{{item.companyName}}</div>
-              <span class="span-text"><i class="far fa-calendar-alt"></i>
-                &nbsp;{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
-                {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}} </span><br>
+              <div class="col-6 p-0  c-name">{{item.companyName}}</div>
+              <div class="col-6 p-0 text-right"><i class="far fa-calendar-alt"></i>{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
+                {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</div>       
 
 
 
-              <span class="span-text">{{item.description}}</span>
+              <span class="span-text" innerHTML="{{item.description}}"></span>
 
 
 
@@ -51,7 +49,7 @@
               <span class="span-text"><i
                   class="far fa-calendar-alt"></i>&nbsp;{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
                 {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</span><br>
-              <span class="span-text">{{item.description}}</span>
+              <span class="span-text" innerHTML="{{item.description}}"></span>
 
             </div>
           </div>
@@ -74,7 +72,7 @@
               <div class="col-6 p-0 text-right">{{item.certicateCode}}</div>
               <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;
                 {{item.dateOfCerticate.month+"/"+item.dateOfCerticate.year}}</span><br>
-              <span class="span-text">{{item.description}}</span>
+              <span class="span-text" innerHTML="{{item.description}}"></span>
             </div>
           </div>
 
@@ -96,7 +94,7 @@
 
 
 
-              <span class="span-text">{{item.description}}</span>
+              <span class="span-text" innerHTML="{{item.description}}"></span>
 
 
 
@@ -112,7 +110,7 @@
           <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.achivements">
             <label>{{item.name}}</label>
             <div class="p-0 col-12 row">
-              <span class="span-text">{{item.description}}</span>
+              <span class="span-text" innerHTML="{{item.description}}"></span>
             </div>
           </div>
         </div>
@@ -127,7 +125,7 @@
               <div class="col-8 p-0  c-name">{{item.url}}</div>
               <!-- <div class="col-4 p-0 text-right">{{item.date.month+'-'+item.date.year}}</div> -->
               <br>
-              <span class="span-text">{{item.description}}</span>
+              <span class="span-text" innerHTML="{{item.description}}"></span>
             </div>
           </div>
         </div>
@@ -143,7 +141,7 @@
               <div class="col-12 p-0  c-name">{{item.company}}</div>
               <div class="col-12 p-0  c-name">{{item.mobile}}</div>
               <div class="col-12 p-0  c-name">{{item.email}}</div>
-              <div class="col-12 p-0  c-name">{{item.description}}</div>
+              <div class="col-12 p-0  c-name" innerHTML="{{item.description}}"></div>
             </div>
           </div>
         </div>
@@ -186,7 +184,7 @@
 
         <div class="col-12">
           <div class="title-box title-color border-color">Summery</div>
-          <p style="text-align: justify;">{{resumeService.resumeComponents.personal.description}}
+          <p style="text-align: justify;" innerHTML="{{resumeService.resumeComponents.personal.description}}">
           </p>
         </div>
         <div class="col-12">
