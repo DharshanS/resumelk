@@ -8,7 +8,7 @@ import { ResumeService } from "../../../../resume.service";
   styleUrls: ["./moon.component.scss"]
 })
 export class MoonComponent implements OnInit {
-  __resume: any;
+  resumeComponents: any;
 
   constructor(
     private resumeService: ResumeService,
@@ -23,6 +23,6 @@ export class MoonComponent implements OnInit {
   }
 
   loadResume() {
-    this.__resume = this.resumeService.resumeObject['resumeJson'];
+    this.resumeComponents = this.resumeService.resumeObject['resumeJson'];
   }
 }

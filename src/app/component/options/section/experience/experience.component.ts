@@ -18,8 +18,6 @@ export class ExperienceComponent implements OnInit {
   constructor(public editorService: EditorService, public resumeService: ResumeService, private utilityService: UtilityService) { }
 
   ngOnInit() {
-    console.log("Experiance ")
-    console.log(this.resumeService.resumeComponents.workExperiance);
   }
 
   addNewExperience(): void {

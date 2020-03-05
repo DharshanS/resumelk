@@ -1,257 +1,229 @@
-
-
- <div class="main-pdf" >
+<div class="main-pdf">
   <div class="pdf-bg-color">
 
-<div class="component-container"  #tasknote >
+    <div class="component-container" #tasknote>
 
 
-<div class="section portfolio ">
-    <div class="left-text">
-        {{__resume.personal.address.street}}<br> {{__resume.personal.address.city}},{{__resume.personal.address.postalCode}} <br>{{__resume.personal.web}}
-    </div>
-    <div class="main-name center-col">
-        {{__resume.personal.firstName}}  {{__resume.personal.lastName}}
-    </div>
-    <div class="right-text">
-       {{__resume.personal.phoneNumber}}<br>  {{__resume.personal.email}}<br> {{__resume.personal.git}}
-    </div>
-    <div class="left-text">
-        Nationality : {{__resume.personal.nationality}}<br>
+      <div class="section portfolio ">
+        <div class="left-text">
+          {{resumeService.resumeComponents.personal.address.street}}<br>
+          {{resumeService.resumeComponents.personal.address.city}},{{resumeService.resumeComponents.personal.address.postalCode}}
+          <br>{{resumeService.resumeComponents.personal.web}}
+        </div>
+        <div class="main-name center-col">
+          {{resumeService.resumeComponents.personal.firstName}} {{resumeService.resumeComponents.personal.lastName}}
+        </div>
+        <div class="right-text">
+          {{resumeService.resumeComponents.personal.phoneNumber}}<br>
+          {{resumeService.resumeComponents.personal.email}}<br> {{resumeService.resumeComponents.personal.git}}
+        </div>
+        <div class="left-text">
+          Nationality : {{resumeService.resumeComponents.personal.nationality}}<br>
 
-     </div>
-</div>
-
-
-
-
-<div class="col-1 section" *ngIf="__resume.education.length">
-    <div   class="p-title b-bottom">
-        EDUCATION
-    </div>
-
-<!--Eduction places-->
-<div *ngFor="let education of __resume.education">
-<div class="portfolio" >
-
-    <div class="left-text p-title">{{education.institutionName}}</div>
-    <div class="left-text p-title center-col">{{education.fieldOfStudy}}</div>
-    <div class="right-text p-title">{{education.timePeriod.from.month?education.timePeriod.from.month +'–'+ education.timePeriod.from.year:""}} – {{education.timePeriod.to.month?education.timePeriod.to.month +'–'+ education.timePeriod.to.year:""}}</div>
+        </div>
+      </div>
 
 
 
-</div>
-<div class="col-1">
-    <div class="" [innerHTML]=education.description></div>
-    <div>
-        <ul>
 
-        </ul>
-    </div>
-</div>
+      <div class="col-1 section" *ngIf="resumeService.resumeComponents.education.length">
+        <div class="p-title b-bottom">
+          EDUCATION
+        </div>
 
-</div>
-</div>
+        <!--Eduction places-->
+        <div *ngFor="let education of resumeService.resumeComponents.education">
+          <div class="portfolio">
 
-<div class="section" *ngIf="__resume.skills.length > 0">
-    <div class="col-1 section">
-        <div   class="p-title b-bottom">
+            <div class="left-text p-title">{{education.institutionName}}</div>
+            <div class="left-text p-title center-col">{{education.fieldOfStudy}}</div>
+            <div class="right-text p-title">
+              {{education.timePeriod.from.month?education.timePeriod.from.month +'–'+ education.timePeriod.from.year:""}}
+              – {{education.timePeriod.to.month?education.timePeriod.to.month +'–'+ education.timePeriod.to.year:""}}
+            </div>
+
+
+
+          </div>
+          <div class="col-1">
+            <div class="" [innerHTML]=education.description></div>
+            <div>
+              <ul>
+
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="section" *ngIf="resumeService.resumeComponents.skills.length > 0">
+        <div class="col-1 section">
+          <div class="p-title b-bottom">
             SKILL
+          </div>
         </div>
-    </div>
-<div class="skills" *ngFor="let skill of __resume.skills">
-<div class="portfolio"*ngFor="let s of skill.skillNames">
+        <div class="skills" *ngFor="let skill of resumeService.resumeComponents.skills">
+          <div class="portfolio" *ngFor="let s of skill.skillNames">
 
 
-    <div class="left-text ">{{skill.skillCategoryName}}</div>
-    <div class="left-text center-col">{{s.skillName}}</div>
-    <div class="left-text "> {{s.skillLevel}} </div>
+            <div class="left-text ">{{skill.skillCategoryName}}</div>
+            <div class="left-text center-col">{{s.skillName}}</div>
+            <div class="left-text "> {{s.skillLevel}} </div>
 
 
-</div>
-<div class="col-1">
-    <div>
+          </div>
+          <div class="col-1">
+            <div>
 
-    </div>
-</div>
-</div>
-</div>
-
-
-<div class="section col-1" *ngIf="__resume.workExperiance.length >0">
-    <div class="p-title b-bottom">
-        EXPERIENCE
-    </div>
-
-
-
-<div class="" *ngFor="let item of __resume.workExperiance">
-<div class="col-1">
-    <div    class="row p-title">
-       <span>{{item.jobTitle }}</span> <span> ( From : {{item.timePeriod.from.year}}/{{  item.timePeriod.from.month}}  To:{{item.timePeriod.to.year }} /{{  item.timePeriod.to.month}})</span>
-    </div>
-</div>
-<div class="col-1">
-    <div   class="p-title">
-        {{item.companyName }}
-    </div>
-</div>
-<div class="col-1">
-    <div>
-        {{item.description}}
-    </div>
-</div>
-
-</div>
-
-</div>
-
-<div class="section col-1" *ngIf=" __resume.achivements.length > 0">
-    <div class="p-title b-bottom">
-        ACHIVEMENTS
-    </div>
-
-
-
-<div class="" *ngFor="let item of __resume.achivements">
-<div class="col-1">
-    <div    class="row p-title">
-       <span>{{item.name}}</span>
-    </div>
-</div>
-<div class="col-1">
-    <div   class="">
-        {{item.description }}
-    </div>
-</div>
-
-
-</div>
-</div>
-
-
-
-<div class="section col-1">
-    <div  class="p-title b-bottom">
-        REFERENCES
-    </div>
-
-
-
-<div class="" *ngFor="let item of __resume.referances">
-
-    <div class="">
-        <div class="p-title">
-            {{item.company }}
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="col-1">
-        <div>
-          <span >{{item.description}}</span><br/>
-          <span >{{item.personName}}</span><br/>
-          <span > {{item.contact1}}</span><br/>
+      </div>
+
+
+      <div class="section col-1" *ngIf="resumeService.resumeComponents.workExperiance.length >0">
+        <div class="p-title b-bottom">
+          EXPERIENCE
         </div>
-    </div>
-
-</div>
-</div>
-
-<div class="section col-1">
-    <div  class="p-title b-bottom">
-        AWARDS
-    </div>
 
 
 
-<div class="" *ngFor="let item of __resume.awards">
-
-    <div class="">
-        <div class="p-title">
-            {{item.name }}
-        </div>
-    </div>
-    <div class="col-1">
-        <div>
-            <span >{{item.description}}</span><br/>
-          <span >{{item.url}}</span><br/>
-          <span > {{item.issuer}}</span><br/>
-          <span > {{item.month}}{{item.year}}</span><br/>
+        <div class="" *ngFor="let item of resumeService.resumeComponents.workExperiance">
+          <div class="col-1">
+            <div class="row p-title">
+              <span>{{item.jobTitle }}</span> <span> ( From :
+                {{item.timePeriod.from.year}}/{{  item.timePeriod.from.month}} To:{{item.timePeriod.to.year }}
+                /{{  item.timePeriod.to.month}})</span>
+            </div>
+          </div>
+          <div class="col-1">
+            <div class="p-title">
+              {{item.companyName }}
+            </div>
+          </div>
+          <div class="col-1">
+            <div>
+              {{item.description}}
+            </div>
+          </div>
 
         </div>
-    </div>
 
-</div>
-</div>
+      </div>
 
-
-<div class="section col-1" *ngIf=" __resume.certificates.length > 0">
-    <div  class="p-title b-bottom">
-        CERTIFICATES
-    </div>
-
-
-
-<div class="" *ngFor="let item of __resume.certificates">
-
-    <div class="">
-        <div class="p-title">
-            {{item.certificateName }}
+      <div class="section col-1" *ngIf=" resumeService.resumeComponents.achivements.length > 0">
+        <div class="p-title b-bottom">
+          ACHIVEMENTS
         </div>
-    </div>
-    <div class="col-1">
-        <div>
-          <span >{{item.authority}}</span><br/>
-          <span > {{item.certicateCode}}</span><br/>
-          <span > {{item.dateOfCerticate.month}}{{item.dateOfCerticate.year}}</span><br/>
+        <div class="" *ngFor="let item of resumeService.resumeComponents.achivements">
+          <div class="col-1">
+            <div class="row p-title">
+              <span>{{item.name}}</span>
+            </div>
+          </div>
+          <div class="col-1">
+            <div class="">
+              {{item.description }}
+            </div>
+          </div>
         </div>
-    </div>
-
-</div>
-</div>
+      </div>
 
 
 
-<div class="section col-1">
-    <div  class="p-title b-bottom">
-        PUBLICATIONS
-    </div>
-
-
-
-<div class="" *ngFor="let item of __resume.publictions">
-
-    <div class="">
-        <div class="p-title">
-            {{item.title }}
+      <div class="section col-1">
+        <div class="p-title b-bottom">
+          REFERENCES
         </div>
-    </div>
-    <div class="col-1">
-        <div>
-          <span >{{item.publisher}}</span><br/>
-          <span > {{item.url}}</span><br/>
-          <span > {{item.date.month}}{{item.date.year}}</span><br/>
-          <span > {{item.description}}</span><br/>
+        <div class="" *ngFor="let item of resumeService.resumeComponents.referances">
+          <div class="">
+            <div class="p-title">
+              {{item.company }}
+            </div>
+          </div>
+          <div class="col-1">
+            <div>
+              <span>{{item.description}}</span><br />
+              <span>{{item.personName}}</span><br />
+              <span> {{item.contact1}}</span><br />
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="section col-1">
+        <div class="p-title b-bottom">
+          AWARDS
+        </div>
+        <div class="" *ngFor="let item of resumeService.resumeComponents.awards">
+          <div class="">
+            <div class="p-title">
+              {{item.name }}
+            </div>
+          </div>
+          <div class="col-1">
+            <div>
+              <span>{{item.description}}</span><br />
+              <span>{{item.url}}</span><br />
+              <span> {{item.issuer}}</span><br />
+              <span> {{item.month}}{{item.year}}</span><br />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="section col-1" *ngIf=" resumeService.resumeComponents.certificates.length > 0">
+        <div class="p-title b-bottom">
+          CERTIFICATES
+        </div>
+
+
+
+        <div class="" *ngFor="let item of resumeService.resumeComponents.certificates">
+
+          <div class="">
+            <div class="p-title">
+              {{item.certificateName }}
+            </div>
+          </div>
+          <div class="col-1">
+            <div>
+              <span>{{item.authority}}</span><br />
+              <span> {{item.certicateCode}}</span><br />
+              <span> {{item.dateOfCerticate.month}}{{item.dateOfCerticate.year}}</span><br />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div class="section col-1" *ngIf="resumeService.resumeComponents.publications.length > 0">
+        <div class="p-title b-bottom">
+          PUBLICATIONS
+        </div>
+
+
+
+        <div class="" *ngFor="let item of resumeService.resumeComponents.publications">
+          <div class="">
+            <div class="p-title">
+              {{item.title }}
+            </div>
+          </div>
+          <div class="col-1">
+            <div>
+              <span>{{item.publisher}}</span><br />
+              <span> {{item.url}}</span><br />
+              <span> {{item.date.month}}{{item.date.year}}</span><br />
+              <span> {{item.description}}</span><br />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
+  </div>
 </div>
-</div>
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-</div>
-</div>
-
-
-

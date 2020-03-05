@@ -901,7 +901,7 @@ li, .contact input,
     .dashboard {
       padding: 5rem 4.0625rem; } }
   @media screen and (min-width: 768px) {
-    .dashboard__resumes {
+    .dashboardresumeComponentss {
       margin: -15px -30px;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -915,14 +915,14 @@ li, .contact input,
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; } }
   @media screen and (min-width: 768px) {
-    .dashboard__resumes .resume-preview-box {
+    .dashboardresumeComponentss .resume-preview-box {
       width: calc(50% - 30px);
       margin: 15px; } }
   @media screen and (min-width: 992px) {
-    .dashboard__resumes .resume-preview-box {
+    .dashboardresumeComponentss .resume-preview-box {
       width: calc(33.333% - 30px); } }
   @media screen and (min-width: 1400px) {
-    .dashboard__resumes .resume-preview-box {
+    .dashboardresumeComponentss .resume-preview-box {
       width: calc(20% - 30px); } }
 
 .preview {

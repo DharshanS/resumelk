@@ -1,166 +1,171 @@
 <div class="editor__group" id="education" *ngIf="flag">
   <aside class="editor__group-sidebar">
-      <div class="editor__group-title">
-          <i class="fas fa-graduation-cap"></i>
-          <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Education</p>
-      </div>
-      <ul class="editor__group-list" data-sortable data-education-list >
-          <li class="editor__group-item "  [ngClass]="{active: selected==i}" data-education-list-item *ngFor="let eduction of resumeService._resume.education; index as i" (click)=selectedItem(i)>
-              <div class="editor__group-item-label">
-                  <i class="fas fa-bars"></i>{{resumeService._resume.education[i].institutionName}}
-                  <p class="paragraph--med u-weight-smb"></p>
-              </div>
-              <i class="fas fa-times editor__group-item-delete" data-education-delete (click)="removeEducation(i)"></i>
-          </li>
-      </ul>
-      <div class="editor__group-sidebar-btn">
-          <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent"
-              data-education-side-btn (click)="addEducation()">
-              <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i> Add
-                  New</p>
-          </button>
-      </div>
+    <div class="editor__group-title">
+      <i class="fas fa-graduation-cap"></i>
+      <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Education</p>
+    </div>
+    <ul class="editor__group-list" data-sortable data-education-list>
+      <li class="editor__group-item " [ngClass]="{active: selected==i}" data-education-list-item
+        *ngFor="let eduction of resumeService.resumeComponents.education; index as i" (click)=selectedItem(i)>
+        <div class="editor__group-item-label">
+          <i class="fas fa-bars"></i>{{resumeService.resumeComponents.education[i].institutionName}}
+          <p class="paragraph--med u-weight-smb"></p>
+        </div>
+        <i class="fas fa-times editor__group-item-delete" data-education-delete (click)="removeEducation(i)"></i>
+      </li>
+    </ul>
+    <div class="editor__group-sidebar-btn">
+      <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent" data-education-side-btn
+        (click)="addEducation()">
+        <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i> Add
+          New</p>
+      </button>
+    </div>
   </aside>
   <div class="editor__group-main">
-      <div class="row">
-          <div class="col-12 editor__group-main-form editor__group-main-form--alt"
-              data-education-form>
-              <div class="row">
-                  <div class="col-12" data-education-form-items>
-                      <div class="row">
-                          <div class="col-12 col-lg-6">
-                              <div class="editor__group-main-wrapper">
+    <div class="row">
+      <div class="col-12 editor__group-main-form editor__group-main-form--alt" data-education-form>
+        <div class="row">
+          <div class="col-12" data-education-form-items>
+            <div class="row">
+              <div class="col-12 col-lg-6">
+                <div class="editor__group-main-wrapper">
 
-                                  <input type="text"
-                                      [(ngModel)]="resumeService._resume.education[selected].institutionName" required>
-                                      <label>Institution name</label>
-                              </div>
-                          </div>
-                          <div class="col-12 col-lg-6">
-                              <div class="editor__group-main-wrapper">
-
-                                  <input type="text"
-                                      data-education-field [(ngModel)]="resumeService._resume.education[selected].feildOfStudy" required>
-                                      <label>Field of Study</label>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-12 col-lg-6">
-                              <div class="editor__group-main-wrapper">
-
-                                  <input type="text"  data-education-city [(ngModel)]="resumeService._resume.education[selected].country" required>
-                                  <label>Country</label>
-                              </div>
-                          </div>
-                          <div class="col-12 col-lg-6">
-                              <div class="editor__group-main-wrapper">
-
-                                  <input type="text"
-                                      data-education-country [(ngModel)]="resumeService._resume.education[selected].city" required>
-                                      <label>City</label>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-12 col-xl-6">
-                              <label>Time Period</label>
-                              <div class="row">
-                                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-start-month [(ngModel)]="resumeService._resume.education[selected].timePeriod.from.month">
-                                          <option value="" disabled selected hidden>Month</option>
-                                          <option value="January">January</option>
-                                          <option value="February">February</option>
-                                          <option value="March">March</option>
-                                          <option value="June">June</option>
-                                          <option value="July">July</option>
-                                          <option value="August">August</option>
-                                          <option value="September">September</option>
-                                          <option value="October">October</option>
-                                          <option value="November">November</option>
-                                          <option value="December">December</option>
-                                      </select>
-                                  </div>
-                                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-start-year [(ngModel)]="resumeService._resume.education[selected].timePeriod.from.year">
-                                          <option value="" disabled selected hidden>Year</option>
-                                          <option value="2018">2018</option>
-                                          <option value="2017">2017</option>
-                                          <option value="2016">2016</option>
-                                          <option value="2015">2015</option>
-                                          <option value="2014">2014</option>
-                                          <option value="2013">2013</option>
-                                          <option value="2012">2012</option>
-                                          <option value="2011">2011</option>
-                                          <option value="2010">2010</option>
-                                      </select>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-12 col-xl-6">
-                              <label class="d-none d-xl-inline-block">&nbsp;</label>
-                              <div class="row">
-                                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-end-month [(ngModel)]="resumeService._resume.education[selected].timePeriod.to.month">
-                                          <option value="" disabled selected hidden>Month</option>
-                                          <option value="January">January</option>
-                                          <option value="February">February</option>
-                                          <option value="March">March</option>
-                                          <option value="June">June</option>
-                                          <option value="July">July</option>
-                                          <option value="August">August</option>
-                                          <option value="September">September</option>
-                                          <option value="October">October</option>
-                                          <option value="November">November</option>
-                                          <option value="December">December</option>
-                                      </select>
-                                  </div>
-                                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
-                                      <select required data-education-end-year [(ngModel)]="resumeService._resume.education[selected].timePeriod.to.year">
-                                          <option value="" disabled selected hidden>Year</option>
-                                          <option value="2018">2018</option>
-                                          <option value="2017">2017</option>
-                                          <option value="2016">2016</option>
-                                          <option value="2015">2015</option>
-                                          <option value="2014">2014</option>
-                                          <option value="2013">2013</option>
-                                          <option value="2012">2012</option>
-                                          <option value="2011">2011</option>
-                                          <option value="2010">2010</option>
-                                      </select>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="row justify-content-end">
-                          <div class="col-auto">
-                              <div class="checkbox">
-                                  <input type="checkbox" id="currently-study-here" [(ngModel)]="resumeService._resume.education[selected].currently"
-                                      data-education-currently>
-                                  <label for="currently-study-here">Currently I study here</label>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-12">
-                            <label>Profile</label>
-                            <ckeditor [editor]="Editor" [(ngModel)]="resumeService._resume.education[selected].description" data></ckeditor>
-                        </div>
-                    </div>
-
-
-                  </div>
+                  <input type="text" [(ngModel)]="resumeService.resumeComponents.education[selected].institutionName"
+                    required>
+                  <label>Institution name</label>
+                </div>
               </div>
+              <div class="col-12 col-lg-6">
+                <div class="editor__group-main-wrapper">
+
+                  <input type="text" data-education-field
+                    [(ngModel)]="resumeService.resumeComponents.education[selected].feildOfStudy" required>
+                  <label>Field of Study</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-lg-6">
+                <div class="editor__group-main-wrapper">
+
+                  <input type="text" data-education-city
+                    [(ngModel)]="resumeService.resumeComponents.education[selected].country" required>
+                  <label>Country</label>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="editor__group-main-wrapper">
+
+                  <input type="text" data-education-country
+                    [(ngModel)]="resumeService.resumeComponents.education[selected].city" required>
+                  <label>City</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-xl-6">
+                <label>Time Period</label>
+                <div class="row">
+                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
+                    <select required data-education-start-month
+                      [(ngModel)]="resumeService.resumeComponents.education[selected].timePeriod.from.month">
+                      <option value="" disabled selected hidden>Month</option>
+                      <option value="January">January</option>
+                      <option value="February">February</option>
+                      <option value="March">March</option>
+                      <option value="June">June</option>
+                      <option value="July">July</option>
+                      <option value="August">August</option>
+                      <option value="September">September</option>
+                      <option value="October">October</option>
+                      <option value="November">November</option>
+                      <option value="December">December</option>
+                    </select>
+                  </div>
+                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
+                    <select required data-education-start-year
+                      [(ngModel)]="resumeService.resumeComponents.education[selected].timePeriod.from.year">
+                      <option value="" disabled selected hidden>Year</option>
+                      <option value="2018">2018</option>
+                      <option value="2017">2017</option>
+                      <option value="2016">2016</option>
+                      <option value="2015">2015</option>
+                      <option value="2014">2014</option>
+                      <option value="2013">2013</option>
+                      <option value="2012">2012</option>
+                      <option value="2011">2011</option>
+                      <option value="2010">2010</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-xl-6">
+                <label class="d-none d-xl-inline-block">&nbsp;</label>
+                <div class="row">
+                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
+                    <select required data-education-end-month
+                      [(ngModel)]="resumeService.resumeComponents.education[selected].timePeriod.to.month">
+                      <option value="" disabled selected hidden>Month</option>
+                      <option value="January">January</option>
+                      <option value="February">February</option>
+                      <option value="March">March</option>
+                      <option value="June">June</option>
+                      <option value="July">July</option>
+                      <option value="August">August</option>
+                      <option value="September">September</option>
+                      <option value="October">October</option>
+                      <option value="November">November</option>
+                      <option value="December">December</option>
+                    </select>
+                  </div>
+                  <div class="col-12 col-lg-6 editor__group-main-wrapper">
+                    <select required data-education-end-year
+                      [(ngModel)]="resumeService.resumeComponents.education[selected].timePeriod.to.year">
+                      <option value="" disabled selected hidden>Year</option>
+                      <option value="2018">2018</option>
+                      <option value="2017">2017</option>
+                      <option value="2016">2016</option>
+                      <option value="2015">2015</option>
+                      <option value="2014">2014</option>
+                      <option value="2013">2013</option>
+                      <option value="2012">2012</option>
+                      <option value="2011">2011</option>
+                      <option value="2010">2010</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-end">
+              <div class="col-auto">
+                <div class="checkbox">
+                  <input type="checkbox" id="currently-study-here"
+                    [(ngModel)]="resumeService.resumeComponents.education[selected].currently" data-education-currently>
+                  <label for="currently-study-here">Currently I study here</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <label>Profile</label>
+                <ckeditor [editor]="Editor" [(ngModel)]="resumeService.resumeComponents.education[selected].description"
+                  data></ckeditor>
+              </div>
+            </div>
+
+
           </div>
+        </div>
       </div>
+    </div>
   </div>
 
   <div class="row">
     <div class="col-12 text-right">
-        <span class="edit-box-delete-icon" (click)="editor.remove('education')">
-            <i class="fas fa-trash editor__group-item-delete"></i>
-        </span>
+      <span class="edit-box-delete-icon" (click)="removeEducation('education')">
+        <i class="fas fa-trash editor__group-item-delete"></i>
+      </span>
     </div>
+  </div>
 </div>
-</div>
-

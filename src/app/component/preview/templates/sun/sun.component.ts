@@ -25,10 +25,12 @@ export class SunComponent implements OnInit {
 
   public Editor = ClassicEditor;
 
-  __resume: any;
+  resumeComponents: any;
+
+
 
   constructor(
-    private resumeService: ResumeService,
+    public resumeService: ResumeService,
     private sanitizer: DomSanitizer,
     private renderer2: Renderer2,
     private el: ElementRef

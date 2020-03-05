@@ -16,7 +16,7 @@ export class CaliforniSmallComponent implements OnInit {
   page2Flag = false;
 
   public Editor = ClassicEditor;
-  __resume: any;
+  resumeComponents: any;
 
 
   constructor(private resumeService: ResumeService, private sections: EditorService) { }
@@ -56,7 +56,7 @@ export class CaliforniSmallComponent implements OnInit {
   }
 
   loadResume() {
-    this.__resume = this.resumeService.resumeObject['resumeJson'];
+    this.resumeComponents = this.resumeService.resumeObject['resumeJson'];
   }
 
 }

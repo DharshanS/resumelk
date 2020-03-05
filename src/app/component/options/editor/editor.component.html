@@ -48,15 +48,9 @@
           </div>
         </div>
       </div>
-      <div class="right-sec" (scroll)="scrollHandler($event)" scroll>
-
-
+      <div class="right-sec">
         <div class="col-12">
-
-
           <button (click)="updateResumeTemplate()">Update</button>
-
-
           <app-personal [flag]="sections.moreSections[0].flag"></app-personal>
           <app-experience [flag]="sections.moreSections[1].flag"></app-experience>
           <app-education [flag]="sections.moreSections[2].flag"></app-education>

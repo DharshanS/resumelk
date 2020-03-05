@@ -23,7 +23,7 @@ export class HawkingComponent implements OnInit {
 
   public Editor = ClassicEditor;
 
-  __resume: any;
+  resumeComponents: any;
 
 
 
@@ -55,7 +55,7 @@ export class HawkingComponent implements OnInit {
   }
 
   loadResume() {
-    this.__resume = this.resumeService.resumeObject['resumeJson'];
+    this.resumeComponents = this.resumeService.resumeObject['resumeJson'];
   }
 
 }

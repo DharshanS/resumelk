@@ -1,129 +1,133 @@
-<div class="editor__group" id="Certifications" *ngIf="flag" >
+<div class="editor__group" id="Certifications" *ngIf="flag">
   <aside class="editor__group-sidebar">
-      <div class="editor__group-title">
-          <i class="fas fa-chart-bar"></i>
-          <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">certificates</p>
-      </div>
-      <ul class="editor__group-list" data-sortable data-skills-list>
-          <li class="editor__group-item "  [ngClass]="{active: selected==i}" data-skills-list-item  *ngFor="let item of resumeService._resume.certificates; index as i" (click)=selectedItem(i)>
-              <div class="editor__group-item-label">
-                  <i class="fas fa-bars"></i>{{resumeService._resume.certificates[i].certificateName}}
-                  <p class="paragraph--med u-weight-smb"></p>
-              </div>
-              <i class="fas fa-times editor__group-item-delete" data-skills-delete (click)="removeCertificate(i)"></i>
-          </li>
-      </ul>
-      <div class="editor__group-sidebar-btn">
-          <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent" (click)=addNewCertificate()
-              data-skills-side-btn>
-              <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i> Add
-                  New</p>
-          </button>
-      </div>
+    <div class="editor__group-title">
+      <i class="fas fa-chart-bar"></i>
+      <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">certificates</p>
+    </div>
+    <ul class="editor__group-list" data-sortable data-skills-list>
+      <li class="editor__group-item " [ngClass]="{active: selectedCertificate==i}" data-skills-list-item
+        *ngFor="let item of resumeService.resumeComponents.certificates; index as i" (click)=selectedItem(i)>
+        <div class="editor__group-item-label">
+          <i class="fas fa-bars"></i>{{resumeService.resumeComponents.certificates[i].certificateName}}
+          <p class="paragraph--med u-weight-smb"></p>
+        </div>
+        <i class="fas fa-times editor__group-item-delete" data-skills-delete (click)="removeCertificate(i)"></i>
+      </li>
+    </ul>
+    <div class="editor__group-sidebar-btn">
+      <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent" (click)=addNewCertificate()
+        data-skills-side-btn>
+        <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i> Add
+          New</p>
+      </button>
+    </div>
   </aside>
   <div class="editor__group-main">
-      <div class="row">
-          <div class="col-12 editor__group-main-form" data-skills-form >
-              <div class="row editor__skills-row" data-skills-form-items>
-                  <div class="col-12 col-lg-6">
-                      <div class="editor__group-main-wrapper">
+    <div class="row">
+      <div class="col-12 editor__group-main-form" data-skills-form>
+        <div class="row editor__skills-row" data-skills-form-items>
+          <div class="col-12 col-lg-6">
+            <div class="editor__group-main-wrapper">
 
-                          <input type="text"
-                              data-skills-category [(ngModel)]="resumeService._resume.certificates[selected].certificateName" required>
-                              <label>Certification name</label>
-                      </div>
+              <input type="text" data-skills-category
+                [(ngModel)]="resumeService.resumeComponents.certificates[selectedCertificate].certificateName" required>
+              <label>Certification name</label>
+            </div>
 
+          </div>
+          <div class="col-12 col-lg-6">
+
+            <div class="editor__group-main-wrapper">
+
+              <input type="text" data-skills-category
+                [(ngModel)]="resumeService.resumeComponents.certificates[selectedCertificate].authority" required>
+              <label>Authority</label>
+            </div>
+          </div>
+
+          <div class="col-12" data-skills-item>
+            <div class="editor__skills">
+              <div class="row editor__skills-row">
+                <div class="col-12 ">
+                  <div class="editor__group-main-wrapper">
+
+                    <input type="text" required data-skills-name
+                      [(ngModel)]="resumeService.resumeComponents.certificates[selectedCertificate].certicateCode"
+                      required>
+                    <label>Certification URL / Code</label>
                   </div>
-                  <div class="col-12 col-lg-6">
-
-                      <div class="editor__group-main-wrapper">
-
-                          <input type="text"
-                              data-skills-category [(ngModel)]="resumeService._resume.certificates[selected].authority" required>
-                              <label>Authority</label>
-                      </div>
-                  </div>
-
-                  <div class="col-12" data-skills-item>
-                      <div class="editor__skills">
-                          <div class="row editor__skills-row">
-                              <div class="col-12 ">
-                                  <div class="editor__group-main-wrapper">
-
-                                      <input type="text"  required
-                                          data-skills-name [(ngModel)]="resumeService._resume.certificates[selected].certicateCode" required>
-                                          <label>Certification URL / Code</label>
-                                  </div>
-                              </div>
-
-                          </div>
-
-                      </div>
-                  </div>
-
-
-                  <div class="col-12" data-skills-item>
-                      <div class="editor__skills">
-                          <div class="row editor__skills-row">
-                              <div class="col-12 col-lg-4">
-                                  <div class="editor__group-main-wrapper">
-                                      <label>Month</label>
-                                      <select required data-skills-level  [(ngModel)]="resumeService._resume.certificates[selected].dateOfCerticate.month">
-                                        <option value="" disabled selected hidden>Month</option>
-                                        <option value="January">January</option>
-                                        <option value="February">February</option>
-                                        <option value="March">March</option>
-                                        <option value="June">June</option>
-                                        <option value="July">July</option>
-                                        <option value="August">August</option>
-                                        <option value="September">September</option>
-                                        <option value="October">October</option>
-                                        <option value="November">November</option>
-                                        <option value="December">December</option>
-                                      </select>
-                                  </div>
-                              </div>
-                              <div class="col-12 col-lg-4">
-                                  <div class="editor__group-main-wrapper">
-                                      <label>Year</label>
-                                      <select required data-skills-level [(ngModel)]="resumeService._resume.certificates[selected].dateOfCerticate.year" >
-                                          <option value="" disabled selected hidden>Year</option>
-                                          <option value="2000">2000</option>
-                                          <option value="2001">2001</option>
-                                          <option value="2002">2002</option>
-                                      </select>
-                                  </div>
-                              </div>
-                          </div>
-
-                      </div>
-
-
-                  </div>
-
-
-
-                  <div  class="col-12" data-skills-item>
-
-                        <label>Profile</label>
-                        <ckeditor [editor]="Editor"  data=""></ckeditor>
-
                 </div>
 
-
               </div>
+
+            </div>
           </div>
 
 
+          <div class="col-12" data-skills-item>
+            <div class="editor__skills">
+              <div class="row editor__skills-row">
+                <div class="col-12 col-lg-4">
+                  <div class="editor__group-main-wrapper">
+                    <label>Month</label>
+                    <select required data-skills-level
+                      [(ngModel)]="resumeService.resumeComponents.certificates[selectedCertificate].dateOfCerticate.month">
+                      <option value="" disabled selected hidden>Month</option>
+                      <option value="January">January</option>
+                      <option value="February">February</option>
+                      <option value="March">March</option>
+                      <option value="June">June</option>
+                      <option value="July">July</option>
+                      <option value="August">August</option>
+                      <option value="September">September</option>
+                      <option value="October">October</option>
+                      <option value="November">November</option>
+                      <option value="December">December</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                  <div class="editor__group-main-wrapper">
+                    <label>Year</label>
+                    <select required data-skills-level
+                      [(ngModel)]="resumeService.resumeComponents.certificates[selectedCertificate].dateOfCerticate.year">
+                      <option value="" disabled selected hidden>Year</option>
+                      <option value="2000">2000</option>
+                      <option value="2001">2001</option>
+                      <option value="2002">2002</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+
+          <div class="col-12" data-skills-item>
+
+            <label>Profile</label>
+            <ckeditor [editor]="Editor" data=""></ckeditor>
+
+          </div>
+
+
+        </div>
       </div>
+
+
+    </div>
   </div>
   <div class="row">
     <div class="col-12 text-right">
-        <span class="edit-box-delete-icon">
-            <i class="fas fa-times editor__group-item-delete" ></i>
-        </span>
+      <span class="edit-box-delete-icon">
+        <i class="fas fa-times editor__group-item-delete"></i>
+      </span>
     </div>
-</div>
+  </div>
 
 
 </div>

@@ -17,11 +17,11 @@ export class NewtonComponent implements OnInit {
 
   @ViewChild('tasknote', { static: false }) input: ElementRef;
   public Editor = ClassicEditor;
-  __resume: any;
+  resumeComponents: any;
   @ViewChild('hawking', { static: false }) myClass: ElementRef;
 
 
-  constructor(private resumeService: ResumeService, private renderer2: Renderer2, private el: ElementRef) {
+  constructor(public resumeService: ResumeService, private renderer2: Renderer2, private el: ElementRef) {
 
   }
 
@@ -60,7 +60,7 @@ export class NewtonComponent implements OnInit {
   }
 
   loadResume() {
-    this.__resume = this.resumeService.resumeObject['resumeJson'];
+    this.resumeComponents = this.resumeService.resumeObject['resumeJson'];
   }
 
 

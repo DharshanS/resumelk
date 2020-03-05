@@ -1,28 +1,31 @@
 <div class="editor__group" id="strengths" *ngIf="flag">
 
-<div class="col-12 editor__group-main-form">
-  <!-- <span class="head"><h4>strengths  {{selectedUserIds}}</h4></span> -->
+  <div class="col-12 editor__group-main-form">
+    <!-- <span class="head"><h4>strengths  {{selectedUserIds}}</h4></span> -->
 
-  <div class="col-lg-12">
-    <div class="row">
-      <label for="" class="col-md-12">New item</label>
-      <div class="col-md-5"> <form class="editor__group-main-wrapper">
+    <div class="col-lg-12">
+      <div class="row">
+        <label for="" class="col-md-12">New item</label>
+        <div class="col-md-5">
+          <form class="editor__group-main-wrapper">
 
-        <input type="text"  aria-label="Number" matInput [formControl]="myControl" [(ngModel)]="resume._resume.strengths" [matAutocomplete]="auto" appearance="outline">
-        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-           {{option}}
-          </mat-option>
-        </mat-autocomplete>
+            <input type="text" aria-label="Number" matInput [formControl]="myControl"
+              [(ngModel)]="resume.resumeComponents.strengths" [matAutocomplete]="auto" appearance="outline">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
 
 
 
-      </form></div>
-      <div class="col-md-4"><button class="btn strength-add-btn " (click)="pushData(stremg)">Create new</button></div>
-    </div>
+          </form>
+        </div>
+        <div class="col-md-4"><button class="btn strength-add-btn " (click)="pushData(stremg)">Create new</button></div>
+      </div>
 
-    <div class="">
-      <!-- <ng-select [items]="users" class="listOfStrenths"
+      <div class="">
+        <!-- <ng-select [items]="users" class="listOfStrenths"
       bindLabel="name"
       bindValue="id"
       [addTag]="addStrengths"
@@ -32,34 +35,33 @@
 
 </ng-select> -->
 
-{{stremgArray}}
+        {{stremgArray}}
 
-<ul>
-  <li *ngFor="let item of stremgArray; index as i" class="strength-item-li">
-    <span class="strength-item-box">
-      {{item}} </span><span class="close-btn" (click)="remove(i)"><i class="fas fa-times"></i>
-      </span>
-    </li>
-</ul>
-
-
+        <ul>
+          <li *ngFor="let item of stremgArray; index as i" class="strength-item-li">
+            <span class="strength-item-box">
+              {{item}} </span><span class="close-btn" (click)="remove(i)"><i class="fas fa-times"></i>
+            </span>
+          </li>
+        </ul>
 
 
 
-</div>
 
-<!-- <div class="col-md-6">Add New Item</div> -->
+
+      </div>
+
+      <!-- <div class="col-md-6">Add New Item</div> -->
+
+
+
+    </div>
+
+
 
 
 
   </div>
 
 
-
-
-
 </div>
-
-
-</div>
-
