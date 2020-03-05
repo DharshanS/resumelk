@@ -3,11 +3,11 @@ import { ResumeService } from "../../../../resume.service";
 import { EditorService } from "../../../options/editor.service";
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 @Component({
-  selector: 'app-californi-small',
-  templateUrl: './californi-small.component.html',
-  styleUrls: ['./californi-small.component.scss']
+  selector: 'app-galileo-galilei',
+  templateUrl: './galileo-galilei.component.html',
+  styleUrls: ['./galileo-galilei.component.scss']
 })
-export class CaliforniSmallComponent implements OnInit {
+export class GalileoGalileiComponent implements OnInit {
 
 
 

@@ -12,9 +12,9 @@ import { NewtonComponent } from './templates/newton/newton.component';
 import { HawkingComponent } from './templates/hawking/hawking.component';
 import { EditorService } from './../options/editor.service';
 import { ParisComponent } from './templates/paris/paris.component';
-import { CaliforniSmallComponent } from './templates/californi-small/californi-small.component';
-import { ProfessionalComponent } from './templates/professional/professional.component';
-import { ModernComponent } from './templates/modern/modern.component';
+
+
+
 import { AmsterdamComponent } from './templates/amsterdam/amsterdam.component';
 
 
@@ -26,6 +26,9 @@ import { CharlesDarwinComponent } from './templates/charles-darwin/charles-darwi
 import { StephenHawkingComponent } from './templates/stephen-hawking/stephen-hawking.component';
 import { NikolaTeslaComponent } from './templates/nikola-tesla/nikola-tesla.component';
 import { ThomasEdisonComponent } from './templates/thomas-edison/thomas-edison.component';
+import { GalileoGalileiComponent } from './templates/galileo-galilei/galileo-galilei.component';
+import { LeonardoDaVinciComponent } from './templates/leonardo-da-vinci/leonardo-da-vinci.component';
+import { AlexanderGrahamBell } from './templates/alexander-graham-bell/alexander-graham-bell.component';
 
 @NgModule({
   declarations: [
@@ -36,9 +39,9 @@ import { ThomasEdisonComponent } from './templates/thomas-edison/thomas-edison.c
     NewtonComponent,
     HawkingComponent,
     ParisComponent,
-    CaliforniSmallComponent,
-    ProfessionalComponent,
-    ModernComponent,
+    GalileoGalileiComponent,
+    AlexanderGrahamBell,
+    LeonardoDaVinciComponent,
     AmsterdamComponent,
     IsaacNewtonComponent,
     NikolaTeslaComponent,

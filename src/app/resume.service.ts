@@ -58,6 +58,58 @@ export class ResumeService {
     {
       "name": "aristotle",
       "id": 6
+    },
+    {
+      "name": "galileo-galilei",
+      "id": 7
+    },
+    {
+      "name": "leonardo-da-vinci",
+      "id": 8
+    },
+    {
+      "name": "nikola-tesla",
+      "id": 9
+    },
+    {
+      "name": "alexander-graham-bell",
+      "id": 10
+    },
+      {
+      "name": "amsterdam",
+      "id": 11
+    },
+    {
+      "name": "isaac-newton",
+      "id": 12
+    },
+    {
+      "name": "thomas-edison",
+      "id": 13
+    },
+    {
+      "name": "stephen-hawking",
+      "id": 14
+    },
+    {
+      "name": "global-citizen-green",
+      "id": 15
+    },
+    {
+      "name": "miani",
+      "id": 16
+    },
+    {
+      "name": "royal-blue",
+      "id": 17
+    },
+    {
+      "name": "trendy-design",
+      "id": 18
+    },
+    {
+      "name": "uniform-brown",
+      "id": 19
     }
 
   ]

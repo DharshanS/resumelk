@@ -6,10 +6,10 @@ import { MoonComponent } from "./templates/moon/moon.component";
 import { PreviewComponent } from "./preview.component";
 import { NewtonComponent } from './templates/newton/newton.component';
 import { HawkingComponent } from './templates/hawking/hawking.component';
-import { CaliforniSmallComponent } from './templates/californi-small/californi-small.component';
-import { ModernComponent } from './templates/modern/modern.component';
+
+
 import { ParisComponent } from './templates/paris/paris.component';
-import { ProfessionalComponent } from './templates/professional/professional.component';
+
 import { AmsterdamComponent } from './templates/amsterdam/amsterdam.component';
 import { RoyalBlueComponent } from './templates/royal-blue/royal-blue.component';
 import { TrendyDesignComponent } from './templates/trendy-design/trendy-design.component';
@@ -19,6 +19,9 @@ import { CharlesDarwinComponent } from './templates/charles-darwin/charles-darwi
 import { StephenHawkingComponent } from './templates/stephen-hawking/stephen-hawking.component';
 import { NikolaTeslaComponent } from './templates/nikola-tesla/nikola-tesla.component';
 import { ThomasEdisonComponent } from './templates/thomas-edison/thomas-edison.component';
+import { GalileoGalileiComponent } from './templates/galileo-galilei/galileo-galilei.component';
+import { LeonardoDaVinciComponent } from './templates/leonardo-da-vinci/leonardo-da-vinci.component';
+import { AlexanderGrahamBell } from './templates/alexander-graham-bell/alexander-graham-bell.component';
 
 
 const optionsRoute: Routes = [
@@ -53,8 +56,8 @@ const optionsRoute: Routes = [
 
       },
       {
-        path:'californiSmall',
-        component:CaliforniSmallComponent
+        path:'galileo-galilei',
+        component:GalileoGalileiComponent
       },
     
       {
@@ -62,12 +65,12 @@ const optionsRoute: Routes = [
         component:ParisComponent
       },
       {
-        path:'modern',
-        component:ModernComponent
+        path:'leonardo-da-vinci',
+        component:LeonardoDaVinciComponent
       },
       {
-        path:'professional',
-        component:ProfessionalComponent
+        path:'alexander-graham-bell',
+        component:AlexanderGrahamBell
       },
       {
         path:'amsterdam',
