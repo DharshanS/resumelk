@@ -33,17 +33,10 @@ export class PersonalComponent implements OnInit {
   ngOnInit() {
 
   }
-  continue() {
-    // console.log(this.personal_Info)
-  }
+
 
   goToPreview() {
     this.router.navigate(["/preview"]);
-  }
-
-  // @HostListener('document:keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) {
-    console.log('key enter')
   }
 
 

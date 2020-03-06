@@ -5,7 +5,6 @@ import { UtilityService } from 'src/app/utility.service';
   selector: 'app-temp-two',
   templateUrl: './einstein.component.html',
   styleUrls: ['./einstein.component.scss'],
-  encapsulation: ViewEncapsulation.Native
 })
 export class EinsteinComponent implements OnInit, AfterViewInit {
 
