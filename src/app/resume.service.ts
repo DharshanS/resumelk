@@ -113,7 +113,8 @@ export class ResumeService {
     }
 
   ]
-  A4_SIZE = 800;
+  A4_SIZE = 29.7;
+  A4_SIZE_CM = 0.02645833;
 
 
 
@@ -150,7 +151,6 @@ export class ResumeService {
   }
 
   updateTemplate(resume) {
-
     this.resumeObject.resumeName = resume;
     this.http.put(this.apiUrl, this.resumeObject, { withCredentials: true }).subscribe(data => {
       console.log("response");

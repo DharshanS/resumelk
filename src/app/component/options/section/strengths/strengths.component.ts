@@ -1,9 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 import { ResumeService } from 'src/app/resume.service';
-//import { FLAGS } from '@angular/core/src/render3/interfaces/view';
 
 @Component({
   selector: 'app-strengths',
@@ -12,21 +11,21 @@ import { ResumeService } from 'src/app/resume.service';
 })
 export class StrengthsComponent implements OnInit {
 
-  stremgArray=[];
+  stremgArray = [];
   stremg;
-  @Input() flag:boolean;
+  @Input() flag: boolean;
 
   users = [
-    {id: 1, name: 'Ability to learn from mistakes'},
-    {id: 2, name: 'Ability to prioritize'},
-    {id: 3, name: 'Accuracy'}
-];
+    { id: 1, name: 'Ability to learn from mistakes' },
+    { id: 2, name: 'Ability to prioritize' },
+    { id: 3, name: 'Accuracy' }
+  ];
 
 
 
-addStrengths = (term) => ({id: term, name: term});
+  addStrengths = (term) => ({ id: term, name: term });
 
-  constructor(public resume:ResumeService) { }
+  constructor(public resume: ResumeService) { }
 
 
   myControl = new FormControl();
@@ -55,19 +54,19 @@ addStrengths = (term) => ({id: term, name: term});
     // And reassign the 'data' which is binded to 'data' property.
   }
 
-  onFocused(e){
+  onFocused(e) {
     // do something when input is focused
   }
 
-  pushData(e){
+  pushData(e) {
     this.stremgArray.push(e);
-    console.log("stremgArray",this.stremgArray);
+    console.log("stremgArray", this.stremgArray);
   }
-  remove(index){
+  remove(index) {
 
 
     if (index !== -1) {
       this.stremgArray.splice(index, 1);
-  }
+    }
   }
 }

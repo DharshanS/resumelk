@@ -1,54 +1,35 @@
 import { Component, OnInit, Renderer2, ViewEncapsulation, ElementRef, ViewChild, ViewChildren, ViewContainerRef, AfterViewInit } from '@angular/core';
-import resumeJson from '../../../../../assets/json/resume.json';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import { ResumeService } from "../../../../resume.service";
-import { EditorService } from "../../../options/editor.service";
-import { timeout, timeInterval } from 'rxjs/operators';
-//import { ConsoleReporter } from 'jasmine';
-
-
-
+import { UtilityService } from 'src/app/utility.service';
 @Component({
-
   selector: 'app-temp-two',
   templateUrl: './einstein.component.html',
   styleUrls: ['./einstein.component.scss'],
   encapsulation: ViewEncapsulation.Native
 })
-export class EinsteinComponent implements OnInit {
+export class EinsteinComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('tasknote', { static: true }) input: ElementRef;
-  @ViewChild('page2', { static: true }) pages: ElementRef;
-  page2Flag = false;
+  @ViewChild("einstein", { static: false }) einsteinPage: ElementRef;
+  einsteinPage2 = false;
   templateData: any;
 
-  constructor(public resumeService: ResumeService, private renderer2: Renderer2, private el: ElementRef) {
+  constructor(public resumeService: ResumeService,
+    private renderer2: Renderer2, private el: ElementRef, private urilityService: UtilityService) {
+
+  }
+  ngAfterViewInit(): void {
+
+    setTimeout(() => {
+      if (this.resumeService.resumeComponents != null) {
+        this.einsteinPage2 = this.urilityService.templatePageBreak(this.einsteinPage, this.einsteinPage2);
+      }
+    }, 1000)
 
   }
 
   ngOnInit() {
-    console.log("On init")
     this.resumeService.loadResumeComponentsJson();
-
   }
 
-  templatePageBreak() {
-    let arraylist = this.input.nativeElement.querySelectorAll('.section');
-    console.log(arraylist.length)
-    let section = 0;
-    for (let i = 0; i < arraylist.length; i++) {
-      section = section + arraylist[i].offsetHeight;
-      if (this.resumeService.A4_SIZE < section) {
-        let element = this.input.nativeElement.querySelectorAll('.section')[i];
-        this.page2Flag = true;
-        setTimeout(() => {
-          if (typeof (element) !== 'undefined')
-            this.pages.nativeElement.querySelector('.page2').appendChild(element);
-        }, 1000);
-
-      }
-    }
-  }
 
 }
