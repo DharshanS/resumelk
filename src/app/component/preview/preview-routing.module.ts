@@ -2,7 +2,7 @@ import { NgModule, OnInit } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { SunComponent } from "./templates/sun/sun.component";
 import { EinsteinComponent } from "./templates/einstein/einstein.component";
-import { MoonComponent } from "./templates/moon/moon.component";
+
 import { PreviewComponent } from "./preview.component";
 import { NewtonComponent } from './templates/newton/newton.component';
 import { HawkingComponent } from './templates/hawking/hawking.component';
@@ -22,6 +22,7 @@ import { ThomasEdisonComponent } from './templates/thomas-edison/thomas-edison.c
 import { GalileoGalileiComponent } from './templates/galileo-galilei/galileo-galilei.component';
 import { LeonardoDaVinciComponent } from './templates/leonardo-da-vinci/leonardo-da-vinci.component';
 import { AlexanderGrahamBell } from './templates/alexander-graham-bell/alexander-graham-bell.component';
+import { DarwinComponent } from './templates/darwin/darwin.component';
 
 
 const optionsRoute: Routes = [
@@ -37,7 +38,7 @@ const optionsRoute: Routes = [
       },
       {
         path: "darwin",
-        component: MoonComponent
+        component: DarwinComponent
 
       },
       {

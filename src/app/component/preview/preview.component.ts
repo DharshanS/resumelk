@@ -25,14 +25,23 @@ export class PreviewComponent implements OnInit {
 
 
   onChangeColorHex8(color: string, color2: string) {
-    console.log('color', color)
+ 
 
-    let names = this.myClass.nativeElement.querySelectorAll('.color-2');
-
-    console.log('myClass', names)
-    names.forEach(e => {
+    let borderColor = this.myClass.nativeElement.querySelectorAll('.border-color');
+    let bgColor = this.myClass.nativeElement.querySelectorAll('.bg-color');
+     let forntColor = this.myClass.nativeElement.querySelectorAll ('.font-color')
+   
+    borderColor.forEach(e => {
       console.log('myClass23', e)
       this.renderer2.setStyle(e, 'border-color', color);
+    });
+    bgColor.forEach(e => {
+      console.log('myClass23', e)
+      this.renderer2.setStyle(e, 'background', color);
+    })
+    forntColor.forEach(e => {
+      console.log('myClass23', e)
+      this.renderer2.setStyle(e, 'color', color);
     })
 
   }

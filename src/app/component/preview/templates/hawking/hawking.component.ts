@@ -12,7 +12,6 @@ import { EditorService } from "../../../options/editor.service";
   selector: 'app-hawking',
   templateUrl: './hawking.component.html',
   styleUrls: ['./hawking.component.scss'],
-  encapsulation: ViewEncapsulation.Native
 })
 export class HawkingComponent implements OnInit {
 
@@ -59,3 +58,5 @@ export class HawkingComponent implements OnInit {
   }
 
 }
+
+

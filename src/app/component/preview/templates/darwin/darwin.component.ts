@@ -3,11 +3,11 @@ import { DomSanitizer } from "@angular/platform-browser";
 import { ResumeService } from "../../../../resume.service";
 
 @Component({
-  selector: "app-temp-three",
-  templateUrl: "./moon.component.html",
-  styleUrls: ["./moon.component.scss"]
+  selector: "app-darwin",
+  templateUrl: "./darwin.component.html",
+  styleUrls: ["./darwin.component.scss"]
 })
-export class MoonComponent implements OnInit {
+export class DarwinComponent implements OnInit {
   resumeComponents: any;
 
   constructor(

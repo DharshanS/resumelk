@@ -30,7 +30,10 @@
                 <div class="col-12 prsonal-box">
 
                     <div class="title-box font-color color-2">Summery</div>
-                    <p style="text-align: justify;">Enterprising marketing professional skilled at marketing, communications, branding, campaign management, and campaign analysis. Over a career of 2+ years, gained exposure to and executed multiple marketing initiatives. Adept at launching marketing campaigns resulting in significant sales and user acquisition. Skilled at analysing & improving the performance of campaigns through data analysis and competitive benchmarking.
+                    <p style="text-align: justify;" innerHTML="{{resumeService.resumeComponents.personal.description}}">
+                      
+                        
+                        
                     </p>
                 </div>
 
@@ -72,8 +75,8 @@
                             {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</span>
                             <br>
 
-                            <span class="span-text">
-                            {{item.description}}
+                            <span class="span-text" innerHTML="item.description">
+                        
                         </span>
 
                         </div>
@@ -94,7 +97,7 @@
                             {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</span>
                             <br>
 
-                            <span class="span-text">{{item.description}}</span>
+                            <span class="span-text" innerHTML="item.description"></span>
 
                         </div>
                     </div>
@@ -114,7 +117,7 @@
                                 <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;{{item.dateOfCerticate.month+"/"+item.dateOfCerticate.year}}</span>
                             </div>
 
-                            <span class="span-text">{{item.description}}</span>
+                            <span class="span-text" innerHTML="item.description"></span>
 
                         </div>
                     </div>
@@ -133,7 +136,7 @@
                             <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;{{item.month+"/"+item.year}}</span>
                             <br>
 
-                            <span class="span-text">{{item.description}}</span>
+                            <span class="span-text" innerHTML="item.description"></span>
                         </div>
                     </div>
                 </div>
@@ -144,7 +147,7 @@
                         <label>{{item.name}}</label>
 
                         <div class="p-0 col-12 row-ca">
-                            <span class="span-text">{{item.description}}</span>
+                            <span class="span-text" innerHTML="item.description"></span>
 
                         </div>
                     </div>
@@ -167,8 +170,8 @@
                             <div class="col-12 p-0  c-name">{{item.mobile}} </div>
                             <div class="col-12 p-0  c-name">{{item.email}} </div>
                             <div class="col-12 p-0  c-name">
-                                <p> 
-                                    {{item.description}}
+                                <p innerHTML="item.description"> 
+                                   
                                 </p> 
                         </div>
                         </div>

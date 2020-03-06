@@ -1,6 +1,6 @@
 <div class="" #newton>
   <div class="main-page section" #tasknote>
-    <div class="header color-1">
+    <div class="tm-header color-1">
       <div class="row">
         <div class="col-4 bg-color">
           <div class="user-img">
@@ -11,11 +11,11 @@
           <div class="title">{{resumeService.resumeComponents.workExperiance[0].jobTitle}}</div>
         </div>
         <div class="col-8">
-          <div class="title-box">SUMMARY</div>
-          <p>{{resumeService.resumeComponents.personal.description}}
+          <div class="title-box font-color border-color" >SUMMARY</div>
+          <p innerHtml="{{resumeService.resumeComponents.personal.description}}">
           </p>
         </div>
-        <div class="col-12 address">
+        <div class="col-12 address font-color border-color">
           <span><i
               class="fas fa-phone-square-alt"></i>&nbsp;{{resumeService.resumeComponents.personal.phoneNumber}}</span>
           <span><i class="fas fa-envelope-square"></i>&nbsp;{{resumeService.resumeComponents.personal.email}}</span>
@@ -36,11 +36,11 @@
 
     <div class="row">
       <div class="col-12 sub-box">
-        <div class="border-b">
-          <div class="title-box">Skills</div>
+        <div class="border-color">
+          <div class="title-box font-color border-color">Skills</div>
           <div class="pl-1" *ngFor="let skills of resumeService.resumeComponents.skills">
             <span class="skill-sub-title">{{skills.skillCategoryName}}</span>
-            <span class="key-skills-box" *ngFor="let skill of skills.skillNames">
+            <span class="key-skills-box bg-color" *ngFor="let skill of skills.skillNames">
               {{skill.skillName}}
             </span>
           </div>
@@ -51,8 +51,8 @@
 
     <div class="row">
       <div class="col-12 sub-box" *ngIf="resumeService.resumeComponents.workExperiance.length > 0">
-        <div class="border-b">
-          <div class="title-box">Experience</div>
+        <div class="border-b border-color">
+          <div class="title-box font-color border-color">Experience</div>
           <div class="in-box">
 
 
@@ -71,7 +71,7 @@
 
 
 
-                <span class="span-text">{{item.description}}</span>
+                <span class="span-text" innerHtml="{{item.description}}"></span>
 
 
 
@@ -88,8 +88,8 @@
       </div>
       <!-- Education -->
       <div class="col-12 sub-box" *ngIf="resumeService.resumeComponents.education.length >0">
-        <div class="border-b">
-          <div class="title-box">Education</div>
+        <div class="border-color">
+          <div class="title-box font-color border-color">Education</div>
           <div class="in-box">
 
 
@@ -109,7 +109,7 @@
 
 
 
-                  <span class="span-text">{{item.description}}</span>
+                  <span class="span-text" innerHtml="{{item.description}}"></span>
                 </div>
               </div>
 
@@ -128,8 +128,8 @@
     <div class="row">
       <!-- Certificates -->
       <div class="col-12 sub-box" *ngIf=" resumeService.resumeComponents.certificates.length>0">
-        <div class="border-b">
-          <div class="title-box">Certificates</div>
+        <div class="border-color">
+          <div class="title-box font-color border-color">Certificates</div>
           <div class="in-box">
 
 
@@ -147,7 +147,7 @@
 
 
 
-                  <span class="span-text">{{item.description}}</span>
+                  <span class="span-text" innerHtml="{{item.description}}"></span>
 
 
 
@@ -168,8 +168,8 @@
 
       <!-- Awards -->
       <div class="col-12 sub-box" *ngIf="resumeService.resumeComponents.awards.length>0">
-        <div class="border-b">
-          <div class="title-box">Awards</div>
+        <div class="border-color">
+          <div class="title-box font-color border-color">Awards</div>
           <div class="in-box">
 
 
@@ -187,7 +187,7 @@
 
 
 
-                  <span class="span-text">{{item.description}}</span>
+                  <span class="span-text" innerHtml="{{item.description}}"></span>
 
 
 
@@ -204,8 +204,8 @@
 
       <!-- Achievements -->
       <div class="col-12 sub-box" *ngIf=" resumeService.resumeComponents.achivements.length > 0">
-        <div class="border-b">
-          <div class="title-box">Achievements</div>
+        <div class="border-color">
+          <div class="title-box font-color border-color">Achievements</div>
           <div class="in-box">
 
 
@@ -217,7 +217,7 @@
                 <div class="p-0 col-12 row">
 
 
-                  <span class="span-text">{{item.description}}</span>
+                  <span class="span-text" innerHtml="{{item.description}}"></span>
 
 
 
@@ -233,8 +233,8 @@
 
       <!-- REFERENCE -->
       <div class="col-12 sub-box" *ngIf="resumeService.resumeComponents.referances.length > 0">
-        <div class="border-b">
-          <div class="title-box">REFERENCE</div>
+        <div class="border-color">
+          <div class="title-box font-color border-color">REFERENCE</div>
           <div class="in-box">
 
 
@@ -249,7 +249,7 @@
                   <div class="col-12 p-0  c-name">{{item.mobile}} </div>
                   <div class="col-12 p-0  c-name">{{item.email}} </div>
 
-                  <div class="col-12 p-0  c-name">{{item.description}}</div>
+                  <div class="col-12 p-0  c-name" innerHtml="{{item.description}}"></div>
 
                 </div>
               </div>
@@ -263,8 +263,8 @@
 
       <!-- Publications -->
       <div class="col-12 sub-box" *ngIf="resumeService.resumeComponents.publications.length >  0">
-        <div class="border-b">
-          <div class="title-box">Publications</div>
+        <div class="border-color">
+          <div class="title-box font-color border-color">Publications</div>
           <div class="in-box">
 
 
@@ -282,7 +282,7 @@
 
 
                   <br>
-                  <span class="span-text">{{item.description}}</span>
+                  <span class="span-text" innerHtml="{{item.description}}"></span>
 
 
 

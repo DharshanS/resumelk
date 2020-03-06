@@ -128,7 +128,7 @@ $box-border-color: #000;
             background:  $h-bg-colo;
         }
 
-        .header {
+        .tm-header {
 
             padding: 20px
         }
@@ -163,14 +163,17 @@ $box-border-color: #000;
             text-transform: uppercase;
             font-weight: bold;
             font-size: 16px !important;
-            color:  $h-bg-colo !important;
+            color:  $h-bg-colo ;
             padding-bottom: 0;
             margin-bottom: 15px;
             border-bottom: 1px solid  $h-bg-colo;
             padding-left: 10px;
+            border-top: 0 !important;
+            border-left: 0 !important;
+            border-right: 0 !important;
         }
 
-        .border-b {
+        .border-color {
             border: 1px solid  $h-bg-colo;
             /* margin-top: 12px; */
         }

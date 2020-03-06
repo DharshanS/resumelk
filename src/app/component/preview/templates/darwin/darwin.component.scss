@@ -1,0 +1,191 @@
+$h-bg-colo: #44556f;
+
+
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col,
+.col-1,
+.col-10,
+.col-11,
+.col-12,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+
+
+.col-1 {
+  flex: 0 0 8.333333%;
+  max-width: 8.333333%;
+  position: relative;
+}
+
+.col-2 {
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%;
+}
+
+.col-3 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+.col-4 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.col-5 {
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-7 {
+  flex: 0 0 58.333333%;
+  max-width: 58.333333%;
+}
+
+.col-8 {
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%;
+}
+
+.col-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+.col-10 {
+  flex: 0 0 83.333333%;
+  max-width: 83.333333%;
+}
+
+.col-11 {
+  flex: 0 0 91.666667%;
+  max-width: 91.666667%;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.main-page {
+  width: 21cm;
+  min-height: 29.7cm;
+  margin: 1cm auto;
+  border: 1px #D3D3D3 solid;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.tm-header {
+  background: $h-bg-colo;
+  padding: 20px
+}
+
+.name {
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+
+}
+
+.title {
+  font-size: 17px;
+  text-transform: capitalize;
+  color: rgb(255, 255, 255);
+  line-height: 30px;
+}
+
+.user-details {
+  color: rgb(255, 255, 255);
+  list-style-type: none;
+}
+
+.sub-box {
+  padding: 20px 35px;
+}
+
+.title-box {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px !important;
+  color: $h-bg-colo !important;
+  border-bottom: 1px solid $h-bg-colo;
+  padding-bottom: 0;
+  margin-bottom: 15px;
+}
+
+.title-sub {
+  font-size: 16px !important;
+  color: $h-bg-colo !important;
+  padding: 6px 0;
+  font-weight: bold;
+}
+
+.skill-ul li {
+  float: left;
+  padding-right: 25px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.span-text {
+  font-size: 12px;
+  width: 100%;
+  color: #3f4548;
+  margin-top: 6px;
+}
+
+p {
+  font-size: 12px;
+}
+
+.key-skills-box {
+  /* background-color: grey; */
+  display: inline-block;
+  font-size: 11px;
+  margin: 5px;
+  border-radius: 4px;
+  padding: 4px 10px;
+  color: #fff;
+  background-color: $h-bg-colo;
+}
+
+.professional-box {
+  padding: 10px 0;
+}
