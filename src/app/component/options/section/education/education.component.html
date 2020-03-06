@@ -149,7 +149,7 @@
             <div class="row">
               <div class="col-12">
                 <label>Profile</label>
-                <ckeditor [editor]="Editor" [(ngModel)]="resumeService.resumeComponents.education[selected].description"
+                <ckeditor [editor]="Editor" [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic','link','bulletedList','numberedList','blockQuote','table','undo','redo'] }" [(ngModel)]="resumeService.resumeComponents.education[selected].description"
                   data></ckeditor>
               </div>
             </div>

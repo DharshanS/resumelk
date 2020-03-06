@@ -41,7 +41,7 @@
 
                 <label>Achievements</label>
 
-                <ckeditor [editor]="Editor" data=""></ckeditor>
+                <ckeditor [editor]="Editor" [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic','link','bulletedList','numberedList','blockQuote','table','undo','redo'] }" data=""></ckeditor>
                 <!-- <angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor> -->
                 <!-- <ckeditor [editor]="Editor" data="write something about your achivements"  [(ngModel)]="resumeService.resumeComponents.achivements[selected].description"></ckeditor> -->
 

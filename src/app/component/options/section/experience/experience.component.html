@@ -153,6 +153,7 @@
               <div class="col-12" data-skills-item>
                 <label>Description</label>
                 <ckeditor [editor]="Editor"
+                [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic','link','bulletedList','numberedList','blockQuote','table','undo','redo'] }"
                   [(ngModel)]="resumeService.resumeComponents.workExperiance[selectedExperiance].description">
                 </ckeditor>
 

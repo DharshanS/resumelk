@@ -33,14 +33,6 @@ export class EinsteinComponent implements OnInit {
 
   }
 
-
-
-
-
-
-
-
-
   templatePageBreak() {
     let arraylist = this.input.nativeElement.querySelectorAll('.section');
     console.log(arraylist.length)

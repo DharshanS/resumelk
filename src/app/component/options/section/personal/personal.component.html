@@ -148,7 +148,7 @@
         <div class="row">
           <div class="col-12">
             <label>Profile Description</label>
-            <ckeditor [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic','link','typing','title','heading','fontSize','codeBlock' ] }" [editor]="Editor" [(ngModel)]="resumeService.resumeComponents.personal.description">
+            <ckeditor [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic','link','bulletedList','numberedList','blockQuote','table','undo','redo'] }" [editor]="Editor" [(ngModel)]="resumeService.resumeComponents.personal.description">
             </ckeditor>
           </div>
         </div>

@@ -99,7 +99,10 @@
             <div class="editor__skills">
               <div class="col-12 p-0">
                 <label>Description</label>
-                <ckeditor [editor]="Editor" data=""
+                <ckeditor 
+                [editor]="Editor" 
+                data=""
+                [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic','link','bulletedList','numberedList','blockQuote','table','undo','redo'] }"
                   [(ngModel)]="resumeService.resumeComponents.publications[selected].description"></ckeditor>
               </div>
             </div>
