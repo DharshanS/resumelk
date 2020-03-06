@@ -1,5 +1,5 @@
-<div class="" #newton>
-  <div class="main-page section" #tasknote>
+<div class="" #newton *ngIf="resumeService.resumeComponents!=null">
+  <div class="main-page section componentSection">
     <div class="tm-header color-1">
       <div class="row">
         <div class="col-4 bg-color">
@@ -22,18 +22,9 @@
           <span><i class="fas fa-home"></i>&nbsp;{{resumeService.resumeComponents.personal.address.street}},
             {{resumeService.resumeComponents.personal.address.city}}
             {{resumeService.resumeComponents.personal.address.country}}</span>
-
         </div>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-12 sub-box">
-
-
-      </div>
-    </div>
-
     <div class="row">
       <div class="col-12 sub-box">
         <div class="border-color">
@@ -45,260 +36,157 @@
             </span>
           </div>
         </div>
-
       </div>
     </div>
-
     <div class="row">
-      <div class="col-12 sub-box" *ngIf="resumeService.resumeComponents.workExperiance.length > 0">
+      <div class="col-12 sub-box componentSection" *ngIf="resumeService.resumeComponents.workExperiance.length > 0">
         <div class="border-b border-color">
           <div class="title-box font-color border-color">Experience</div>
           <div class="in-box">
-
-
-
             <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.workExperiance">
               <label class="bold">{{item.jobTitle}}</label>
-
-
               <div class="p-0 col-12 row">
-
                 <div class="col-6 p-0  c-name">{{item.companyName}}</div>
                 <div class="col-6 p-0 text-right">{{item.city}},{{item.city}}</div>
                 <span class="span-text"><i class="far fa-calendar-alt"></i>
                   &nbsp;{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
-                  {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</span><br>
-
-
-
+                  {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</span>
+                  <br>
                 <span class="span-text" innerHtml="{{item.description}}"></span>
-
-
-
-
-
               </div>
             </div>
-
-
           </div>
-
         </div>
-
       </div>
       <!-- Education -->
-      <div class="col-12 sub-box" *ngIf="resumeService.resumeComponents.education.length >0">
+      <div class="col-12 sub-box componentSection" *ngIf="resumeService.resumeComponents.education.length >0">
         <div class="border-color">
           <div class="title-box font-color border-color">Education</div>
           <div class="in-box">
-
-
             <div class="col-12 p-0 col-box">
               <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.education">
                 <label>{{item.feildOfStudy}}</label>
-
-
                 <div class="p-0 col-12 row">
-
                   <div class="col-6 p-0  c-name">{{item.institutionName}}</div>
                   <div class="col-6 p-0 text-right"><span>{{item.city}}, &nbsp;</span><span>{{item.country}}</span>
                   </div>
                   <span class="span-text"><i class="far fa-calendar-alt"></i>
                     &nbsp;{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
                     {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</span><br>
-
-
-
                   <span class="span-text" innerHtml="{{item.description}}"></span>
                 </div>
               </div>
-
-
-
-
             </div>
           </div>
         </div>
       </div>
-
+            <!-- Certificates -->
+            <div class="col-12 sub-box componentSection" *ngIf=" resumeService.resumeComponents.certificates.length>0">
+              <div class="border-color">
+                <div class="title-box font-color border-color">Certificates</div>
+                <div class="in-box">
+                  <div class="col-12 p-0 col-box">
+                    <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.certificates">
+                      <label>{{item.certificateName}}</label>
+                      <div class="p-0 col-12 row">
+                        <div class="col-6 p-0  c-name" *ngIf="item.url">Certification URL </div>
+                        <div class="col-6 p-0 text-right">{{item.certicateCode}}</div>
+                        <span class="span-text"><i class="far fa-calendar-alt"></i>
+                          &nbsp;{{item.dateOfCerticate.month+"/"+item.dateOfCerticate.year}}</span><br>
+                        <span class="span-text" innerHtml="{{item.description}}"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Awards -->
+            <div class="col-12 sub-box componentSection" *ngIf="resumeService.resumeComponents.awards.length>0">
+              <div class="border-color">
+                <div class="title-box font-color border-color">Awards</div>
+                <div class="in-box">
+                  <div class="col-12 p-0 col-box">
+                    <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.awards">
+                      <label>{{item.name}}</label>
+                      <div class="p-0 col-12 row">
+                        <div class="col-8 p-0  c-name">{{item.url}}</div>
+                        <div class="col-4 p-0 text-right">{{item.issuer}}</div>
+                        <span class="span-text"><i class="far fa-calendar-alt"></i>
+                          &nbsp;{{item.month+"/"+item.year}}</span><br>
+                        <span class="span-text" innerHtml="{{item.description}}"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Achievements -->
+            <div class="col-12 sub-box componentSection" *ngIf=" resumeService.resumeComponents.achivements.length > 0">
+              <div class="border-color">
+                <div class="title-box font-color border-color">Achievements</div>
+                <div class="in-box">
+                  <div class="col-12 p-0 col-box">
+                    <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.achivements">
+                      <label>{{item.name}}</label>
+                      <div class="p-0 col-12 row">
+                        <span class="span-text" innerHtml="{{item.description}}"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- REFERENCE -->
+            <div class="col-12 sub-box componentSection" *ngIf="resumeService.resumeComponents.referances.length > 0">
+              <div class="border-color">
+                <div class="title-box font-color border-color">REFERENCE</div>
+                <div class="in-box">
+                  <div class="col-12 p-0 col-box">
+                    <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.referances">
+                      <label>{{item.personName}}</label>
+                      <div class="p-0 col-12 row">
+                        <div class="col-12 p-0  c-name">{{item.title}} , {{item.company}} </div>
+                        <div class="col-12 p-0  c-name">{{item.mobile}} </div>
+                        <div class="col-12 p-0  c-name">{{item.email}} </div>
+                        <div class="col-12 p-0  c-name" innerHtml="{{item.description}}"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Publications -->
+            <div class="col-12 sub-box componentSection" *ngIf="resumeService.resumeComponents.publications.length >  0">
+              <div class="border-color">
+                <div class="title-box font-color border-color">Publications</div>
+                <div class="in-box">
+                  <div class="col-12 p-0 col-box">
+                    <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.publications">
+                      <div class="p-0 col-12 row">
+                        <div class="col-8 p-0"><label>{{item.title}}</label></div>
+                        <div class="col-4 p-0 text-right">{{item.publisher}}</div>
+                        <div class="col-8 p-0  c-name">{{item.url}}</div>
+                        <!-- <div class="col-4 p-0 text-right">04/2019 - 12/2019</div> -->
+                        <!-- <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;04/2019 - 12/2019</span><br> -->
+                        <br>
+                        <span class="span-text" innerHtml="{{item.description}}"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--  -->
     </div>
   </div>
 
-  <div class="main-page">
-    <div class="row">
-      <!-- Certificates -->
-      <div class="col-12 sub-box" *ngIf=" resumeService.resumeComponents.certificates.length>0">
-        <div class="border-color">
-          <div class="title-box font-color border-color">Certificates</div>
-          <div class="in-box">
-
-
-            <div class="col-12 p-0 col-box">
-              <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.certificates">
-                <label>{{item.certificateName}}</label>
-
-
-                <div class="p-0 col-12 row">
-
-                  <div class="col-6 p-0  c-name" *ngIf="item.url">Certification URL </div>
-                  <div class="col-6 p-0 text-right">{{item.certicateCode}}</div>
-                  <span class="span-text"><i class="far fa-calendar-alt"></i>
-                    &nbsp;{{item.dateOfCerticate.month+"/"+item.dateOfCerticate.year}}</span><br>
-
-
-
-                  <span class="span-text" innerHtml="{{item.description}}"></span>
-
-
-
-
-
-                </div>
-              </div>
-
-
-
-
-
-
-            </div>
-          </div>
+    <!-- Page 2 -->
+    <div class="main-page secondPage secondPage" *ngIf="newtonPage2">
+      <div class="row">
+        <div class="col-12">
         </div>
       </div>
-
-      <!-- Awards -->
-      <div class="col-12 sub-box" *ngIf="resumeService.resumeComponents.awards.length>0">
-        <div class="border-color">
-          <div class="title-box font-color border-color">Awards</div>
-          <div class="in-box">
-
-
-            <div class="col-12 p-0 col-box">
-              <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.awards">
-                <label>{{item.name}}</label>
-
-
-                <div class="p-0 col-12 row">
-
-                  <div class="col-8 p-0  c-name">{{item.url}}</div>
-                  <div class="col-4 p-0 text-right">{{item.issuer}}</div>
-                  <span class="span-text"><i class="far fa-calendar-alt"></i>
-                    &nbsp;{{item.month+"/"+item.year}}</span><br>
-
-
-
-                  <span class="span-text" innerHtml="{{item.description}}"></span>
-
-
-
-
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Achievements -->
-      <div class="col-12 sub-box" *ngIf=" resumeService.resumeComponents.achivements.length > 0">
-        <div class="border-color">
-          <div class="title-box font-color border-color">Achievements</div>
-          <div class="in-box">
-
-
-            <div class="col-12 p-0 col-box">
-              <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.achivements">
-                <label>{{item.name}}</label>
-
-
-                <div class="p-0 col-12 row">
-
-
-                  <span class="span-text" innerHtml="{{item.description}}"></span>
-
-
-
-
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- REFERENCE -->
-      <div class="col-12 sub-box" *ngIf="resumeService.resumeComponents.referances.length > 0">
-        <div class="border-color">
-          <div class="title-box font-color border-color">REFERENCE</div>
-          <div class="in-box">
-
-
-            <div class="col-12 p-0 col-box">
-              <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.referances">
-                <label>{{item.personName}}</label>
-
-
-                <div class="p-0 col-12 row">
-
-                  <div class="col-12 p-0  c-name">{{item.title}} , {{item.company}} </div>
-                  <div class="col-12 p-0  c-name">{{item.mobile}} </div>
-                  <div class="col-12 p-0  c-name">{{item.email}} </div>
-
-                  <div class="col-12 p-0  c-name" innerHtml="{{item.description}}"></div>
-
-                </div>
-              </div>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Publications -->
-      <div class="col-12 sub-box" *ngIf="resumeService.resumeComponents.publications.length >  0">
-        <div class="border-color">
-          <div class="title-box font-color border-color">Publications</div>
-          <div class="in-box">
-
-
-            <div class="col-12 p-0 col-box">
-              <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.publications">
-
-
-
-                <div class="p-0 col-12 row">
-                  <div class="col-8 p-0"><label>{{item.title}}</label></div>
-                  <div class="col-4 p-0 text-right">{{item.publisher}}</div>
-                  <div class="col-8 p-0  c-name">{{item.url}}</div>
-                  <!-- <div class="col-4 p-0 text-right">04/2019 - 12/2019</div> -->
-                  <!-- <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;04/2019 - 12/2019</span><br> -->
-
-
-                  <br>
-                  <span class="span-text" innerHtml="{{item.description}}"></span>
-
-
-
-
-
-                </div>
-              </div>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--  -->
-
-
     </div>
-
+  
   </div>
+  

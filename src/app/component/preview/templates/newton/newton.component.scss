@@ -9,20 +9,14 @@ $h-bg-colo: #425B67;
 $name-color: #fff;
 $box-border-color: #000;
 
-        :root {
-          
-        }
-
+  
         .main-page {
             margin: 0;
             font-family: 'Open Sans', sans-serif;
             font-size: 14px;
         }
 
-        * {
-            box-sizing: border-box;
-            -moz-box-sizing: border-box;
-        }
+   
 
         .row {
             display: flex;
@@ -48,7 +42,11 @@ $box-border-color: #000;
             padding-left: 15px;
         }
 
-
+        .main-page p {
+            font-size: 14px;
+            line-height: 23px;
+            text-align: justify;
+        }
 
         .col-1 {
             flex: 0 0 8.333333%;

@@ -16,19 +16,14 @@ $title: #fff;
 
 
 
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  color: #555555;
-}
+
 
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
 
-.row {
+.tm-row {
   display: flex;
   flex-wrap: wrap;
 }
@@ -123,11 +118,12 @@ body {
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-family: 'Open Sans', sans-serif;
 }
 
 .header {
-  padding-left: 3mm;
-  padding-right: 3mm;
+  padding-left: 1mm;
+  padding-right: 1mm;
   height: 112vh;
   padding-top: 15px;
   border: 1px solid rgb(242, 0, 67);
@@ -453,4 +449,11 @@ position: fixed;
 //   }
 .color-1f3471:hover ~ .tem-img-2{
   display: block;
+}
+
+.main-page li, .main-page p {
+  font-size: 15px;
+  line-height: 22px;
+  color: #3f4548;
+  margin-top: 6px;
 }

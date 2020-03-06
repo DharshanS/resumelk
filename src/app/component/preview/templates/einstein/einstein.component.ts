@@ -11,9 +11,10 @@ export class EinsteinComponent implements OnInit, AfterViewInit {
   @ViewChild("einstein", { static: false }) einsteinPage: ElementRef;
   einsteinPage2 = false;
   templateData: any;
-  page2Class = "secondPage";
+  page2Class = "secondPageEes";
 
-  constructor(public resumeService: ResumeService,
+  constructor(
+    public resumeService: ResumeService,
     private renderer2: Renderer2, private el: ElementRef, private urilityService: UtilityService) {
 
   }

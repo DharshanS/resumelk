@@ -22,7 +22,7 @@ export class UtilityService {
 
   private isPageSizeMoreThanOnePage(section: number, element: any, i: number, pageClass: string) {
     let _pageFlag = false;
-    if (this.resumeService.A4_SIZE < section) {
+    if (this.resumeService.A4_SIZE*this.resumeService.A4_SIZE_CM < section) {
       let sectionElement = element.nativeElement.querySelectorAll('.componentSection')[i];
       _pageFlag = true;
       this.moveParentElementAsChildElement(element, sectionElement, pageClass);

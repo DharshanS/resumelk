@@ -1,54 +1,44 @@
-import { Component, OnInit, Renderer2, ViewEncapsulation, ElementRef, ViewChild } from '@angular/core';
-import resumeJson from '../../../../../assets/json/resume.json';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+import { Component, OnInit, Renderer2, ViewEncapsulation, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { ResumeService } from "../../../../resume.service";
+import { UtilityService } from '../../../../utility.service';
+
 
 
 
 @Component({
 
-  selector: 'app-temp-two',
+  selector: 'newton',
   templateUrl: './newton.component.html',
   styleUrls: ['./newton.component.scss'],
 })
-export class NewtonComponent implements OnInit {
+export class NewtonComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('tasknote', { static: false }) input: ElementRef;
-  public Editor = ClassicEditor;
-  resumeComponents: any;
-  @ViewChild('hawking', { static: false }) myClass: ElementRef;
+  @ViewChild("newton", { static: false }) newtonPage: ElementRef;
 
+  templateData: any;
+  page2Class = "secondPage";
+  newtonPage2 = false;
 
-  constructor(public resumeService: ResumeService, private renderer2: Renderer2, private el: ElementRef) {
+  constructor(
+    private urilityService: UtilityService, 
+    public resumeService: ResumeService, 
+    private renderer2: Renderer2, 
+    private el: ElementRef) {
 
   }
 
   ngOnInit() {
-    this.loadResume();
+    this.resumeService.loadResumeComponentsJson();
   }
 
   ngAfterViewInit() {
 
-    var arraylist = this.input.nativeElement.querySelectorAll('.section');
-    //this.input.nativeElement.insertAdjacentHTML('beforeend', '<div class="page-break col-1" ></div>');
 
-    var section = 0;
-    var bottom = 0;
-    for (var i = 0; i < arraylist.length; i++) {
-      section = section + arraylist[i].offsetHeight;
-
-      if (section > 842) {
-        this.input.nativeElement.querySelectorAll('.section')[i].insertAdjacentHTML('beforebegin', '<div class="page-break col-1" ></div>');
-        section = 0;
+    setTimeout(() => {
+      if (this.urilityService.isObjectIsNotNull(this.resumeService.resumeComponents)) {
+        this.newtonPage2 = this.urilityService.templatePageBreak(this.newtonPage, this.page2Class);
       }
-    }
-  }
-
-
-
-  loadResume() {
-    this.resumeComponents = this.resumeService.resumeObject['resumeJson'];
+    }, 1000)
   }
 
 
