@@ -9,39 +9,40 @@ export class UtilityService {
     return true;
   }
 
-  templatePageBreak(element: any, _pageFlag: boolean): boolean {
-    console.log(element);
-    let arraylist = element.nativeElement.querySelectorAll('.section');
+  templatePageBreak(element: any, pageClass: string): boolean {
+    let _pageFlag;
+    let arraylist = element.nativeElement.querySelectorAll('.componentSection');
     let calculateSectionSize = 0;
     for (let i = 0; i < arraylist.length; i++) {
       calculateSectionSize += arraylist[i].offsetHeight * this.resumeService.A4_SIZE_CM;
-      _pageFlag = this.isPageSizeMoreThanOnePage(calculateSectionSize, element, i, _pageFlag);
+      _pageFlag = this.isPageSizeMoreThanOnePage(calculateSectionSize, element, i, pageClass);
     }
     return _pageFlag;
   }
 
-  private isPageSizeMoreThanOnePage(section: number, element: any, i: number, _pageFlag: boolean) {
+  private isPageSizeMoreThanOnePage(section: number, element: any, i: number, pageClass: string) {
+    let _pageFlag = false;
     if (this.resumeService.A4_SIZE < section) {
-      let sectionElement = element.nativeElement.querySelectorAll('.section')[i];
+      let sectionElement = element.nativeElement.querySelectorAll('.componentSection')[i];
       _pageFlag = true;
-      this.moveParentElementAsChildElement(element, sectionElement);
+      this.moveParentElementAsChildElement(element, sectionElement, pageClass);
     }
     return _pageFlag;
   }
 
-  private moveParentElementAsChildElement(element: any, sectionElement: any) {
+  private moveParentElementAsChildElement(element: any, sectionElement: any, pageClass: string) {
     setTimeout(() => {
       if (typeof (element) !== 'undefined') {
-        element.nativeElement.querySelector('.page2').appendChild(sectionElement);
+        element.nativeElement.querySelector("." + pageClass).appendChild(sectionElement);
       }
     }, 1000);
   }
 
-  // isObjectIsNotNull(resumeObject: object) {
-  //   if (resumeObject != null) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
+  isObjectIsNotNull(resumeObject: object) {
+    if (resumeObject != null) {
+      return true;
+    }
+    return false;
+  }
 
 }

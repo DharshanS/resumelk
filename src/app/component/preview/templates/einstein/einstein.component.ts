@@ -12,6 +12,7 @@ export class EinsteinComponent implements OnInit, AfterViewInit {
   @ViewChild("einstein", { static: false }) einsteinPage: ElementRef;
   einsteinPage2 = false;
   templateData: any;
+  page2Class = "secondPage";
 
   constructor(public resumeService: ResumeService,
     private renderer2: Renderer2, private el: ElementRef, private urilityService: UtilityService) {
@@ -20,8 +21,8 @@ export class EinsteinComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
 
     setTimeout(() => {
-      if (this.resumeService.resumeComponents != null) {
-        this.einsteinPage2 = this.urilityService.templatePageBreak(this.einsteinPage, this.einsteinPage2);
+      if (this.urilityService.isObjectIsNotNull(this.resumeService.resumeComponents)) {
+        this.einsteinPage2 = this.urilityService.templatePageBreak(this.einsteinPage, this.page2Class);
       }
     }, 1000)
 
