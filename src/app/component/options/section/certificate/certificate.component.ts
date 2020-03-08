@@ -2,6 +2,8 @@ import { Component, OnInit, Input, AfterViewInit, AfterContentChecked } from "@a
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { Certificate } from "./Certificate";
 import { ResumeService } from "../../../../resume.service";
+import { UtilityService } from 'src/app/utility.service';
+import { EditorService } from '../../editor.service';
 
 @Component({
   selector: "app-certificate",
@@ -13,15 +15,15 @@ export class CertificateComponent implements OnInit {
   public Editor = ClassicEditor;
 
   selectedCertificate = 0;
-  constructor(public resumeService: ResumeService) { }
+  constructor(public resumeService: ResumeService, private utilityService: UtilityService, private editorService: EditorService) { }
 
   ngOnInit() {
   }
 
   ngAfterContentChecked() {
     if (this.flag) {
-      if (this.resumeService.checklenthOfarray(this.resumeService.resumeComponents.certificates)) {
-        this.resumeService.resumeComponents.certificates.push(new Certificate());
+      if (this.utilityService.isLengthOfZero(this.resumeService.resumeComponents.certificates)) {
+        this.addNewCertificate();
       }
     }
   }
@@ -31,9 +33,13 @@ export class CertificateComponent implements OnInit {
   }
   removeCertificate(index) {
     if (index !== 0) this.resumeService.resumeComponents.certificates.splice(index, 1);
+    this.selectedCertificate = 0;
   }
 
-  selectedItem(i) {
+  selectCertificateItem(i: number) {
     this.selectedCertificate = i;
+  }
+  removeCertificateComponent() {
+    this.editorService.removeComponent('certifications');
   }
 }

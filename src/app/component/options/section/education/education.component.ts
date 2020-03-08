@@ -3,6 +3,7 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import { Education } from './Education';
 import { ResumeService } from "../../../../resume.service";
 import { EditorService } from "../../editor.service";
+import { UtilityService } from 'src/app/utility.service';
 
 @Component({
   selector: 'app-education',
@@ -11,41 +12,40 @@ import { EditorService } from "../../editor.service";
 })
 export class EducationComponent implements OnInit, AfterContentChecked {
   ngAfterContentChecked(): void {
-    if (this.flag && this.resumeService.checklenthOfarray(this.resumeService.resumeComponents.education)) {
-      this.resumeService.resumeComponents.education.push(new Education());
-    }
+    if (this.utilityService.isLengthOfZero(this.resumeService.resumeComponents.education))
+      this.addNewEducation();
 
   }
   @Input() flag: boolean;
   public Editor = ClassicEditor;
   education: Education;
-  selected = 0;
-  eductionsPlace = [];
+  selectedEducation = 0;
 
-  constructor(public resumeService: ResumeService, public editor: EditorService) {
+
+  constructor(public resumeService: ResumeService, public editorService: EditorService, private utilityService: UtilityService) {
   }
 
   ngOnInit() {
-    if (this.resumeService.resumeComponents.education.length == 0)
-      this.resumeService.resumeComponents.education.push(new Education())
   }
 
-  removeEducation(index) {
+  removeEducation(index: number) {
     if (index !== 0)
-      this.eductionsPlace.splice(index, 1);
+      this.resumeService.resumeComponents.education.splice(index, 1);
+    this.selectedEducation = 0;
   }
 
-  addEducation() {
-    console.log(this.Editor.document.ge);
-    this.eductionsPlace.push(new Education())
-  }
-  selectedItem(index) {
-    this.selected = index;
+  removeEducationComponant() {
+    this.editorService.removeComponent('education');
   }
 
-  continue() {
-    console.log(this.eductionsPlace)
+  addNewEducation() {
+    this.resumeService.resumeComponents.education.push(new Education())
   }
+  selectedEducationItem(index: number) {
+    this.selectedEducation = index;
+  }
+
+
 
 
 

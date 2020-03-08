@@ -75,7 +75,7 @@ export class ResumeService {
       "name": "alexander-graham-bell",
       "id": 10
     },
-      {
+    {
       "name": "amsterdam",
       "id": 11
     },
@@ -132,13 +132,6 @@ export class ResumeService {
   }
 
 
-  checklenthOfarray(data: any[]) {
-    if (data.length == 0) {
-      console.log("Data Nulll")
-      return true;
-    }
-    return false;
-  }
 
   loadResumeComponentsJson() {
     this.http.get(`${this.apiUrl}?userCode=${this.userCode}`, { withCredentials: true }).subscribe(data => {

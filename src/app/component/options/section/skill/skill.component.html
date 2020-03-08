@@ -1,105 +1,103 @@
 <div class="editor__group" id="skill" *ngIf="flag">
-    <aside class="editor__group-sidebar">
+  <aside class="editor__group-sidebar">
 
-        <div class="editor__group-title">
-            <i class="fas fa-chart-bar"></i>
-            <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Skills</p>
-        </div>
-
-
-        <ul class="editor__group-list" data-sortable data-skills-list>
-            <li class="editor__group-item" [ngClass]="{active: selected==i}"
-                *ngFor="let item of resumeService.resumeComponents.skills;index as i" (click)=selectedItem(i)>
-                <div class="editor__group-item-label">
-                    <i class="fas fa-bars"></i>{{resumeService.resumeComponents.skills[i].skillCategoryName}}
-                    <!-- <p class="paragraph--*ngFor="let item of work_experiences;index as i"med u-weight-smb"></p> -->
-                </div>
-                <i class="fas fa-times editor__group-item-delete" (click)="removeSkillCategory(i)"
-                    data-education-delete></i>
-            </li>
-
-
-        </ul>
-
-
-
-        <div class="editor__group-sidebar-btn">
-            <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent" data-skills-side-btn
-                (click)=addNewSkillCategory()>
-                <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i> Add
-                    New</p>
-            </button>
-        </div>
-
-    </aside>
-    <div class="editor__group-main">
-        <div class="row">
-            <div class="col-12 editor__group-main-form" data-skills-form>
-                <div class="row" data-skills-form-items>
-                    <div class="col-12">
-                        <div class="editor__group-main-wrapper">
-
-                            <input type="text" data-skills-category
-                                [(ngModel)]="resumeService.resumeComponents.skills[selected].skillCategoryName">
-                            <label>Skill category name</label>
-                        </div>
-                    </div>
-                    <div class="col-12" data-skills-item>
-                        <div class="editor__skills"
-                            *ngFor="let item of resumeService.resumeComponents.skills[selected].skillNames;index as i">
-                            <div class="row editor__skills-row">
-                                <div class="col-12 col-lg-6">
-                                    <div class="editor__group-main-wrapper">
-
-                                        <input type="text" required
-                                            [(ngModel)]="resumeService.resumeComponents.skills[selected].skillNames[i].skillName"
-                                            data-skills-name required>
-                                        <label>Skill Name</label>
-                                    </div>
-                                </div>
-                                <!--[(ngModel)]="resumeService.resumeComponents.skills[selected][item].skillName"-->
-                                <div class="col-12 col-lg-6">
-                                    <div class="editor__group-main-wrapper">
-                                       
-                                        <select required data-skills-level
-                                            [(ngModel)]="resumeService.resumeComponents.skills[selected].skillNames[i].skillLevel">
-                                            <option value="" disabled selected hidden>Skill Level</option>
-                                            <option value="beginner">Beginner</option>
-                                            <option value="intermediate">Intermediate</option>
-                                            <option value="expert">Expert</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="editor__skills-delete">
-                                <i class="fas fa-trash editor__skills-delete-icon" *ngIf="i!=0" data-skills-form-delete
-                                    (click)="removeSkill(selected,i)"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="editor__group-main-btn">
-                    <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent"
-                        (click)="addNewSkill(selected,0)" data-skills-inner-btn>
-                        <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i>
-                            Add New Skill Name</p>
-                    </button>
-
-                </div>
-
-
-
-            </div>
-        </div>
-
+    <div class="editor__group-title">
+      <i class="fas fa-chart-bar"></i>
+      <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Skills</p>
     </div>
+
+
+    <ul class="editor__group-list" data-sortable data-skills-list>
+      <li class="editor__group-item" [ngClass]="{active: selectedSkill==i}"
+        *ngFor="let item of resumeService.resumeComponents.skills;index as i" (click)=selectedSkillItem(i)>
+        <div class="editor__group-item-label">
+          <i class="fas fa-bars"></i>{{resumeService.resumeComponents.skills[i].skillCategoryName}}
+        </div>
+        <i class="fas fa-times editor__group-item-delete" (click)="removeSkillCategory(i)" data-education-delete></i>
+      </li>
+
+
+    </ul>
+
+
+
+    <div class="editor__group-sidebar-btn">
+      <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent" data-skills-side-btn
+        (click)=addNewSkillCategory()>
+        <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i> Add
+          New</p>
+      </button>
+    </div>
+
+  </aside>
+  <div class="editor__group-main">
     <div class="row">
-        <div class="col-12 text-right">
-            <span class="edit-box-delete-icon">
-                <i class="fas fa-trash editor__group-item-delete"></i>
-            </span>
+      <div class="col-12 editor__group-main-form" data-skills-form>
+        <div class="row" data-skills-form-items>
+          <div class="col-12">
+            <div class="editor__group-main-wrapper">
+
+              <input type="text" data-skills-category
+                [(ngModel)]="resumeService.resumeComponents.skills[selectedSkill].skillCategoryName">
+              <label>Skill category name</label>
+            </div>
+          </div>
+          <div class="col-12" data-skills-item>
+            <div class="editor__skills"
+              *ngFor="let item of resumeService.resumeComponents.skills[selectedSkill].skillNames;index as i">
+              <div class="row editor__skills-row">
+                <div class="col-12 col-lg-6">
+                  <div class="editor__group-main-wrapper">
+
+                    <input type="text" required
+                      [(ngModel)]="resumeService.resumeComponents.skills[selectedSkill].skillNames[i].skillName"
+                      data-skills-name required>
+                    <label>Skill Name</label>
+                  </div>
+                </div>
+                <!--[(ngModel)]="resumeService.resumeComponents.skills[selectedSkill][item].skillName"-->
+                <div class="col-12 col-lg-6">
+                  <div class="editor__group-main-wrapper">
+
+                    <select required data-skills-level
+                      [(ngModel)]="resumeService.resumeComponents.skills[selectedSkill].skillNames[i].skillLevel">
+                      <option value="" disabled selectedSkill hidden>Skill Level</option>
+                      <option value="beginner">Beginner</option>
+                      <option value="intermediate">Intermediate</option>
+                      <option value="expert">Expert</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="editor__skills-delete">
+                <i class="fas fa-trash editor__skills-delete-icon" *ngIf="i!=0" data-skills-form-delete
+                  (click)="removeSkill(selectedSkill,i)"></i>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="col-12">
+        <div class="editor__group-main-btn">
+          <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent"
+            (click)="addNewSkill(selectedSkill,0)" data-skills-inner-btn>
+            <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i>
+              Add New Skill Name</p>
+          </button>
+
+        </div>
+
+
+
+      </div>
     </div>
+
+  </div>
+  <div class="row">
+    <div class="col-12 text-right" (click)=removeSkillComponant()>
+      <span class="edit-box-delete-icon">
+        <i class="fas fa-trash editor__group-item-delete"></i>
+      </span>
+    </div>
+  </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="editor__group" id="Certifications" *ngIf="flag">
+<div class="editor__group" id="certifications" *ngIf="flag">
   <aside class="editor__group-sidebar">
     <div class="editor__group-title">
       <i class="fas fa-chart-bar"></i>
@@ -6,7 +6,7 @@
     </div>
     <ul class="editor__group-list" data-sortable data-skills-list>
       <li class="editor__group-item " [ngClass]="{active: selectedCertificate==i}" data-skills-list-item
-        *ngFor="let item of resumeService.resumeComponents.certificates; index as i" (click)=selectedItem(i)>
+        *ngFor="let item of resumeService.resumeComponents.certificates; index as i" (click)=selectCertificateItem(i)>
         <div class="editor__group-item-label">
           <i class="fas fa-bars"></i>{{resumeService.resumeComponents.certificates[i].certificateName}}
           <p class="paragraph--med u-weight-smb"></p>
@@ -110,7 +110,9 @@
           <div class="col-12" data-skills-item>
 
             <label>Profile</label>
-            <ckeditor [editor]="Editor" [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic','link','bulletedList','numberedList','blockQuote','table','undo','redo'] }" data=""></ckeditor>
+            <ckeditor [editor]="Editor"
+              [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic','link','bulletedList','numberedList','blockQuote','table','undo','redo'] }"
+              data=""></ckeditor>
 
           </div>
 
@@ -121,10 +123,11 @@
 
     </div>
   </div>
+
   <div class="row">
-    <div class="col-12 text-right">
+    <div class="col-12 text-right" (click)="removeCertificateComponent()">
       <span class="edit-box-delete-icon">
-        <i class="fas fa-times editor__group-item-delete"></i>
+        <i class="fas fa-trash editor__group-item-delete"></i>
       </span>
     </div>
   </div>

@@ -5,13 +5,13 @@
       <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Reference</p>
     </div>
     <ul class="editor__group-list" data-sortable data-skills-list>
-      <li class="editor__group-item " [ngClass]="{active: selected==i}" data-skills-list-item
-        *ngFor="let item of resumeService.resumeComponents.referances; index as i" (click)=selectedItem(i)>
+      <li class="editor__group-item " [ngClass]="{active: selectedReferance==i}" data-skills-list-item
+        *ngFor="let item of resumeService.resumeComponents.referances; index as i" (click)=selectReferanceItem(i)>
         <div class="editor__group-item-label">
           <i class="fas fa-bars"></i>{{resumeService.resumeComponents.referances[i].company}}
           <p class="paragraph--med u-weight-smb"></p>
         </div>
-        <i class="fas fa-times editor__group-item-delete" data-skills-delete (click)="removeRefernace()"></i>
+        <i class="fas fa-times editor__group-item-delete" data-skills-delete (click)="removeReferance()"></i>
       </li>
     </ul>
     <div class="editor__group-sidebar-btn">
@@ -32,7 +32,7 @@
             <div class="editor__group-main-wrapper">
 
               <input type="text" data-skills-category
-                [(ngModel)]="resumeService.resumeComponents.referances[selected].personName" required>
+                [(ngModel)]="resumeService.resumeComponents.referances[selectedReferance].personName" required>
               <label>Person Name</label>
             </div>
           </div>
@@ -40,7 +40,7 @@
             <div class="editor__group-main-wrapper">
 
               <input type="text" data-skills-category
-                [(ngModel)]="resumeService.resumeComponents.referances[selected].company" required>
+                [(ngModel)]="resumeService.resumeComponents.referances[selectedReferance].company" required>
               <label>Company Name</label>
             </div>
 
@@ -49,7 +49,7 @@
             <div class="editor__group-main-wrapper">
 
               <input type="text" data-skills-category
-                [(ngModel)]="resumeService.resumeComponents.referances[selected].title" required>
+                [(ngModel)]="resumeService.resumeComponents.referances[selectedReferance].title" required>
               <label>Job Title </label>
             </div>
 
@@ -61,7 +61,7 @@
                   <div class="editor__group-main-wrapper">
 
                     <input type="text" required data-skills-name
-                      [(ngModel)]="resumeService.resumeComponents.referances[selected].contact1" required>
+                      [(ngModel)]="resumeService.resumeComponents.referances[selectedReferance].contact1" required>
                     <label>Contact 1</label>
                   </div>
                 </div>
@@ -70,7 +70,7 @@
                   <div class="editor__group-main-wrapper">
 
                     <input type="text" required data-skills-name
-                      [(ngModel)]="  resumeService.resumeComponents.referances[selected].contact2" required>
+                      [(ngModel)]="  resumeService.resumeComponents.referances[selectedReferance].contact2" required>
                     <label>Contact 2</label>
                   </div>
                 </div>
@@ -79,27 +79,15 @@
 
             </div>
           </div>
-
-
-
-
-
           <div class="col-12" data-skills-item>
-
-
-
-
           </div>
-
-
         </div>
       </div>
-
 
     </div>
   </div>
   <div class="row">
-    <div class="col-12 text-right">
+    <div class="col-12 text-right" (click)="removeReferanceComponent()">
       <span class="edit-box-delete-icon">
         <i class="fas fa-trash editor__group-item-delete"></i>
       </span>

@@ -5,8 +5,9 @@
       <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Awards</p>
     </div>
     <ul class="editor__group-list" data-sortable data-skills-list>
-      <li class="editor__group-item editor__group-item--active" [ngClass]="{active: selected==i}" data-skills-list-item
-        *ngFor="let item of resumeService.resumeComponents.awards;index as i" (click)="selectedItem(i)">
+      <li class="editor__group-item editor__group-item--active" [ngClass]="{active: selectedAward==i}"
+        data-skills-list-item *ngFor="let item of resumeService.resumeComponents.awards;index as i"
+        (click)="selectAwardItem(i)">
         <div class="editor__group-item-label">
           <i class="fas fa-bars"></i>
           <p class="paragraph--med u-weight-smb">{{resumeService.resumeComponents.awards[i].name}}</p>
@@ -15,7 +16,7 @@
       </li>
     </ul>
     <div class="editor__group-sidebar-btn">
-      <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent" (click)="addAward()"
+      <button class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent" (click)="addNewAward()"
         data-skills-side-btn>
         <p class="btn__label paragraph--med"><i class="fas fa-plus btn__icon"></i> Add
           New</p>
@@ -29,8 +30,8 @@
           <div class="col-12 col-lg-6">
             <div class="editor__group-main-wrapper">
 
-              <input type="text" [(ngModel)]="resumeService.resumeComponents.awards[selected].name" data-skills-category
-                required>
+              <input type="text" [(ngModel)]="resumeService.resumeComponents.awards[selectedAward].name"
+                data-skills-category required>
               <label>Award Name {{resumeService.resumeComponents.awards.length}}</label>
             </div>
 
@@ -40,7 +41,7 @@
             <div class="editor__group-main-wrapper">
 
               <input type="text" data-skills-category
-                [(ngModel)]="resumeService.resumeComponents.awards[selected].issuer" required>
+                [(ngModel)]="resumeService.resumeComponents.awards[selectedAward].issuer" required>
               <label>Issuer</label>
             </div>
           </div>
@@ -52,7 +53,7 @@
                   <div class="editor__group-main-wrapper">
 
                     <input type="text" required data-skills-name
-                      [(ngModel)]="resumeService.resumeComponents.awards[selected].url">
+                      [(ngModel)]="resumeService.resumeComponents.awards[selectedAward].url">
                     <label>URL to award</label>
                   </div>
                 </div>
@@ -71,8 +72,8 @@
                   <div class="editor__group-main-wrapper">
 
                     <select required data-skills-level
-                      [(ngModel)]="resumeService.resumeComponents.awards[selected].month">
-                      <option value="" disabled selected hidden>Month</option>
+                      [(ngModel)]="resumeService.resumeComponents.awards[selectedAward].month">
+                      <option value="" disabled selectedAward hidden>Month</option>
                       <option [ngValue]="item" *ngFor="let item of months;let i = index">{{item}}</option>
 
                     </select>
@@ -82,8 +83,8 @@
                   <div class="editor__group-main-wrapper">
 
                     <select required data-skills-level
-                      [(ngModel)]="resumeService.resumeComponents.awards[selected].year">
-                      <option value="" disabled selected hidden>Year</option>
+                      [(ngModel)]="resumeService.resumeComponents.awards[selectedAward].year">
+                      <option value="" disabled selectedAward hidden>Year</option>
                       <option [ngValue]="1990+i" *ngFor="let item of [].constructor(50);let i = index">{{1990+i}}
                       </option>
 
@@ -104,7 +105,9 @@
 
             <label>Description</label>
 
-            <ckeditor [editor]="Editor" [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic','link','bulletedList','numberedList','blockQuote','table','undo','redo'] }" data=""></ckeditor>
+            <ckeditor [editor]="Editor"
+              [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic','link','bulletedList','numberedList','blockQuote','table','undo','redo'] }"
+              data=""></ckeditor>
 
           </div>
         </div>
@@ -114,7 +117,7 @@
   </div>
 
   <div class="row">
-    <div class="col-12 text-right">
+    <div class="col-12 text-right" (click)="removeAwardComponant()">
       <span class="edit-box-delete-icon">
         <i class="fas fa-trash editor__group-item-delete"></i>
       </span>

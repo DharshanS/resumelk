@@ -6,10 +6,11 @@ export class Education {
   country: string;
   city: string;
   timePeriod: TimePeriod;
-  description: "lets";
-  currently:boolean;
-  constructor(){
-    this.timePeriod=new TimePeriod();
+  description: string;
+  currently: boolean;
+  constructor() {
+    this.timePeriod = new TimePeriod();
+    this.description = "";
   }
 }
 
