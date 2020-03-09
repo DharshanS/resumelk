@@ -6,7 +6,7 @@
       <div class="col-8">
         <!-- Experience -->
 
-        <div class="col-12 col-box componentSection" *ngIf="resumeService.resumeComponents.workExperiance.length > 0">
+        <div class="col-12 col-box " *ngIf="resumeService.resumeComponents.workExperiance.length > 0">
           <div class="title-box font-color border-color color-1">Experience</div>
           <div class="professional-box" *ngFor="let  item of resumeService.resumeComponents.workExperiance">
             <label>{{item.jobTitle}}</label>
@@ -15,8 +15,9 @@
             <div class="p-0 col-12 tm-row">
 
               <div class="col-6 p-0  c-name">{{item.companyName}}</div>
-              <div class="col-6 p-0 text-right"><i class="far fa-calendar-alt"></i>{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
-                {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</div>       
+              <div class="col-6 p-0 text-right"><i
+                  class="far fa-calendar-alt"></i>{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
+                {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</div>
 
 
 
@@ -77,7 +78,8 @@
         </div>
 
         <div class="col-12 col-box componentSection">
-          <div class="title-box font-color border-color" *ngIf="resumeService.resumeComponents.awards.length>0">Awards</div>
+          <div class="title-box font-color border-color" *ngIf="resumeService.resumeComponents.awards.length>0">Awards
+          </div>
           <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.awards">
             <label>{{item.name}}</label>
 
@@ -129,7 +131,7 @@
         </div>
 
 
-        <div class="col-12 col-box componentSection">
+        <div class="col-12 col-box ">
           <div class="title-box font-color border-color" *ngIf="resumeService.resumeComponents.referances.length > 0">
             Reference</div>
           <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.referances">
@@ -196,12 +198,12 @@
         <div class="col-12">
           <div class="title-box title-color border-color">TECHNICAL SKILLS</div>
           <ul class="technical-skills">
-            <li  *ngFor="let item of resumeService.resumeComponents.skills">
+            <li *ngFor="let item of resumeService.resumeComponents.skills">
 
               <span>{{item.skillCategoryName}}</span>
               <span class="skill-sub-title">{{item.skillCategoryName}}</span>
               <span class="key-skills-box bg-color" *ngFor="let skill of item.skillNames">
-                  {{skill.skillName}}
+                {{skill.skillName}}
               </span>
 
             </li>

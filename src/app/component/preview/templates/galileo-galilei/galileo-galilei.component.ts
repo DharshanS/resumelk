@@ -19,7 +19,7 @@ export class GalileoGalileiComponent implements OnInit {
   resumeComponents: any;
 
 
-  constructor(private resumeService: ResumeService, private sections: EditorService) { }
+  constructor(public resumeService: ResumeService, private sections: EditorService) { }
 
   ngOnInit() {
 

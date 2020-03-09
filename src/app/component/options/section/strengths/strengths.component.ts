@@ -13,7 +13,7 @@ export class StrengthsComponent implements OnInit {
 
   strengthBucket = [];
   @Input() flag: boolean;
-
+  strengthInput: string;
   addStrengths = (term) => ({ id: term, name: term });
   constructor(public resumeService: ResumeService) { }
 

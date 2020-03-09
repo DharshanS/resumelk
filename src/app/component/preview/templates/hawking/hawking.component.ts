@@ -27,7 +27,7 @@ export class HawkingComponent implements OnInit {
 
 
 
-  constructor(private sanitizer: DomSanitizer, private resumeService: ResumeService, private renderer2: Renderer2, private el: ElementRef) {
+  constructor(private sanitizer: DomSanitizer, public resumeService: ResumeService, private renderer2: Renderer2, private el: ElementRef) {
 
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResumeService } from 'src/app/resume.service';
 
 @Component({
   selector: 'app-miami',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharlesDarwinComponent implements OnInit {
 
-  constructor() { }
+  constructor(public resumeService: ResumeService) { }
 
   ngOnInit() {
   }

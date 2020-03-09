@@ -14,7 +14,8 @@
             </mat-autocomplete>
           </form>
         </div>
-        <div class="col-md-4"><button class="btn strength-add-btn " (click)="pushStrength(stremg)">Create new</button>
+        <div class="col-md-4"><button class="btn strength-add-btn " (click)="pushStrength(strengthInput)">Create
+            new</button>
         </div>
       </div>
 
@@ -22,7 +23,7 @@
         <ul>
           <li *ngFor="let item of strengthBucket; index as i" class="strength-item-li">
             <span class="strength-item-box">
-              {{item}} </span><span class="close-btn" (click)="remove(i)"><i class="fas fa-times"></i>
+              {{item}} </span><span class="close-btn" (click)="removeStrength(i)"><i class="fas fa-times"></i>
             </span>
           </li>
         </ul>

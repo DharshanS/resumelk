@@ -11,7 +11,7 @@ export class DarwinComponent implements OnInit {
   resumeComponents: any;
 
   constructor(
-    private resumeService: ResumeService,
+    public resumeService: ResumeService,
     private sanitizer: DomSanitizer,
     private renderer2: Renderer2,
     private el: ElementRef,

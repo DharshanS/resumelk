@@ -14,7 +14,8 @@ export class UtilityService {
     let arraylist = element.nativeElement.querySelectorAll('.componentSection');
     let calculateSectionSize = 0;
     for (let i = 0; i < arraylist.length; i++) {
-      calculateSectionSize += arraylist[i].offsetHeight * this.resumeService.A4_SIZE_CM;
+      console.log(arraylist[i].offsetHeight);
+      calculateSectionSize = calculateSectionSize + (arraylist[i].offsetHeight * this.resumeService.A4_SIZE_CM);
       _pageFlag = this.isPageSizeMoreThanOnePage(calculateSectionSize, element, i, pageClass);
     }
     return _pageFlag;
@@ -22,7 +23,9 @@ export class UtilityService {
 
   private isPageSizeMoreThanOnePage(section: number, element: any, i: number, pageClass: string) {
     let _pageFlag = false;
-    if (this.resumeService.A4_SIZE*this.resumeService.A4_SIZE_CM < section) {
+    let a4Size = this.resumeService.A4_SIZE;
+    console.log("Section : " + section + ":" + a4Size)
+    if (a4Size < section) {
       let sectionElement = element.nativeElement.querySelectorAll('.componentSection')[i];
       _pageFlag = true;
       this.moveParentElementAsChildElement(element, sectionElement, pageClass);
