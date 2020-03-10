@@ -16,9 +16,11 @@ export class EditorService {
     { "id": 7, "label": "References", "flag": false, "class": "fa-suitcase ", "icon": "fa-times", "name": "referance", "active": false },
     { "id": 8, "label": "Achievements", "flag": false, "class": "fa-suitcase ", "icon": "fa-times", "name": "achievements", "active": false },
     { "id": 9, "label": "Publications", "flag": false, "class": "fa-suitcase ", "icon": "fa-times", "name": "publications", "active": false },
-    { "id": 10, "label": "Text", "flag": false, "class": "fa-suitcase ", "icon": "fa-times", "name": "text", "active": false },
+    // { "id": 10, "label": "Text", "flag": false, "class": "fa-suitcase ", "icon": "fa-times", "name": "text", "active": false },
     { "id": 11, "label": "strengths", "flag": false, "class": "fa-suitcase ", "icon": "fa-times", "name": "strengths", "active": false },
-    { "id": 12, "label": "Custom", "flag": false, "class": "fa-suitcase ", "icon": "fa-times", "name": "custom", "title": "Title", "active": false }];
+    // { "id": 12, "label": "Custom", "flag": false, "class": "fa-suitcase ", "icon": "fa-times", "name": "custom", "title": "Title", "active": false }
+
+  ];
 
 
 

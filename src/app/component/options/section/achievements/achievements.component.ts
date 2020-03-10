@@ -2,6 +2,7 @@ import { Component, OnInit, Input, AfterContentChecked } from '@angular/core';
 import { Acheivment } from './Achivment';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ResumeService } from "../../../../resume.service";
+import { EditorService } from '../../editor.service';
 
 @Component({
   selector: 'app-achievements',
@@ -9,18 +10,12 @@ import { ResumeService } from "../../../../resume.service";
   styleUrls: ['./achievements.component.css']
 })
 export class AchievementsComponent implements OnInit, AfterContentChecked {
-
-
-  __achivements = [];
   selected = 0;
   public Editor = ClassicEditor;
-
-
-
   @Input() flag: boolean;
 
 
-  constructor(public resumeService: ResumeService) { }
+  constructor(public resumeService: ResumeService, private editorService: EditorService) { }
 
   ngOnInit() {
 
@@ -29,13 +24,13 @@ export class AchievementsComponent implements OnInit, AfterContentChecked {
   addAchivements() {
     this.resumeService.resumeComponents.achivements.push(new Acheivment())
   }
-  removeAchivements(index) {
+  removeAchivements(index: number) {
     if (index != 0)
       this.resumeService.resumeComponents.achivements.splice(index, 1);
 
   }
 
-  selectedItem(i) {
+  selectedItem(i: number) {
     this.selected = i;
   }
 
@@ -45,5 +40,8 @@ export class AchievementsComponent implements OnInit, AfterContentChecked {
     }
   }
 
+  removeAchiveComponent() {
+    this.editorService.removeComponent('achievements')
+  }
 
 }

@@ -14,22 +14,28 @@ export class UtilityService {
     let arraylist = element.nativeElement.querySelectorAll('.componentSection');
     let calculateSectionSize = 0;
     for (let i = 0; i < arraylist.length; i++) {
-      console.log(arraylist[i].offsetHeight);
       calculateSectionSize = calculateSectionSize + (arraylist[i].offsetHeight * this.resumeService.A4_SIZE_CM);
+      console.log(calculateSectionSize);
       _pageFlag = this.isPageSizeMoreThanOnePage(calculateSectionSize, element, i, pageClass);
+      if (_pageFlag) {
+        calculateSectionSize = 0;
+      }
     }
+
+    console.log("einsteinPage2" + _pageFlag)
     return _pageFlag;
   }
 
-  private isPageSizeMoreThanOnePage(section: number, element: any, i: number, pageClass: string) {
+  private isPageSizeMoreThanOnePage(componentSectionTotalHight: number, element: any, i: number, pageClass: string) {
     let _pageFlag = false;
     let a4Size = this.resumeService.A4_SIZE;
-    console.log("Section : " + section + ":" + a4Size)
-    if (a4Size < section) {
+    console.log("Section : " + componentSectionTotalHight + ":" + a4Size)
+    if (a4Size < componentSectionTotalHight) {
       let sectionElement = element.nativeElement.querySelectorAll('.componentSection')[i];
       _pageFlag = true;
       this.moveParentElementAsChildElement(element, sectionElement, pageClass);
     }
+    console.log("Page " + _pageFlag)
     return _pageFlag;
   }
 

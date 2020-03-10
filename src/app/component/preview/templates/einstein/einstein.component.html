@@ -5,39 +5,28 @@
 
       <div class="col-8">
         <!-- Experience -->
-
-        <div class="col-12 col-box " *ngIf="resumeService.resumeComponents.workExperiance.length > 0">
-          <div class="title-box font-color border-color color-1">Experience</div>
-          <div class="professional-box" *ngFor="let  item of resumeService.resumeComponents.workExperiance">
+        <div class="col-12 col-box  componentSection" *ngIf="resumeService.resumeComponents.workExperiance.length > 0">
+          <div class="title-box font-color border-color color-1 ">Experience</div>
+          <div class="professional-box " *ngFor="let  item of resumeService.resumeComponents.workExperiance">
             <label>{{item.jobTitle}}</label>
-
-
             <div class="p-0 col-12 tm-row">
 
               <div class="col-6 p-0  c-name">{{item.companyName}}</div>
               <div class="col-6 p-0 text-right"><i
                   class="far fa-calendar-alt"></i>{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
                 {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</div>
-
-
-
               <span class="span-text" innerHTML="{{item.description}}"></span>
-
-
-
-
-
             </div>
           </div>
 
 
         </div>
-        <!-- Education -->
 
-        <div class="col-12 col-box componentSection">
-          <div class="title-box font-color border-color" *ngIf="resumeService.resumeComponents.education.length >0">
+        <!-- Education -->
+        <div class="col-12 col-box  componentSection">
+          <div class="title-box font-color border-color " *ngIf="resumeService.resumeComponents.education.length >0">
             Education</div>
-          <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.education">
+          <div class="professional-box " *ngFor="let item of resumeService.resumeComponents.education">
             <label>{{item.feildOfStudy}}</label>
 
 
@@ -55,11 +44,11 @@
         </div>
 
         <!-- Certificates -->
-
         <div class="col-12 col-box componentSection">
           <div class="title-box font-color border-color" *ngIf=" resumeService.resumeComponents.certificates.length>0">
             Certificates</div>
-          <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.certificates">
+          <div class="professional-box componentSection"
+            *ngFor="let item of resumeService.resumeComponents.certificates">
             <label>{{item.certificateName}}</label>
 
 
@@ -217,11 +206,12 @@
 
 
   <!-- Page 2 -->
-  <div class="main-page secondPageEes" *ngIf="einsteinPage2">
+  <div class="main-page secondPageEes">
     <div class="tm-row">
       <div class="col-12">
       </div>
     </div>
   </div>
+
 
 </div>

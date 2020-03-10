@@ -2,10 +2,13 @@
 
 
   <div class="editor__group-main">
-  <div> <div *ngIf="!isEditable" (click)="changeEditor()"><label contenteditable="true" class="pointer"> {{title}} </label>&nbsp;&nbsp;<span ><i class=" pointer fas fa-pen"></i></span></div>
-     <div *ngIf="isEditable" class="row"> <input type="text" [(ngModel)]="title" *ngIf="isEditable" class="pointer title-txt">
-    <i class=" pointer title-font fas fa-check" (click)="changeEditor()"></i></div>
-  </div>
+    <div>
+      <div *ngIf="!isEditable" (click)="changeEditor()"><label contenteditable="true" class="pointer"> {{title}}
+        </label>&nbsp;&nbsp;<span><i class=" pointer fas fa-pen"></i></span></div>
+      <div *ngIf="isEditable" class="row"> <input type="text" [(ngModel)]="title" *ngIf="isEditable"
+          class="pointer title-txt">
+        <i class=" pointer title-font fas fa-check" (click)="changeEditor()"></i></div>
+    </div>
 
 
 
@@ -17,5 +20,3 @@
 
 
 </div>
-
-

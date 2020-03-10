@@ -9,7 +9,7 @@ import { UtilityService } from 'src/app/utility.service';
 export class EinsteinComponent implements OnInit, AfterViewInit {
 
   @ViewChild("einstein", { static: false }) einsteinPage: ElementRef;
-  einsteinPage2 = false;
+  einsteinPage2 = true;
   templateData: any;
   page2Class = "secondPageEes";
 
