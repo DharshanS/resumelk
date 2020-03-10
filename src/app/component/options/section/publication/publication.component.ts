@@ -24,19 +24,17 @@ export class PublicationComponent implements OnInit, AfterContentChecked {
 
 
   constructor(public resumeService: ResumeService, private utilityService: UtilityService) { }
-
-  publications = [];
-
   ngOnInit() {
-
   }
 
   addPublication() {
     this.resumeService.resumeComponents.publications.push(new Publication())
   }
   removePublication(index: number) {
-    if (index != 0)
-      this.publications.splice(index, 1);
+    if (index != 0) {
+      this.resumeService.resumeComponents.publications.splice(index, 1);
+      this.selected = 0;
+    }
 
   }
 
