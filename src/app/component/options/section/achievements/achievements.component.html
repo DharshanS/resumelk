@@ -43,7 +43,7 @@
 
                 <ckeditor [editor]="Editor"
                   [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic','link','bulletedList','numberedList','blockQuote','table','undo','redo'] }"
-                  data=""></ckeditor>
+                  [(ngModel)]="resumeService.resumeComponents.achivements[selected].description"></ckeditor>
 
               </div>
             </div>

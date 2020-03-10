@@ -2,6 +2,7 @@ import { Component, OnInit, Input, AfterContentChecked } from '@angular/core';
 import { ResumeService } from "../../../../resume.service";
 import { Publication } from './Publication';
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { UtilityService } from 'src/app/utility.service';
 
 @Component({
   selector: 'app-publication',
@@ -10,9 +11,8 @@ import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 })
 export class PublicationComponent implements OnInit, AfterContentChecked {
   ngAfterContentChecked(): void {
-    if (this.flag && this.resumeService.resumeComponents.publications.length == 0) {
-
-      this.resumeService.resumeComponents.publications.push(new Publication())
+    if (this.flag && this.utilityService.isLengthOfZero(this.resumeService.resumeComponents.publications)) {
+      this.addPublication();
     }
   }
 
@@ -23,7 +23,7 @@ export class PublicationComponent implements OnInit, AfterContentChecked {
   selected = 0;
 
 
-  constructor(public resumeService: ResumeService) { }
+  constructor(public resumeService: ResumeService, private utilityService: UtilityService) { }
 
   publications = [];
 
@@ -32,15 +32,15 @@ export class PublicationComponent implements OnInit, AfterContentChecked {
   }
 
   addPublication() {
-    this.publications.push(new Publication())
+    this.resumeService.resumeComponents.publications.push(new Publication())
   }
-  removePublication(index) {
+  removePublication(index: number) {
     if (index != 0)
       this.publications.splice(index, 1);
 
   }
 
-  selectedItem(index) {
+  selectedItem(index: number) {
     this.selected = index;
   }
 

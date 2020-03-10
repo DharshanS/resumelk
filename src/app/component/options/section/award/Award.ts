@@ -1,9 +1,12 @@
-export class Award{
+export class Award {
 
-  name:string;
-  issuer:string;
-  url:string;
-  month:string;
-  year:string;
-  description:string;
+  name: string;
+  issuer: string;
+  url: string;
+  month: string;
+  year: string;
+  description: string;
+  constructor() {
+    this.description = "";
+  }
 }
