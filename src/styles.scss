@@ -666,4 +666,28 @@ body {
   background: rgba(165, 187, 185, 0.28);
   height: auto;
 }
+
+
+.main-page p, .main-page li {
+  line-height: 24px;
+  font-size: 13px;
+  color: #3f4548;
+}
+
+.professional-box{
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #000;
+}
+.date-font-size{
+  font-size: 12px;
+}
+.c-name {
+  font-size: 12px;
+  font-weight: 600;
+}
+.span-text{
+  margin-top: 6px !important;
+}
+
 @import "media_query";

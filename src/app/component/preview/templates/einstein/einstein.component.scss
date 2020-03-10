@@ -112,7 +112,7 @@ $title: #fff;
 
 .main-page {
   width: 21cm;
-  min-height: 29.7cm;
+  height: 29.7cm;
   margin: 1cm auto;
   border: 1px #D3D3D3 solid;
   border-radius: 5px;
@@ -224,6 +224,7 @@ $title: #fff;
 .span-text {
   font-size: 12px;
   width: 100%;
+  text-align: justify;
   color: #3f4548;
   margin-top: 6px;
 }
@@ -285,7 +286,7 @@ margin-bottom: 15px;
 }
 
 .border-box {
-  padding: 0 3mm;
+  padding: 0 ;
   padding-top: 15px;
   padding-bottom: 15px;
   border-bottom: 1px solid;

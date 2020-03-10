@@ -50,66 +50,59 @@ export class ResumeService {
       "name": "darwin",
       "id": 4,
 
-    }, {
-      "name": "curie",
-      "id": 5,
-
     },
-    {
-      "name": "aristotle",
-      "id": 6
-    },
+    
     {
       "name": "galileo-galilei",
-      "id": 7
+      "id": 5
     },
     {
       "name": "leonardo-da-vinci",
-      "id": 8
+      "id": 6
     },
     {
       "name": "nikola-tesla",
-      "id": 9
+      "id": 7
     },
     {
       "name": "alexander-graham-bell",
-      "id": 10
+      "id": 8
     },
     {
       "name": "amsterdam",
-      "id": 11
+      "id": 9
     },
     {
       "name": "isaac-newton",
-      "id": 12
+      "id": 10
     },
     {
       "name": "thomas-edison",
-      "id": 13
+      "id": 11
     },
     {
       "name": "stephen-hawking",
-      "id": 14
+      "id": 12
     },
     {
       "name": "global-citizen-green",
-      "id": 15
+      "id": 13
     },
     {
       "name": "miani",
-      "id": 16
+      "id": 14
     },
     {
       "name": "royal-blue",
-      "id": 17
+      "id": 15
     },
     {
       "name": "trendy-design",
-      "id": 18
+      "id": 16
     },
     {
       "name": "uniform-brown",
-      "id": 19
+      "id": 17
     }
 
   ]

@@ -68,25 +68,41 @@
               <div class="row editor__skills-row">
                 <div class="col-12 col-lg-4">
                   <div class="editor__group-main-wrapper">
-                    <label>Month</label>
+                    <!-- <label>Month</label> -->
                     <select required data-skills-level
                       [(ngModel)]="resumeService.resumeComponents.publications[selected].publicationDate.month">
                       <option value="" disabled selected hidden>Month</option>
-                      <option value="beginner">Beginner</option>
-                      <option value="intermediate">Intermediate</option>
-                      <option value="expert">Expert</option>
+                      <option  value="01" >January</option>
+                      <option   value="02" >February</option>
+                      <option   value="03" >March</option>                      
+                      <option   value="04" >April</option>
+                      <option   value="05" >May</option>
+                      <option   value="06" >June</option>
+                      <option   value="06" >July</option>
+                      <option   value="07" >August</option>
+                      <option   value="08" >September</option>
+                      <option   value="09" >October</option>
+                      <option   value="10" >November</option>
+                      <option   value="11" >December</option>
                     </select>
                   </div>
                 </div>
                 <div class="col-12 col-lg-4">
                   <div class="editor__group-main-wrapper">
-                    <label>Year</label>
+                    <!-- <label>Year</label> -->
                     <select required data-skills-level
                       [(ngModel)]="resumeService.resumeComponents.publications[selected].publicationDate.year">
                       <option value="" disabled selected hidden>Year</option>
-                      <option value="beginner">Beginner</option>
-                      <option value="intermediate">Intermediate</option>
-                      <option value="expert">Expert</option>
+                      <option   disabled="" hidden="" selectededucation="" value="" ng-reflect-value="">Year</option>
+                      <option   value="2018" >2018</option>
+                      <option   value="2017">2017</option>
+                      <option   value="2016" >2016</option>
+                      <option   value="2015" >2015</option>
+                      <option   value="2014" >2014</option>
+                      <option   value="2013" >2013</option>
+                      <option   value="2012" >2012</option>
+                      <option   value="2011" >2011</option>
+                      <option   value="2010" >2010</option>
                     </select>
                   </div>
                 </div>

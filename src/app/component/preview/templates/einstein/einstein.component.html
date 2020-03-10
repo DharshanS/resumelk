@@ -8,13 +8,14 @@
         <div class="col-12 col-box  componentSection" *ngIf="resumeService.resumeComponents.workExperiance.length > 0">
           <div class="title-box font-color border-color color-1 ">Experience</div>
           <div class="professional-box " *ngFor="let  item of resumeService.resumeComponents.workExperiance">
-            <label>{{item.jobTitle}}</label>
-            <div class="p-0 col-12 tm-row">
 
-              <div class="col-6 p-0  c-name">{{item.companyName}}</div>
-              <div class="col-6 p-0 text-right"><i
-                  class="far fa-calendar-alt"></i>{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
-                {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</div>
+            <div class="p-0 col-12 tm-row">
+              <div class="col-8 p-0  "> <label>{{item.jobTitle}}</label></div>
+              <div class="col-4 p-0 text-right c-name date-font-size"><i class="far fa-calendar-alt"></i>
+                &nbsp;{{item.timePeriod.from.month.substring(0,3)+"/"+item.timePeriod.from.year}} -
+                {{item.timePeriod.to.month.substring(0,3)+"/"+item.timePeriod.to.year}}</div>
+              <div class="col-8 p-0  c-name">{{item.companyName}}</div>
+              <div class="col-4 p-0 text-right c-name date-font-size">{{item.city}},{{item.country}}</div>
               <span class="span-text" innerHTML="{{item.description}}"></span>
             </div>
           </div>
@@ -27,17 +28,18 @@
           <div class="title-box font-color border-color " *ngIf="resumeService.resumeComponents.education.length >0">
             Education</div>
           <div class="professional-box " *ngFor="let item of resumeService.resumeComponents.education">
-            <label>{{item.feildOfStudy}}</label>
+            <!-- <label>{{item.feildOfStudy}}</label> -->
 
 
-            <div class="p-0 col-12 tm-tm-row">
+            <div class="p-0 col-12 tm-row">
+              <div class="col-8 p-0  "> <label>{{item.feildOfStudy}}</label></div>
+              <div class="col-4 p-0 text-right c-name date-font-size"><i class="far fa-calendar-alt"></i>
+                &nbsp;{{item.timePeriod.from.month.substring(0,3)+"/"+item.timePeriod.from.year}} -
+                {{item.timePeriod.to.month.substring(0,3)+"/"+item.timePeriod.to.year}}</div>
 
-              <div class="col-6 p-0  c-name">{{item.institutionName}}</div>
-              <div class="col-6 p-0 text-right"><span>{{item.city}}, &nbsp;</span><span>{{item.country}}</span></div>
-              <span class="span-text"><i
-                  class="far fa-calendar-alt"></i>&nbsp;{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
-                {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</span><br>
-              <span class="span-text">{{item.description}}</span>
+              <div class="col-8 p-0  c-name">{{item.institutionName}}</div>
+              <div class="col-4 p-0 text-right c-name date-font-size">{{item.city}},{{item.country}}</div>
+              <span class="span-text" innerHTML="{{item.description}}"></span>
 
             </div>
           </div>
@@ -49,18 +51,20 @@
             Certificates</div>
           <div class="professional-box componentSection"
             *ngFor="let item of resumeService.resumeComponents.certificates">
-            <label>{{item.certificateName}}</label>
+            <!-- <label>{{item.certificateName}}</label> -->
 
 
-            <div class="p-0 col-12 tm-tm-row">
+            <div class="p-0 col-12 tm-row">
+              <div class="col-8 p-0  "> <label>{{item.certificateName}}</label></div>
+              <div class="col-4"><i class="far fa-calendar-alt"></i> &nbsp;
+                {{item.dateOfCerticate.month+"/"+item.dateOfCerticate.year}}</div>
+              
+              
+              <div class="col-12 p-0 ">{{item.certicateCode}}</div>
+              <span class="span-text" innerHtml="{{item.description}}"></span>
 
-              <div class="col-6 p-0  c-name" *ngIf="item.url">Certification URL </div>
-              <div class="col-6 p-0 text-right" *ngIf="item.url">{{item.url}}</div>
-              <div class="col-6 p-0  c-name">Certification Code</div>
-              <div class="col-6 p-0 text-right">{{item.certicateCode}}</div>
-              <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;
-                {{item.dateOfCerticate.month+"/"+item.dateOfCerticate.year}}</span><br>
-              <span class="span-text">{{item.description}}</span>
+
+              
             </div>
           </div>
 
@@ -73,17 +77,17 @@
             <label>{{item.name}}</label>
 
 
-            <div class="p-0 col-12 tm-tm-row">
+            <div class="p-0 col-12 tm-row">
 
-              <div class="col-8 p-0  c-name">URL to award</div>
-              <div class="col-4 p-0 text-right">{{item.url}}</div>
-              <div class="col-8 p-0  c-name">Issuer</div>
+              <!-- <div class="col-8 p-0  c-name">URL to award</div> -->
+              <div class="col-8 p-0 ">{{item.url}}</div>
+              <!-- <div class="col-8 p-0  c-name">Issuer</div> -->
               <div class="col-4 p-0 text-right">{{item.issuer}}</div>
               <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;{{item.month+"/"+item.year}}</span><br>
 
 
 
-              <span class="span-text">{{item.description}}</span>
+              <span class="span-text" innerHtml="{{item.description}}"></span>
 
 
 
@@ -99,7 +103,7 @@
           <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.achivements">
             <label>{{item.name}}</label>
             <div class="p-0 col-12 tm-row">
-              <span class="span-text">{{item.description}}</span>
+              <span class="span-text" innerHtml="{{item.description}}"></span>
             </div>
           </div>
         </div>
@@ -112,9 +116,10 @@
               <div class="col-8 p-0"><label>{{item.title}}</label></div>
               <div class="col-4 p-0 text-right">{{item.publisher}}</div>
               <div class="col-8 p-0  c-name">{{item.url}}</div>
-              <!-- <div class="col-4 p-0 text-right">{{item.date.month+'-'+item.date.year}}</div> -->
+              <div class="col-4 p-0 text-right"><i class="far fa-calendar-alt"></i>
+                &nbsp;{{item.publicationDate.month.substring(0,3)+"/"+item.publicationDate.year}}</div>
               <br>
-              <span class="span-text">{{item.description}}</span>
+              <span class="span-text" innerHtml="{{item.description}}"></span>
             </div>
           </div>
         </div>
@@ -188,16 +193,12 @@
           <div class="title-box title-color border-color">TECHNICAL SKILLS</div>
           <ul class="technical-skills">
             <li *ngFor="let item of resumeService.resumeComponents.skills">
-
               <span>{{item.skillCategoryName}}</span>
               <span class="skill-sub-title">{{item.skillCategoryName}}</span>
               <span class="key-skills-box bg-color" *ngFor="let skill of item.skillNames">
                 {{skill.skillName}}
               </span>
-
             </li>
-
-
           </ul>
         </div>
       </div>
@@ -209,9 +210,8 @@
   <div class="main-page secondPageEes">
     <div class="tm-row">
       <div class="col-12">
+
       </div>
     </div>
   </div>
-
-
 </div>
