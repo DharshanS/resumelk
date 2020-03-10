@@ -133,7 +133,7 @@
             <div class="p-0 col-12 tm-row">
               <div class="col-12 p-0 ">{{item.title}}</div>
               <div class="col-12 p-0  c-name">{{item.company}}</div>
-              <div class="col-12 p-0  c-name">{{item.mobile}}</div>
+              <div class="col-12 p-0  c-name">{{item.contact1}}</div>
               <div class="col-12 p-0  c-name">{{item.email}}</div>
               <div class="col-12 p-0  c-name">{{item.description}}</div>
             </div>
@@ -185,7 +185,7 @@
           <div class="title-box title-color border-color">Strengths</div>
 
           <span class="key-skills-box bg-color"
-            *ngFor="let item of resumeService.resumeComponents.skills">{{item.category}}</span>
+            *ngFor="let item of resumeService.resumeComponents.strengths">{{item}}</span>
 
 
         </div>
