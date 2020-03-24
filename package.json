@@ -39,7 +39,7 @@
     "jquery": "^3.4.1",
     "ng-select": "^1.0.2",
     "ngx-bootstrap": "^5.3.2",
-    "ngx-image-cropper": "^3.1.2",
+    "ngx-image-cropper": "^3.1.3",
     "ngx-scroll-event": "^1.0.8",
     "rxjs": "~6.4.0",
     "s3-deploy": "^1.4.0",

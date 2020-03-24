@@ -58,13 +58,13 @@
               <div class="col-8 p-0  "> <label>{{item.certificateName}}</label></div>
               <div class="col-4"><i class="far fa-calendar-alt"></i> &nbsp;
                 {{item.dateOfCerticate.month+"/"+item.dateOfCerticate.year}}</div>
-              
-              
+
+
               <div class="col-12 p-0 ">{{item.certicateCode}}</div>
               <span class="span-text" innerHtml="{{item.description}}"></span>
 
 
-              
+
             </div>
           </div>
 
@@ -181,23 +181,20 @@
           <p style="text-align: justify;" innerHtml="{{resumeService.resumeComponents.personal.description}}">
           </p>
         </div>
-        <div class="col-12">
+        <!-- <div class="col-12">
           <div class="title-box title-color border-color">Strengths</div>
 
-          <span class="key-skills-box bg-color"
-            *ngFor="let item of resumeService.resumeComponents.strengths">{{item}}</span>
-
-
-        </div>
+          <span class="key-skills-box bg-color"  *ngFor="let item of resumeService.resumeComponents.skills">{{item.category}}</span>
+        </div> -->
         <div class="col-12">
           <div class="title-box title-color border-color">TECHNICAL SKILLS</div>
           <ul class="technical-skills">
             <li *ngFor="let item of resumeService.resumeComponents.skills">
               <span>{{item.skillCategoryName}}</span>
-              <span class="skill-sub-title">{{item.skillCategoryName}}</span>
-              <span class="key-skills-box bg-color" *ngFor="let skill of item.skillNames">
+              <span class="skill-sub-title" *ngIf="item.length>0">{{item.skillCategoryName}}</span>
+              <!-- <span class="key-skills-box bg-color" *ngFor="let skill of item.skillNames">
                 {{skill.skillName}}
-              </span>
+              </span> -->
             </li>
           </ul>
         </div>
@@ -206,12 +203,26 @@
   </div>
 
 
-  <!-- Page 2 -->
-  <div class="main-page secondPageEes">
+
+  <!-- <div class="main-page secondPageEes">
     <div class="tm-row">
       <div class="col-12">
 
       </div>
     </div>
+  </div> -->
+
+
+
+  <div *ngFor="let item of componentList">
+
+    <resume-page [data]=item></resume-page>
+
   </div>
+  <!-- <ng-template resumeDirective></ng-template> -->
+
+
+
+
+
 </div>

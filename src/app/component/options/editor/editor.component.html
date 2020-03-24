@@ -50,7 +50,7 @@
       </div>
       <div class="right-sec">
         <div class="col-12">
-          <button (click)="updateResumeTemplate()">Update</button>
+
           <app-personal [flag]="sections.moreSections[0].flag" *ngIf="sections.moreSections[0].flag"></app-personal>
           <app-experience [flag]="sections.moreSections[1].flag" *ngIf="sections.moreSections[1].flag"></app-experience>
           <app-education [flag]="sections.moreSections[2].flag" *ngIf="sections.moreSections[2].flag"></app-education>

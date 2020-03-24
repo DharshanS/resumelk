@@ -51,7 +51,7 @@ export class ResumeService {
       "id": 4,
 
     },
-    
+
     {
       "name": "galileo-galilei",
       "id": 5
@@ -106,7 +106,7 @@ export class ResumeService {
     }
 
   ]
-  A4_SIZE = 29.7;
+  A4_SIZE = 25.7;
   A4_SIZE_CM = 0.02645833;
 
 
@@ -150,7 +150,7 @@ export class ResumeService {
     this.resumeObject.userName = "Dharshan";
     this.resumeObject.resumeId = '5e4be10d2ab79c00013c086f'
     this.http.put(this.apiUrl, this.resumeObject, { withCredentials: true }).subscribe(data => {
-      this.loadResumeComponentsJson();
+      //   this.loadResumeComponentsJson();
     });
   }
 

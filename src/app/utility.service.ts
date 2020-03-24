@@ -16,9 +16,10 @@ export class UtilityService {
     for (let i = 0; i < arraylist.length; i++) {
       calculateSectionSize = calculateSectionSize + (arraylist[i].offsetHeight * this.resumeService.A4_SIZE_CM);
       console.log(calculateSectionSize);
-      _pageFlag = this.isPageSizeMoreThanOnePage(calculateSectionSize, element, i, pageClass);
+      _pageFlag = _pageFlag != true ? this.isPageSizeMoreThanOnePage(calculateSectionSize, element, i, pageClass, _pageFlag) : true;
       if (_pageFlag) {
         calculateSectionSize = 0;
+        this.moveParentElementAsChildElement(element, arraylist[i], pageClass);
       }
     }
 
@@ -26,14 +27,12 @@ export class UtilityService {
     return _pageFlag;
   }
 
-  private isPageSizeMoreThanOnePage(componentSectionTotalHight: number, element: any, i: number, pageClass: string) {
-    let _pageFlag = false;
+  private isPageSizeMoreThanOnePage(componentSectionTotalHight: number, element: any, i: number, pageClass: string, _pageFlag: boolean) {
     let a4Size = this.resumeService.A4_SIZE;
     console.log("Section : " + componentSectionTotalHight + ":" + a4Size)
     if (a4Size < componentSectionTotalHight) {
       let sectionElement = element.nativeElement.querySelectorAll('.componentSection')[i];
       _pageFlag = true;
-      this.moveParentElementAsChildElement(element, sectionElement, pageClass);
     }
     console.log("Page " + _pageFlag)
     return _pageFlag;
@@ -52,6 +51,43 @@ export class UtilityService {
       return true;
     }
     return false;
+  }
+
+
+  pageElementsHTML(element: any) {
+    let arraylist = element.nativeElement.querySelectorAll('.componentSection');
+    let calculateSectionSize = 0;
+    let nodeSet = [];
+    let isFirstPage = true;
+    var node = document.createElement("div");
+
+    for (let i = 0; i < arraylist.length; i++) {
+      calculateSectionSize = calculateSectionSize + (arraylist[i].offsetHeight * this.resumeService.A4_SIZE_CM);
+
+      calculateSectionSize = calculateSectionSize + (arraylist[i].offsetHeight * this.resumeService.A4_SIZE_CM);
+      if (this.resumeService.A4_SIZE < calculateSectionSize && !isFirstPage) {
+        if (this.resumeService.A4_SIZE < calculateSectionSize) {
+          node.appendChild(arraylist[i]);
+        } else {
+          calculateSectionSize = 0;
+          nodeSet.push(node);
+          node = document.createElement("div");
+          node.appendChild(arraylist[i]);
+        }
+
+      } else {
+        if (this.resumeService.A4_SIZE < calculateSectionSize) {
+          isFirstPage = false;
+        }
+
+      }
+
+
+
+
+
+    }
+    return nodeSet;
   }
 
 }

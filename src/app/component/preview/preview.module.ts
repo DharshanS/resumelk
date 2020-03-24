@@ -25,6 +25,9 @@ import { GalileoGalileiComponent } from './templates/galileo-galilei/galileo-gal
 import { LeonardoDaVinciComponent } from './templates/leonardo-da-vinci/leonardo-da-vinci.component';
 import { AlexanderGrahamBell } from './templates/alexander-graham-bell/alexander-graham-bell.component';
 import { DarwinComponent } from './templates/darwin/darwin.component';
+import { ResumePage } from './templates/resume-page/resume-page.component';
+import { AddCpmponentService } from './template.service';
+import { ResumeDirective } from './templates/page.directive';
 
 @NgModule({
   declarations: [
@@ -46,12 +49,16 @@ import { DarwinComponent } from './templates/darwin/darwin.component';
     CharlesDarwinComponent,
     RoyalBlueComponent,
     TrendyDesignComponent,
-    UniformBrownComponent
+    UniformBrownComponent,
+    ResumePage,
+    ResumeDirective
+
   ],
   imports: [
     PreviewRoutingModule,
     CommonModule
   ],
-  providers: [EditorService]
+  entryComponents: [ResumePage],
+  providers: [EditorService, AddCpmponentService]
 })
 export class PreviewModule { }

@@ -43,11 +43,11 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import {
   MatInputModule, MatButtonModule, MatSelectModule, MatIconModule
-  , MatNativeDateModule,MatDatepickerModule,MatFormFieldModule
+  , MatNativeDateModule, MatDatepickerModule, MatFormFieldModule
 } from '@angular/material';
 import { DynamicComponentsService } from './dynamic-components.service';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 @NgModule({
   declarations: [
@@ -83,14 +83,14 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     OptionRoutingModule,
     MatAutocompleteModule,
     FormsModule,
-     ReactiveFormsModule,
+    ReactiveFormsModule,
     MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule,
     MatNativeDateModule,
     MatSelectModule,
     MatButtonModule,
-
+    ImageCropperModule,
     NgSelectModule,
     CKEditorModule,
 
@@ -98,7 +98,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
   ],
 
   //exports:[MatDatepickerModule],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [CustomComponent, TextComponent],
   providers: [EditorService, DynamicComponentsService, MatDatepickerModule],
 

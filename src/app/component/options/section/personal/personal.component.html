@@ -7,12 +7,25 @@
       <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Personal Information</p>
     </div>
     <div class="editor__photo">
-      <div class="editor__photo-img" style="background-image: url('assets/images/headshot.jpg');"></div>
-      <div class="editor__photo-check checkbox">
-        <input type="checkbox" id="use-profile-photo">
-        <label for="use-profile-photo">Use profile photo</label>
+
+      <!-- <div class="editor__photo-img" style="background-image: url('assets/images/headshot.jpg');"></div> -->
+      <div class="editor__photo-img">
+        <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
+          [containWithinAspectRatio]="containWithinAspectRatio" [aspectRatio]="4 / 3" [resizeToWidth]="256"
+          [cropperMinWidth]="128" [onlyScaleDown]="true" [roundCropper]="false" [canvasRotation]="canvasRotation"
+          [transform]="transform" [alignImage]="'left'" [style.display]="showCropper ? null : 'none'" format="png"
+          (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady($event)"
+          (loadImageFailed)="loadImageFailed()"></image-cropper>
       </div>
-      <input type="file" class="editor__photo-input" id="editor-photo">
+
+      <div class="editor__photo-check checkbox">
+        <input type="checkbox" id="use-profile-photo" [(ngModel)]="userProfileUpload"
+          (change)="userProfileImageUpload()">
+        <label for="use-profile-photo">Use profile photo</label>
+        <button (click)="zoomOut()">Zoom -</button> <button (click)="zoomIn()">Zoom +</button>
+      </div>
+      <!-- <input type="file" class="editor__photo-input" id="editor-photo"> -->
+      <input type="file" (change)="fileChangeEvent($event)" class="editor__photo-input" id="editor-photo" />
       <label for="editor-photo" class="editor__photo-label">
         <span class="btn btn--auto btn--primary-alt btn--no-shadow btn--full btn--accent">
           <p class="btn__label paragraph--med"><i class="fas fa-upload btn__icon"></i>
@@ -71,8 +84,8 @@
 
 
             <mat-datepicker #Start></mat-datepicker>
-            <input type="text" [(ngModel)]="resumeService.resumeComponents.personal.dateOfBirth" placeholder="From" readonly
-              [matDatepicker]="Start" (click)="Start.open()" required>
+            <input type="text" [(ngModel)]="resumeService.resumeComponents.personal.dateOfBirth" placeholder="From"
+              readonly [matDatepicker]="Start" (click)="Start.open()" required>
 
             <!-- <label style="left: 13px;">From</label> -->
 
@@ -146,9 +159,17 @@
           </div>
         </div>
         <div class="row">
+
           <div class="col-12">
-            <label>Profile Description</label>
-            <ckeditor [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic','link','bulletedList','numberedList','blockQuote','table','undo','redo'] }" [editor]="Editor" [(ngModel)]="resumeService.resumeComponents.personal.description">
+            <div class="row">
+              <label class="col-5">Profile Description</label> <label *ngIf=isLengthIsAbove role="alert"
+                class="col-7 alert alert-success"> This
+                description is lenthy better you choose another template</label>
+            </div>
+            <ckeditor
+              [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic','link','bulletedList','numberedList','blockQuote','table','undo','redo'] }"
+              [editor]="Editor" [(ngModel)]="resumeService.resumeComponents.personal.description"
+              (change)="onChange($event)">
             </ckeditor>
           </div>
         </div>

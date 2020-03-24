@@ -62,6 +62,7 @@ export class EditorComponent implements OnInit {
 
   }
 
+
   ngOnInit() {
     this.date = new FormControl(new Date());
     this.serializedDate = new FormControl(new Date().toISOString());
