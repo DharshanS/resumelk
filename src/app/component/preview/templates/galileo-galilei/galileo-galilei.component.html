@@ -11,30 +11,20 @@
 
                 <div class="contact-box">
                     <ul class="user-details">
-                        <li><span><i class="fa fa-phone"></i>&nbsp;&nbsp;+94758627689</span></li>
-                        <li><span><i class="fa fa-envelope"></i>&nbsp;&nbsp;lojan@gmail.com</span></li>
-                        <li><span><i class="fa fa-map-marker"></i>&nbsp;&nbsp;29 Deal Pl, Colombo,SL</span></li>
+                        <li><span><i class="fa fa-phone"></i>&nbsp;&nbsp;{{resumeService.resumeComponents.personal.phoneNumber}}</span></li>
+                        <li><span><i class="fa fa-envelope"></i>&nbsp;&nbsp;{{resumeService.resumeComponents.personal.email}}</span></li>
+                        <li><span><i class="fa fa-map-marker"></i>&nbsp;&nbsp;{{resumeService.resumeComponents.personal.address.street}},
+                            {{resumeService.resumeComponents.personal.address.city}}
+                            {{resumeService.resumeComponents.personal.address.country}}</span></li>
 
                     </ul>
 
                 </div>
-                <div class="col-12 prsonal-box">
-                    <div class="title-box font-color color-2">Personal Details</div>
-                    <ul class="user-details-social">
-                        <li><span><i class="fa fa-phone"></i>&nbsp;&nbsp;+94758627689</span></li>
-                        <li><span><i class="fa fa-envelope"></i>&nbsp;&nbsp;lojan@gmail.com</span></li>
-                        <li><span><i class="fa fa-map-marker"></i>&nbsp;&nbsp;29 Deal Pl, Colombo,SL</span></li>
-
-                    </ul>
-                </div>
+        
                 <div class="col-12 prsonal-box">
 
                     <div class="title-box font-color color-2">Summery</div>
-                    <p style="text-align: justify;" innerHTML="{{resumeService.resumeComponents.personal.description}}">
-                      
-                        
-                        
-                    </p>
+                    <p style="text-align: justify;" innerHTML="{{resumeService.resumeComponents.personal.description}}"> </p>
                 </div>
 
                 <div class="col-12 prsonal-box">
@@ -52,7 +42,7 @@
 
             </div>
             <div class="col-8 margin-top">
-                <div class="row name-tag color-1">
+                <div class="row-ca name-tag color-1">
                     <div class="col-12">
                         <label for="" class="color-2">{{resumeComponents.personal.firstName}} {{resumeComponents.personal.lastName}}</label>
                         <span>

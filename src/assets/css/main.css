@@ -1109,7 +1109,7 @@ li, .contact input,
         width: calc(33.333% - 30px); } }
     @media screen and (min-width: 1400px) {
       .select-template__grid-item {
-        width: calc(20% - 30px); } }
+        width: calc(25% - 30px); } }
   .select-template__item {
     height: 37.5rem;
     position: relative;
