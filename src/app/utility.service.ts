@@ -63,30 +63,18 @@ export class UtilityService {
 
     for (let i = 0; i < arraylist.length; i++) {
       calculateSectionSize = calculateSectionSize + (arraylist[i].offsetHeight * this.resumeService.A4_SIZE_CM);
-
-      calculateSectionSize = calculateSectionSize + (arraylist[i].offsetHeight * this.resumeService.A4_SIZE_CM);
-      if (this.resumeService.A4_SIZE < calculateSectionSize && !isFirstPage) {
-        if (this.resumeService.A4_SIZE < calculateSectionSize) {
-          node.appendChild(arraylist[i]);
-        } else {
-          calculateSectionSize = 0;
-          nodeSet.push(node);
-          node = document.createElement("div");
-          node.appendChild(arraylist[i]);
-        }
-
-      } else {
-        if (this.resumeService.A4_SIZE < calculateSectionSize) {
-          isFirstPage = false;
-        }
-
+      if (!isFirstPage) {
+        node.appendChild(arraylist[i]);
       }
-
-
-
-
+      if (calculateSectionSize > this.resumeService.A4_SIZE) {
+        isFirstPage = false;
+        calculateSectionSize = 0;
+      }
+      console.log(calculateSectionSize)
 
     }
+
+    //  nodeSet.push(node);
     return nodeSet;
   }
 

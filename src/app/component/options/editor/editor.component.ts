@@ -5,16 +5,12 @@ import {
   ViewContainerRef,
   ComponentFactoryResolver,
   ElementRef,
-  AfterViewInit,
-  AfterContentChecked,
   Inject,
   HostListener
 } from "@angular/core";
 
 import { DOCUMENT } from '@angular/common';
-import * as $ from "jquery";
 import { FormControl } from "@angular/forms";
-import { ScrollEvent } from "ngx-scroll-event";
 import { ResumeReq } from "../../../resumeReq";
 import { EditorService } from "../editor.service";
 import { DynamicComponentsService } from "../dynamic-components.service";
@@ -36,7 +32,7 @@ export class EditorComponent implements OnInit {
   serializedDate;
   top;
   displayScrollButton = "none";
-
+  flag = true;
   personal = new Personal();
   componentRef: any;
   componentRefList: any[] = [];
@@ -61,6 +57,8 @@ export class EditorComponent implements OnInit {
     });
 
   }
+
+
 
 
   ngOnInit() {

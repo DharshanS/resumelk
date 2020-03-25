@@ -106,7 +106,7 @@ export class ResumeService {
     }
 
   ]
-  A4_SIZE = 25.7;
+  A4_SIZE = 20.7;
   A4_SIZE_CM = 0.02645833;
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterContentChecked } from '@angular/core';
+import { Component, OnInit, Input, AfterContentChecked, HostListener } from '@angular/core';
 import { Acheivment } from './Achivment';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ResumeService } from "../../../../resume.service";
@@ -21,6 +21,9 @@ export class AchievementsComponent implements OnInit, AfterContentChecked {
 
   }
 
+  @HostListener('document:keypress') onKeydownHandler() {
+    this.resumeService.updateResume();
+  }
   addAchivements() {
     this.resumeService.resumeComponents.achivements.push(new Acheivment())
   }

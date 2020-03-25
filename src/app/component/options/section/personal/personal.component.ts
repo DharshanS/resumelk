@@ -1,48 +1,50 @@
-import { Component, OnInit, Input, HostListener, DoCheck, AfterContentChecked } from "@angular/core";
+import { Component, OnInit, Input, HostListener } from "@angular/core";
 import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { ResumeService } from "../../../../resume.service";
 import { Router } from "@angular/router";
 import { Personal } from './Personal';
 import { ImageCroppedEvent, ImageTransform, Dimensions } from 'ngx-image-cropper';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
-import { UtilityService } from 'src/app/utility.service';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: "app-personal",
   templateUrl: "./personal.component.html",
   styleUrls: ["./personal.component.css"],
-  host: {
-    '(document:keyup)': 'onKeyUp($event)'
-  }
-
 })
 export class PersonalComponent implements OnInit {
 
 
-  onKeyUp() {
+  // onKeyUp() {
+  //   this.resumeService.updateResume();
+  // }
+
+  @HostListener('document:keypress') onKeydownHandler() {
     this.resumeService.updateResume();
   }
 
   public Editor = ClassicEditor;
   @Input() flag: boolean;
-  @Input() personal: Personal;
   isLengthIsAbove = false;
   scale = 1;
+
   transform: ImageTransform = {};
   showCropper = false;
   imageChangedEvent: any = '';
   croppedImage: any = '';
+  canvasRotation = 0;
   userProfileUpload = false;
+  containWithinAspectRatio = 0;
   // @ViewChild(ImageCropperComponent) imageCropper: ImageCropperComponent;
 
   constructor(
     public resumeService: ResumeService,
     private router: Router,
-
+    private http: HttpClient
   ) { }
 
 
   ngOnInit() {
-    if (this.flag && this.resumeService.resumeComponents.personal == null) {
+    if (this.resumeService.resumeComponents.personal == null) {
       this.createPerson();
     }
   }
@@ -83,6 +85,12 @@ export class PersonalComponent implements OnInit {
   }
 
   userProfileImageUpload() {
+
+    const formData: FormData = new FormData();
+    formData.append('file', this.croppedImage);
+    this.http.post('https://resume.lk/api/v1/images/upload', formData, { withCredentials: true }).subscribe(data => {
+      console.log(data)
+    });
     console.log("userProfileUpload" + this.userProfileUpload)
   }
 

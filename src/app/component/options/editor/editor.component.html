@@ -50,13 +50,14 @@
       </div>
       <div class="right-sec">
         <div class="col-12">
-
-          <app-personal [flag]="sections.moreSections[0].flag" *ngIf="sections.moreSections[0].flag"></app-personal>
+          <app-personal></app-personal>
           <app-experience [flag]="sections.moreSections[1].flag" *ngIf="sections.moreSections[1].flag"></app-experience>
           <app-education [flag]="sections.moreSections[2].flag" *ngIf="sections.moreSections[2].flag"></app-education>
           <app-skill [flag]="sections.moreSections[3].flag" *ngIf="sections.moreSections[3].flag"></app-skill>
+
           <app-certificate [flag]="sections.moreSections[4].flag" *ngIf="sections.moreSections[4].flag">
           </app-certificate>
+
           <app-award [flag]="sections.moreSections[5].flag" *ngIf="sections.moreSections[5].flag"></app-award>
           <app-achievements [flag]="sections.moreSections[7].flag"></app-achievements>
           <app-referances [flag]="sections.moreSections[6].flag"></app-referances>
