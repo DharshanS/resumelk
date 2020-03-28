@@ -65,8 +65,14 @@ export class UtilityService {
       calculateSectionSize = calculateSectionSize + (arraylist[i].offsetHeight * this.resumeService.A4_SIZE_CM);
       if (!isFirstPage) {
         node.appendChild(arraylist[i]);
+           if (calculateSectionSize > this.resumeService.A4_SIZE){
+                nodeSet.push(node)
+             node = document.createElement("div");
+          calculateSectionSize=0;
+           }
+
       }
-      if (calculateSectionSize > this.resumeService.A4_SIZE) {
+      if (calculateSectionSize > this.resumeService.A4_SIZE && isFirstPage) {
         isFirstPage = false;
         calculateSectionSize = 0;
       }
@@ -74,7 +80,7 @@ export class UtilityService {
 
     }
 
-    //  nodeSet.push(node);
+      nodeSet.push(node);
     return nodeSet;
   }
 

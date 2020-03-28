@@ -4,12 +4,15 @@
 
 
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of, from } from 'rxjs';
-
+const headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' });
 
 export class ResumeService {
   apiUrl = "http://44.229.50.57:8081/resumeservice/api/v1/resume";
+  //http://44.229.50.57:8081/resumeservice/api/v1/resume
+  //https://resume.lk/resumeservice/api/v1/resume
+
   resumeObject: any;
   userCode = 8;
   constructor(private http: HttpClient) {
@@ -163,5 +166,13 @@ export class ResumeService {
       return data[0]["resumeJson"];
     })
 
+  }
+
+  profileImagePost() {
+    let url = 'http://44.229.50.57:8081/resumeservice/api/v1/resume';
+    this.http.put(url, this.resumeObject, { withCredentials: true, headers: headers }).subscribe(data => {
+      console.log("response");
+      this.loadResumeComponentsJson();
+    });
   }
 }

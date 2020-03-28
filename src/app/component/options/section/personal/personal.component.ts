@@ -88,10 +88,11 @@ export class PersonalComponent implements OnInit {
 
     const formData: FormData = new FormData();
     formData.append('file', this.croppedImage);
-    this.http.post('https://resume.lk/api/v1/images/upload', formData, { withCredentials: true }).subscribe(data => {
+    //   formData.append('file', 'welcome');
+    this.http.post('http://44.229.50.57:8081/resumeservice/api/v1/images/upload', formData, { withCredentials: true }).subscribe(data => {
       console.log(data)
     });
-    console.log("userProfileUpload" + this.userProfileUpload)
+    //  console.log("userProfileUpload" + this.userProfileUpload)
   }
 
   public onChange({ editor }: ChangeEvent) {
