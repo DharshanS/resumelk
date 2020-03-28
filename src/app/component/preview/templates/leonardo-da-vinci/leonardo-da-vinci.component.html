@@ -1,231 +1,322 @@
- <!-- Page 1 -->
- <div #leonardo *ngIf="resumeService.resumeComponents!=null"></div>
-    <div class="main-page">
-        <div class="row-ca row-ca-hight componentSection">
-            <div class="col-12" *ngIf="resumeService.resumeComponents.personal!=null">
-                <div class="row-ca name-tag color-1 ">
+     <!-- Page 1 -->
+     <div class="main-page">
+        <div class="row row-hight">
+            <div class="col-12">
+                <div class="row name-tag color-1 ">
                     <div class="name-sub-box">
                         <div class="user-img">
                 
                             <img src="https://www.cricbuzz.com/stats/img/faceImages/508.jpg" alt="">
                         </div>
                         <div class="name-main">
-                            <label for="" class="color-3">{{resumeService.resumeComponents.personal.firstName}}</label>
+                            <label for="" class="color-3">Jonathan Simth</label>
                             <span>
-                                {{resumeService.resumeComponents.workExperiance[0].jobTitle}}
+                                web Developer
                         
                             </span>
                             <div class="contact-details-box">
-                                <span><i class="fa fa-phone color-2"></i>&nbsp;&nbsp;{{resumeService.resumeComponents.personal.phoneNumber}}</span>
-                                <span><i class="fa fa-envelope color-2"></i>&nbsp;&nbsp;{{resumeService.resumeComponents.personal.email}}</span>
-                                <span><i class="fa fa-map-marker color-2"></i>&nbsp;&nbsp;{{resumeService.resumeComponents.personal.address.street}},
-                                    {{resumeService.resumeComponents.personal.address.city}}
-                                    {{resumeService.resumeComponents.personal.address.country}}</span>
-            
-                            </div>
+                                <span><i class="fa fa-phone color-2"></i>&nbsp;&nbsp;+94758627689</span>
+                                <span><i class="fa fa-envelope color-2"></i>&nbsp;&nbsp;lojan@gmail.com</span>
+                                <span><i class="fa fa-map-marker color-2"></i>&nbsp;&nbsp;29 Deal Pl, Colombo,SL</span>
+              
+                               </div>
                         </div>
-                    
+                     
                     </div>
-                
+                   
                     
                 </div>
             </div>
+        <div class="col-8 margin-top">
+           
+            <div class="col-12 col-box">
+                <div class="title-box font-color color-3"><i class="fa fa-phone name-icon color-2"></i>Experience</div>
+                <div class="professional-box">
+                    <label>Marketing Campaign Management</label>
 
-                <div class="col-8 margin-top">
-                
-                    <div class="col-12 col-box componentSection">
-                        <div class="title-box font-color color-3" *ngIf="resumeComponents.workExperiance.length > 0"><i class="fa fa-phone name-icon color-2"></i>Experience</div>
-                        <div class="professional-box" *ngFor="let item of resumeComponents.workExperiance">
-                            <label>{{item.jobTitle}}</label>
 
+                    <div class="p-0 col-12 row">
 
-                            <div class="p-0 col-12 row-ca">
-
-                                <div class="col-6 p-0  c-name">{{item.companyName}}</div>
-                                <div class="col-6 p-0 text-right">{{item.city}},{{item.city}}</div>
-                                <span class="span-text">
-                                    <i class="far fa-calendar-alt"></i> 
-                                    &nbsp;{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
-                                    {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</span><br>
-
-                                    <span class="span-text" innerHTML="item.description">
+                        <div class="col-6 p-0  c-name">Company Name</div>
+                        <div class="col-6 p-0 text-right">Menia Park,SL</div>
+                        <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                            14/12/2019</span><br>
 
 
 
-                            </div>
-                        </div>
+                        <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                            across
+                            North America and has revenues of $ 10+ mn. per year</span>
+
 
 
 
 
                     </div>
-
-                    <div class="col-12 col-box componentSection" *ngIf="resumeComponents.education.length >0">
-                        <div class="title-box font-color color-3"><i class="fas fa-book-open color-2"></i>EDUCATION</div>
-                        <div class="professional-box" *ngFor="let item of resumeComponents.education">
-                            <label>{{item.feildOfStudy}}</label>
-
-                            <div class="p-0 col-12 row-ca">
-
-                                <div class="col-6 p-0  c-name">{{item.institutionName}}</div>
-                                <div class="col-6 p-0 text-right"><span>{{item.city}},
-                                &nbsp;</span><span>{{item.country}}</span></div>
-                                <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
-                                {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</span>
-                                <br>
-
-                                <span class="span-text" innerHTML="item.description"></span>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-12 col-box componentSection" *ngIf="resumeComponents.certificates.length >0">
-                        <div class="title-box font-color color-3"><i class="fa fa-phone name-icon color-2"></i>CERTIFICATES</div>
-                        <div class="professional-box" *ngFor="let item of resumeComponents.certificates">
-                            <label>{{item.certificateName}}</label>
-
-                            <div class="p-0 col-12 row-ca">
-
-                                <div class="col-12 p-0  c-name">{{item.authority}}</div>
-                                <div class="col-6 p-0 ">{{item.certicateCode}}</div>
-                                <div class="col-6 p-0 text-right">
-                                    <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;{{item.dateOfCerticate.month+"/"+item.dateOfCerticate.year}}</span>
-                                </div>
-
-                                <span class="span-text" innerHTML="item.description"></span>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-12 col-box componentSection" *ngIf="resumeComponents.awards.length >0">
-                        <div class="title-box font-color color-3"><i class="fa fa-phone name-icon color-2"></i>Awards</div>
-                        <div class="professional-box" *ngFor="let item of resumeComponents.awards">
-                            <label>{{item.name}}</label>
-
-                            <div class="p-0 col-12 row-ca">
-
-                                <div class="col-6 p-0  c-name">{{item.url}}</div>
-                                <div class="col-6 p-0 text-right">{{item.issuer}}</div>
-                                <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;{{item.month+"/"+item.year}}</span>
-                                <br>
-
-                                <span class="span-text" innerHTML="item.description"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-box componentSection" *ngIf="resumeComponents.achivements.length >0">
-                        <div class="title-box font-color color-3"><i class="fa fa-phone name-icon color-2"></i>ACHIEVEMENTS</div>
-                        <div class="professional-box" *ngFor="let item of resumeComponents.achivements">
-                            <label>{{item.name}}</label>
-
-                            <div class="p-0 col-12 row-ca">
-                                <span class="span-text" innerHTML="item.description"></span>
-
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <!-- Reference -->
-
-                    <div class="col-12 col-box componentSection" *ngIf="resumeComponents.referances.length >0">
-                        <div class="title-box font-color bo-color">REFERENCE</div>
-
-                        <div class="professional-box"  *ngFor="let item of resumeComponents.referances">
-                            <label>{{item.personName}}</label>
-
-
-                            <div class="p-0 col-12 row-ca">
-
-                                <div class="col-12 p-0  c-name">{{item.title}} , {{item.company}}</div>
-                                <div class="col-12 p-0  c-name">{{item.mobile}} </div>
-                                <div class="col-12 p-0  c-name">{{item.email}} </div>
-                                <div class="col-12 p-0  c-name">
-                                    <p innerHTML="item.description"> 
-                                    
-                                    </p> 
-                            </div>
-                            </div>
-                        </div>
-
-                    
-
-
-
-                    </div>
-                    <div class="col-12 col-box componentSection" *ngIf="resumeComponents.publications.length >0">
-                        <div class="title-box font-color bo-color">Publications</div>
-                        <div class="professional-box" *ngFor="let item of resumeComponents.publications">
-                            
-
-
-                            <div class="p-0 col-12 row-ca">
-                                <div class="col-8 p-0"><label>{{item.title}}</label></div>
-                                <div class="col-4 p-0 text-right">{{item.publisher}}</div>
-                                <div class="col-8 p-0  c-name">{{item.url}}</div>
-                                <div class="col-4 p-0 text-right">04/2019 - 12/2019</div>
-                                <!-- <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;04/2019 - 12/2019</span><br> -->
-
-
-                                <br>
-                                <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
-                                    across
-                                    North America and has revenues of $ 10+ mn. per year</span>
-
-
-
-
-
-                            </div>
-                        </div>
-
-                    
-                        </div>
-
-
-                
                 </div>
-            
-                <div class="col-4 ">
-                    
-            
 
-                    <div class="col-12 prsonal-box">
-                    
-                        <div class="title-box font-color ">Summery</div>
-                        <p style="text-align: justify;" innerHTML="{{resumeService.resumeComponents.personal.description}}"> </p>
-                    
+                <div class="professional-box">
+                    <label>software engineer </label>
+
+
+                    <div class="p-0 col-12 row">
+
+                        <div class="col-6 p-0  c-name">Company Name</div>
+                        <div class="col-6 p-0 text-right">Menia Park,US</div>
+                        <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                            14/12/2019</span><br>
+
+
+
+                        <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                            across
+                            North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
                     </div>
-
-                    <div class="col-12 prsonal-box">
-                        <div class="title-box font-color color-2">SKILLS</div>
-                
-                        <div class="pl-1" *ngFor="let skills of resumeComponents.skills">
-                            <span class="skill-sub-title">{{skills.skillCategoryName}}</span>
-                            <span class="key-skills-box color-4" *ngFor="let skill of skills.skillNames">
-                                {{skill.skillName}}
-                            </span>
-                        </div>
-                    </div>
-            
-                    
-
                 </div>
+
+
+
+            </div>
+
+            <div class="col-12 col-box">
+                <div class="title-box font-color color-3"><i class="fa fa-phone name-icon color-2"></i>EDUCATION</div>
+                <div class="professional-box">
+                    <label>Aeronautics And Aviation Science</label>
+
+
+                    <div class="p-0 col-12 row">
+
+                        <div class="col-6 p-0  c-name">Company Name</div>
+                        <div class="col-6 p-0 text-right">Menia Park,SL</div>
+                        <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                            14/12/2019</span><br>
+
+
+
+                        <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                            across
+                            North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="professional-box">
+                    <label>Business Administration</label>
+
+
+                    <div class="p-0 col-12 row">
+
+                        <div class="col-6 p-0  c-name">Company Name</div>
+                        <div class="col-6 p-0 text-right">Menia Park,US</div>
+                        <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                            14/12/2019</span><br>
+
+
+
+                        <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                            across
+                            North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="col-12 col-box">
+                <div class="title-box font-color color-3"><i class="fa fa-phone name-icon color-2"></i>CERTIFICATES</div>
+                <div class="professional-box">
+                    <label>Certification For Project Managers</label>
+
+
+                    <div class="p-0 col-12 row">
+
+                        <div class="col-6 p-0  c-name">Company Name</div>
+                        <div class="col-6 p-0 text-right">Menia Park,SL</div>
+                        <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                            14/12/2019</span><br>
+
+
+
+                        <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                            across
+                            North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="professional-box">
+                    <label>Business Administration</label>
+
+
+                    <div class="p-0 col-12 row">
+
+                        <div class="col-6 p-0  c-name">Company Name</div>
+                        <div class="col-6 p-0 text-right">Menia Park,US</div>
+                        <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                            14/12/2019</span><br>
+
+
+
+                        <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                            across
+                            North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+           
+        </div>
+        
+            <div class="col-4 ">
+                
+           
+    
+                <div class="col-12 prsonal-box">
+                 
+                    <div class="title-box font-color ">Summery</div>
+                    <p style="text-align: justify;">Enterprising marketing professional skilled at marketing,
+                        communications, branding, campaign
+                        management, and campaign analysis. Over a career of 2+ years, gained exposure to and executed
+                        multiple marketing initiatives. Adept at launching marketing campaigns resulting in significant
+                        sales and user acquisition. Skilled at analysing & improving the performance of campaigns
+                        through
+                        data analysis and competitive benchmarking.
+                    </p>
+                </div>
+    
+                <div class="col-12 prsonal-box">
+                    <div class="title-box font-color ">KEY SKILLS</div>
+                    <span class="key-skills-box color-4">Marketing Campaigns</span>
+                    <span class="key-skills-box color-4">Campaign Analysis</span>
+                    <span class="key-skills-box color-4">Corporate Communications</span>
+                    <span class="key-skills-box color-4">User Growth</span>
+                    <span class="key-skills-box color-4">Key Metric Analysis</span>
+                </div>
+    
+                <div class="col-12 prsonal-box">
+                    <div class="title-box font-color color-2">ECHNICAL SKILLS</div>
+                    <span class="key-skills-box color-4">Marketing Campaigns</span>
+                    <span class="key-skills-box color-4">Campaign Analysis</span>
+                    <span class="key-skills-box color-4">Corporate Communications</span>
+                    <span class="key-skills-box color-4">User Growth</span>
+                    <span class="key-skills-box color-4">Key Metric Analysis</span>
+                </div>
+           
+                
+    
         </div>
     </div>
-
- <!-- Page 2 -->
- <div class="main-page secondPageEes">
-    <div class="tm-row">
-      <div class="col-12">
-
-      </div>
     </div>
-  </div>
-</div>
+
+     <!-- Page 2 -->
+     <div class="main-page">
+        <div class="row row-hight">
+            <div class="col-8 margin-top">
+                <div class="col-12 col-box">
+                    <div class="title-box font-color color-3"><i class="fa fa-phone name-icon color-2"></i>AWARDS</div>
+                    <div class="professional-box">
+                        <label>Awards Name</label>
+    
+    
+                        <div class="p-0 col-12 row">
+    
+                            <div class="col-6 p-0  c-name">Company Name</div>
+                            <div class="col-6 p-0 text-right">Menia Park,SL</div>
+                            <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;14/04/2019 -
+                                14/12/2019</span><br>
+    
+    
+    
+                            <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                across
+                                North America and has revenues of $ 10+ mn. per year</span>
+    
+    
+    
+    
+    
+                        </div>
+                    </div>
+    
+    
+    
+    
+                </div>
+           
+
+                <div class="col-12 col-box">
+                    <div class="title-box font-color color-3"><i class="fa fa-phone name-icon color-2"></i>ACHIEVEMENTS</div>
+                    <div class="professional-box">
+                        <label>ACHIEVEMENTS</label>
+    
+                        <div class="p-0 col-12 row">
+
+
+
+
+                            <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                across
+                                North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                        </div>
+                    </div>
+    
+                    <div class="professional-box">
+                        <label>ACHIEVEMENTS</label>
+    
+                        <div class="p-0 col-12 row">
+
+
+
+
+                            <span class="span-text">Alph Foods is the leading provider of restaurant reviews to users
+                                across
+                                North America and has revenues of $ 10+ mn. per year</span>
+
+
+
+
+
+                        </div>
+                    </div>
+    
+    
+                </div>
+
+
+            </div>
+            <div class="col-4 "></div>
+          
+        </div>
+        </div>
