@@ -12,17 +12,22 @@
       <div class="editor__photo-img">
         <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
           [containWithinAspectRatio]="containWithinAspectRatio" [aspectRatio]="4 / 3" [resizeToWidth]="256"
-          [cropperMinWidth]="128" [onlyScaleDown]="true" [roundCropper]="false" [canvasRotation]="canvasRotation"
-          [transform]="transform" [alignImage]="'left'" [style.display]="showCropper ? null : 'none'" format="png"
+          [cropperMinWidth]="128" [onlyScaleDown]="true" [roundCropper]="false"  [style.display]="showCropper ? null : 'none'" [canvasRotation]="canvasRotation"
+          [transform]="transform" [alignImage]="'left'"  format="png"
           (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady($event)"
           (loadImageFailed)="loadImageFailed()"></image-cropper>
       </div>
-
-      <div class="editor__photo-check checkbox">
+      <div class="zoom-btn" [style.display]="showCropper ? null : 'none'">
+          
+      <button (click)="zoomOut()"><i class="fas fa-search-minus"></i></button> <button (click)="zoomIn()"><i class="fas fa-search-plus"></i></button>
+      </div>
+      <div class="editor__photo-check checkbox m-2" [style.display]="showCropper ? null : 'none'">
         <input type="checkbox" id="use-profile-photo" [(ngModel)]="userProfileUpload"
           (change)="userProfileImageUpload()">
-        <label for="use-profile-photo">Use profile photo</label>
-        <button (click)="zoomOut()">Zoom -</button> <button (click)="zoomIn()">Zoom +</button>
+         
+          
+        <label for="use-profile-photo" class="use-profile-photo d-block">Use profile photo</label>
+       
       </div>
       <!-- <input type="file" class="editor__photo-input" id="editor-photo"> -->
       <input type="file" (change)="fileChangeEvent($event)" class="editor__photo-input" id="editor-photo" />

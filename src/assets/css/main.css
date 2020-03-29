@@ -1186,7 +1186,7 @@ li, .contact input,
   text-align: center; }
   @media screen and (min-width: 1400px) {
     .editor__photo {
-      padding: 0 3.75rem; } }
+      padding: 0 .75rem; } }
   .editor__photo-img {
     width: 100%;
     max-width: 12.5rem;
@@ -1197,7 +1197,7 @@ li, .contact input,
     margin: 0 auto;
     position: relative; }
     .editor__photo-img:after {
-      content: "";
+      /* content: ""; */
       display: block;
       padding-bottom: 100%; }
   .editor__photo-check {
@@ -1284,7 +1284,7 @@ li, .contact input,
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    padding: 0 2.1875rem;
+    padding: 0 1.1875rem;
     margin-bottom: 1.25rem; }
     .editor__group-title i {
       margin-right: 1.25rem;

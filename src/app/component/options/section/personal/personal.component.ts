@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: "app-personal",
   templateUrl: "./personal.component.html",
-  styleUrls: ["./personal.component.css"],
+  styleUrls: ["./personal.component.scss"],
 })
 export class PersonalComponent implements OnInit {
 
