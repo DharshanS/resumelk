@@ -3,7 +3,7 @@ $h-bg-colo: #44556f;
 
 
 
-.row {
+.tm-row {
   display: flex;
   flex-wrap: wrap;
 }
@@ -89,18 +89,27 @@ $h-bg-colo: #44556f;
   flex: 0 0 100%;
   max-width: 100%;
 }
-
+.border-left{
+  border: 0 !important;
+}
+span.skill-sub-title {
+  width: 100%;
+  display: block;
+  font-weight: 600;
+}
 .main-page {
   width: 21cm;
   min-height: 29.7cm;
   margin: 1cm auto;
-  border: 1px #D3D3D3 solid;
-  border-radius: 5px;
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   font-family: 'Open Sans', sans-serif;
 }
-
+.user-details{
+  li{
+    color: #fff !important;
+  }
+}
 .tm-header {
   background: $h-bg-colo;
   padding: 20px
