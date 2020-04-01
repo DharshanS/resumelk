@@ -6,7 +6,7 @@ $name-color: #258ef9;
   -moz-box-sizing: border-box;
 }
 
-.row {
+.tm-row {
   display: flex;
   flex-wrap: wrap;
 }
@@ -100,7 +100,18 @@ $name-color: #258ef9;
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
-
+// .main-page , .tm-2 .main-page{
+//   padding-left: 45px !important;
+//   padding-right: 45px !important;
+// }
+.tm-2 {
+.sub-box {
+  padding: 0px 20px;
+}
+.title-icon{
+  left: 6px;
+}
+}
 .temp-header {
   background: $h-bg-color;
   padding: 20px;

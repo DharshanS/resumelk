@@ -4,10 +4,10 @@
 <div #hawking *ngIf="resumeService.resumeComponents!=null">
 <div class="main-page" >
 
-    <div class="temp-header bg-color" *ngIf="resumeService.resumeComponents.personal!=null">
-        <div class="row">
+    <div class="temp-header bg-color" >
+        <div class="tm-row">
             <div class="col-7">
-                <div class="name myClass">{{resumeService.resumeComponents.personal.firstName}}&nbsp; {{resumeComponents.personal.lastName}}</div>
+                <div class="name myClass">{{resumeService.resumeComponents.personal.firstName}}&nbsp; {{resumeService.resumeComponents.personal.lastName}}</div>
                 <div class="title">{{resumeService.resumeComponents.workExperiance[0].jobTitle}}</div>
 
             </div>
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="tm-row">
         <div class="col-12 sub-box">
             <div class="border-left">
                 <div class="title-icon bg-color"><i class="fas fa-address-card"></i></div>
@@ -38,29 +38,26 @@
 
     </div>
 
-    <div class="row">
+    <div class="tm-row">
         <div class="col-12 sub-box">
             <div class="border-left">
                 <div class="title-icon bg-color"><i class="fas fa-address-card"></i></div>
-                <div class="title-box font-color">Skills</div>
+                
 
                 <div class="border-b">
                     <div class="title-box font-color">Skills</div>
-                    <ul class="technical-skills">
-                        <li *ngFor="let item of resumeService.resumeComponents.skills">
-                          <span>{{item.skillCategoryName}}</span>
-                          <span class="skill-sub-title" *ngIf="item.length>0">{{item.skillCategoryName}}</span>
-                          <!-- <span class="key-skills-box bg-color" *ngFor="let skill of item.skillNames">
-                            {{skill.skillName}}
-                          </span> -->
-                        </li>
-                      </ul>
+                    <div class="pl-1" *ngFor="let skills of resumeService.resumeComponents.skills">
+                        <span class="skill-sub-title">{{skills.skillCategoryName}}</span>
+                        <span class="key-skills-box bg-color" *ngFor="let skill of skills.skillNames">
+                          {{skill.skillName}}
+                        </span>
+                      </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="tm-row">
         <div class="col-12 sub-box componentSection" *ngIf="resumeService.resumeComponents.workExperiance.length > 0">
             <div class="border-left">
                 <div class="title-icon bg-color"><i class="fas fa-address-card"></i></div>
@@ -69,28 +66,17 @@
                     <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.workExperiance">
                         <label class="bold">{{item.jobTitle}}</label>
 
-
-                        <div class="p-0 col-12 row">
-
+                        <div class="p-0 col-12 tm-row">
+                            
                             <div class="col-6 p-0  c-name">{{item.companyName}}</div>
                             <div class="col-6 p-0 text-right">{{item.city}},{{item.city}}</div>
                             <span class="span-text"><i class="far fa-calendar-alt"></i>
                                 &nbsp;{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
                                 {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</span><br>
-
-
-
                             <span class="span-text" innerHtml="{{item.description}}"></span>
-
-
-
-
-
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
         <!-- education -->
@@ -103,7 +89,7 @@
                         <label>{{item.feildOfStudy}}</label>
 
 
-                        <div class="p-0 col-12 row">
+                        <div class="p-0 col-12 tm-row">
 
                             <div class="col-6 p-0  c-name">{{item.institutionName}}</div>
                             <div class="col-6 p-0 text-right"><span>{{item.city}},
@@ -133,7 +119,7 @@
                         <label>{{item.certificateName}}</label>
 
 
-                        <div class="p-0 col-12 row">
+                        <div class="p-0 col-12 tm-row">
 
                             <div class="col-6 p-0  c-name" *ngIf="item.url">Certification URL </div>
                             <div class="col-6 p-0 text-right">{{item.certicateCode}}</div>
@@ -159,7 +145,7 @@
                         <label>{{item.name}}</label>
 
 
-                        <div class="p-0 col-12 row">
+                        <div class="p-0 col-12 tm-row">
 
                             <div class="col-8 p-0  c-name">{{item.url}}</div>
                             <div class="col-4 p-0 text-right">{{item.issuer}}</div>
@@ -193,7 +179,7 @@
                         <label>{{item.name}}</label>
 
 
-                        <div class="p-0 col-12 row">
+                        <div class="p-0 col-12 tm-row">
 
 
                             <span class="span-text" innerHtml="{{item.description}}"></span>
@@ -220,7 +206,7 @@
                         <label>{{item.personName}}</label>
 
 
-                        <div class="p-0 col-12 row">
+                        <div class="p-0 col-12 tm-row">
 
                             <div class="col-12 p-0  c-name">{{item.title}} , {{item.company}} </div>
                             <div class="col-12 p-0  c-name">{{item.mobile}} </div>
@@ -246,7 +232,7 @@
 
 
 
-                        <div class="p-0 col-12 row">
+                        <div class="p-0 col-12 tm-row">
                             <div class="col-8 p-0"><label>{{item.title}}</label></div>
                             <div class="col-4 p-0 text-right">{{item.publisher}}</div>
                             <div class="col-8 p-0  c-name">{{item.url}}</div>
@@ -275,7 +261,7 @@
 </div>
 
 
-<div *ngFor="let item of componentList">
+<div *ngFor="let item of componentList" class="tm-2">
 
     <resume-page [data]=item></resume-page>
 
