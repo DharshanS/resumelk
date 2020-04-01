@@ -168,11 +168,10 @@ export class ResumeService {
 
   }
 
-  profileImagePost() {
-    let url = 'http://44.229.50.57:8081/resumeservice/api/v1/resume';
-    this.http.put(url, this.resumeObject, { withCredentials: true, headers: headers }).subscribe(data => {
-      console.log("response");
-      this.loadResumeComponentsJson();
-    });
+  profileImagePost(file: File) {
+    let url = 'http://44.229.50.57:8081/resumeservice/api/v1/images/files';
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    return this.http.post(url, formData, { withCredentials: true });
   }
 }

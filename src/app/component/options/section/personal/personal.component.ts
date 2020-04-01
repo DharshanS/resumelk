@@ -6,6 +6,7 @@ import { Personal } from './Personal';
 import { ImageCroppedEvent, ImageTransform, Dimensions } from 'ngx-image-cropper';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 import { HttpClient } from '@angular/common/http';
+import { async } from '@angular/core/testing';
 @Component({
   selector: "app-personal",
   templateUrl: "./personal.component.html",
@@ -34,6 +35,8 @@ export class PersonalComponent implements OnInit {
   canvasRotation = 0;
   userProfileUpload = false;
   containWithinAspectRatio = 0;
+
+  file: any;
   // @ViewChild(ImageCropperComponent) imageCropper: ImageCropperComponent;
 
   constructor(
@@ -65,12 +68,18 @@ export class PersonalComponent implements OnInit {
 
   fileChangeEvent(event: any): void {
     this.imageChangedEvent = event;
-    console.log(this.imageChangedEvent);
+    this.file = event.target.files[0]
+    console.log("file change event")
+
   }
 
   imageCropped(event: ImageCroppedEvent) {
     this.croppedImage = event.base64;
-    console.log(this.croppedImage);
+    var blob = new Blob([event.base64], { type: 'image/png' });
+    this.file = new File([blob], this.getFileName());
+  }
+  getFileName() {
+    return this.resumeService.resumeComponents.personal.firstName + new Date().getTime() + '.png';
   }
   imageLoaded() {
     this.showCropper = true;
@@ -84,15 +93,13 @@ export class PersonalComponent implements OnInit {
     // show message
   }
 
-  userProfileImageUpload() {
 
-    const formData: FormData = new FormData();
-    formData.append('file', this.croppedImage);
-    //   formData.append('file', 'welcome');
-    this.http.post('http://44.229.50.57:8081/resumeservice/api/v1/images/post', formData, { withCredentials: true }).subscribe(data => {
-      console.log(data)
+
+  userProfileImageUpload() {
+    this.resumeService.profileImagePost(this.file).subscribe(data => {
+      this.resumeService.resumeComponents.personal.profilePic = data['key'];
     });
-    //  console.log("userProfileUpload" + this.userProfileUpload)
+
   }
 
   public onChange({ editor }: ChangeEvent) {

@@ -7,27 +7,31 @@
       <p class="paragraph--big u-color-gray-alt-14 u-weight-smb">Personal Information</p>
     </div>
     <div class="editor__photo">
-
-      <!-- <div class="editor__photo-img" style="background-image: url('assets/images/headshot.jpg');"></div> -->
+      <div class="text-center col-md-4">
+        <h5>Preview</h5>
+        <img [src]="croppedImage" />
+      </div>
+      <div class="editor__photo-img" style="background-image: url('assets/images/headshot.jpg');"></div>
       <div class="editor__photo-img">
         <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
           [containWithinAspectRatio]="containWithinAspectRatio" [aspectRatio]="4 / 3" [resizeToWidth]="256"
-          [cropperMinWidth]="128" [onlyScaleDown]="true" [roundCropper]="false"  [style.display]="showCropper ? null : 'none'" [canvasRotation]="canvasRotation"
-          [transform]="transform" [alignImage]="'left'"  format="png"
-          (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady($event)"
-          (loadImageFailed)="loadImageFailed()"></image-cropper>
+          [cropperMinWidth]="128" [onlyScaleDown]="true" [roundCropper]="true"
+          [style.display]="showCropper ? null : 'none'" [canvasRotation]="canvasRotation" [transform]="transform"
+          [alignImage]="'left'" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+          (cropperReady)="cropperReady($event)" (loadImageFailed)="loadImageFailed()"></image-cropper>
       </div>
       <div class="zoom-btn" [style.display]="showCropper ? null : 'none'">
-          
-      <button (click)="zoomOut()"><i class="fas fa-search-minus"></i></button> <button (click)="zoomIn()"><i class="fas fa-search-plus"></i></button>
+
+        <button (click)="zoomOut()"><i class="fas fa-search-minus"></i></button> <button (click)="zoomIn()"><i
+            class="fas fa-search-plus"></i></button>
       </div>
       <div class="editor__photo-check checkbox m-2" [style.display]="showCropper ? null : 'none'">
         <input type="checkbox" id="use-profile-photo" [(ngModel)]="userProfileUpload"
           (change)="userProfileImageUpload()">
-         
-          
+
+
         <label for="use-profile-photo" class="use-profile-photo d-block">Use profile photo</label>
-       
+
       </div>
       <!-- <input type="file" class="editor__photo-input" id="editor-photo"> -->
       <input type="file" (change)="fileChangeEvent($event)" class="editor__photo-input" id="editor-photo" />
