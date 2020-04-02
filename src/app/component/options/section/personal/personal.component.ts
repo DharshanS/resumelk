@@ -6,7 +6,6 @@ import { Personal } from './Personal';
 import { ImageCroppedEvent, ImageTransform, Dimensions } from 'ngx-image-cropper';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 import { HttpClient } from '@angular/common/http';
-import { async } from '@angular/core/testing';
 @Component({
   selector: "app-personal",
   templateUrl: "./personal.component.html",
@@ -30,11 +29,13 @@ export class PersonalComponent implements OnInit {
 
   transform: ImageTransform = {};
   showCropper = false;
-  imageChangedEvent: any = '';
+  imageChangedEvent: any;
+  imageFile: any;
   croppedImage: any = '';
   canvasRotation = 0;
   userProfileUpload = false;
   containWithinAspectRatio = 0;
+  profilePicture: string;
 
   file: any;
   // @ViewChild(ImageCropperComponent) imageCropper: ImageCropperComponent;
@@ -50,6 +51,9 @@ export class PersonalComponent implements OnInit {
     if (this.resumeService.resumeComponents.personal == null) {
       this.createPerson();
     }
+
+    this.profilePicture = this.resumeService.resumeComponents.personal.profilePic;
+    console.log(this.resumeService.resumeComponents.personal.profilePic)
   }
 
 
@@ -74,12 +78,13 @@ export class PersonalComponent implements OnInit {
   }
 
   imageCropped(event: ImageCroppedEvent) {
-    this.croppedImage = event.base64;
-    var blob = new Blob([event.base64], { type: 'image/png' });
-    this.file = new File([blob], this.getFileName());
+    console.log(event)
+    // this.croppedImage = event.base64;
+    // var blob = new Blob([this.croppedImage], { type: 'image/jpeg' });
+    // this.file = new File([blob], this.getFileName(), { type: 'image/jpeg' });
   }
   getFileName() {
-    return this.resumeService.resumeComponents.personal.firstName + new Date().getTime() + '.png';
+    return this.resumeService.resumeComponents.personal.firstName + new Date().getTime() + '.jpg';
   }
   imageLoaded() {
     this.showCropper = true;

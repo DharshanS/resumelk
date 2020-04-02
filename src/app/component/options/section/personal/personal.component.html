@@ -8,8 +8,7 @@
     </div>
     <div class="editor__photo">
       <div class="text-center col-md-4">
-        <h5>Preview</h5>
-        <img [src]="croppedImage" />
+        <img [src]=" resumeService.resumeComponents.personal.profilePic" class="user-img" />
       </div>
       <div class="editor__photo-img" style="background-image: url('assets/images/headshot.jpg');"></div>
       <div class="editor__photo-img">
@@ -17,8 +16,9 @@
           [containWithinAspectRatio]="containWithinAspectRatio" [aspectRatio]="4 / 3" [resizeToWidth]="256"
           [cropperMinWidth]="128" [onlyScaleDown]="true" [roundCropper]="true"
           [style.display]="showCropper ? null : 'none'" [canvasRotation]="canvasRotation" [transform]="transform"
-          [alignImage]="'left'" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
-          (cropperReady)="cropperReady($event)" (loadImageFailed)="loadImageFailed()"></image-cropper>
+          [alignImage]="'left'" format="" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+          (cropperReady)="cropperReady($event)" (loadImageFailed)="loadImageFailed()">
+        </image-cropper>
       </div>
       <div class="zoom-btn" [style.display]="showCropper ? null : 'none'">
 
