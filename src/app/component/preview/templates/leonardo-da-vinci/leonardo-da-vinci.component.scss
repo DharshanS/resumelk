@@ -189,8 +189,8 @@ padding: 18px;
 padding-bottom:0px ;
 }
 .name-tag label{
-width: 59%;
-display: block;
+// width: 59%;
+// display: block;
 font-size: 32px;
 font-weight: 700;
 text-align: center;
@@ -199,15 +199,14 @@ margin: auto;
 padding: 7px;
 }
 .name-tag span{
-text-align: center;
-font-size: 20px;
-width: 100%;
-display: block;
-position: relative;
-top: -16px;
-background: #fff;
-width: 204px;
-margin: auto;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    display: block;
+    position: relative;
+    top: 3px;
+    background: #fff;
+    margin: auto;
 }
 .prsonal-box{
 margin: 20px 0px;
@@ -235,12 +234,14 @@ padding-bottom: 30px;
 align-self: center
 }
 .contact-details-box {
-width: 66%;
+// width: 66%;
 margin: auto;
 margin-top: 19px;
 }
+
 .contact-details-box span {
-float: left;
+    display: block !important;
+    width: 100%;
 font-size: 12px;
 width: auto;
 margin-right: 13px;

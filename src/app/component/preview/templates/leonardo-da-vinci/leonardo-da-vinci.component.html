@@ -10,8 +10,13 @@
                             <img src="https://www.cricbuzz.com/stats/img/faceImages/508.jpg" alt="">
                         </div>
                         <div class="name-main">
+                          <div class="col-12" style="
+                          text-align: center;
+                      ">
                             <label for="" class="color-3">{{resumeService.resumeComponents.personal.firstName}} &nbsp; {{resumeService.resumeComponents.personal.lastName}}</label>
-                            <span>
+                         
+                          </div>
+                           <span>
                                 {{resumeService.resumeComponents.workExperiance[0].jobTitle}}
                         
                             </span>
@@ -30,7 +35,7 @@
                     
                 </div>
             </div>
-            <div class="tm-row">
+            <div class="tm-row"style="margin-top: 14px;" >
                 <div class="col-8 margin-top ">
            
                     <div class="col-12 col-box " *ngIf="resumeService.resumeComponents.workExperiance.length > 0">
