@@ -153,12 +153,22 @@ font-weight: 600;
 
 .user-details li {
     padding: 4px 0px;
+
+
+    span{
+        display: grid;
+    grid-template-columns: 24px auto;   
+    }
 }
 
 .technical-skills {
     list-style-type: none;
     padding: 0px;
     font-size: 13px;
+}
+.skill-sub-title{
+    display: block;
+    font-weight: 600;
 }
 
 .technical-skills li {

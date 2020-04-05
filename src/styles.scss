@@ -122,10 +122,15 @@ table th {
 
 .user-img {
   width: 100%;
-  // box-shadow: 0px 0px 14px 0 rgba(0,0,0,.5)!important;
-  border-radius: 56px;
+  border-radius: 125px;
+  height: 91%;
+  object-fit: fill;
 }
-
+.user-img-main{
+  width: 179px;
+  height: 160px;
+  margin: auto;
+}
 .user-details-box {
   text-align: center;
   color: #fff;

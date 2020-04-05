@@ -12,7 +12,7 @@ body {
     -moz-box-sizing: border-box;
 }
 
-.roow-tm {
+.tm-row {
     display: flex;
     flex-wrap: wrap;
 }
@@ -131,6 +131,17 @@ color: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+
+.address label {
+    color: #fff;
+    margin-left: -15px !important;
+    font-weight: 300;
+    display: grid;
+    grid-template-columns: 24px auto;
+    text-transform: capitalize;
+    margin-bottom: 11px;
+}
+
 .bg-color {
     background: $h-bg-colo;
 }
@@ -237,12 +248,14 @@ p {
 .address {
     width: 100%;
     color: $h-bg-colo;
-    border: 1px solid $box-border-color;
     /* background-color: rgb(229, 240, 248); */
     position: relative;
     justify-content: center;
 }
-
+.skill-sub-title {
+    display: block;
+    font-weight: 600;
+}
 .address span {
     width: 100%;
     padding: 7px 13px;

@@ -1,172 +1,202 @@
 
+<div class="" #alexanderGrahamBell *ngIf="resumeService.resumeComponents!=null">
 <div class="main-page">
     <div class="header">
-        <div class="roow-tm">
+        <div class="tm-row">
             <div class="col-4 bg-color">
                 <div class="name-box">
                     <div class="user-img">
                         <img src="https://www.cricbuzz.com/stats/img/faceImages/508.jpg" alt="">
                     </div>
-                    <div class="name">marty mcfy</div>
-                    <div class="title">business analyst</div>
+                    <div class="name">{{resumeService.resumeComponents.personal.firstName}}&nbsp; {{resumeService.resumeComponents.personal.lastName}}</div>
+                    <div class="title">{{resumeService.resumeComponents.workExperiance[0].jobTitle}}</div>
                 </div>
                 
 
                 <div class="col-12 address">
-                    <span><i class="fas fa-phone-square-alt"></i>&nbsp;+94758627689</span>
-                    <span><i class="fas fa-envelope-square"></i>&nbsp;lojan@gmail.com</span>
-                    <span><i class="fas fa-home"></i>&nbsp;lojan@gmail.com</span>
+                    <label><i class="fas fa-phone-square-alt"></i>&nbsp;{{resumeService.resumeComponents.personal.phoneNumber}}</label>
+                    <label><i class="fas fa-envelope-square"></i>&nbsp;{{resumeService.resumeComponents.personal.email}}</label>
+                    <label><i class="fas fa-home"></i>&nbsp;{{resumeService.resumeComponents.personal.address.street}},
+                        {{resumeService.resumeComponents.personal.address.city}}
+                        {{resumeService.resumeComponents.personal.address.country}}</label>
 
                 </div>
             </div>
             <div class="col-8">
                 <div class="title-box">SUMMARY</div>
-                <p>Enterprising marketing professional skilled at marketing, communications, branding, campaign
-                    management, and campaign analysis. Over a career of 2+ years, gained exposure to and executed
-                    multiple marketing initiatives. Adept at launching marketing campaigns resulting in significant
-                    sales and user acquisition. Skilled at analysing & improving the performance of campaigns
-                    through data analysis and competitive benchmarking.
-                </p>
+                <p innerHtml="{{resumeService.resumeComponents.personal.description}}">           </p>
             </div>
         
         </div>
     </div>
 
-    <div class="roow-tm">
+    <div class="tm-row">
         <div class="col-12 sub-box">
 
 
         </div>
     </div>
 
-    <div class="roow-tm">
+    <div class="tm-row">
         <div class="col-12 sub-box">
-            <div class="border-b">
-                <div class="title-box">Key Skills</div>
-
-                <span class="key-skills-box">Marketing Campaigns</span>
-                <span class="key-skills-box">Campaign Analysis</span>
-                <span class="key-skills-box">Corporate Communications</span>
-                <span class="key-skills-box">User Groow-tmth</span>
-                <span class="key-skills-box">Key Metric Analysis</span>
+          <div class="border-b border-color">
+            <div class="title-box font-color border-color">Skills</div>
+            <div class="pl-1 in-box" *ngFor="let skills of resumeService.resumeComponents.skills">
+              <span class="skill-sub-title">{{skills.skillCategoryName}}</span>
+              <span class="key-skills-box bg-color" *ngFor="let skill of skills.skillNames">
+                {{skill.skillName}}
+              </span>
             </div>
+          </div>
         </div>
-    </div>
-
-    <div class="roow-tm">
-        <div class="col-12 sub-box">
-            <div class="border-b">
-                <div class="title-box">professional experience</div>
-                <div class="in-box">
-                        <div class="title-sub">Checkered Inc</div>
-
-
-                        <div class="p-0 col-12 roow-tm">
-    
-                            <div class="col-6 p-0 bold">Bussiness Analyst</div>
-                            <div class="col-6 p-0 text-right">Menia Park,US</div>
-    
-    
-                            <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;Jul 14 - Present</span><br>
-                            <label class="span-text">Alph Foods is the leading provider of restaurant reviews to users
-                                across
-                                North America and has revenues of $ 10+ mn. per year</label>
-    
-                            <ul style="margin: 0;">
-                                <li class="span-text">Worked with the CMO of the company & created digital marketing
-                                    strategy
-                                    which resulted in 60% increased following</li>
-    
-                            </ul>
-                            <div class="professional-box">
-                                <label>Marketing Campaign Management</label>
-                                <ul style="margin: 0;">
-                                    <li class="span-text">Supported 50+ clients on multiple campaign projects</li>
-                                    <li class="span-text">Responsible for winning back 30+ clients by delivering exceptional
-                                        results in the campaigns</li>
-                                    <li class="span-text">Managed the entire spectrum of clients ranging from small to key
-                                        accounts resulting in 10% increase in revenue</li>
-                                </ul>
-                            </div>
-                            <div class="professional-box">
-                                <label>Campaign Performance Analysis</label>
-                                <ul style="margin: 0;">
-                                    <li class="span-text">Conducted in depth analysis of the market & client specific data
-                                        to
-                                        improve the campaign performance</li>
-                                    <li class="span-text">Increased traffic on the site by 60% by analyzing multiple metrics
-                                        such as page views, ad impressions etc.</li>
-                                    <li class="span-text">Led the competitor benchmarking exercise for 7 key accounts to
-                                        assist
-                                        them in improving their overall performance</li>
-                                </ul>
-                            </div>
-    
-    
-    
-    
-                        </div>
+      </div>
+      <div class="tm-row">
+        <div class="col-12 sub-box componentSection" *ngIf="resumeService.resumeComponents.workExperiance.length > 0">
+          <div class="border-b border-color">
+            <div class="title-box font-color border-color">Experience</div>
+            <div class="in-box">
+              <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.workExperiance">
+                <label class="bold">{{item.jobTitle}}</label>
+                <div class="p-0 col-12 tm-row">
+                  <div class="col-6 p-0  c-name">{{item.companyName}}</div>
+                  <div class="col-6 p-0 text-right">{{item.city}},{{item.city}}</div>
+                  <span class="span-text"><i class="far fa-calendar-alt"></i>
+                    &nbsp;{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
+                    {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</span>
+                  <br>
+                  <span class="span-text" innerHtml="{{item.description}}"></span>
                 </div>
-                
+              </div>
             </div>
-
+          </div>
         </div>
-
-        <div class="col-12 sub-box">
-            <div class="border-b">
-                <div class="title-box">INTERNSHIPS</div>
-                <div class="in-box">
-                <div class="title-sub">M&N</div>
-
-
-                <div class="p-0 col-12 roow-tm">
-
-                    <div class="col-6 p-0 bold">Marketing Intern</div>
-                    <div class="col-6 p-0 text-right">Menia Park,US</div>
-
-
-                    <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;Jul 14 - Present</span><br>
-                    <label class="span-text">Alph Foods is the leading provider of restaurant reviews to users
-                        across
-                        North America and has revenues of $ 10+ mn. per year</label>
-
-                    <ul style="margin: 0;">
-                        <li class="span-text">Worked with the CMO of the company & created digital marketing
-                            strategy
-                            which resulted in 60% increased following</li>
-
-                    </ul>
-                    <div class="professional-box">
-                        <label>Marketing Campaign Management</label>
-                        <ul style="margin: 0;">
-                            <li class="span-text">Supported 50+ clients on multiple campaign projects</li>
-                            <li class="span-text">Responsible for winning back 30+ clients by delivering exceptional
-                                results in the campaigns</li>
-                            <li class="span-text">Managed the entire spectrum of clients ranging from small to key
-                                accounts resulting in 10% increase in revenue</li>
-                        </ul>
+        <!-- Education -->
+        <div class="col-12 sub-box componentSection" >
+          <div class="border-color title-box font-color" *ngIf="resumeService.resumeComponents.education.length >0">
+            <div class="title-box font-color border-color">Education</div>
+            <div class="in-box">
+              <div class="col-12 p-0 col-box">
+                <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.education">
+                  <label>{{item.feildOfStudy}}</label>
+                  <div class="p-0 col-12 tm-row">
+                    <div class="col-6 p-0  c-name">{{item.institutionName}}</div>
+                    <div class="col-6 p-0 text-right"><span>{{item.city}}, &nbsp;</span><span>{{item.country}}</span>
                     </div>
-                    <div class="professional-box">
-                        <label>Campaign Performance Analysis</label>
-                        <ul style="margin: 0;">
-                            <li class="span-text">Conducted in depth analysis of the market & client specific data
-                                to
-                                improve the campaign performance</li>
-                            <li class="span-text">Increased traffic on the site by 60% by analyzing multiple metrics
-                                such as page views, ad impressions etc.</li>
-                            <li class="span-text">Led the competitor benchmarking exercise for 7 key accounts to
-                                assist
-                                them in improving their overall performance</li>
-                        </ul>
-                    </div>
-
-
-
-
+                    <span class="span-text"><i class="far fa-calendar-alt"></i>
+                      &nbsp;{{item.timePeriod.from.month+"/"+item.timePeriod.from.year}} -
+                      {{item.timePeriod.to.month+"/"+item.timePeriod.to.year}}</span><br>
+                    <span class="span-text" innerHtml="{{item.description}}"></span>
+                  </div>
                 </div>
-</div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
+        <!-- Certificates -->
+        <div class="col-12 sub-box componentSection" *ngIf=" resumeService.resumeComponents.certificates.length>0">
+          <div class="border-color">
+            <div class="title-box font-color border-color">Certificates</div>
+            <div class="in-box">
+              <div class="col-12 p-0 col-box">
+                <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.certificates">
+                  <label>{{item.certificateName}}</label>
+                  <div class="p-0 col-12 tm-row">
+                    <div class="col-6 p-0  c-name" *ngIf="item.url">Certification URL </div>
+                    <div class="col-6 p-0 text-right">{{item.certicateCode}}</div>
+                    <span class="span-text"><i class="far fa-calendar-alt"></i>
+                      &nbsp;{{item.dateOfCerticate.month+"/"+item.dateOfCerticate.year}}</span><br>
+                    <span class="span-text" innerHtml="{{item.description}}"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Awards -->
+        <div class="col-12 sub-box componentSection" *ngIf="resumeService.resumeComponents.awards.length>0">
+          <div class="border-color">
+            <div class="title-box font-color border-color">Awards</div>
+            <div class="in-box">
+              <div class="col-12 p-0 col-box">
+                <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.awards">
+                  <label>{{item.name}}</label>
+                  <div class="p-0 col-12 tm-row">
+                    <div class="col-8 p-0  c-name">{{item.url}}</div>
+                    <div class="col-4 p-0 text-right">{{item.issuer}}</div>
+                    <span class="span-text"><i class="far fa-calendar-alt"></i>
+                      &nbsp;{{item.month+"/"+item.year}}</span><br>
+                    <span class="span-text" innerHtml="{{item.description}}"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Achievements -->
+        <div class="col-12 sub-box componentSection" *ngIf=" resumeService.resumeComponents.achivements.length > 0">
+          <div class="border-color">
+            <div class="title-box font-color border-color">Achievements</div>
+            <div class="in-box">
+              <div class="col-12 p-0 col-box">
+                <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.achivements">
+                  <label>{{item.name}}</label>
+                  <div class="p-0 col-12 tm-row">
+                    <span class="span-text" innerHtml="{{item.description}}"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- REFERENCE -->
+        <div class="col-12 sub-box componentSection" *ngIf="resumeService.resumeComponents.referances.length > 0">
+          <div class="border-color">
+            <div class="title-box font-color border-color">REFERENCE</div>
+            <div class="in-box">
+              <div class="col-12 p-0 col-box">
+                <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.referances">
+                  <label>{{item.personName}}</label>
+                  <div class="p-0 col-12 tm-row">
+                    <div class="col-12 p-0  c-name">{{item.title}} , {{item.company}} </div>
+                    <div class="col-12 p-0  c-name">{{item.mobile}} </div>
+                    <div class="col-12 p-0  c-name">{{item.email}} </div>
+                    <div class="col-12 p-0  c-name" innerHtml="{{item.description}}"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Publications -->
+        <div class="col-12 sub-box componentSection" *ngIf="resumeService.resumeComponents.publications.length >  0">
+          <div class="border-color">
+            <div class="title-box font-color border-color">Publications</div>
+            <div class="in-box">
+              <div class="col-12 p-0 col-box">
+                <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.publications">
+                  <div class="p-0 col-12 tm-row">
+                    <div class="col-8 p-0"><label>{{item.title}}</label></div>
+                    <div class="col-4 p-0 text-right">{{item.publisher}}</div>
+                    <div class="col-8 p-0  c-name">{{item.url}}</div>
+                    <!-- <div class="col-4 p-0 text-right">04/2019 - 12/2019</div> -->
+                    <!-- <span class="span-text"><i class="far fa-calendar-alt"></i> &nbsp;04/2019 - 12/2019</span><br> -->
+                    <br>
+                    <span class="span-text" innerHtml="{{item.description}}"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+      </div>
 </div>
-<div class="main-page"></div>
+
+
+<div *ngFor="let item of componentList">
+
+    <resume-page [data]=item></resume-page>
+
+  </div>
+
+</div>

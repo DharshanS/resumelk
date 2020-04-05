@@ -29,7 +29,7 @@ body {
     -moz-box-sizing: border-box;
 }
 
-.row {
+.tm-row {
     display: flex;
     flex-wrap: wrap;
 }
@@ -128,7 +128,7 @@ body {
 }
 
 .header {
-    background: $h-bg-colo;
+    background: $h-bg-colo !important;
     padding: 20px;
     color: $title;
     height: 100vh;
@@ -136,7 +136,7 @@ body {
 
 .name {
     font-weight: 600;
-    padding: 10px 0 24px 0;
+    padding:20px  0 20px 13px;
     text-transform: uppercase;
     color: $color1;
     font-size: 30px;
@@ -149,6 +149,7 @@ body {
     text-transform: capitalize;
     color: #fff;
     line-height: 30px;
+    padding-left: 14px;
 }
 
 .user-details {
