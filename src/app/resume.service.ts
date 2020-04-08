@@ -90,23 +90,11 @@ export class ResumeService {
     {
       "name": "global-citizen-green",
       "id": 13
-    },
-    {
-      "name": "miani",
-      "id": 14
-    },
-    {
-      "name": "royal-blue",
-      "id": 15
-    },
-    {
-      "name": "trendy-design",
-      "id": 16
-    },
-    {
-      "name": "uniform-brown",
-      "id": 17
     }
+    // {
+    //   "name": "markoni",
+    //   "id": 14
+    // }
 
   ]
   A4_SIZE = 20.7;

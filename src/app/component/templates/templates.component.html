@@ -10,7 +10,30 @@
           <label class="res-name">{{item.name}}</label>
           <div class="select-template__item" [style.background-image]="getBackground(item.name)">
 
-            <div class="select-template__item-overlay">
+          
+
+            <!-- SPINNER 13   -->
+            <div class="flexbox" *ngIf="loaderDiv">
+  <div>
+    <div class="ml-loader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  </div>
+
+
+            <div class="select-template__item-overlay" *ngIf="!loaderDiv">
               <button
                 class="btn btn--no-shadow btn--shorter btn--icon btn--primary-alt select-btn-p u-margin-bottom-med"
                 (click)="selectTemplateName(item.name)" (click)="goToProductDetails()">

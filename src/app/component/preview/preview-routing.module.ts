@@ -23,7 +23,8 @@ import { GalileoGalileiComponent } from './templates/galileo-galilei/galileo-gal
 import { LeonardoDaVinciComponent } from './templates/leonardo-da-vinci/leonardo-da-vinci.component';
 import { AlexanderGrahamBell } from './templates/alexander-graham-bell/alexander-graham-bell.component';
 import { DarwinComponent } from './templates/darwin/darwin.component';
-
+import { MarkoniComponent } from './templates/markoni/markoni.component';
+import { GlobalCitizenGreenComponent } from './templates/global-citizen-green/global-citizen-green.component';
 
 const optionsRoute: Routes = [
   {
@@ -98,13 +99,13 @@ const optionsRoute: Routes = [
         component:CharlesDarwinComponent
       },
       {
-        path:'royal-blue',
-        component:RoyalBlueComponent
+        path:'global-citizen-green',
+        component:GlobalCitizenGreenComponent
       },
-      {
-        path:'trendy-design',
-        component:TrendyDesignComponent
-      },
+      // {
+      //   path:'markoni',
+      //   component:MarkoniComponent
+      // },
       {
         path:'uniform-brown',
         component:UniformBrownComponent

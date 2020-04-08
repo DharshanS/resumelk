@@ -7,15 +7,14 @@ import { ResumeDirective } from '../page.directive';
 import { AddCpmponentService } from '../../template.service';
 import { ResumePage } from '../resume-page/resume-page.component';
 @Component({
-  selector: 'app-thomas-edison',
-  templateUrl: './thomas-edison.component.html',
-  styleUrls: ['./thomas-edison.component.scss']
+  selector: 'app-global-citizen-green',
+  templateUrl: './global-citizen-green.component.html',
+  styleUrls: ['./global-citizen-green.component.scss']
 })
-export class ThomasEdisonComponent implements OnInit {
+export class GlobalCitizenGreenComponent implements OnInit {
 
- 
-  @ViewChild("thomasEdison", { static: false }) thomasEdisonPage: ElementRef;
-  thomasEdisonPage2 = true;
+  @ViewChild("globalCitizenGreen", { static: false }) globalCitizenGreenPage: ElementRef;
+  globalCitizenGreenPage2 = true;
   templateData: any;
   page2Class = "secondPageEes";
   componentList: any[] = new Array();
@@ -36,7 +35,7 @@ export class ThomasEdisonComponent implements OnInit {
 
     setTimeout(() => {
       if (this.urilityService.isObjectIsNotNull(this.resumeService.resumeComponents)) {
-        //  this.thomasEdisonPage2 = this.urilityService.templatePageBreak(this.thomasEdisonPage, this.page2Class);
+        //  this.globalCitizenGreenPage2 = this.urilityService.templatePageBreak(this.globalCitizenGreenPage, this.page2Class);
         this.loadComponent();
       }
     }, 1000)
@@ -54,10 +53,10 @@ export class ThomasEdisonComponent implements OnInit {
 
 
   loadComponent() {
-    this.componentList = this.urilityService.pageElementsHTML(this.thomasEdisonPage);
-    console.log(this.thomasEdisonPage)
+    this.componentList = this.urilityService.pageElementsHTML(this.globalCitizenGreenPage);
+    console.log(this.globalCitizenGreenPage)
     // let adItem = this.ads[0];
-    //adItem.data = this.urilityService.pageElementsHTML(this.thomasEdisonPage);
+    //adItem.data = this.urilityService.pageElementsHTML(this.globalCitizenGreenPage);
     // console.log(adItem.data)
     // let componentFactory = this.componentFactoryResolver.resolveComponentFactory(adItem.component);
     // let viewContainerRef = this.resumePage.viewContainerRef;
@@ -70,5 +69,3 @@ export class ThomasEdisonComponent implements OnInit {
 
 
 }//711327574
-
-

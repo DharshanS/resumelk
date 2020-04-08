@@ -28,6 +28,8 @@ import { DarwinComponent } from './templates/darwin/darwin.component';
 import { ResumePage } from './templates/resume-page/resume-page.component';
 import { AddCpmponentService } from './template.service';
 import { ResumeDirective } from './templates/page.directive';
+import { MarkoniComponent } from './templates/markoni/markoni.component';
+import { GlobalCitizenGreenComponent } from './templates/global-citizen-green/global-citizen-green.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { ResumeDirective } from './templates/page.directive';
     TrendyDesignComponent,
     UniformBrownComponent,
     ResumePage,
-    ResumeDirective
+    ResumeDirective,
+    MarkoniComponent,
+    GlobalCitizenGreenComponent
 
   ],
   imports: [

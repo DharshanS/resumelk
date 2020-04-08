@@ -10,7 +10,7 @@ import { ResumeService } from "./../../resume.service";
 })
 export class TemplatesComponent implements OnInit {
 
-
+  loaderDiv:any = false;
   selectedTemplate = 1;
   imgUrl;
 
@@ -32,6 +32,14 @@ export class TemplatesComponent implements OnInit {
   }
   goToProductDetails() {
     this.router.navigate(['/editor', this.resumeService.resumeObject['resumeName']]);
+
+this.loaderDiv = true;
+      //  setTimeout (() => {
+      //    this.loaderDiv = false;
+      //    console.log("Hello from setTimeout");
+      // }, 1000);
+
+
   }
 
   getBackground(image) {
