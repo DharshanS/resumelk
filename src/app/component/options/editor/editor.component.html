@@ -21,9 +21,14 @@
           <label for="show-slide" class="close-icon"><i class="fas fa-times"></i></label>
           <div class="user-details-box">
             <div class="user-img-box">
-              <img *ngIf="!isProfilePic" src="'assets/images/headshot.jpg" alt="" class="user-img">
-              <ng-template #loggedOut>
-                <img src="'assets/images/headshot.jpg" alt="" class="user-img">
+
+              <img *ngIf="!isProfilePic ; else  image" src="assets/images/headshot.jpg" alt="" class="user-img">
+
+
+              <ng-template #image>
+
+                <img src="{{resumeService.resumeComponents.personal.profilePic}}" alt="" class="user-img">
+
               </ng-template>
             </div>
             <div class="user-name">Slave Kornllow</div>

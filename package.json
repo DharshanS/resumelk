@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "dev-build": "ng build --deploy-url=http://dev.resume.lk.s3-website-ap-southeast-1.amazonaws.com/ --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer && s3-deploy './dist/resume/**' --cwd './dist/resume/' --profile resume --region ap-southeast-1 --bucket dev.resume.lk --gzip --deleteRemoved",
+    "dev-build": "ng build  --base-href /app/ --deploy-url=/app/   --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer && s3-deploy './dist/resume/**' --cwd './dist/resume/' --profile resume --region ap-southeast-1 --bucket dev.resume.lk --gzip --deleteRemoved",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

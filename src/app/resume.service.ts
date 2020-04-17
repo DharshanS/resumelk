@@ -9,7 +9,8 @@ import { Observable, of, from } from 'rxjs';
 const headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' });
 
 export class ResumeService {
-  apiUrl = "http://44.229.50.57:8081/resumeservice/api/v1/resume";
+  apiUrl = "https://resume.lk/resumeservice/api/v1/resume";
+  GUEST_URL = "https://resume.lk/resumeservice/api/v1/guests-resumes";
   //http://44.229.50.57:8081/resumeservice/api/v1/resume
   //https://resume.lk/resumeservice/api/v1/resume
 
@@ -145,7 +146,7 @@ export class ResumeService {
     });
   }
 
-  getResume(code) {
+  getResume(code: string) {
     return this.http.get(`${this.apiUrl}?userCode=${code}`, { withCredentials: true });
   }
 
@@ -157,9 +158,26 @@ export class ResumeService {
   }
 
   profileImagePost(file: File) {
-    let url = 'http://44.229.50.57:8081/resumeservice/api/v1/images/files';
+    let url = 'https://resume.lk/resumeservice/api/v1/images/files';
     const formData: FormData = new FormData();
     formData.append('file', file);
     return this.http.post(url, formData, { withCredentials: true });
   }
+
+
+
+  createGuestResume() {
+    console.log("Guest initiating....");
+    return this.http.get(`${this.GUEST_URL}`, { withCredentials: true }).subscribe(d => {
+      console.log(d)
+    });
+    //return this.http.get(`${this.GUEST_URL}`, { withCredentials: true });
+  }
+
+  async updateGuestResume() {
+    this.http.put(this.GUEST_URL, this.resumeObject, { withCredentials: true }).subscribe(data => {
+
+    });
+  }
+
 }

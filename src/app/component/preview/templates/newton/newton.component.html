@@ -1,7 +1,7 @@
 <div class="" #newton *ngIf="resumeService.resumeComponents!=null">
-  <div class="main-page ">
-    <div class="tm-header color-1">
-      <div class="tm-row">
+  <div class="main-page firstPage " #firstPage>
+    <div class="tm-header color-1  componentSection">
+      <div class="tm-row ">
         <div class="col-4 bg-color">
           <div class="user-img">
             <img src="images/images.jpg" alt="">
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div class="tm-row">
+    <div class="tm-row componentSection">
       <div class="col-12 sub-box">
         <div class="border-color">
           <div class="title-box font-color border-color">Skills</div>
@@ -38,12 +38,12 @@
         </div>
       </div>
     </div>
-    <div class="tm-row">
-      <div class="col-12 sub-box componentSection" *ngIf="resumeService.resumeComponents.workExperiance.length > 0">
-        <div class="border-b border-color">
+    <div class="tm-row ">
+      <div class="col-12 sub-box " *ngIf="resumeService.resumeComponents.workExperiance.length > 0">
+        <div class="border-b border-color componentSection">
           <div class="title-box font-color border-color">Experience</div>
           <div class="in-box">
-            <div class="professional-box" *ngFor="let item of resumeService.resumeComponents.workExperiance">
+            <div class="professional-box " *ngFor="let item of resumeService.resumeComponents.workExperiance">
               <label class="bold">{{item.jobTitle}}</label>
               <div class="p-0 col-12 tm-row">
                 <div class="col-6 p-0  c-name">{{item.companyName}}</div>
@@ -59,7 +59,7 @@
         </div>
       </div>
       <!-- Education -->
-      <div class="col-12 sub-box componentSection" >
+      <div class="col-12 sub-box componentSection">
         <div class="border-color title-box font-color" *ngIf="resumeService.resumeComponents.education.length >0">
           <div class="title-box font-color border-color">Education</div>
           <div class="in-box">

@@ -8,15 +8,26 @@ import { ResumeService } from 'src/app/resume.service';
 })
 export class DashboardComponent implements OnInit {
 
+  isUserLoggedIn = false;
+
   constructor(public resumeService: ResumeService) { }
 
   ngOnInit() {
-    this.resumeService.loadResumeComponentsJson();
+
+    if (this.isUserLoggedIn) {
+      this.resumeService.loadResumeComponentsJson();
+    } else {
+      console.log("User not created account yet");
+      this.resumeService.createGuestResume()
+    }
+
   }
 
   @HostListener("window:scroll", [])
   onWindowScroll() {
 
   }
+
+
 
 }

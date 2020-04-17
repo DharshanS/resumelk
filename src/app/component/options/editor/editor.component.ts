@@ -6,7 +6,8 @@ import {
   ComponentFactoryResolver,
   ElementRef,
   Inject,
-  HostListener
+  HostListener,
+  AfterViewInit
 } from "@angular/core";
 
 import { DOCUMENT } from '@angular/common';
@@ -17,14 +18,16 @@ import { DynamicComponentsService } from "../dynamic-components.service";
 import { TextComponent } from "../section/text/text.component";
 import { Personal } from "../section/personal/Personal";
 import { ResumeService } from 'src/app/resume.service';
+import { timeout } from 'rxjs/operators';
 
 @Component({
   selector: "app-editor",
   templateUrl: "./editor.component.html",
   styleUrls: ["./editor.component.css"],
+  host: { 'window:beforeunload': 'doSomething' },
   entryComponents: [TextComponent]
 })
-export class EditorComponent implements OnInit {
+export class EditorComponent implements OnInit, AfterViewInit {
   isShow: boolean;
   topPosToStartShowing = 50;
   gotoTopShow: boolean = false;
@@ -40,7 +43,7 @@ export class EditorComponent implements OnInit {
   components: [TextComponent];
   @ViewChild("customContainer", { static: true, read: ViewContainerRef }) container;
   @ViewChild("experience", { static: true, read: ElementRef }) experiance;
-
+  isProfilePic = false;
   resumeObject: ResumeReq;
   constructor(
     public resolver: ComponentFactoryResolver,
@@ -48,6 +51,7 @@ export class EditorComponent implements OnInit {
     public resumeService: ResumeService,
     public custom: DynamicComponentsService,
     public resolve: ComponentFactoryResolver,
+
     @Inject(DOCUMENT) public document: Document
 
   ) {
@@ -57,13 +61,22 @@ export class EditorComponent implements OnInit {
     });
 
   }
-
-
-
+  @HostListener('window:beforeunload', ['$event'])
+  doSomething($event) {
+    $event.returnValue = 'Your data will be lost!';
+  }
 
   ngOnInit() {
     this.date = new FormControl(new Date());
     this.serializedDate = new FormControl(new Date().toISOString());
+    setTimeout(() => {
+      if (this.resumeService.resumeComponents.personal.profilePic != null) {
+
+        this.isProfilePic = true;
+      }
+    }
+      , 2000);
+
 
   }
 
@@ -100,6 +113,9 @@ export class EditorComponent implements OnInit {
 
   ngAfterViewInit() {
     this.top = document.getElementById("top");
+
+
+
   }
 
   public scrollUp() {

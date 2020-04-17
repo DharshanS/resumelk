@@ -148,7 +148,7 @@
         <div class="col-12">
           <div class="border-box border-color">
             <div class="user-img">
-              <img src="assets/images/headshot.jpg" alt="">
+              <img src="{{resumeService.resumeComponents.personal.profilePic}}" alt="">
             </div>
             <div class="name">{{resumeService.resumeComponents.personal.firstName}}</div>
             <div class="title" *ngIf="resumeService.resumeComponents.workExperiance.length >0 ">
@@ -164,8 +164,9 @@
                     class="fa fa-envelope mail-icon"></i>&nbsp;&nbsp;{{resumeService.resumeComponents.personal.email}}</span>
               </li>
               <li>
-                <span> 
-                  <i class="fa fa-map-marker location-icon"></i>&nbsp;&nbsp;{{resumeService.resumeComponents.personal.address.street}},
+                <span>
+                  <i
+                    class="fa fa-map-marker location-icon"></i>&nbsp;&nbsp;{{resumeService.resumeComponents.personal.address.street}},
                   {{resumeService.resumeComponents.personal.address.city}}
                   {{resumeService.resumeComponents.personal.address.country}}
                 </span>

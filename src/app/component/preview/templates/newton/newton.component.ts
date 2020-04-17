@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2,ComponentFactoryResolver, ViewEncapsulation, ElementRef, ViewChild, AfterViewInit, Input } from '@angular/core';
+import { Component, OnInit, Renderer2, ComponentFactoryResolver, ViewEncapsulation, ElementRef, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { ResumeService } from "../../../../resume.service";
 import { UtilityService } from '../../../../utility.service';
 import { PageComponent } from '../page-component';
@@ -16,6 +16,11 @@ import { AddCpmponentService } from '../../template.service';
 export class NewtonComponent implements OnInit, AfterViewInit {
 
   @ViewChild("newton", { static: false }) newtonPage: ElementRef;
+  @ViewChild("firstPage", { static: false }) firstPage: ElementRef;
+
+
+
+
   templateData: any;
   page2Class = "secondPageEes";
   newtonPage2 = false;
@@ -56,16 +61,9 @@ export class NewtonComponent implements OnInit, AfterViewInit {
 
   loadComponent() {
     this.componentList = this.urilityService.pageElementsHTML(this.newtonPage);
-    console.log(this.newtonPage)
-    // let adItem = this.ads[0];
-    //adItem.data = this.urilityService.pageElementsHTML(this.einsteinPage);
-    // console.log(adItem.data)
-    // let componentFactory = this.componentFactoryResolver.resolveComponentFactory(adItem.component);
-    // let viewContainerRef = this.resumePage.viewContainerRef;
-    // viewContainerRef.clear();
-    // const componentRef = viewContainerRef.createComponent(componentFactory);
-    // (<PageComponent>componentRef.instance).data = adItem.data;
-    // this.componentList.push(componentRef);
+    console.log("New pages....")
+    console.log(this.firstPage.nativeElement.offsetHeight * this.resumeService.A4_SIZE_CM)
+
   }
 
 
